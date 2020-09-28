@@ -6,4 +6,5 @@ const { mkdir } = require('fs').promises
 	} catch {}
 
 	require('./bundleAutoCompletions.js')
+	require('./bundleFileDefs.js')
 })()
