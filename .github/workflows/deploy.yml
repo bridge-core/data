@@ -26,6 +26,16 @@ jobs:
               with:
                   github_token: ${{ secrets.GITHUB_TOKEN }}
 
+            - name: NPM version 🔢
+              run: npm version patch
+              with:
+                  github_token: ${{ secrets.GITHUB_TOKEN }}
+
+            - name: Push changes 🔼
+              uses: ad-m/github-push-action@master
+              with:
+                  github_token: ${{ secrets.GITHUB_TOKEN }}
+
             - name: Publish 🚀
               run: npm publish
               env:
