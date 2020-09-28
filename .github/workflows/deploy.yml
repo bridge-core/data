@@ -28,7 +28,7 @@ jobs:
 
             - name: NPM version 🔢
               run: npm version patch
-              with:
+              env:
                   github_token: ${{ secrets.GITHUB_TOKEN }}
 
             - name: Push changes 🔼
