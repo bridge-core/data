@@ -1,0 +1,20 @@
+{
+  "format_version": "1.10",
+  "minecraft:item": {
+    "description": {
+      "identifier": "minecraft:rabbit_stew",
+      "category": "Equipment"
+    },
+    "components": {
+      "minecraft:creative_category": {
+        "parent": "itemGroup.name.miscFood"
+      },
+      "minecraft:icon": {
+        "texture": "rabbit_stew"
+      },
+      "minecraft:use_animation": "eat",
+      "minecraft:render_offsets": "stew",
+      "minecraft:display_name": {}
+    }
+  }
+}

@@ -1,0 +1,12 @@
+{
+    "define_multiple": true,
+    "definitions": [
+        {
+            "load": "entity"
+        },
+        {
+            "load": "entity",
+            "as": "entity_tag"
+        }
+    ]
+}

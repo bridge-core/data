@@ -1,0 +1,19 @@
+{
+  "format_version": "1.10",
+  "minecraft:item": {
+    "description": {
+      "identifier": "minecraft:beetroot_seeds",
+      "category": "Nature"
+    },
+    "components": {
+      "minecraft:creative_category": {
+        "parent": "itemGroup.name.seed"
+      },
+      "minecraft:icon": {
+        "texture": "seeds_beetroot"
+      },
+      "minecraft:render_offsets": "seeds",
+      "minecraft:display_name": {}
+    }
+  }
+}

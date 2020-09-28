@@ -1,0 +1,20 @@
+{
+  "format_version": "1.10",
+  "minecraft:item": {
+    "description": {
+      "identifier": "minecraft:carrot",
+      "category": "Nature"
+    },
+    "components": {
+      "minecraft:creative_category": {
+        "parent": "itemGroup.name.crop"
+      },
+      "minecraft:icon": {
+        "texture": "carrot"
+      },
+      "minecraft:use_animation": "eat",
+      "minecraft:render_offsets": "carrots",
+      "minecraft:display_name": {}
+    }
+  }
+}

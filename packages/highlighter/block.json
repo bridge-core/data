@@ -1,0 +1,8 @@
+{
+    "set": {},
+    "define": {
+        "keywords": ["minecraft", "description", "components", "bridge", "permutations", "events"],
+        "titles": ["format_version"],
+        "symbols": ["properties"]
+    }
+}

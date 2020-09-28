@@ -1,0 +1,20 @@
+{
+    "icon": "mdi-language-javascript",
+    "title": "Script",
+    "extension": "js",
+    "path": "scripts/server/",
+    "add_content": {
+        "add_location": [ -3, 1 ],
+        "type": "select",
+        "text": "server",
+        "options": [ "server",  "client" ],
+        "action": {
+            "type": "change_path",
+            "to": "'scripts/' + parameter + '/'"
+        }
+    },
+    "templates": {
+        "Client Script Start": "let system = client.registerSystem(0,0);\n\nsystem.initialize = function() {};\nsystem.update = function () {};",
+        "Server Script Start": "let system = server.registerSystem(0,0);\n\nsystem.initialize = function() {};\nsystem.update = function () {};"
+    }
+}

@@ -1,0 +1,36 @@
+{
+    "icon": "mdi-minecraft",
+    "title": "Client Entity",
+    "extension": "json",
+    "path": "entity/",
+
+    "templates": {
+        "$default_pack": {
+            "path": "RP/entity"
+        },
+        "Blank Entity": {
+            "format_version": {},
+            "minecraft:client_entity": {
+                "description": {
+                    "identifier": {},
+                    "materials": {
+                        "default": {}
+                    },
+                    "textures": {
+                        "default": {}
+                    },
+                    "geometry": {
+                        "default": {}
+                    },
+                    "animations": {},
+                    "scripts": {
+                        "pre_animation": {},
+                        "animate": {}
+                    },
+                    "render_controllers": {},
+                    "spawn_egg": {}
+                }
+            }
+        }
+    }
+}

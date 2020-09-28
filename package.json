@@ -1,0 +1,23 @@
+{
+	"name": "bridge-data",
+	"version": "1.0.0",
+	"description": "Provide data for the bridge. editor",
+	"main": "dist/auto-completions.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"build": "node scripts/build.js"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/bridge-core/data.git"
+	},
+	"author": "",
+	"license": "GPL-3.0-or-later",
+	"bugs": {
+		"url": "https://github.com/bridge-core/data/issues"
+	},
+	"homepage": "https://github.com/bridge-core/data#readme",
+	"devDependencies": {
+		"json5": "^2.1.3"
+	}
+}

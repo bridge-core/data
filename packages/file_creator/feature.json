@@ -1,0 +1,131 @@
+{
+    "icon": "mdi-flower",
+    "title": "Feature",
+    "extension": "json",
+    "path": "features/",
+    "is_experimental": true,
+    
+    "templates": {
+        "$default_pack": {
+            "path": "BP/features"
+        },
+        "Blank Ore Feature": {
+            "format_version": {},
+            "minecraft:ore_feature": {
+                "description": {
+                    "identifier": {}
+                },
+                "count": {},
+                "places_block": {},
+                "may_replace": [{
+                    "name": {},
+                    "states": {}
+                }]
+            }
+        },
+        "Blank Single Block Feature": {
+            "format_version": {},
+            "minecraft:single_block_feature": {
+                "description": {
+                    "identifier": {}
+                },
+                "places_block": {
+                    "name": "minecraft:double_plant",
+                    "states": {}
+                },
+                "enforce_survivability_rules": {},
+                "enforce_placement_rules": {},
+                "may_replace": {}
+            }
+        },
+        "Blank Aggregate Feature": {
+            "format_version": {},
+            "minecraft:aggregate_feature": {
+                "description": {
+                    "identifier": {}
+                },
+                "early_out": {},
+                "features": {}
+            }
+        },
+        "Blank Scatter Feature": {
+            "format_version": {},
+            "minecraft:scatter_feature": {
+                "description": {
+                    "identifier": {}
+                },
+                "iterations": {},
+                "project_input_to_floor": {},
+                "coordinate_eval_order": {},
+                "scatter_chance": {},
+                "x": {},
+                "z": {},
+                "y": {},
+                "places_feature": {}
+            }
+        },
+        "Blank Tree Feature": {
+            "format_version": {},
+            "minecraft:tree_feature": {
+                "description": {
+                    "identifier": {}
+                },
+                "can_be_submerged": {},
+                "base_block": {},
+                "base_cluster": {},
+                "may_grow_on": {},
+                "may_grow_through": {},
+                "may_replace": {}
+            }
+        },
+        "Blank Weighted Random Feature": {
+            "format_version": {},
+            "minecraft:weighted_random_feature": {
+                "description": {
+                    "identifier": {}
+                },
+                "features": {}
+            }
+        },
+        "Blank Structure Feature": {
+            "format_version": {},
+            "minecraft:structure_template_feature": {
+                "description": {
+                    "identifier": {}
+                },
+                "structure_name": {},
+                "adjustment_radius": {},
+                "facing_direction": {},
+                "constraints": {
+                    "grounded": {},
+                    "unburied": {},
+                    "block_intersection": {}
+                }
+            }
+        },
+        "Blank Search Feature": {
+            "format_version": {},
+            "minecraft:search_feature": {
+                "description": {
+                    "identifier": {}
+                },
+                "places_features": {},
+                "search_volume": {
+                    "min": {},
+                    "max": {}
+                },
+                "search_axis": {},
+                "required_successes": {}
+            }
+        },
+        "Blank Sequence Feature": {
+            "format_version": {},
+            "minecraft:sequence_feature": {
+                "description": {
+                    "identifier": {}
+                },
+                "features": {}
+            }
+        }
+    }
+}

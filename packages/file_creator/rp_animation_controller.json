@@ -1,0 +1,24 @@
+{
+    "icon": "mdi-google-controller",
+    "title": "Client Animation Controller",
+    "extension": "json",
+    "path": "animation_controllers/",
+    
+    "templates": {
+        "$default_pack": {
+            "path": "RP/animation_controllers"
+        },
+        "Blank Animation Controller": {
+            "format_version": {},
+            "animation_controllers": {
+                "controller.animation.blank": {
+                    "states": {
+                        "default": {
+                            
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

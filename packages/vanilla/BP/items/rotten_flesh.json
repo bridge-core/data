@@ -1,0 +1,37 @@
+{
+  "format_version": "1.16.100",
+  "minecraft:item": {
+    "description": {
+      "identifier": "minecraft:rotten_flesh"
+    },
+    "components": {
+      "minecraft:use_duration": 1.6,
+      "minecraft:food": {
+        "nutrition": 4,
+        "saturation_modifier": "poor",
+        "on_consume": {
+          "event": "consumed",
+          "target": "self"
+        }
+      }
+    },
+    "events": {
+      "consumed": {
+        "randomize": [
+          {
+            "weight": 8,
+            "add_mob_effect": {
+              "effect": "hunger",
+              "duration": 30,
+              "amplifier": 0,
+              "target": "holder"
+            }
+          },
+          {
+            "weight": 2
+          }
+        ]
+      }
+    }
+  }
+}

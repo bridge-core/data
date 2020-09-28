@@ -1,0 +1,21 @@
+{
+    "icon": "mdi-sword",
+    "title": "Item",
+    "extension": "json",
+    "path": "items/",
+    
+    "templates": {
+        "$default_pack": {
+            "path": "BP/items"
+        },
+        "Blank Item": {
+            "format_version": {},
+            "minecraft:item": {
+                "description": {
+                    "identifier": ""
+                },
+                "components": {}
+            }
+        }
+    }
+}

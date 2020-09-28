@@ -1,0 +1,25 @@
+{
+    "icon": "mdi-minecraft",
+    "title": "Entity",
+    "extension": "json",
+    "path": "entities/",
+    "templates": {
+        "$default_pack": {
+            "path": "BP/entities"
+        },
+        "Blank Entity": {
+            "format_version": {},
+            "minecraft:entity": {
+                "description": {
+                    "identifier": "",
+                    "runtime_identifier": "",
+                    "is_summonable": true,
+                    "is_spawnable": true
+                },
+                "component_groups": {},
+                "components": {},
+                "events": {}
+            }
+        }
+    }
+}

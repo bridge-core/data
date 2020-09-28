@@ -1,0 +1,20 @@
+{
+  "format_version": "1.10",
+  "minecraft:item": {
+    "description": {
+      "identifier": "minecraft:spider_eye",
+      "category": "Nature"
+    },
+    "components": {
+      "minecraft:creative_category": {
+        "parent": "itemGroup.name.natureMisc"
+      },
+      "minecraft:icon": {
+        "texture": "spider_eye"
+      },
+      "minecraft:use_animation": "eat",
+      "minecraft:render_offsets": "spider_eye",
+      "minecraft:display_name": {}
+    }
+  }
+}

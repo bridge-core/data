@@ -1,0 +1,20 @@
+{
+  "format_version": "1.10",
+  "minecraft:item": {
+    "description": {
+      "identifier": "minecraft:dried_kelp",
+      "category": "Equipment"
+    },
+    "components": {
+      "minecraft:creative_category": {
+        "parent": "itemGroup.name.miscFood"
+      },
+      "minecraft:icon": {
+        "texture": "dried_kelp"
+      },
+      "minecraft:use_animation": "eat",
+      "minecraft:render_offsets": "dried_kelp",
+      "minecraft:display_name": {}
+    }
+  }
+}

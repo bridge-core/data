@@ -1,0 +1,18 @@
+{
+    "icon": "mdi-crop",
+    "title": "Render Controller",
+    "extension": "json",
+    "path": "render_controllers/",
+
+    "templates": {
+        "$default_pack": {
+            "path": "RP/render_controllers"
+        },
+        "Blank Render Controller": {
+            "format_version": {},
+            "render_controllers": {
+                "controller.render.blank": {}
+            }
+        }
+    }
+}

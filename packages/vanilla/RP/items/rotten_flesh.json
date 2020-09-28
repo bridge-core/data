@@ -1,0 +1,20 @@
+{
+  "format_version": "1.10",
+  "minecraft:item": {
+    "description": {
+      "identifier": "minecraft:rotten_flesh",
+      "category": "Nature"
+    },
+    "components": {
+      "minecraft:creative_category": {
+        "parent": "itemGroup.name.natureMisc"
+      },
+      "minecraft:icon": {
+        "texture": "rotten_flesh"
+      },
+      "minecraft:use_animation": "eat",
+      "minecraft:render_offsets": "flesh",
+      "minecraft:display_name": {}
+    }
+  }
+}

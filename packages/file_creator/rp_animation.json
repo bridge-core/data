@@ -1,0 +1,20 @@
+{
+    "icon": "mdi-movie",
+    "title": "Client Animation",
+    "extension": "json",
+    "path": "animations/",
+    
+    "templates": {
+        "$default_pack": {
+            "path": "RP/animations"
+        },
+        "Blank Animation": {
+            "format_version": {},
+            "animations": {
+                "animation.blank": {
+                    "animation_length": {}
+                }
+            }
+        }
+    }
+}
