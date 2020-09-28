@@ -18,9 +18,9 @@ jobs:
                   registry-url: 'https://registry.npmjs.org'
             - name: Install and Build 🔧
               run: |
+                  npm version patch
                   npm install
                   npm run build
-                  npm version patch
 
             - name: Publish 🚀
               run: npm publish
