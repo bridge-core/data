@@ -18,12 +18,8 @@ jobs:
                   registry-url: 'https://registry.npmjs.org'
             - name: Install and Build 🔧
               run: |
-                  npm version patch
-                  git push
                   npm install
                   npm run build
-              env:
-                  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
             - name: Publish 🚀
               run: npm publish
