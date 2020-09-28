@@ -18,11 +18,14 @@ jobs:
                   registry-url: 'https://registry.npmjs.org'
             - name: Install and Build 🔧
               run: |
+                  npm version patch
+                  git push
                   npm install
                   npm run build
-
-            - name: Publish 🚀
-              uses: mikeal/merge-release@master
               env:
                   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-                  NPM_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+            - name: Publish 🚀
+              run: npm publish
+              env:
+                  NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
