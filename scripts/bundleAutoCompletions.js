@@ -33,10 +33,8 @@ async function loadDir(dirPath, saveObj = autoCompletions) {
 loadDir('./packages/auto_completions').then(async () => {
 	await writeFile(
 		'./dist/auto-completions.js',
-		`const BridgeAutoCompletions = JSON.parse("${JSON.stringify(
-			autoCompletions
-		)
+		`(() => JSON.parse("${JSON.stringify(autoCompletions)
 			.replace(/\\\"/g, '\\\\"')
-			.replace(/\"/g, '\\"')}")`
+			.replace(/\"/g, '\\"')}"))()`
 	)
 })
