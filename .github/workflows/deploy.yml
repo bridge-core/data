@@ -15,35 +15,30 @@ jobs:
               uses: actions/setup-node@v1
               with:
                   node-version: '12.x'
-                  registry-url: 'https://registry.npmjs.org'
+                  registry-url: 'https://registry.npmjs.org'   
             - name: Install and Build 🔧
               run: |
                   npm install
                   npm run build
-
             - name: Commit files ✅
                run: |
                     git config --local user.email "action@github.com"
                     git config --local user.name "GitHub Action"
                     git commit -m "Push latest dist files" -a
-
             - name: Push changes 🔼
               uses: ad-m/github-push-action@master
               with:
                   branch: master
                   github_token: ${{ secrets.GITHUB_TOKEN }}
-
             - name: NPM version 🔢
               run: npm version patch
               env:
                   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
             - name: Push changes 🔼
               uses: ad-m/github-push-action@master
               with:
                   branch: master
                   github_token: ${{ secrets.GITHUB_TOKEN }}
-
             - name: Publish 🚀
               run: npm publish
               env:
