@@ -21,6 +21,11 @@ jobs:
                   npm install
                   npm run build
 
+            - name: Push changes 🔼
+              uses: ad-m/github-push-action@master
+              with:
+                  github_token: ${{ secrets.GITHUB_TOKEN }}
+
             - name: Publish 🚀
               run: npm publish
               env:
