@@ -119,7 +119,7 @@
 			"$if": "$format_version >= 1.16.100",
 			"$data": {
 				"custom_description": {
-					"@meta": {"is_value": true}
+					"@meta": { "is_value": true }
 				},
 				"grid_size": ["3"],
 				"crafting_tags": {
@@ -134,11 +134,21 @@
 			"$data": {
 				"$placeholder": {
 					"texture": "$dynamic.rp.terrain_texture",
-					"render_method": ["opaque", "blend", "alpha_test", "double_sided"]
+					"render_method": [
+						"opaque",
+						"blend",
+						"alpha_test",
+						"double_sided"
+					]
 				},
-				"*": { 
+				"*": {
 					"texture": "$dynamic.rp.terrain_texture",
-					"render_method": ["opaque", "blend", "alpha_test", "double_sided"]
+					"render_method": [
+						"opaque",
+						"blend",
+						"alpha_test",
+						"double_sided"
+					]
 				}
 			}
 		}
@@ -163,6 +173,16 @@
 		}
 	],
 	"$versioned_template.minecraft:on_step_off": [
+		{
+			"$if": "$format_version >= 1.16.100",
+			"$data": {
+				"event": "asValue($dynamic.block.events)",
+				"target": ["self"],
+				"condition": "$molang.embedded"
+			}
+		}
+	],
+	"$versioned_template.minecraft:on_player_destroyed": [
 		{
 			"$if": "$format_version >= 1.16.100",
 			"$data": {

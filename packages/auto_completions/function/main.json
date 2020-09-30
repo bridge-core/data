@@ -152,6 +152,24 @@
 	"mobevent": {
 		"$function.general.mob_event": "$general.boolean"
 	},
+	"music": {
+		"volume": "$general.decimal",
+		"stop": "$general.decimal",
+		"play": {
+			"$placeholder": {
+				"$general.decimal": {
+					"$general.number": "$function.general.music_repeat_mode"
+				}
+			}
+		},
+		"queue": {
+			"$placeholder": {
+				"$general.decimal": {
+					"$general.number": "$function.general.music_repeat_mode"
+				}
+			}
+		}
+	},
 	"particle": {
 		"$function.general.particle_identifier": {
 			"$function.general.location": {
