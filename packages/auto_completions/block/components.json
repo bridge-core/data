@@ -304,6 +304,12 @@
 			"$data": "$general.boolean"
 		}
 	],
+	"$versioned_template.minecraft:breathability": [
+		{
+			"$if": "$format_version >= 1.16.100",
+			"$data": ["air", "solid"]
+		}
+	],
 	"$versioned_template.minecraft:onlypistonpush": [
 		{
 			"$if": "$format_version >= 1.16.100",
