@@ -387,7 +387,8 @@
 			"$data": {
 				"do_swing_animation": "$general.boolean",
 				"max_draw_duration": "$general.number",
-				"scale_power_by_draw_duration": "$general.boolean"
+				"scale_power_by_draw_duration": "$general.boolean",
+				"launch_power_scale": "$general.number"
 			}
 		}
 	],
