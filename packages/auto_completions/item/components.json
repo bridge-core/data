@@ -275,7 +275,8 @@
 		{
 			"$if": "$format_version >= 1.16.100",
 			"$data": {
-				"protection": "$general.number"
+				"protection": "$general.number",
+				"texture_type": "$client_item.general.armor_types"
 			}
 		}
 	],
