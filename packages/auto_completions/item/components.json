@@ -275,7 +275,8 @@
 		{
 			"$if": "$format_version >= 1.16.100",
 			"$data": {
-				"protection": "$general.number"
+				"protection": "$general.number",
+				"texture_type": "$client_item.general.armor_types"
 			}
 		}
 	],
@@ -337,13 +338,24 @@
 			}
 		}
 	],
-	"$versioned_template.minecraft:use_on": [
+	"$versioned_template.minecraft:on_use_on": [
+		{
+			"$if": "$format_version >= 1.16.100",
+			"$data": {
+				"on_use_on": {
+					"event": "$dynamic.cache.block.events",
+					"target": ["block", "self", "holder"]
+				}
+			}
+		}
+	],
+	"$versioned_template.minecraft:on_use": [
 		{
 			"$if": "$format_version >= 1.16.100",
 			"$data": {
 				"on_use": {
 					"event": "$dynamic.cache.block.events",
-					"target": ["block"]
+					"target": ["holder", "self"]
 				}
 			}
 		}
@@ -387,7 +399,8 @@
 			"$data": {
 				"do_swing_animation": "$general.boolean",
 				"max_draw_duration": "$general.number",
-				"scale_power_by_draw_duration": "$general.boolean"
+				"scale_power_by_draw_duration": "$general.boolean",
+				"launch_power_scale": "$general.number"
 			}
 		}
 	],
