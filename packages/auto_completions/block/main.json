@@ -90,7 +90,7 @@
 				},
 				"play_sound": {
 					"target": ["self", "other"],
-					"sound": "$function.general.particle_identifier"
+					"sound": "$function.general.sound_definitions"
 				},
 				"set_block": {
 					"block_type": "$general.block_identifier"
