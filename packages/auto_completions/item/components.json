@@ -263,7 +263,7 @@
 		{
 			"$if": "$format_version >= 1.16.100",
 			"$data": {
-				"max_damage": "$general.number",
+				"max_durability": "$general.number",
 				"damage_chance": {
 					"min": "$general.number",
 					"max": "$general.number"
@@ -284,7 +284,8 @@
 		{
 			"$if": "$format_version >= 1.16.100",
 			"$data": {
-				"slot": "$general.slot_type"
+				"slot": "$general.slot_type",
+				"dispensable": "$general.boolean"
 			}
 		}
 	],
@@ -292,7 +293,17 @@
 		{
 			"$if": "$format_version >= 1.16.100",
 			"$data": {
-				"on_hurt": {
+				"on_hurt_entity": {
+					"event": "asValue($dynamic.item.events)",
+					"target": ["holder", "self"],
+					"condition": "$molang.embedded"
+				},
+				"on_not_hurt_entity": {
+					"event": "asValue($dynamic.item.events)",
+					"target": ["holder", "self"],
+					"condition": "$molang.embedded"
+				},
+				"on_hit_block": {
 					"event": "asValue($dynamic.item.events)",
 					"target": ["holder", "self"],
 					"condition": "$molang.embedded"
@@ -314,16 +325,16 @@
 		{
 			"$if": "$format_version >= 1.16.100",
 			"$data": {
+				"on_repaired": {
+					"event": "asValue($dynamic.item.events)",
+					"target": ["self", "holder"]
+				},
 				"repair_items": {
 					"$dynamic.list.next_index": {
 						"items": {
 							"$dynamic.list.next_index": "$general.item_identifier"
 						},
-						"repair_amount": "$general.number and $molang.embedded",
-						"on_repaired": {
-							"event": "asValue($dynamic.item.events)",
-							"target": ["self", "holder"]
-						}
+						"repair_amount": "$general.number and $molang.embedded"
 					}
 				}
 			}
@@ -365,6 +376,11 @@
 			"$if": "$format_version >= 1.16.100",
 			"$data": {
 				"use_efficiency": "$general.boolean",
+				"on_dig": {
+					"event": "asValue($dynamic.item.events)",
+					"target": ["holder", "self"],
+					"condition": "$molang.embedded"
+				},
 				"destroy_speeds": {
 					"$dynamic.list.next_index": {
 						"block": {
@@ -430,9 +446,21 @@
 	],
 	"$versioned_template.minecraft:creative_category": [
 		{
-			"$if": "$project_target_version >= 1.16.100",
+			"$if": "$format_version >= 1.16.100",
 			"$data": {
 				"parent": "$item.general.item_group_reference"
+			}
+		}
+	],
+	"$versioned_template.minecraft:icon": [
+		{
+			"$if": "$format_version >= 1.16.100",
+			"$data": {
+				"texture": {
+					"@meta": { "is_value": true },
+					"@import.value": "$dynamic.rp.item_textures"
+				},
+				"frame": "$general.number and $molang.embedded"
 			}
 		}
 	],

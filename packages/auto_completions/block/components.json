@@ -359,5 +359,11 @@
 			"$if": "$format_version >= 1.16.100",
 			"$data": "$general.boolean"
 		}
+	],
+	"$versioned_template.minecraft:display_name": [
+		{
+			"$if": "$project_target_version >= 1.16.100",
+			"$data": { "@meta": { "is_value": true } }
+		}
 	]
 }
