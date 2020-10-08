@@ -10,7 +10,9 @@
 	"camerashake": {
 		"add": {
 			"$function.general.target_selector": {
-				"$general.decimal": "$general.decimal"
+				"$general.decimal": {
+					"$general.decimal": "$function.general.shake_types"
+				}
 			}
 		}
 	},

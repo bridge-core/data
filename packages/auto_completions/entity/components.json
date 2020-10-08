@@ -939,19 +939,30 @@
 			}
 		}
 	],
-	"minecraft:on_death": {
-		"@meta": {
-			"validate": {
-				"confirm": "!Bridge.File.usesEntity('minecraft:ender_dragon')",
-				"then": {
-					"show": true,
-					"is_warning": true,
-					"message": "\"minecraft:on_death\" can only be used by the ender dragon"
-				}
+	"$versioned_template.minecraft:on_death": [
+		{
+			"$if": "$format_version < 1.16.100",
+			"$data": {
+				"@meta": {
+					"validate": {
+						"confirm": "!Bridge.File.usesEntity('minecraft:ender_dragon')",
+						"then": {
+							"show": true,
+							"is_warning": true,
+							"message": "\"minecraft:on_death\" can only be used by the ender dragon"
+						}
+					}
+				},
+				"$load": "$entity.general.event_definition"
 			}
 		},
-		"$load": "$entity.general.event_definition"
-	},
+		{
+			"$if": "$format_version >= 1.16.100",
+			"$data": {
+				"$load": "$entity.general.event_definition"
+			}
+		}
+	],
 	"minecraft:on_friendly_anger": "$entity.general.event_definition",
 	"minecraft:on_hurt": "$entity.general.event_definition",
 	"minecraft:on_hurt_by_player": "$entity.general.event_definition",

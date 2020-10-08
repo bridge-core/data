@@ -46,5 +46,6 @@
 	"teleport_rules": ["teleport_rider", "teleport_ride"],
 	"how_to_fill": ["if_group_fits", "until_full"],
 	"ride_rules": ["no_ride_change", "reassign_rides", "skip_riders"],
-	"music_repeat_mode": ["loop", "play_once"]
+	"music_repeat_mode": ["loop", "play_once"],
+	"shake_types": ["positional", "rotational"]
 }
