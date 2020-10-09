@@ -533,5 +533,13 @@
 			"is_equipped": "$entity.components",
 			"is_not_equipped": "$entity.components"
 		}
-	}
+	},
+	"$versioned_template.minecraft:display_name": [
+		{
+			"$if": "$format_version >= 1.16.100",
+			"$data": {
+				"value": { "@meta": { "is_value": true } }
+			}
+		}
+	]
 }
