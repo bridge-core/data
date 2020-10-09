@@ -464,6 +464,24 @@
 			}
 		}
 	],
+	"$versioned_template.minecraft:use_animation": [
+		{
+			"$if": "$format_version >= 1.16.100",
+			"$data": ["bow", "eat", "drink", "crossbow", "camera"]
+		}
+	],
+	"$versioned_template.minecraft:render_offsets": [
+		{
+			"$if": "$format_version >= 1.16.100",
+			"$data": "$client_item.general.render_offsets"
+		}
+	],
+	"$versioned_template.minecraft:hover_text_color": [
+		{
+			"$if": "$format_version >= 1.16.100",
+			"$data": "$general.minecraft_color"
+		}
+	],
 	"$versioned_template.minecraft:food": [
 		{
 			"$if": "$format_version >= 1.16.100",
@@ -533,5 +551,13 @@
 			"is_equipped": "$entity.components",
 			"is_not_equipped": "$entity.components"
 		}
-	}
+	},
+	"$versioned_template.minecraft:display_name": [
+		{
+			"$if": "$format_version >= 1.16.100",
+			"$data": {
+				"value": { "@meta": { "is_value": true } }
+			}
+		}
+	]
 }
