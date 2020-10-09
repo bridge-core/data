@@ -57,7 +57,7 @@
 				"sleep": "$simple.general.sound_object",
 				"spit": "$simple.general.sound_object",
 				"warn": "$simple.general.sound_object",
-				"scream": "$simple.general.sound_object"
+				"scream": "$simple.general.sound_object",
 				"charge": "$simple.general.sound_object"
 			}
 		},
