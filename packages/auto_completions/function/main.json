@@ -271,6 +271,35 @@
 		}
 	},
 	"say": {},
+	"schedule": {
+		"on_area_loaded": {
+			"add": {
+				"$function.general.location": {
+					"$function.general.location": {
+						"$function.general.location": {
+							"$function.general.location": {
+								"$function.general.location": {
+									"$function.general.location": "$dynamic.function_files"
+								}
+							}
+						}
+					}
+				},
+				"circle": {
+					"$function.general.location": {
+						"$function.general.location": {
+							"$function.general.location": {
+								"$general.number": "$dynamic.function_files"
+							}
+						}
+					}
+				},
+				"tickingarea": {
+					"$placeholder": "$dynamic.function_files"
+				}
+			}
+		}
+	},
 	"scoreboard": {
 		"objectives": {
 			"add": {
