@@ -448,7 +448,7 @@
 		{
 			"$if": "$format_version >= 1.16.100",
 			"$data": {
-				"parent": "$item.general.item_group_reference"
+				"parent": "$item.general.item_group_reference and $general.item_category"
 			}
 		}
 	],
