@@ -308,6 +308,7 @@
 	},
 	{
 		"id": "fog",
+		"target_version": "$project_target_version >= 1.16.100",
 		"includes": "fogs/",
 		"file_viewer": "json",
 
