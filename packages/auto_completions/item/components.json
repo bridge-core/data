@@ -293,21 +293,9 @@
 		{
 			"$if": "$format_version >= 1.16.100",
 			"$data": {
-				"on_hurt_entity": {
-					"event": "asValue($dynamic.item.events)",
-					"target": ["holder", "self"],
-					"condition": "$molang.embedded"
-				},
-				"on_not_hurt_entity": {
-					"event": "asValue($dynamic.item.events)",
-					"target": ["holder", "self"],
-					"condition": "$molang.embedded"
-				},
-				"on_hit_block": {
-					"event": "asValue($dynamic.item.events)",
-					"target": ["holder", "self"],
-					"condition": "$molang.embedded"
-				}
+				"on_hurt_entity": "$item.general.event_definition",
+				"on_not_hurt_entity": "$item.general.event_definition",
+				"on_hit_block": "$item.general.event_definition"
 			}
 		}
 	],
@@ -325,10 +313,7 @@
 		{
 			"$if": "$format_version >= 1.16.100",
 			"$data": {
-				"on_repaired": {
-					"event": "asValue($dynamic.item.events)",
-					"target": ["self", "holder"]
-				},
+				"on_repaired": "$item.general.event_definition",
 				"repair_items": {
 					"$dynamic.list.next_index": {
 						"items": {
@@ -354,8 +339,16 @@
 			"$if": "$format_version >= 1.16.100",
 			"$data": {
 				"on_use_on": {
-					"event": "$dynamic.cache.block.events",
-					"target": ["block", "self", "holder"]
+					"event": "$dynamic.item.events",
+					"target": [
+						"self",
+						"other",
+						"target",
+						"parent",
+						"baby",
+						"holder",
+						"block"
+					]
 				}
 			}
 		}
@@ -364,10 +357,7 @@
 		{
 			"$if": "$format_version >= 1.16.100",
 			"$data": {
-				"on_use": {
-					"event": "$dynamic.cache.block.events",
-					"target": ["holder", "self"]
-				}
+				"on_use": "$item.general.event_definition"
 			}
 		}
 	],
@@ -376,11 +366,7 @@
 			"$if": "$format_version >= 1.16.100",
 			"$data": {
 				"use_efficiency": "$general.boolean",
-				"on_dig": {
-					"event": "asValue($dynamic.item.events)",
-					"target": ["holder", "self"],
-					"condition": "$molang.embedded"
-				},
+				"on_dig": "$item.general.event_definition",
 				"destroy_speeds": {
 					"$dynamic.list.next_index": {
 						"block": {
@@ -486,10 +472,7 @@
 		{
 			"$if": "$format_version >= 1.16.100",
 			"$data": {
-				"on_consume": {
-					"event": "asValue($dynamic.item.events)",
-					"target": ["self", "holder"]
-				},
+				"on_consume": "$item.general.event_definition",
 				"nutrition": "$general.number",
 				"can_always_eat": "$general.boolean",
 				"saturation_modifier": "$item.general.saturation_modifier"

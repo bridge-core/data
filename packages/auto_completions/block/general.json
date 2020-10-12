@@ -1,0 +1,7 @@
+{
+	"event_definition": {
+		"event": "$dynamic.block.events",
+		"target": ["self", "other", "target", "parent", "baby"],
+		"condition": "$molang.embedded"
+	}
+}
