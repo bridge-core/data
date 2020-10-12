@@ -1,9 +1,0 @@
-{
-    "icon": "mdi-function",
-    "title": "Function",
-    "extension": "mcfunction",
-    "path": "functions/",
-    "templates": {
-        "Example Function": "# My Comment\nsay Hello World!"
-    }
-}

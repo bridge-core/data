@@ -1,4 +1,0 @@
-[ 
-    { "key": "ids", "path": "animations" },
-    { "key": "custom_commands", "hook": "json.custom_commands" }
-]
