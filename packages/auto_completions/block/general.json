@@ -1,6 +1,11 @@
 {
 	"event_definition": {
-		"event": "$dynamic.block.events",
+		"event": {
+			"@meta": {
+				"is_value": true
+			},
+			"@import.value": "$dynamic.block.events"
+		},
 		"target": ["self", "other", "target", "parent", "baby"],
 		"condition": "$molang.embedded"
 	}
