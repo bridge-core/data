@@ -14,7 +14,8 @@
 			},
 			"@import.value": "$dynamic.item.events"
 		},
-		"target": ["self", "other", "target", "parent", "baby", "holder"]
+		"target": ["self", "other", "target", "parent", "baby", "holder"],
+                "condition": "$molang.embedded"
 	},
 	"saturation_modifier": [
 		"poor",
