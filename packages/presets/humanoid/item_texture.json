@@ -1,7 +1,0 @@
-{
-  "texture_data": {
-    "{{IDENTIFIER}}": {
-      "textures": [ "textures/items/{{IDENTIFIER}}" ]
-    }
-  }
-}

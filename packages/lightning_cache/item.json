@@ -1,4 +1,0 @@
-[ 
-    { "key": "identifiers", "path": "minecraft:item/description/identifier" },
-    { "key": "custom_commands", "hook": "json.custom_commands" }
-]

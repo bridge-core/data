@@ -1,6 +1,0 @@
-{
-    "{{PROJ_PREFIX}}:{{IDENTIFIER}}": {
-		"textures": "{{PROJ_PREFIX}}_{{IDENTIFIER}}",
-		"sound": "stone"
-    }
-}

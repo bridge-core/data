@@ -1,19 +1,60 @@
 {
-    "effect_definition": {
-        "name": "$general.effect_name",
-        "chance": "$general.decimal",
-        "duration": "$general.number",
-        "amplifier": "$general.number",
-        "visible": "$general.number_boolean",
-        "ambient": "$general.number_boolean"
-    },
-    "saturation_modifier": [ "poor", "low", "normal", "good", "max", "supernatural" ],
-    "slots": ["axe", "bow", "armor_feet", "armor_torso", "armor_head", "armor_legs", "hoe", "pickaxe", "shovel", "elytra", "fishing_rod", "flintsteel", "sword", "shears", "cosmetic_head"],
-    "cooldown_types": ["chorusfruit", "ender_pearl"],
-    "fertilizer_types": ["bonemeal", "rapid"],
-    "potion_types": ["lingering", "regular", "splash"],
-    "door_types": ["iron", "acacia", "birch", "dark_oak", "jungle", "oak", "spruce"],
-    "item_groups_names": [
+	"effect_definition": {
+		"name": "$general.effect_name",
+		"chance": "$general.decimal",
+		"duration": "$general.number",
+		"amplifier": "$general.number",
+		"visible": "$general.number_boolean",
+		"ambient": "$general.number_boolean"
+	},
+	"event_definition": {
+		"event": {
+			"@meta": {
+				"is_value": true
+			},
+			"@import.value": "$dynamic.item.events"
+		},
+		"target": ["self", "other", "target", "parent", "baby", "holder"],
+                "condition": "$molang.embedded"
+	},
+	"saturation_modifier": [
+		"poor",
+		"low",
+		"normal",
+		"good",
+		"max",
+		"supernatural"
+	],
+	"slots": [
+		"axe",
+		"bow",
+		"armor_feet",
+		"armor_torso",
+		"armor_head",
+		"armor_legs",
+		"hoe",
+		"pickaxe",
+		"shovel",
+		"elytra",
+		"fishing_rod",
+		"flintsteel",
+		"sword",
+		"shears",
+		"cosmetic_head"
+	],
+	"cooldown_types": ["chorusfruit", "ender_pearl"],
+	"fertilizer_types": ["bonemeal", "rapid"],
+	"potion_types": ["lingering", "regular", "splash"],
+	"door_types": [
+		"iron",
+		"acacia",
+		"birch",
+		"dark_oak",
+		"jungle",
+		"oak",
+		"spruce"
+	],
+	"item_groups_names": [
 		"axe",
 		"pickaxe",
 		"shovel",
@@ -106,5 +147,19 @@
 		"mobEgg"
 	],
 	"item_group_reference": "'itemGroup.name.' + $item.general.item_group_names",
-	"music_events": ["13", "cat", "blocks", "chirp", "far", "mall", "mellohi", "stal", "strad", "ward", "11", "wait", "pigstep"]
+	"music_events": [
+		"13",
+		"cat",
+		"blocks",
+		"chirp",
+		"far",
+		"mall",
+		"mellohi",
+		"stal",
+		"strad",
+		"ward",
+		"11",
+		"wait",
+		"pigstep"
+	]
 }

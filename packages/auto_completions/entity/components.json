@@ -348,12 +348,19 @@
 			"range_max": "$general.number"
 		}
 	},
-	"$versioned_template.minecraft:inside_block_identifier": [
+	"$versioned_template.minecraft:inside_block_notifier": [
 		{
 			"$if": "$format_version >= 1.16.100",
 			"$data": {
 				"block_list": {
-					"$dynamic.list.next_index": "$general.block_identifier"
+					"$dynamic.list.next_index": {
+						"block": {
+							"name": "$general.block_identifier",
+							"states": "$_general.block_states"
+						},
+						"entered_block_event": "$entity.general.event_definition",
+						"exited_block_event": "$entity.general.event_definition"
+					}
 				}
 			}
 		}

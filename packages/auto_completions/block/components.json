@@ -165,39 +165,27 @@
 	"$versioned_template.minecraft:on_step_on": [
 		{
 			"$if": "$format_version >= 1.16.100",
-			"$data": {
-				"event": "asValue($dynamic.block.events)",
-				"target": ["self"],
-				"condition": "$molang.embedded"
-			}
+			"$data": "$block.general.event_defintion"
 		}
 	],
 	"$versioned_template.minecraft:on_step_off": [
 		{
 			"$if": "$format_version >= 1.16.100",
-			"$data": {
-				"event": "asValue($dynamic.block.events)",
-				"target": ["self"],
-				"condition": "$molang.embedded"
-			}
+			"$data": "$block.general.event_defintion"
 		}
 	],
 	"$versioned_template.minecraft:on_player_destroyed": [
 		{
 			"$if": "$format_version >= 1.16.100",
-			"$data": {
-				"event": "asValue($dynamic.block.events)",
-				"target": ["self"],
-				"condition": "$molang.embedded"
-			}
+			"$data": "$block.general.event_defintion"
 		}
 	],
 	"$versioned_template.minecraft:on_fall_on": [
 		{
 			"$if": "$format_version >= 1.16.100",
 			"$data": {
-				"event": "asValue($dynamic.block.events)",
-				"target": ["self"],
+				"event": "$dynamic.block.events",
+				"target": ["self", "other", "target", "parent", "baby"],
 				"condition": "$molang.embedded",
 				"min_fall_distance": "$general.number"
 			}
@@ -206,31 +194,19 @@
 	"$versioned_template.minecraft:on_placed": [
 		{
 			"$if": "$format_version >= 1.16.100",
-			"$data": {
-				"event": "asValue($dynamic.block.events)",
-				"target": ["self"],
-				"condition": "$molang.embedded"
-			}
+			"$data": "$block.general.event_defintion"
 		}
 	],
 	"$versioned_template.minecraft:on_player_placing": [
 		{
 			"$if": "$format_version >= 1.16.100",
-			"$data": {
-				"event": "asValue($dynamic.block.events)",
-				"target": ["self"],
-				"condition": "$molang.embedded"
-			}
+			"$data": "$block.general.event_defintion"
 		}
 	],
 	"$versioned_template.minecraft:on_interact": [
 		{
 			"$if": "$format_version >= 1.16.100",
-			"$data": {
-				"event": "asValue($dynamic.block.events)",
-				"target": ["self"],
-				"condition": "$molang.embedded"
-			}
+			"$data": "$block.general.event_defintion"
 		}
 	],
 	"$versioned_template.minecraft:ticking": [
@@ -242,11 +218,7 @@
 					"$dynamic.list.index_pair": "$general.number"
 				},
 
-				"on_tick": {
-					"condition": "$molang.embedded",
-					"event": "asValue($dynamic.block.events)",
-					"target": ["self"]
-				}
+				"on_tick": "$block.general.event_defintion"
 			}
 		}
 	],
@@ -254,11 +226,7 @@
 		{
 			"$if": "$format_version >= 1.16.100",
 			"$data": {
-				"on_tick": {
-					"condition": "$molang.embedded",
-					"event": "asValue($dynamic.block.events)",
-					"target": ["self"]
-				}
+				"on_tick": "$block.general.event_defintion"
 			}
 		}
 	],
