@@ -63,11 +63,11 @@
 								"$dynamic.list.index_triple": "$general.number"
 							}
 						},
-						"execute_command": {
+						"run_command": {
 							"command": {
 								"$dynamic.list.next_index": "$function.embedded_no_slash"
 							},
-							"target": ["other"]
+							"target": ["other", "holder"]
 						}
 					}
 				}
