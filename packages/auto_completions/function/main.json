@@ -408,10 +408,23 @@
 		},
 		"load": {
 			"$placeholder": {
-				"$function.general.structure_rotations": {
-					"$function.general.mirror": {
-						"$general.boolean": {
-							"$general.boolean": "$general.number"
+				"$function.general.location": {
+					"$function.general.location": {
+						"$function.general.location": {
+							"$function.general.structure_rotations": {
+								"$function.general.mirror": {
+									"$general.boolean": {
+										"$general.boolean": "$general.number"
+									},
+									"$function.general.structure_animations": {
+										"$general.number": {
+											"$general.boolean": {
+												"$general.boolean": "$general.number"
+											}
+										}
+									}
+								}
+							}
 						}
 					}
 				}
