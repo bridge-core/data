@@ -25,6 +25,9 @@
 		"components": "$block.components and $dynamic.plugins.block_custom_components",
 		"events": {
 			"$placeholder": {
+				"@meta": {
+					"expand_path_exceptions": ["decrement_stack"]
+				},
 				"randomize": {
 					"$dynamic.list.next_index": {
 						"weight": "$general.number",
