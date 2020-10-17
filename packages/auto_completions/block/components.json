@@ -1,4 +1,7 @@
 {
+	"@meta": {
+		"expand_path_exceptions": ["minecraft:unit_cube"]
+	},
 	"$versioned_template.minecraft:destroy_time": [
 		{
 			"$if": "$format_version < 1.16.0",

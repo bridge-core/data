@@ -18,6 +18,12 @@
 				"$if": "$format_version >= 1.16.100",
 				"$data": {
 					"$placeholder": {
+						"@meta": {
+							"expand_path_exceptions": [
+								"swing",
+								"decrement_stack"
+							]
+						},
 						"randomize": {
 							"$dynamic.list.next_index": {
 								"weight": "$general.number",
@@ -30,6 +36,7 @@
 							"angle_offset": "$general.number and $molang.embedded"
 						},
 						"swing": {},
+						"decrement_stack": {},
 						"damage": {
 							"type": "$general.damage_type",
 							"amount": "$general.number"
@@ -63,11 +70,11 @@
 								"$dynamic.list.index_triple": "$general.number"
 							}
 						},
-						"execute_command": {
+						"run_command": {
 							"command": {
 								"$dynamic.list.next_index": "$function.embedded_no_slash"
 							},
-							"target": ["other"]
+							"target": ["other", "holder"]
 						}
 					}
 				}
