@@ -1072,11 +1072,16 @@
 			},
 			"definition_event": {
 				"affect_projectile": "$general.boolean",
+				"affect_shooter": "$general.boolean",
+				"affect_target": "$general.boolean",
+				"affect_splash_area": "$general.boolean",
+				"splash_area": "$general.number",
 				"event_trigger": "$entity.general.event_definition"
 			},
 			"grant_xp": {
 				"minXP": "$general.number",
-				"maxXP": "$general.number"
+				"maxXP": "$general.number",
+				"xp": "$general.number"
 			},
 			"spawn_aoe_cloud": {
 				"radius": "$general.number",
@@ -1091,11 +1096,7 @@
 				"reapplication_delay": "$general.number"
 			},
 			"impact_damage": {
-				"filter": {
-					"@meta": {
-						"is_value": true
-					}
-				},
+				"filter": "$molang.embedded",
 				"damage": {
 					"$dynamic.list.index_pair": "$general.number"
 				},
@@ -1105,11 +1106,15 @@
 				"max_critical_damage": "$general.number",
 				"min_critical_damage": "$general.number",
 				"power_multiplier": "$general.decimal",
-				"should_bounce": "$general.boolean"
+				"should_bounce": "$general.boolean",
+				"channeling": "$general.boolean",
+				"set_last_hurt_requires_damage": "$general.boolean",
+				"destroy_on_hit_requres_damage": "$general.boolean"
 			},
 			"spawn_chance": {
 				"first_spawn_percent_chance": "$general.number",
 				"first_spawn_chance": "$general.number",
+				"second_spawn_percent_chance": "$general.number",
 				"second_spawn_chance": "$general.number",
 				"first_spawn_count": "$general.number",
 				"second_spawn_count": "$general.number",
@@ -1123,6 +1128,7 @@
 			},
 			"mob_effect": {
 				"effect": "$general.effect_name",
+				"duration": "$general.number",
 				"duration_easy": "$general.number",
 				"duration_normal": "$general.number",
 				"duration_hard": "$general.number",
