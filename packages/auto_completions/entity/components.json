@@ -1440,7 +1440,7 @@
 			"$dynamic.list.index_pair": "$general.decimal"
 		},
 		"random_time_choices": {
-			"$dynamic.list.index_pair": {
+			"$dynamic.list.next_index": {
 				"weight": "$general.number",
 				"value": "$general.number"
 			}
