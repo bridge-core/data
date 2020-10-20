@@ -168,19 +168,19 @@
 	"$versioned_template.minecraft:on_step_on": [
 		{
 			"$if": "$format_version >= 1.16.100",
-			"$data": "$block.general.event_defintion"
+			"$data": "$block.general.event_definition"
 		}
 	],
 	"$versioned_template.minecraft:on_step_off": [
 		{
 			"$if": "$format_version >= 1.16.100",
-			"$data": "$block.general.event_defintion"
+			"$data": "$block.general.event_definition"
 		}
 	],
 	"$versioned_template.minecraft:on_player_destroyed": [
 		{
 			"$if": "$format_version >= 1.16.100",
-			"$data": "$block.general.event_defintion"
+			"$data": "$block.general.event_definition"
 		}
 	],
 	"$versioned_template.minecraft:on_fall_on": [
@@ -197,7 +197,7 @@
 	"$versioned_template.minecraft:on_placed": [
 		{
 			"$if": "$format_version >= 1.16.100",
-			"$data": "$block.general.event_defintion"
+			"$data": "$block.general.event_definition"
 		}
 	],
 	"$versioned_template.minecraft:on_player_placing": [
@@ -209,7 +209,7 @@
 	"$versioned_template.minecraft:on_interact": [
 		{
 			"$if": "$format_version >= 1.16.100",
-			"$data": "$block.general.event_defintion"
+			"$data": "$block.general.event_definition"
 		}
 	],
 	"$versioned_template.minecraft:ticking": [
@@ -221,7 +221,7 @@
 					"$dynamic.list.index_pair": "$general.number"
 				},
 
-				"on_tick": "$block.general.event_defintion"
+				"on_tick": "$block.general.event_definition"
 			}
 		}
 	],
@@ -229,7 +229,7 @@
 		{
 			"$if": "$format_version >= 1.16.100",
 			"$data": {
-				"on_tick": "$block.general.event_defintion"
+				"on_tick": "$block.general.event_definition"
 			}
 		}
 	],
