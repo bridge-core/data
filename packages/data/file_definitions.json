@@ -281,6 +281,7 @@
 	},
 	{
 		"id": "client_item",
+		"target_version": "$project_target_version < 1.16.100",
 		"includes": "items/",
 		"file_viewer": "json",
 		"rp_definition": true,
@@ -307,6 +308,7 @@
 	},
 	{
 		"id": "fog",
+		"target_version": "$project_target_version >= 1.16.100",
 		"includes": "fogs/",
 		"file_viewer": "json",
 
