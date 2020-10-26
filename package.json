@@ -5,7 +5,7 @@
 	"main": "dist/auto-completions.js",
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1",
-		"build": "node scripts/build.js"
+		"build": "deno run --allow-read --allow-write scripts/build.ts"
 	},
 	"repository": {
 		"type": "git",
@@ -16,8 +16,5 @@
 	"bugs": {
 		"url": "https://github.com/bridge-core/data/issues"
 	},
-	"homepage": "https://github.com/bridge-core/data#readme",
-	"devDependencies": {
-		"json5": "^2.1.3"
-	}
+	"homepage": "https://github.com/bridge-core/data#readme"
 }
