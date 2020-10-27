@@ -20,6 +20,7 @@
 					}
 				},
 				"distance": {
+					"type": "object",
 					"properties": {
 						"water": {
 							"type": "object",
@@ -35,7 +36,39 @@
 									"format": "hex",
 									"default": "#FFFFFF"
 								},
-								"render_distance_types": {} // Unfinished
+								"render_distance_types": {
+									"type": "string",
+									"enum": ["fixed", "render"]
+								}
+							}
+						}
+					}
+				},
+				"volumetric": {
+					"type": "object",
+					"description": "RTX is required for volumetric fogs.",
+					"properties": {
+						"media_coefficients": {},
+						"density": {
+							"type": "object",
+							"properties": {
+								"air": {
+									"type": "object",
+									"properties": {
+										"max_density": {
+											"type": "number"
+										},
+										"max_density_height": {
+											"type": "number"
+										},
+										"zero_density_height": {
+											"type": "number"
+										},
+										"uniform": {
+											"type": "boolean"
+										}
+									}
+								}
 							}
 						}
 					}
