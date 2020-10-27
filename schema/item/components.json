@@ -1,0 +1,31 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"description": "Components allow for item functionality.",
+	"properties": {
+		"minecraft:use_duration": {
+			"type": "number",
+			"description": "How long to use before item is done being used."
+		},
+		"minecraft:max_stack_size": {
+			"type": "number",
+			"default": 64,
+			"description": "The max stack size of the item."
+		},
+		"minecraft:max_damage": {
+			"type": "number",
+			"description": "Max damage item has, this is used like item max health."
+		},
+		"minecraft:hand_equipped": {
+			"type": "boolean",
+			"description": "Is this a hand equipped item."
+		},
+		"minecraft:stacked_by_data": {
+			"type": "boolean",
+			"description": "Stacked by data aux value or not."
+		},
+		"minecraft:foil": {
+			"type": "boolean",
+			"description": "Foil or enchantment glint on the item."
+		}
+	}
+}

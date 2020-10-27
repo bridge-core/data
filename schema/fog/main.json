@@ -1,0 +1,46 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"$id": "bridge.fogs",
+	"additionalProperties": false,
+	"title": "Fog",
+	"required": ["format_version", "minecraft:fog_settings"],
+	"properties": {
+		"format_version": {
+			"$ref": "../general/format_version.json"
+		},
+		"minecraft:fog_settings": {
+			"type": "object",
+			"properties": {
+				"description": {
+					"type": "object",
+					"properties": {
+						"identifier": {
+							"type": "string"
+						}
+					}
+				},
+				"distance": {
+					"properties": {
+						"water": {
+							"type": "object",
+							"properties": {
+								"fog_start": {
+									"type": "number"
+								},
+								"fog_end": {
+									"type": "number"
+								},
+								"fog_color": {
+									"type": "string",
+									"format": "hex",
+									"default": "#FFFFFF"
+								},
+								"render_distance_types": {} // Unfinished
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
