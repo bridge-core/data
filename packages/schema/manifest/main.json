@@ -93,7 +93,7 @@
 			"description": "Defines the dependencies of the pack",
 			"items": [
 				{
-					"type": "string",
+					"type": "object",
 					"properties": {
 						"uuid": {
 							"type": "string",
