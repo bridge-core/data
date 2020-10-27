@@ -40,7 +40,7 @@
 	"teleport": {
 		"target": ["holder"],
 		"avoid_water": "$general.boolean",
-		"destintion": {
+		"destination": {
 			"$dynamic.list.index_triple": "$general.number"
 		},
 		"land_on_block": "$general.boolean",
