@@ -54,19 +54,69 @@
 				},
 				"use_on": {
 					"type": "array",
-					"items": [
-						{
-							"type": "string"
-						}
-					]
+					"items": {
+						"type": "string"
+					}
 				},
 				"dispense_on": {
 					"type": "array",
-					"items": [
-						{
-							"type": "string"
+					"items": {
+						"type": "string"
+					}
+				}
+			},
+			"minecraft:knockback_resistance": {
+				"description": "For items that provide knockback resistance",
+				"type": "number",
+				"minimum": 0.0,
+				"maximum": 1.0
+			},
+			"minecraft:enchantable": {
+				"description": "Makes an item enchantable",
+				"properties": {
+					"slot": {
+						"type": "string"
+					},
+					"value": {
+						"type": "integer"
+					}
+				}
+			},
+			"minecraft:shooter": {},
+			"minecraft:durability": {
+				"description": "Define an item's durability",
+				"additionalProperties": false,
+				"properties": {
+					"max_durability": {
+						"type": "integer",
+						"minimum": 0
+					},
+					"damage_chance": {
+						"type": "object",
+						"additionalProperties": false,
+						"properties": {
+							"min": { "type": "number" },
+							"max": { "type": "number" }
 						}
-					]
+					}
+				}
+			},
+			"minecraft:armor": {
+				"description": "Set armor related data",
+				"additionalProperties": false,
+				"properties": {
+					"protection": { "type": "integer" },
+					"texture_type": {
+						"enum": ["leather", "chain", "diamond", "iron", "gold"]
+					}
+				}
+			},
+			"minecraft:wearable": {
+				"description": "Makes an item wearable",
+				"additionalProperties": false,
+				"properties": {
+					"slot": { "type": "string" },
+					"dispensable": { "type": "boolean" }
 				}
 			}
 		}
