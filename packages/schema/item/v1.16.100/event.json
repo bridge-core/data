@@ -1,3 +1,102 @@
 {
-	"$schema": "http://json-schema.org/draft-07/schema"
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"properties": {
+		"randomize": {
+			"type": "array",
+			"items": {
+				"allOf": [
+					{
+						"properties": {
+							"weight": { "type": "number" }
+						}
+					},
+					{
+						"$ref": "#"
+					}
+				]
+			}
+		},
+		"sequence": {
+			"type": "array",
+			"items": {
+				"allOf": [
+					{
+						"properties": {
+							"condition": { "type": "string" }
+						}
+					},
+					{
+						"$ref": "#"
+					}
+				]
+			}
+		},
+		"shoot": {
+			"additionalProperties": false,
+			"properties": {
+				"projectile": { "type": "string" },
+				"launch_power": { "type": "number" },
+				"angle_offset": { "type": ["string", "number"] }
+			}
+		},
+		"swing": {
+			"additionalProperties": false
+		},
+		"decrement_stack": {
+			"additionalProperties": false
+		},
+		"damage": {
+			"additionalProperties": false,
+			"properties": {
+				"type": { "type": "string" },
+				"amount": { "type": "integer" }
+			}
+		},
+		"add_mob_effect": {
+			"additionalProperties": false,
+			"properties": {
+				"effect": { "type": "string" },
+				"target": { "type": "string" },
+				"duration": { "type": "integer" },
+				"amplifier": { "type": "integer" }
+			}
+		},
+		"remove_mob_effect": {
+			"additionalProperties": false,
+			"properties": {
+				"effect": { "type": "string" },
+				"target": { "type": "string" }
+			}
+		},
+		"transform_item": {
+			"additionalProperties": false,
+			"properties": {
+				"transform": { "type": "string" }
+			}
+		},
+		"teleport": {
+			"additionalProperties": false,
+			"properties": {
+				"target": { "type": "string" },
+				"avoid_water": { "type": "boolean" },
+				"destination": {
+					"$dynamic.list.index_triple": { "type": "integer" }
+				},
+				"land_on_block": { "type": "boolean" },
+				"max_range": {
+					"$dynamic.list.index_triple": { "type": "integer" }
+				}
+			}
+		},
+		"run_command": {
+			"additionalProperties": false,
+			"properties": {
+				"command": {
+					"type": "array",
+					"items": { "type": "string" }
+				},
+				"target": { "type": "string" }
+			}
+		}
+	}
 }
