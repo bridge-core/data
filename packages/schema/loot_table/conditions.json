@@ -3,12 +3,30 @@
 	"type": "array",
 	"items": {
 		"type": "object",
-		"properties": {
-			"condition": {
-				"type": "string",
-				"$ref": "./general.json#/definitions/conditions"
+		"allOf": [
+			{
+				"properties": {
+					"condition": {
+						"$ref": "./general.json#/definitions/conditions"
+					}
+				}
+			},
+			{
+				"if": {
+					"properties": {
+						"condition": {
+							"const": "has_mark_variant"
+						}
+					}
+				},
+				"then": {
+					"properties": {
+						"value": {
+							"type": "integer"
+						}
+					}
+				}
 			}
-			// Unfinished
-		}
+		]
 	}
 }
