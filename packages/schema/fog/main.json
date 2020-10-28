@@ -4,6 +4,11 @@
 	"additionalProperties": false,
 	"title": "Fog",
 	"required": ["format_version", "minecraft:fog_settings"],
+	"definitions": {
+		"hex_color": {
+			"$ref": "../general/hex_color.json"
+		}
+	},
 	"properties": {
 		"format_version": {
 			"$ref": "../general/format_version.json"
@@ -20,10 +25,11 @@
 					}
 				},
 				"distance": {
+					"additionalProperties": false,
 					"type": "object",
-					"properties": {
-						"water": {
-							"type": "object",
+					"description": "Valid properties: 'water', 'air', 'weather', 'lava', 'lava_resistance'",
+					"patternProperties": {
+						"^water|air|weather|lava|lava_resistance$": {
 							"properties": {
 								"fog_start": {
 									"type": "number"
@@ -32,9 +38,8 @@
 									"type": "number"
 								},
 								"fog_color": {
-									"type": "string",
-									"format": "hex",
-									"default": "#FFFFFF"
+									"$ref": "#/definitions/hex_color",
+									"description": "A hex color value that defines the color of the fog."
 								},
 								"render_distance_types": {
 									"type": "string",
@@ -48,7 +53,22 @@
 					"type": "object",
 					"description": "RTX is required for volumetric fogs.",
 					"properties": {
-						"media_coefficients": {},
+						"media_coefficients": {
+							"type": "object",
+							"description": "Valid properties: 'air', 'water', 'cloud'",
+							"patternProperties": {
+								"^air|water|cloud$": {
+									"properties": {
+										"scattering": {
+											"$ref": "#/definitions/hex_color"
+										},
+										"absorption": {
+											"$ref": "#/definitions/hex_color"
+										}
+									}
+								}
+							}
+						},
 						"density": {
 							"type": "object",
 							"properties": {
