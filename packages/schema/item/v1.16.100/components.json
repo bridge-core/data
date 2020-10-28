@@ -2,9 +2,73 @@
 	"$schema": "http://json-schema.org/draft-07/schema",
 	"description": "Components allow for item functionality.",
 	"properties": {
-		"bridge:test": {
-			"type": "number",
-			"description": "How long to use before item is done being used."
+		"minecraft:can_destroy_in_creative": {
+			"description": "Prevent destruction of blocks in creative mode while holding this item",
+			"type": "boolean"
+		},
+		"minecraft:dye_powder": {
+			"description": "Set that this item is a dye and its dye color",
+			"additionalProperties": false,
+			"properties": {
+				"color": {
+					"type": "number",
+					"maximum": 15,
+					"minimum": 0
+				}
+			}
+		},
+		"minecraft:mirrored_art": {
+			"description": "Mirror the item icon",
+			"type": "boolean"
+		},
+		"minecraft:explodable": {
+			"description": "Whether the item entity survives an explosion",
+			"type": "boolean"
+		},
+		"minecraft:liquid_clipped": {
+			"description": "Whether the item rendering clips liquids",
+			"type": "boolean"
+		},
+		"minecraft:allow_off_hand": {
+			"description": "Whether the item can be placed inside of the off hand",
+			"type": "boolean"
+		},
+		"minecraft:projectile": {
+			"description": "Sets the projectile used by minecraft:shooter and minecraft:throwable",
+			"additionalProperties": false,
+			"properties": {
+				"projectile_entity": {
+					"type": "string"
+				},
+				"minimum_critical_power": {
+					"type": "number"
+				}
+			}
+		},
+		"minecraft:entity_placer": {
+			"description": "Allow this item to place entities",
+			"additionalProperties": false,
+			"properties": {
+				"entity": {
+					"type": "string"
+				},
+				"use_on": {
+					"type": "array",
+					"items": [
+						{
+							"type": "string"
+						}
+					]
+				},
+				"dispense_on": {
+					"type": "array",
+					"items": [
+						{
+							"type": "string"
+						}
+					]
+				}
+			}
 		}
 	}
 }
