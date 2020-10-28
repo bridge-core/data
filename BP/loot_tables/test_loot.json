@@ -1,0 +1,30 @@
+{
+	"pools": [
+		{
+			"rolls": 1,
+			"tiers": {
+				"bonus_chance": 0.2,
+				"bonus_rolls": 1,
+				"initial_range": 8
+			},
+			"conditions": [
+				{
+					"condition": "has_mark_variant",
+					"value": 0
+				}
+			]
+		},
+		{
+			"rolls": {
+				"max": 2,
+				"min": 0
+			},
+			"conditions": [],
+			"entries": [
+				{
+					"type": "empty"
+				}
+			]
+		}
+	]
+}
