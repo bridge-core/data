@@ -7,13 +7,16 @@
 	"required": ["format_version", "header"],
 	"additionalProperties": false,
 	"definitions": {
-		"triple_number": {
-			"$ref": "../general/arrays/triple_number.json"
+		"triple_integer": {
+			"$ref": "../general/arrays/triple_integer.json"
+		},
+		"uuid": {
+			"$ref": "../general/uuid.json"
 		}
 	},
 	"properties": {
 		"format_version": {
-			"type": "number",
+			"type": "integer",
 			"enum": [1, 2],
 			"title": "Format Version",
 			"description": "This defines the current version of the manifest. Don't change this unless you have a good reason to."
@@ -33,20 +36,19 @@
 					"description": "This is a short description of the pack. It will appear in the game below the name of the pack."
 				},
 				"uuid": {
-					"type": "string",
-					"format": "uuid",
+					"$ref": "#/definitions/uuid",
 					"description": "This is a special type of identifier that uniquely identifies this pack from any other pack."
 				},
 				"version": {
-					"$ref": "#/definitions/triple_number",
+					"$ref": "#/definitions/triple_integer",
 					"description": "This is the version of your pack in the format [majorVersion, minorVersion, revision]."
 				},
 				"min_engine_version": {
-					"$ref": "#/definitions/triple_number",
+					"$ref": "#/definitions/triple_integer",
 					"description": "This is the minimum version of the game that this pack was written for."
 				},
 				"base_game_version": {
-					"$ref": "#/definitions/triple_number",
+					"$ref": "#/definitions/triple_integer",
 					"description": "This is the version of the base game your world template requires."
 				},
 				"lock_template_options": {
@@ -82,7 +84,7 @@
 							"format": "uuid"
 						},
 						"verison": {
-							"$ref": "#/definitions/triple_number"
+							"$ref": "#/definitions/triple_integer"
 						}
 					}
 				}
@@ -94,6 +96,7 @@
 			"items": [
 				{
 					"type": "object",
+					"required": ["uuid", "version"],
 					"properties": {
 						"uuid": {
 							"type": "string",
@@ -101,7 +104,7 @@
 							"description": "This is the unique identifier of the pack that this pack depends on. It needs to be the exact same UUID that the pack has defined in the header section of it's manifest file."
 						},
 						"version": {
-							"$ref": "#/definitions/triple_number",
+							"$ref": "#/definitions/triple_integer",
 							"description": "This is the specific version of the pack that your pack depends on. Should match the version the other pack has in its manifest file."
 						}
 					}
