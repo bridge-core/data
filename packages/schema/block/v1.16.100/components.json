@@ -53,17 +53,83 @@
 			"type": "string",
 			"description": "The geometry definition name to use"
 		},
-		"minecraft:on_step_on": {},
-		"minecraft:on_step_off": {},
-		"minecraft:on_player_destroyed": {},
-		"minecraft:on_fall_on": {},
-		"minecraft:on_placed": {},
-		"minecraft:on_player_placing": {},
-		"minecraft:on_interact": {},
-		"minecraft:ticking": {},
-		"minecraft:random_ticking": {},
-		"minecraft:entity_collision": {},
-		"minecraft:pick_collision": {},
+		"minecraft:on_step_on": {
+			"type": "object",
+			"description": "Trigger an event when a player steps onto this block",
+			"$ref": "../general/eventDefinition.json"
+		},
+		"minecraft:on_step_off": {
+			"type": "object",
+			"description": "Trigger an event when a player leaves this block",
+			"$ref": "../general/eventDefinition.json"
+		},
+		"minecraft:on_player_destroyed": {
+			"type": "object",
+			"description": "Trigger an event when a player destroys this block",
+			"$ref": "../general/eventDefinition.json"
+		},
+		"minecraft:on_fall_on": {
+			"type": "object",
+			"description": "Trigger an event when a player falls onto this block",
+			"$ref": "../general/eventDefinition.json"
+		},
+		"minecraft:on_placed": {
+			"type": "object",
+			"description": "Trigger an event when this block is placed",
+			"$ref": "../general/eventDefinition.json"
+		},
+		"minecraft:on_player_placing": {
+			"type": "object",
+			"description": "Trigger an event when a player places this block",
+			"$ref": "../general/eventDefinition.json"
+		},
+		"minecraft:on_interact": {
+			"type": "object",
+			"description": "Trigger an event when this block is interacted with",
+			"$ref": "../general/eventDefinition.json"
+		},
+		"minecraft:ticking": {
+			"type": "object",
+			"description": "Trigger an event at a regular interval between two values",
+			"additionalProperties": false,
+			"properties": {
+				"looping": {
+					"type": "boolean",
+					"description": "Whether the event should loop"
+				},
+				"range": {
+					"type": "array",
+					"description": "Range between which the component will trigger its event",
+					"minItems": 2,
+					"maxItems": 2,
+
+					"items": {
+						"type": "number"
+					}
+				},
+				"on_tick": {
+					"$ref": "../general/eventDefinition.json"
+				}
+			}
+		},
+		"minecraft:random_ticking": {
+			"type": "object",
+			"description": "TODO",
+			"additionalProperties": false,
+			"properties": {
+				"on_tick": {
+					"$ref": "../general/eventDefinition.json"
+				}
+			}
+		},
+		"minecraft:entity_collision": {
+			"type": "object",
+			"$ref": "../general/collisionSize.json"
+		},
+		"minecraft:pick_collision": {
+			"type": "object",
+			"$ref": "../general/collisionSize.json"
+		},
 		"minecraft:breakonpush": {
 			"type": "boolean",
 			"description": "When pushed by a piston the block breaks"
@@ -81,7 +147,38 @@
 			"type": "boolean",
 			"description": "Blocks with those components won't stick to stickyPistons"
 		},
-		"minecraft:placement_filter": {},
+		"minecraft:placement_filter": {
+			"type": "object",
+			"description": "Sets rules for under what conditions the block can be placed/survive",
+
+			"additionalProperties": false,
+			"properties": {
+				"block_filter": {
+					"type": "array",
+					"description": "List of blocks (can use tags to specify them) that this block can be placed against in the allowed_faces direction",
+					"items": {
+						"type": "string"
+					}
+				},
+				"allowed_faces": {
+					"type": "array",
+					"description": "TODO",
+					"items": {
+						"type": "string",
+						"enum": [
+							"up",
+							"down",
+							"north",
+							"south",
+							"east",
+							"west",
+							"side",
+							"all"
+						]
+					}
+				}
+			}
+		},
 		"minecraft:preventsjumping": {
 			"type": "boolean",
 			"description": "This component makes it so actors can't jump when walking on this block"
