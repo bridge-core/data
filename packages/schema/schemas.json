@@ -5,11 +5,11 @@
 	},
 	{
 		"uri": "https://raw.githubusercontent.com/bridge-core/data/dev/packages/schema/item/main.json",
-		"fileMatch": ["*/item/*.json"]
+		"fileMatch": ["*/items/*.json"]
 	},
 	{
 		"uri": "https://raw.githubusercontent.com/bridge-core/data/dev/packages/schema/loot_table/main.json",
-		"fileMatch": ["*/loot_table/*.json"]
+		"fileMatch": ["*/loot_tables/*.json"]
 	},
 	{
 		"uri": "https://raw.githubusercontent.com/bridge-core/data/dev/packages/schema/fog/main.json",
