@@ -29,7 +29,7 @@
 					"type": "object",
 					"description": "Valid properties: 'water', 'air', 'weather', 'lava', 'lava_resistance'",
 					"patternProperties": {
-						"^water|air|weather|lava|lava_resistance$": {
+						"^water|air|weather|lava|lava_resistance|powder_snow$": {
 							"properties": {
 								"fog_start": {
 									"type": "number"

@@ -8,7 +8,12 @@
 	"additionalProperties": false,
 	"definitions": {
 		"triple_integer": {
-			"$ref": "../general/arrays/triple_integer.json"
+			"type": "array",
+			"minItems": 3,
+			"maxItems": 3,
+			"items": {
+				"type": "integer"
+			}
 		},
 		"uuid": {
 			"$ref": "../general/uuid.json"
