@@ -3,9 +3,11 @@
 	"description": "Components allow for block functionality.",
 	"properties": {
 		"minecraft:flammable": {
-			"flame_odds_max": {
-				"description": "MAX: How likely the block will catch flame when next to a fire",
-				"type": "integer"
+			"properties": {
+				"flame_odds_max": {
+					"description": "MAX: How likely the block will catch flame when next to a fire",
+					"type": "integer"
+				}
 			}
 		},
 		"minecraft:crafting_table": {

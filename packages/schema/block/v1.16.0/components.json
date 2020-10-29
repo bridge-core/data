@@ -3,7 +3,7 @@
 	"description": "Components allow for block functionality.",
 	"properties": {
 		"minecraft:destroy_time": {
-			"type": "integer",
+			"type": "number",
 			"description": "Sets the destroy time property for the block. Greater numbers result in greater mining times"
 		},
 		"minecraft:block_light_emission": {
@@ -23,13 +23,15 @@
 		"minecraft:flammable": {
 			"type": "object",
 			"description": "Makes this block flammable",
-			"burn_odds": {
-				"description": "How likely the block will be destroyed by flames when on fire",
-				"type": "integer"
-			},
-			"flame_odds": {
-				"description": "How likely the block will catch flame when next to a fire",
-				"type": "integer"
+			"properties": {
+				"burn_odds": {
+					"description": "How likely the block will be destroyed by flames when on fire",
+					"type": "integer"
+				},
+				"flame_odds": {
+					"description": "How likely the block will catch flame when next to a fire",
+					"type": "integer"
+				}
 			}
 		},
 		"minecraft:friction": {
