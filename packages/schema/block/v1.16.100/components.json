@@ -4,6 +4,7 @@
 	"properties": {
 		"minecraft:flammable": {
 			"properties": {
+				"flame_odds": false,
 				"flame_odds_max": {
 					"description": "MAX: How likely the block will catch flame when next to a fire",
 					"type": "integer"
