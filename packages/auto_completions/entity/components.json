@@ -412,17 +412,37 @@
 		"damage_per_hurt": "$general.number",
 		"time_between_hurt": "$general.number"
 	},
-	"minecraft:damage_sensor": {
-		"triggers": {
-			"$dynamic.list.next_index": {
-				"on_damage": "$entity.general.event_definition",
-				"cause": "$general.damage_type",
-				"deals_damage": "$general.boolean",
-				"damage_multiplier": "$general.decimal",
-				"on_damage_sound_event": "$general.sound"
+	"$versioned_template.minecraft:damage_sensor": [
+		{
+			"$if": "$format_version >= 1.16.100",
+			"$data": {
+				"triggers": {
+					"$dynamic.list.next_index": {
+						"on_damage": "$entity.general.event_definition",
+						"cause": "$general.damage_type",
+						"deals_damage": "$general.boolean",
+						"damage_multiplier": "$general.decimal",
+						"damage_modifier": "$general.decimal",
+						"on_damage_sound_event": "$general.sound"
+					}
+				}
+			}
+		},
+		{
+			"$if": "$format_version < 1.16.0",
+			"$data": {
+				"triggers": {
+					"$dynamic.list.next_index": {
+						"on_damage": "$entity.general.event_definition",
+						"cause": "$general.damage_type",
+						"deals_damage": "$general.boolean",
+						"damage_multiplier": "$general.decimal",
+						"on_damage_sound_event": "$general.sound"
+					}
+				}
 			}
 		}
-	},
+	],
 	"minecraft:default_look_angle": {
 		"value": "$general.decimal"
 	},
@@ -898,6 +918,7 @@
 	"minecraft:navigation.climb": {
 		"is_amphibious": "$general.boolean",
 		"avoid_portals": "$general.boolean",
+		"avoid_powder_snow": "$general.boolean",
 		"avoid_sun": "$general.boolean",
 		"avoid_water": "$general.boolean",
 		"avoid_damage_blocks": "$general.boolean",
