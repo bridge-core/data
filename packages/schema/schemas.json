@@ -1,0 +1,26 @@
+[
+	{
+		"uri": "https://raw.githubusercontent.com/bridge-core/data/dev/packages/schema/manifest/main.json",
+		"fileMatch": ["*/manifest.json"]
+	},
+	{
+		"uri": "https://raw.githubusercontent.com/bridge-core/data/dev/packages/schema/item/main.json",
+		"fileMatch": ["*/item/*.json"]
+	},
+	{
+		"uri": "https://raw.githubusercontent.com/bridge-core/data/dev/packages/schema/loot_table/main.json",
+		"fileMatch": ["*/loot_table/*.json"]
+	},
+	{
+		"uri": "https://raw.githubusercontent.com/bridge-core/data/dev/packages/schema/fog/main.json",
+		"fileMatch": ["*/fogs/*.json"]
+	},
+	{
+		"uri": "https://raw.githubusercontent.com/bridge-core/data/dev/packages/schema/animation/server.json",
+		"fileMatch": ["*/animations/*.json"]
+	},
+	{
+		"uri": "https://raw.githubusercontent.com/bridge-core/data/dev/packages/schema/animationController/server.json",
+		"fileMatch": ["*/animation_controllers/*.json"]
+	}
+]
