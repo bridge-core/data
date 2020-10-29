@@ -3,7 +3,7 @@
 	"$id": "bridge.serverAnimationController",
 	"properties": {
 		"format_version": { "enum": ["1.10.0"] },
-		"animations": {
+		"animation_controllers": {
 			"patternProperties": {
 				"^controller.animation\\..+$": {
 					"properties": {
