@@ -48,7 +48,7 @@
 										"$ref": "./components.json"
 									},
 									{
-										"$ref": "../v1.10.0/components.json"
+										"$ref": "../v1.16.0/components.json"
 									}
 								]
 							}
