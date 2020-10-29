@@ -8,6 +8,10 @@
 		"fileMatch": ["*/items/*.json"]
 	},
 	{
+		"uri": "https://raw.githubusercontent.com/bridge-core/data/dev/packages/schema/block/main.json",
+		"fileMatch": ["*/blocks/*.json"]
+	},
+	{
 		"uri": "https://raw.githubusercontent.com/bridge-core/data/dev/packages/schema/loot_table/main.json",
 		"fileMatch": ["*/loot_tables/*.json"]
 	},

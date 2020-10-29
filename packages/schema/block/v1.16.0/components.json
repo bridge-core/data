@@ -1,0 +1,17 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"description": "Components allow for block functionality.",
+	"properties": {
+		"minecraft:flammable": {
+			"description": "Makes this block flammable",
+			"burn_odds": {
+				"description": "How likely the block will be destroyed by flames when on fire",
+				"type": "number"
+			},
+			"flame_odds": {
+				"description": "How likely the block will catch flame when next to a fire",
+				"type": "number"
+			}
+		}
+	}
+}
