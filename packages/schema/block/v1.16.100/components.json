@@ -4,14 +4,13 @@
 	"properties": {
 		"minecraft:flammable": {
 			"properties": {
+				"flame_odds": {
+					"doNotSuggest": true,
+					"deprecationMessage": "Invalid on Minecraft v1.16.100"
+				},
 				"flame_odds_max": {
 					"description": "MAX: How likely the block will catch flame when next to a fire",
 					"type": "integer"
-				}
-			},
-			"not": {
-				"properties": {
-					"flame_odds": false
 				}
 			}
 		},
