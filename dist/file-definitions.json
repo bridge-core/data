@@ -33,6 +33,7 @@
 		"id": "biome",
 		"includes": "biomes/",
 		"file_viewer": "json",
+
 		"documentation": "Biomes",
 		"start_state": "biome/main",
 		"lightning_cache": "biome",
