@@ -1,0 +1,209 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"additionalProperties": false,
+	"properties": {
+		"minecraft:emitter_local_space": {
+			"additionalProperties": false,
+			"properties": {
+				"position": { "type": "boolean" },
+				"rotation": { "type": "boolean" },
+				"velocity": { "type": "boolean" }
+			}
+		},
+		"minecraft:emitter_initialization": {
+			"additionalProperties": false,
+			"properties": {
+				"creation_expression": {
+					"type": "string"
+				},
+				"per_update_expression": {
+					"type": "string"
+				}
+			}
+		},
+		"minecraft:emitter_rate_instant": {
+			"additionalProperties": false,
+			"properties": {
+				"num_particles": {
+					"anyOf": [
+						{
+							"type": "string"
+						},
+						{
+							"type": "number"
+						}
+					]
+				}
+			}
+		},
+		"minecraft:emitter_rate_steady": {
+			"additionalProperties": false,
+			"properties": {
+				"spawn_rate": {
+					"anyOf": [
+						{
+							"type": "string"
+						},
+						{
+							"type": "number"
+						}
+					]
+				},
+				"max_particles": {
+					"anyOf": [
+						{
+							"type": "string"
+						},
+						{
+							"type": "number"
+						}
+					]
+				}
+			}
+		},
+		"minecraft:emitter_rate_manual": {
+			"additionalProperties": false,
+			"properties": {
+				"max_particles": {
+					"anyOf": [
+						{
+							"type": "string"
+						},
+						{
+							"type": "number"
+						}
+					]
+				}
+			}
+		},
+		"minecraft:emitter_lifetime_looping": {
+			"additionalProperties": false,
+			"properties": {
+				"active_time": {
+					"anyOf": [
+						{
+							"type": "string"
+						},
+						{
+							"type": "number"
+						}
+					]
+				},
+				"sleep_time": {
+					"anyOf": [
+						{
+							"type": "string"
+						},
+						{
+							"type": "number"
+						}
+					]
+				}
+			}
+		},
+		"minecraft:emitter_lifetime_once": {
+			"additionalProperties": false,
+			"properties": {
+				"active_time": {
+					"anyOf": [
+						{
+							"type": "string"
+						},
+						{
+							"type": "number"
+						}
+					]
+				}
+			}
+		},
+		"minecraft:emitter_lifetime_expression": {
+			"additionalProperties": false,
+			"properties": {
+				"activation_expression": {
+					"anyOf": [
+						{
+							"type": "string"
+						},
+						{
+							"type": "number"
+						}
+					]
+				},
+				"expiration_expression": {
+					"anyOf": [
+						{
+							"type": "string"
+						},
+						{
+							"type": "number"
+						}
+					]
+				}
+			}
+		},
+		"minecraft:emitter_lifetime_events": {
+			"additionalProperties": false,
+			"properties": {
+				"creation_event": {
+					"type": "array",
+					"items": {
+						"type": "string"
+					}
+				},
+				"expiration_event": {
+					"type": "array",
+					"items": {
+						"type": "string"
+					}
+				},
+				"timeline": {
+					"additionalProperties": false,
+					"properties": {
+						"time": {
+							"type": "array",
+							"items": {
+								"type": "string"
+							}
+						}
+					}
+				}
+			}
+		},
+		"minecraft:emitter_shape_point": {
+			"additionalProperties": false,
+			"properties": {
+				"offset": {
+					"type": "array",
+					"minItems": 3,
+					"maxItems": 3,
+					"items": {
+						"anyOf": [
+							{
+								"type": "string"
+							},
+							{
+								"type": "number"
+							}
+						]
+					}
+				},
+				"direction": {
+					"type": "array",
+					"minItems": 3,
+					"maxItems": 3,
+					"items": {
+						"anyOf": [
+							{
+								"type": "string"
+							},
+							{
+								"type": "number"
+							}
+						]
+					}
+				}
+			}
+		}
+		// "minecraft:emitter_shape_sphere" continue from here...
+	}
+}
