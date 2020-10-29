@@ -3,6 +3,7 @@
 	"description": "Components allow for block functionality.",
 	"properties": {
 		"minecraft:crafting_table": {
+			"type": "object",
 			"description": "Makes this block a crafting table",
 			"properties": {
 				"custom_description": {
@@ -21,6 +22,89 @@
 					}
 				}
 			}
+		},
+		"minecraft:unit_cube": {
+			"type": "object",
+			"description": "Specifies that a unit cube is to be used with tessellation",
+			"additionalProperties": false
+		},
+		"minecraft:material_instances": {
+			"type": "object",
+			"description": "Maps face or material_instance names in a geometry file to an actual material instance. Material instance can either be a full material instance or a name to another already defined instance",
+			"patternProperties": {
+				".*": {
+					"texture": {
+						"description": "Name of a texture from the terrain_texture.json file",
+						"type": "string"
+					},
+					"render_method": {
+						"description": "Method to use for rendering this face",
+						"enum": [
+							"opaque",
+							"blend",
+							"alpha_test",
+							"double_sided"
+						]
+					}
+				}
+			}
+		},
+		"minecraft:geometry": {
+			"type": "string",
+			"description": "The geometry definition name to use"
+		},
+		"minecraft:on_step_on": {},
+		"minecraft:on_step_off": {},
+		"minecraft:on_player_destroyed": {},
+		"minecraft:on_fall_on": {},
+		"minecraft:on_placed": {},
+		"minecraft:on_player_placing": {},
+		"minecraft:on_interact": {},
+		"minecraft:ticking": {},
+		"minecraft:random_ticking": {},
+		"minecraft:entity_collision": {},
+		"minecraft:pick_collision": {},
+		"minecraft:breakonpush": {
+			"type": "boolean",
+			"description": "When pushed by a piston the block breaks"
+		},
+		"minecraft:immovable": {
+			"type": "boolean",
+			"description": "An Immovable block cannot be pushed by pistons"
+		},
+		"minecraft:breathability": {
+			"type": "string",
+			"description": "Property describing the breathability of this block and whether it is treated as a solid or as air",
+			"enum": ["air", "solid"]
+		},
+		"minecraft:onlypistonpush": {
+			"type": "boolean",
+			"description": "Blocks with those components won't stick to stickyPistons"
+		},
+		"minecraft:placement_filter": {},
+		"minecraft:preventsjumping": {
+			"type": "boolean",
+			"description": "This component makes it so actors can't jump when walking on this block"
+		},
+		"minecraft:rotation": {
+			"type": "array",
+			"description": "This is the block's rotation around the center of the cube in degrees. The rotation order is x-y-z",
+
+			"maxItems": 3,
+			"minItems": 3,
+			"items": {
+				"type": "integer",
+				"minimum": 0,
+				"maximum": 360
+			}
+		},
+		"minecraft:unwalkable": {
+			"type": "boolean",
+			"description": "This component sets a block as unwalkable. Most mobs will not try to jump over it if the value is set to true"
+		},
+		"minecraft:display_name": {
+			"type": "string",
+			"description": "Specifies the display name id for the block"
 		}
 	}
 }
