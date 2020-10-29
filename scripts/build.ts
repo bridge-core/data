@@ -2,5 +2,5 @@ try {
 	await Deno.mkdir('./dist')
 } catch {}
 
-import('./bundleAutoCompletions.ts')
-import('./bundleFileDefs.ts')
+await import('./bundleAutoCompletions.ts')
+await import('./bundleFileDefs.ts')
