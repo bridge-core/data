@@ -8,9 +8,7 @@
 			"description": "This MoLang expression has to evaluate to 'true' in order for the event to run"
 		},
 		"target": {
-			"type": "string",
-			"description": "Target to trigger the event on",
-			"enum": ["self", "other", "target", "parent", "baby", "holder"]
+			"$ref": "../../general/filter/subject.json"
 		},
 		"event": {
 			"type": "string",

@@ -129,7 +129,7 @@
 					"const": "has_biome_tag"
 				},
 				"operator": {
-					"$ref": "../general/operators.json"
+					"$ref": "../general/filter/operator.json"
 				},
 				"value": {
 					"$ref": "../general/vanilla/biomeTags.json"

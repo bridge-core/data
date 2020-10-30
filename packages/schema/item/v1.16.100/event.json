@@ -1,105 +1,69 @@
 {
 	"$schema": "http://json-schema.org/draft-07/schema",
-	"properties": {
-		"randomize": {
-			"type": "array",
-			"items": {
-				"allOf": [
-					{
-						"properties": {
-							"weight": { "type": "number" }
-						}
-					},
-					{
-						"$ref": "#"
-					}
-				]
-			}
-		},
-		"sequence": {
-			"type": "array",
-			"items": {
-				"allOf": [
-					{
-						"properties": {
-							"condition": { "type": "string" }
-						}
-					},
-					{
-						"$ref": "#"
-					}
-				]
-			}
-		},
-		"shoot": {
-			"additionalProperties": false,
+	"allOf": [
+		{
 			"properties": {
-				"projectile": { "type": "string" },
-				"launch_power": { "type": "number" },
-				"angle_offset": { "type": ["string", "number"] }
-			}
-		},
-		"swing": {
-			"additionalProperties": false
-		},
-		"decrement_stack": {
-			"additionalProperties": false
-		},
-		"damage": {
-			"additionalProperties": false,
-			"properties": {
-				"type": { "type": "string" },
-				"amount": { "type": "integer" }
-			}
-		},
-		"add_mob_effect": {
-			"allOf": [
-				{
-					"properties": {
-						"target": { "type": "string" }
-					}
-				},
-				{
-					"$ref": "../../general/effectDefinition.json"
-				}
-			]
-		},
-		"remove_mob_effect": {
-			"additionalProperties": false,
-			"properties": {
-				"effect": { "$ref": "../../general/vanilla/effectName.json" },
-				"target": { "type": "string" }
-			}
-		},
-		"transform_item": {
-			"additionalProperties": false,
-			"properties": {
-				"transform": { "type": "string" }
-			}
-		},
-		"teleport": {
-			"additionalProperties": false,
-			"properties": {
-				"target": { "type": "string" },
-				"avoid_water": { "type": "boolean" },
-				"destination": {
-					"$dynamic.list.index_triple": { "type": "integer" }
-				},
-				"land_on_block": { "type": "boolean" },
-				"max_range": {
-					"$dynamic.list.index_triple": { "type": "integer" }
-				}
-			}
-		},
-		"run_command": {
-			"additionalProperties": false,
-			"properties": {
-				"command": {
+				"randomize": {
 					"type": "array",
-					"items": { "type": "string" }
+					"items": {
+						"allOf": [
+							{
+								"properties": {
+									"weight": { "type": "number" }
+								}
+							},
+							{
+								"$ref": "#"
+							}
+						]
+					}
 				},
-				"target": { "type": "string" }
+				"sequence": {
+					"type": "array",
+					"items": {
+						"allOf": [
+							{
+								"properties": {
+									"condition": { "type": "string" }
+								}
+							},
+							{
+								"$ref": "#"
+							}
+						]
+					}
+				}
 			}
+		},
+		{
+			"$ref": "../../event/damage.json"
+		},
+		{
+			"$ref": "../../event/die.json"
+		},
+		{
+			"$ref": "../../event/item.json"
+		},
+		{
+			"$ref": "../../event/mobEffect.json"
+		},
+		{
+			"$ref": "../../event/playEffect.json"
+		},
+		{
+			"$ref": "../../event/playSound.json"
+		},
+		{
+			"$ref": "../../event/runCommand.json"
+		},
+		{
+			"$ref": "../../event/shoot.json"
+		},
+		{
+			"$ref": "../../event/teleport.json"
+		},
+		{
+			"$ref": "../../event/transformItem.json"
 		}
-	}
+	]
 }
