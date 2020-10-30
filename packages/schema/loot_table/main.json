@@ -52,13 +52,86 @@
 						"description": "Lists the entries of the loot table to be chosen from.",
 						"items": {
 							"type": "object",
-							"properties": {
-								"type": {
-									"type": "string",
-									"enum": ["item", "loot_table", "empty"]
+							"anyOf": [
+								{
+									"properties": {
+										"type": {
+											"type": "string",
+											"enum": [
+												"item",
+												"loot_table",
+												"empty"
+											]
+										}
+									},
+									"required": ["type"]
+								},
+								{
+									"if": {
+										"properties": {
+											"type": {
+												"const": "item"
+											}
+										},
+										"required": ["type"]
+									},
+									"then": {
+										"properties": {
+											"weight": {
+												"type": "integer"
+											},
+											"name": {
+												"description": "Item identifier",
+												"type": "string"
+											},
+											"pools": {
+												"$ref": "#/properties/pools"
+											},
+											"functions": {
+												"$ref": "./functions.json"
+											}
+										}
+									}
+								},
+								{
+									"if": {
+										"properties": {
+											"type": {
+												"const": "loot_table"
+											}
+										},
+										"required": ["type"]
+									},
+									"then": {
+										"properties": {
+											"weight": {
+												"type": "integer"
+											},
+											"name": {
+												"description": "Path to a loot table file",
+												"type": "string"
+											}
+										}
+									}
+								},
+								{
+									"if": {
+										"properties": {
+											"type": {
+												"const": "empty"
+											}
+										},
+										"required": ["type"]
+									},
+									"then": {
+										"properties": {
+											"weight": {
+												"type": "integer"
+											}
+										}
+									}
 								}
-								// TODO finish loot table schema
-							}
+							]
 						}
 					}
 				}
