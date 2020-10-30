@@ -82,400 +82,400 @@
 						"type": "string"
 					}
 				}
-			},
-			"minecraft:knockback_resistance": {
-				"type": "number",
-				"description": "For items that provide knockback resistance",
+			}
+		},
+		"minecraft:knockback_resistance": {
+			"type": "number",
+			"description": "For items that provide knockback resistance",
 
-				"minimum": 0.0,
-				"maximum": 1.0
-			},
-			"minecraft:enchantable": {
-				"type": "object",
-				"description": "Makes an item enchantable",
-				"properties": {
-					"slot": {
-						"type": "string"
-					},
-					"value": {
-						"type": "integer"
-					}
+			"minimum": 0.0,
+			"maximum": 1.0
+		},
+		"minecraft:enchantable": {
+			"type": "object",
+			"description": "Makes an item enchantable",
+			"properties": {
+				"slot": {
+					"type": "string"
+				},
+				"value": {
+					"type": "integer"
 				}
-			},
-			"minecraft:shooter": {
-				"type": "object",
-				"properties": {
-					"max_draw_duration": {
-						"type": "number",
-						"description": "Draw Duration. Default is set to 0"
-					},
-					"charge_on_draw": {
-						"type": "boolean",
-						"description": "Charge on draw? Default is set to false"
-					},
-					"scale_power_by_draw_duration": {
-						"type": "boolean",
-						"description": "Scale power by draw duration? Default is set to false"
-					},
-					"launch_power_scale": {
-						"type": "number",
-						"description": "Launch power scale. Default is set to 1.0"
-					},
-					"max_launch_power": {
-						"type": "number",
-						"description": "Launch power. Default is set to 1.0"
-					},
-					"ammunition": {
-						"type": "array",
-						"description": "Define the ammunition item to use",
-						"items": {
-							"type": "object",
-							"properties": {
-								"item": {
-									"type": "string"
-								},
-								"use_offhand": {
-									"type": "boolean"
-								},
-								"search_inventory": {
-									"type": "boolean"
-								},
-								"use_in_creative": {
-									"type": "boolean"
-								}
-							}
-						}
-					}
-				}
-			},
-			"minecraft:durability": {
-				"type": "object",
-				"description": "Define an item's durability",
-				"additionalProperties": false,
-				"properties": {
-					"max_durability": {
-						"type": "integer",
-						"description": "Max durability is the amount of damage that this item can take before breaking",
-						"minimum": 0
-					},
-					"damage_chance": {
+			}
+		},
+		"minecraft:shooter": {
+			"type": "object",
+			"properties": {
+				"max_draw_duration": {
+					"type": "number",
+					"description": "Draw Duration. Default is set to 0"
+				},
+				"charge_on_draw": {
+					"type": "boolean",
+					"description": "Charge on draw? Default is set to false"
+				},
+				"scale_power_by_draw_duration": {
+					"type": "boolean",
+					"description": "Scale power by draw duration? Default is set to false"
+				},
+				"launch_power_scale": {
+					"type": "number",
+					"description": "Launch power scale. Default is set to 1.0"
+				},
+				"max_launch_power": {
+					"type": "number",
+					"description": "Launch power. Default is set to 1.0"
+				},
+				"ammunition": {
+					"type": "array",
+					"description": "Define the ammunition item to use",
+					"items": {
 						"type": "object",
-						"additionalProperties": false,
 						"properties": {
-							"min": { "type": "number" },
-							"max": { "type": "number" }
+							"item": {
+								"type": "string"
+							},
+							"use_offhand": {
+								"type": "boolean"
+							},
+							"search_inventory": {
+								"type": "boolean"
+							},
+							"use_in_creative": {
+								"type": "boolean"
+							}
 						}
 					}
 				}
-			},
-			"minecraft:armor": {
-				"type": "object",
-				"description": "Set armor related data",
-				"additionalProperties": false,
-				"properties": {
-					"protection": { "type": "integer" },
-					"texture_type": {
-						"enum": ["leather", "chain", "diamond", "iron", "gold"]
+			}
+		},
+		"minecraft:durability": {
+			"type": "object",
+			"description": "Define an item's durability",
+			"additionalProperties": false,
+			"properties": {
+				"max_durability": {
+					"type": "integer",
+					"description": "Max durability is the amount of damage that this item can take before breaking",
+					"minimum": 0
+				},
+				"damage_chance": {
+					"type": "object",
+					"additionalProperties": false,
+					"properties": {
+						"min": { "type": "number" },
+						"max": { "type": "number" }
 					}
 				}
-			},
-			"minecraft:wearable": {
-				"type": "object",
-				"description": "Makes an item wearable",
-				"additionalProperties": false,
-				"properties": {
-					"slot": { "type": "string" },
-					"dispensable": { "type": "boolean" }
+			}
+		},
+		"minecraft:armor": {
+			"type": "object",
+			"description": "Set armor related data",
+			"additionalProperties": false,
+			"properties": {
+				"protection": { "type": "integer" },
+				"texture_type": {
+					"enum": ["leather", "chain", "diamond", "iron", "gold"]
 				}
-			},
-			"minecraft:weapon": {
-				"type": "object",
-				"description": "Weapon Item Component. Added to every weapon item such as axe, sword, trident, bow, crossbow",
-				"properties": {
-					"on_hit_block": {
-						"description": "Trigger for letting you know when this item is used to hit a block",
-						"$ref": "../general/eventDefinition.json"
-					},
-					"on_hurt_entity": {
-						"description": "Trigger for letting you know when this item is used to hurt another mob",
-						"$ref": "../general/eventDefinition.json"
-					},
-					"on_not_hurt_entity": {
-						"description": "Trigger for letting you know when this item hit another actor, but didn't do damage",
-						"$ref": "../general/eventDefinition.json"
-					}
+			}
+		},
+		"minecraft:wearable": {
+			"type": "object",
+			"description": "Makes an item wearable",
+			"additionalProperties": false,
+			"properties": {
+				"slot": { "type": "string" },
+				"dispensable": { "type": "boolean" }
+			}
+		},
+		"minecraft:weapon": {
+			"type": "object",
+			"description": "Weapon Item Component. Added to every weapon item such as axe, sword, trident, bow, crossbow",
+			"properties": {
+				"on_hit_block": {
+					"description": "Trigger for letting you know when this item is used to hit a block",
+					"$ref": "../general/eventDefinition.json"
+				},
+				"on_hurt_entity": {
+					"description": "Trigger for letting you know when this item is used to hurt another mob",
+					"$ref": "../general/eventDefinition.json"
+				},
+				"on_not_hurt_entity": {
+					"description": "Trigger for letting you know when this item hit another actor, but didn't do damage",
+					"$ref": "../general/eventDefinition.json"
 				}
-			},
-			"minecraft:record": {
-				"type": "object",
-				"description": "TODO",
-				"properties": {
-					"sound_event": {
-						"type": "string",
-						"description": "TODO",
-						"enum": [
-							"13",
-							"cat",
-							"blocks",
-							"chirp",
-							"far",
-							"mall",
-							"mellohi",
-							"stal",
-							"strad",
-							"ward",
-							"11",
-							"wait",
-							"pigstep"
-						]
-					},
-					"duration": {
-						"type": "integer",
-						"description": "TODO"
-					},
-					"comparator_signal": {
-						"type": "integer",
-						"description": "TODO",
-						"min": 0,
-						"max": 15
-					}
+			}
+		},
+		"minecraft:record": {
+			"type": "object",
+			"description": "TODO",
+			"properties": {
+				"sound_event": {
+					"type": "string",
+					"description": "TODO",
+					"enum": [
+						"13",
+						"cat",
+						"blocks",
+						"chirp",
+						"far",
+						"mall",
+						"mellohi",
+						"stal",
+						"strad",
+						"ward",
+						"11",
+						"wait",
+						"pigstep"
+					]
+				},
+				"duration": {
+					"type": "integer",
+					"description": "TODO"
+				},
+				"comparator_signal": {
+					"type": "integer",
+					"description": "TODO",
+					"min": 0,
+					"max": 15
 				}
-			},
-			"minecraft:repairable": {
-				"type": "object",
-				"description": "TODO",
-				"properties": {
-					"on_repaired": {
-						"$ref": "../general/eventDefinition.json"
-					},
-					"repair_items": {
-						"type": "array",
-						"description": "TODO",
-						"items": {
-							"type": "object",
-							"properties": {
+			}
+		},
+		"minecraft:repairable": {
+			"type": "object",
+			"description": "TODO",
+			"properties": {
+				"on_repaired": {
+					"$ref": "../general/eventDefinition.json"
+				},
+				"repair_items": {
+					"type": "array",
+					"description": "TODO",
+					"items": {
+						"type": "object",
+						"properties": {
+							"items": {
+								"type": "array",
 								"items": {
-									"type": "array",
-									"items": {
+									"type": "string"
+								}
+							},
+							"repair_amount": {
+								"$ref": "../../molang/embeddedBeta.json"
+							}
+						}
+					}
+				}
+			}
+		},
+		"minecraft:cooldown": {
+			"type": "object",
+			"description": "Cool down time for a component. After you use an item it becomes unusable for the duration specified by the 'cool down time' setting in this component",
+			"properties": {
+				"category": {
+					"type": "string",
+					"description": "The type of cool down for this item"
+				},
+				"duration": {
+					"type": "number",
+					"description": "The duration of time this item will spend cooling down before becoming usable again"
+				}
+			}
+		},
+		"minecraft:on_use_on": {
+			"type": "object",
+			"description": "TODO",
+			"properties": {
+				"on_use_on": {
+					"$ref": "../general/eventDefinition.json"
+				}
+			}
+		},
+		"minecraft:on_use": {
+			"type": "object",
+			"description": "TODO",
+			"properties": {
+				"on_use": {
+					"$ref": "../general/eventDefinition.json"
+				}
+			}
+		},
+		"minecraft:digger": {
+			"type": "object",
+			"description": "Digger item. Component put on items that dig",
+			"properties": {
+				"use_efficiency": {
+					"type": "boolean",
+					"description": "Use efficiency? Default is set to false"
+				},
+				"destroy_speeds": {
+					"type": "array",
+					"description": "Destroy speed per block",
+					"items": {
+						"type": "object",
+						"properties": {
+							"block": {
+								"description": "TODO",
+								"anyOf": [
+									{
 										"type": "string"
+									},
+									{
+										"type": "string",
+										"enum": [
+											"query.any_tag()",
+											"query.all_tags()"
+										]
 									}
-								},
-								"repair_amount": {
-									"$ref": "../../molang/embeddedBeta.json"
-								}
+								]
+							},
+							"speed": {
+								"type": "number",
+								"description": "TODO"
 							}
 						}
 					}
+				},
+				"on_dig": {
+					"description": "Trigger for when you dig a block that isn't listed in destroy_speeds",
+					"$ref": "../general/eventDefinition.json"
 				}
-			},
-			"minecraft:cooldown": {
-				"type": "object",
-				"description": "Cool down time for a component. After you use an item it becomes unusable for the duration specified by the 'cool down time' setting in this component",
-				"properties": {
-					"category": {
-						"type": "string",
-						"description": "The type of cool down for this item"
-					},
-					"duration": {
-						"type": "number",
-						"description": "The duration of time this item will spend cooling down before becoming usable again"
-					}
+			}
+		},
+		"minecraft:fertilizer": {
+			"type": "object",
+			"description": "TODO",
+			"properties": {
+				"type": {
+					"type": "string",
+					"description": "TODO",
+					"enum": ["bonemeal", "rapid"]
 				}
-			},
-			"minecraft:on_use_on": {
-				"type": "object",
-				"description": "TODO",
-				"properties": {
-					"on_use_on": {
-						"$ref": "../general/eventDefinition.json"
-					}
+			}
+		},
+		"minecraft:fuel": {
+			"type": "object",
+			"description": "Fuel component. Allows this item to be used as fuel in a furnace to 'cook' other items",
+			"properties": {
+				"duration": {
+					"type": "integer",
+					"description": "How long in seconds will this fuel cook items for"
 				}
-			},
-			"minecraft:on_use": {
-				"type": "object",
-				"description": "TODO",
-				"properties": {
-					"on_use": {
-						"$ref": "../general/eventDefinition.json"
-					}
+			}
+		},
+		"minecraft:throwable": {
+			"type": "object",
+			"description": "Throwable item component. Throwable items, such as a snowball",
+			"properties": {
+				"do_swing_animation": {
+					"type": "boolean",
+					"description": "Whether the item should use the swing animation when thrown. Default is set to false"
+				},
+				"max_draw_duration": {
+					"type": "number",
+					"description": "The maximum duration to draw a throwable item. Default is set to 0.0"
+				},
+				"min_draw_duration": {
+					"type": "number",
+					"description": "The minimum duration to draw a throwable item. Default is set to 0.0"
+				},
+				"scale_power_by_draw_duration": {
+					"type": "boolean",
+					"description": "Whether or not the power of the throw increases with duration charged. Default is set to false"
+				},
+				"launch_power_scale": {
+					"type": "number",
+					"description": "The scale at which the power of the throw increases. Default is set to 1.0"
+				},
+				"max_launch_power": {
+					"type": "number",
+					"description": "The maximum power to launch the throwable item. Default is set to 1.0"
 				}
-			},
-			"minecraft:digger": {
-				"type": "object",
-				"description": "Digger item. Component put on items that dig",
-				"properties": {
-					"use_efficiency": {
-						"type": "boolean",
-						"description": "Use efficiency? Default is set to false"
-					},
-					"destroy_speeds": {
-						"type": "array",
-						"description": "Destroy speed per block",
-						"items": {
-							"type": "object",
-							"properties": {
-								"block": {
-									"description": "TODO",
-									"anyOf": [
-										{
-											"type": "string"
-										},
-										{
-											"type": "string",
-											"enum": [
-												"query.any_tag()",
-												"query.all_tags()"
-											]
-										}
-									]
-								},
-								"speed": {
-									"type": "number",
-									"description": "TODO"
-								}
-							}
-						}
-					},
-					"on_dig": {
-						"description": "Trigger for when you dig a block that isn't listed in destroy_speeds",
-						"$ref": "../general/eventDefinition.json"
-					}
+			}
+		},
+		"minecraft:potion": {
+			"type": "object",
+			"description": "TODO",
+			"properties": {
+				"type": {
+					"type": "string",
+					"enum": ["lingering", "regular", "splash"]
 				}
-			},
-			"minecraft:fertilizer": {
-				"type": "object",
-				"description": "TODO",
-				"properties": {
-					"type": {
-						"type": "string",
-						"description": "TODO",
-						"enum": ["bonemeal", "rapid"]
-					}
+			}
+		},
+		"minecraft:creative_category": {
+			"type": "object",
+			"description": "TODO",
+			"properties": {
+				"parent": {
+					"$ref": "../general/itemGroups.json"
 				}
-			},
-			"minecraft:fuel": {
-				"type": "object",
-				"description": "Fuel component. Allows this item to be used as fuel in a furnace to 'cook' other items",
-				"properties": {
-					"duration": {
-						"type": "integer",
-						"description": "How long in seconds will this fuel cook items for"
-					}
+			}
+		},
+		"minecraft:icon": {
+			"type": "object",
+			"description": "TODO",
+			"properties": {
+				"texture": {
+					"type": "string"
+				},
+				"frame": {
+					"$ref": "../../molang/embeddedBeta.json"
 				}
-			},
-			"minecraft:throwable": {
-				"type": "object",
-				"description": "Throwable item component. Throwable items, such as a snowball",
-				"properties": {
-					"do_swing_animation": {
-						"type": "boolean",
-						"description": "Whether the item should use the swing animation when thrown. Default is set to false"
-					},
-					"max_draw_duration": {
-						"type": "number",
-						"description": "The maximum duration to draw a throwable item. Default is set to 0.0"
-					},
-					"min_draw_duration": {
-						"type": "number",
-						"description": "The minimum duration to draw a throwable item. Default is set to 0.0"
-					},
-					"scale_power_by_draw_duration": {
-						"type": "boolean",
-						"description": "Whether or not the power of the throw increases with duration charged. Default is set to false"
-					},
-					"launch_power_scale": {
-						"type": "number",
-						"description": "The scale at which the power of the throw increases. Default is set to 1.0"
-					},
-					"max_launch_power": {
-						"type": "number",
-						"description": "The maximum power to launch the throwable item. Default is set to 1.0"
-					}
+			}
+		},
+		"minecraft:use_animation": {
+			"type": "string",
+			"description": "TODO",
+			"enum": ["bow", "eat", "drink", "crossbow", "camera"]
+		},
+		"minecraft:render_offsets": {
+			"type": "string",
+			"description": "TODO",
+			"$ref": "../general/renderOffsets.json"
+		},
+		"minecraft:hover_text_color": {
+			"type": "string",
+			"description": "TODO",
+			"$ref": "../../general/minecraftColor.json"
+		},
+		"minecraft:food": {
+			"type": "object",
+			"properties": {
+				"on_consume": {
+					"description": "TODO",
+					"$ref": "../general/eventDefinition.json"
+				},
+				"using_converts_to": {
+					"doNotSuggest": true,
+					"deprecationMessage": "Deprecated in favor of event responses (format_version: v1.16.100)"
+				},
+				"effects": {
+					"doNotSuggest": true,
+					"deprecationMessage": "Deprecated in favor of event responses (format_version: v1.16.100)"
+				},
+				"remove_effects": {
+					"doNotSuggest": true,
+					"deprecationMessage": "Deprecated in favor of event responses (format_version: v1.16.100)"
+				},
+				"on_use_action": {
+					"doNotSuggest": true,
+					"deprecationMessage": "Deprecated in favor of event responses (format_version: v1.16.100)"
+				},
+				"on_use_range": {
+					"doNotSuggest": true,
+					"deprecationMessage": "Deprecated in favor of event responses (format_version: v1.16.100)"
 				}
-			},
-			"minecraft:potion": {
-				"type": "object",
-				"description": "TODO",
-				"properties": {
-					"type": {
-						"type": "string",
-						"enum": ["lingering", "regular", "splash"]
-					}
-				}
-			},
-			"minecraft:creative_category": {
-				"type": "object",
-				"description": "TODO",
-				"properties": {
-					"parent": {
-						"$ref": "../general/itemGroups.json"
-					}
-				}
-			},
-			"minecraft:icon": {
-				"type": "object",
-				"description": "TODO",
-				"properties": {
-					"texture": {
-						"type": "string"
-					},
-					"frame": {
-						"$ref": "../../molang/embeddedBeta.json"
-					}
-				}
-			},
-			"minecraft:use_animation": {
-				"type": "string",
-				"description": "TODO",
-				"enum": ["bow", "eat", "drink", "crossbow", "camera"]
-			},
-			"minecraft:render_offsets": {
-				"type": "string",
-				"description": "TODO",
-				"$ref": "../general/renderOffsets.json"
-			},
-			"minecraft:hover_text_color": {
-				"type": "string",
-				"description": "TODO",
-				"$ref": "../../general/minecraftColor.json"
-			},
-			"minecraft:food": {
-				"type": "object",
-				"properties": {
-					"on_consume": {
-						"description": "TODO",
-						"$ref": "../general/eventDefinition.json"
-					},
-					"using_converts_to": {
-						"doNotSuggest": true,
-						"deprecationMessage": "Deprecated in favor of event responses (format_version: v1.16.100)"
-					},
-					"effects": {
-						"doNotSuggest": true,
-						"deprecationMessage": "Deprecated in favor of event responses (format_version: v1.16.100)"
-					},
-					"remove_effects": {
-						"doNotSuggest": true,
-						"deprecationMessage": "Deprecated in favor of event responses (format_version: v1.16.100)"
-					},
-					"on_use_action": {
-						"doNotSuggest": true,
-						"deprecationMessage": "Deprecated in favor of event responses (format_version: v1.16.100)"
-					},
-					"on_use_range": {
-						"doNotSuggest": true,
-						"deprecationMessage": "Deprecated in favor of event responses (format_version: v1.16.100)"
-					}
-				}
-			},
-			"minecraft:display_name": {
-				"type": "object",
-				"description": "Display name item component. Display names display the name of an item",
-				"properties": {
-					"value": {
-						"type": "string",
-						"description": "Set the display name for an item"
-					}
+			}
+		},
+		"minecraft:display_name": {
+			"type": "object",
+			"description": "Display name item component. Display names display the name of an item",
+			"properties": {
+				"value": {
+					"type": "string",
+					"description": "Set the display name for an item"
 				}
 			}
 		}
