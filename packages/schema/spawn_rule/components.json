@@ -132,7 +132,7 @@
 					"$ref": "../general/operators.json"
 				},
 				"value": {
-					"$ref": "../general/biomeTags.json"
+					"$ref": "../general/vanilla/biomeTags.json"
 				}
 			}
 		},
