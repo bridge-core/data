@@ -26,5 +26,9 @@
 	{
 		"uri": "https://raw.githubusercontent.com/bridge-core/data/dev/packages/schema/animationController/server.json",
 		"fileMatch": ["*/animation_controllers/*.json"]
+	},
+	{
+		"uri": "https://raw.githubusercontent.com/bridge-core/data/dev/packages/schema/particle/main.json",
+		"fileMatch": ["*/particles/*.json"]
 	}
 ]
