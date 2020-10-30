@@ -158,7 +158,7 @@
 		{
 			"properties": {
 				"format_version": {
-					"$ref": "../general/format_version.json"
+					"$ref": "../general/formatVersion.json"
 				}
 			}
 		}

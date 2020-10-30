@@ -6,12 +6,12 @@
 	"required": ["format_version", "minecraft:fog_settings"],
 	"definitions": {
 		"hex_color": {
-			"$ref": "../general/hex_color.json"
+			"$ref": "../general/hexColor.json"
 		}
 	},
 	"properties": {
 		"format_version": {
-			"$ref": "../general/format_version.json"
+			"$ref": "../general/formatVersion.json"
 		},
 		"minecraft:fog_settings": {
 			"type": "object",

@@ -18,7 +18,7 @@
 		},
 		"minecraft:map_color": {
 			"description": "A color represented as a hex value. This will be the color rendered to a map",
-			"$ref": "../../general/hex_color.json"
+			"$ref": "../../general/hexColor.json"
 		},
 		"minecraft:flammable": {
 			"type": "object",
