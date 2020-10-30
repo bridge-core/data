@@ -72,6 +72,9 @@
 							"$ref": "./event.json"
 						}
 					}
+				},
+				"components": {
+					"$ref": "./components.json"
 				}
 			}
 		}
