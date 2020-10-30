@@ -54,17 +54,19 @@
 		},
 		"add_mob_effect": {
 			"additionalProperties": false,
-			"properties": {
-				"effect": { "type": "string" },
-				"target": { "type": "string" },
-				"duration": { "type": "integer" },
-				"amplifier": { "type": "integer" }
-			}
+			"allOf": [
+				{
+					"target": { "type": "string" }
+				},
+				{
+					"$ref": "../general/effectDefinition.json"
+				}
+			]
 		},
 		"remove_mob_effect": {
 			"additionalProperties": false,
 			"properties": {
-				"effect": { "type": "string" },
+				"effect": { "$ref": "../../general/effectName.json" },
 				"target": { "type": "string" }
 			}
 		},

@@ -1,0 +1,19 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"type": "object",
+	"description": "Defines an effect to add to the entity",
+	"additionalProperties": false,
+	"properties": {
+		"effect": {
+			"$ref": "../../general/effectName.json"
+		},
+		"duration": {
+			"type": "integer",
+			"description": "TODO"
+		},
+		"amplifier": {
+			"type": "integer",
+			"description": "TODO"
+		}
+	}
+}
