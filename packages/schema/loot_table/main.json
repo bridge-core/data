@@ -57,7 +57,7 @@
 									"type": "string",
 									"enum": ["item", "loot_table", "empty"]
 								}
-								// Unfinished
+								// TODO finish loot table schema
 							}
 						}
 					}

@@ -3,6 +3,7 @@
 	"additionalProperties": false,
 	"properties": {
 		"minecraft:emitter_local_space": {
+			"description": "TODO (description for all components)",
 			"additionalProperties": false,
 			"properties": {
 				"position": { "type": "boolean" },
