@@ -55,7 +55,9 @@
 		"add_mob_effect": {
 			"allOf": [
 				{
-					"target": { "type": "string" }
+					"properties": {
+						"target": { "type": "string" }
+					}
 				},
 				{
 					"$ref": "../general/effectDefinition.json"
