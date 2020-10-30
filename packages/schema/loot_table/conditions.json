@@ -3,13 +3,14 @@
 	"type": "array",
 	"items": {
 		"type": "object",
-		"allOf": [
+		"anyOf": [
 			{
 				"properties": {
 					"condition": {
 						"$ref": "./general.json#/definitions/conditions"
 					}
-				}
+				},
+				"required": ["condition"]
 			},
 			{
 				"if": {
@@ -17,7 +18,8 @@
 						"condition": {
 							"const": "has_mark_variant"
 						}
-					}
+					},
+					"required": ["condition"]
 				},
 				"then": {
 					"properties": {
@@ -33,7 +35,8 @@
 						"condition": {
 							"const": "entity_properties"
 						}
-					}
+					},
+					"required": ["condition"]
 				},
 				"then": {
 					"properties": {
@@ -57,7 +60,8 @@
 						"condition": {
 							"const": "random_chance"
 						}
-					}
+					},
+					"required": ["condition"]
 				},
 				"then": {
 					"properties": {
@@ -73,7 +77,8 @@
 						"condition": {
 							"const": "random_chance_with_looting"
 						}
-					}
+					},
+					"required": ["condition"]
 				},
 				"then": {
 					"properties": {
@@ -92,7 +97,8 @@
 						"condition": {
 							"const": "random_difficulty_chance"
 						}
-					}
+					},
+					"required": ["condition"]
 				},
 				"then": {
 					"properties": {
@@ -114,7 +120,8 @@
 						"condition": {
 							"const": "random_regional_difficulty_chance"
 						}
-					}
+					},
+					"required": ["condition"]
 				},
 				"then": {
 					"properties": {
