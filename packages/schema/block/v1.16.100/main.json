@@ -45,10 +45,10 @@
 								"description": "Components to add when the condition evaluates to 'true'",
 								"allOf": [
 									{
-										"$ref": "./components.json"
+										"$ref": "../v1.16.0/components.json"
 									},
 									{
-										"$ref": "../v1.16.0/components.json"
+										"$ref": "./components.json"
 									}
 								]
 							}
@@ -58,10 +58,10 @@
 				"components": {
 					"allOf": [
 						{
-							"$ref": "./components.json"
+							"$ref": "../v1.16.0/components.json"
 						},
 						{
-							"$ref": "../v1.16.0/components.json"
+							"$ref": "./components.json"
 						}
 					]
 				},
