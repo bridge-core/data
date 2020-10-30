@@ -2,7 +2,7 @@
 	"$schema": "http://json-schema.org/draft-07/schema",
 	"$id": "bridge.general.vanilla.soundDefinitions",
 	"type": "string",
-	"examples": [
+	"enum": [
 		"ambient.weather.lightning.impact",
 		"ambient.weather.rain",
 		"ambient.weather.thunder",

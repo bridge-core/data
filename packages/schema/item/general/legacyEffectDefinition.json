@@ -5,7 +5,7 @@
 	"additionalProperties": false,
 	"properties": {
 		"name": {
-			"$ref": "../../general/effectName.json"
+			"$ref": "../../general/vanilla/effectName.json"
 		},
 		"chance": {
 			"type": "number",

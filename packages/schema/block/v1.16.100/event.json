@@ -67,7 +67,7 @@
 		"remove_mob_effect": {
 			"additionalProperties": false,
 			"properties": {
-				"effect": { "$ref": "../../general/effectName.json" },
+				"effect": { "$ref": "../../general/vanilla/effectName.json" },
 				"target": { "type": "string" }
 			}
 		},

@@ -4,7 +4,7 @@
 	"description": "Defines an effect to add to the entity",
 	"properties": {
 		"effect": {
-			"$ref": "./effectName.json"
+			"$ref": "./vanilla/effectName.json"
 		},
 		"duration": {
 			"type": "integer",
