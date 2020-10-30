@@ -5,10 +5,6 @@
 		"swing": {
 			"description": "Event causes the actor to swing",
 			"additionalProperties": false
-		},
-		"decrement_stack": {
-			"description": "Decrement item stack",
-			"additionalProperties": false
 		}
 	}
 }

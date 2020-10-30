@@ -39,10 +39,10 @@
 			"$ref": "../../event/damage.json"
 		},
 		{
-			"$ref": "../../event/die.json"
+			"$ref": "../../event/decrementStack.json"
 		},
 		{
-			"$ref": "../../event/item.json"
+			"$ref": "../../event/die.json"
 		},
 		{
 			"$ref": "../../event/mobEffect.json"
@@ -64,6 +64,9 @@
 		},
 		{
 			"$ref": "../../event/spawnLoot.json"
+		},
+		{
+			"$ref": "../../event/swing.json"
 		},
 		{
 			"$ref": "../../event/teleport.json"
