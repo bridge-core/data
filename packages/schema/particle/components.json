@@ -203,7 +203,670 @@
 					}
 				}
 			}
+		},
+		"minecraft:emitter_shape_sphere": {
+			"additionalProperties": false,
+			"properties": {
+				"radius": {
+					"anyOf": [
+						{
+							"type": "string"
+						},
+						{
+							"type": "number"
+						}
+					]
+				},
+				"surface_only": {
+					"type": "boolean"
+				},
+				"offset": {
+					"type": "array",
+					"minItems": 3,
+					"maxItems": 3,
+					"items": {
+						"anyOf": [
+							{
+								"type": "string"
+							},
+							{
+								"type": "number"
+							}
+						]
+					}
+				},
+				"direction": {
+					"anyOf": [
+						{
+							"type": "string",
+							"examples": ["outwards", "inwards"]
+						},
+						{
+							"type": "array",
+							"minItems": 3,
+							"maxItems": 3,
+							"items": {
+								"anyOf": [
+									{
+										"type": "string"
+									},
+									{
+										"type": "number"
+									}
+								]
+							}
+						}
+					]
+				}
+			}
+		},
+		"minecraft:emitter_shape_box": {
+			"additionalProperties": false,
+			"properties": {
+				"half_dimensions": {
+					"type": "array",
+					"minItems": 3,
+					"maxItems": 3,
+					"items": {
+						"anyOf": [
+							{
+								"type": "string"
+							},
+							{
+								"type": "number"
+							}
+						]
+					}
+				},
+				"surface_only": {
+					"type": "boolean"
+				},
+				"offset": {
+					"type": "array",
+					"minItems": 3,
+					"maxItems": 3,
+					"items": {
+						"anyOf": [
+							{
+								"type": "string"
+							},
+							{
+								"type": "number"
+							}
+						]
+					}
+				},
+				"direction": {
+					"anyOf": [
+						{
+							"type": "string",
+							"examples": ["outwards", "inwards"]
+						},
+						{
+							"type": "array",
+							"minItems": 3,
+							"maxItems": 3,
+							"items": {
+								"anyOf": [
+									{
+										"type": "string"
+									},
+									{
+										"type": "number"
+									}
+								]
+							}
+						}
+					]
+				}
+			}
+		},
+		"minecraft:emitter_shape_custom": {
+			"additionalProperties": false,
+			"properties": {
+				"offset": {
+					"type": "array",
+					"minItems": 3,
+					"maxItems": 3,
+					"items": {
+						"anyOf": [
+							{
+								"type": "string"
+							},
+							{
+								"type": "number"
+							}
+						]
+					}
+				},
+				"direction": {
+					"anyOf": [
+						{
+							"type": "string",
+							"examples": ["outwards", "inwards"]
+						},
+						{
+							"type": "array",
+							"minItems": 3,
+							"maxItems": 3,
+							"items": {
+								"anyOf": [
+									{
+										"type": "string"
+									},
+									{
+										"type": "number"
+									}
+								]
+							}
+						}
+					]
+				}
+			}
+		},
+		"minecraft:emitter_shape_entity_aabb": {
+			"additionalProperties": false,
+			"properties": {
+				"surface_only": {
+					"type": "boolean"
+				},
+				"direction": {
+					"anyOf": [
+						{
+							"type": "string",
+							"examples": ["outwards", "inwards"]
+						},
+						{
+							"type": "array",
+							"minItems": 3,
+							"maxItems": 3,
+							"items": {
+								"anyOf": [
+									{
+										"type": "string"
+									},
+									{
+										"type": "number"
+									}
+								]
+							}
+						}
+					]
+				}
+			}
+		},
+		"minecraft:emitter_shape_disc": {
+			"additionalProperties": false,
+			"properties": {
+				"plane_normal": {
+					"type": "array",
+					"minItems": 3,
+					"maxItems": 3,
+					"items": {
+						"anyOf": [
+							{
+								"type": "string"
+							},
+							{
+								"type": "number"
+							}
+						]
+					}
+				},
+				"surface_only": {
+					"type": "boolean"
+				},
+				"offset": {
+					"type": "array",
+					"minItems": 3,
+					"maxItems": 3,
+					"items": {
+						"anyOf": [
+							{
+								"type": "string"
+							},
+							{
+								"type": "number"
+							}
+						]
+					}
+				},
+				"direction": {
+					"anyOf": [
+						{
+							"type": "string",
+							"examples": ["outwards", "inwards"]
+						},
+						{
+							"type": "array",
+							"minItems": 3,
+							"maxItems": 3,
+							"items": {
+								"anyOf": [
+									{
+										"type": "string"
+									},
+									{
+										"type": "number"
+									}
+								]
+							}
+						}
+					]
+				}
+			}
+		},
+		"minecraft:particle_initial_spin": {
+			"additionalProperties": false,
+			"properties": {
+				"rotation": {
+					"anyOf": [
+						{
+							"type": "string"
+						},
+						{
+							"type": "number"
+						}
+					]
+				},
+				"rotation_rate": {
+					"anyOf": [
+						{
+							"type": "string"
+						},
+						{
+							"type": "number"
+						}
+					]
+				}
+			}
+		},
+		"minecraft:particle_initial_speed": {
+			"type": "array",
+			"minItems": 3,
+			"maxItems": 3,
+			"items": {
+				"anyOf": [
+					{
+						"type": "string"
+					},
+					{
+						"type": "number"
+					}
+				]
+			}
+		},
+		"minecraft:particle_motion_dynamic": {
+			"additionalProperties": false,
+			"properties": {
+				"linear_acceleration": {
+					"type": "array",
+					"minItems": 3,
+					"maxItems": 3,
+					"items": {
+						"anyOf": [
+							{
+								"type": "string"
+							},
+							{
+								"type": "number"
+							}
+						]
+					}
+				},
+				"linear_drag_coeffiecient": {
+					"anyOf": [
+						{
+							"type": "string"
+						},
+						{
+							"type": "number"
+						}
+					]
+				},
+				"rotating_acceleration": {
+					"anyOf": [
+						{
+							"type": "string"
+						},
+						{
+							"type": "number"
+						}
+					]
+				},
+				"rotation_drag_coefficient": {
+					"anyOf": [
+						{
+							"type": "string"
+						},
+						{
+							"type": "number"
+						}
+					]
+				}
+			}
+		},
+		"minecraft:particle_motion_parametric": {
+			"additionalProperties": false,
+			"properties": {
+				"relative_position": {
+					"type": "array",
+					"minItems": 3,
+					"maxItems": 3,
+					"items": {
+						"anyOf": [
+							{
+								"type": "string"
+							},
+							{
+								"type": "number"
+							}
+						]
+					}
+				},
+				"direction": {
+					"type": "array",
+					"minItems": 3,
+					"maxItems": 3,
+					"items": {
+						"anyOf": [
+							{
+								"type": "string"
+							},
+							{
+								"type": "number"
+							}
+						]
+					}
+				},
+				"rotation": {
+					"anyOf": [
+						{
+							"type": "string"
+						},
+						{
+							"type": "number"
+						}
+					]
+				}
+			}
+		},
+		"minecraft:particle_motion_collision": {
+			"additionalProperties": false,
+			"properties": {
+				"enabled": {
+					"type": "boolean"
+				},
+				"expire_on_contact": {
+					"type": "boolean"
+				},
+				"collision_drag": {
+					"anyOf": [
+						{
+							"type": "string"
+						},
+						{
+							"type": "number"
+						}
+					]
+				},
+				"coeffiecient_of_restitution": {
+					"anyOf": [
+						{
+							"type": "string"
+						},
+						{
+							"type": "number"
+						}
+					]
+				},
+				"collision_radius": {
+					"anyOf": [
+						{
+							"type": "string"
+						},
+						{
+							"type": "number"
+						}
+					]
+				},
+				"events": {
+					"type": "array",
+					"items": {
+						"additionalProperties": false,
+						"properties": {
+							"event": {
+								"type": "string"
+							},
+							"min_speed": {
+								"type": "number"
+							}
+						}
+					}
+				}
+			}
+		},
+		"minecraft:particle_appearance_billboard": {
+			"additionalProperties": false,
+			"properties": {
+				"size": {
+					"type": "array",
+					"minItems": 2,
+					"maxItems": 2,
+					"items": {
+						"anyOf": [
+							{
+								"type": "string"
+							},
+							{
+								"type": "number"
+							}
+						]
+					}
+				},
+				"face_camera_mode": {
+					"type": "string",
+					"enum": [
+						"rotate_xyz",
+						"rotate_y",
+						"lookat_xyz",
+						"lookat_y",
+						"direction"
+					]
+				},
+				"uv": {
+					"additionalProperties": false,
+					"properties": {
+						"texture_height": {
+							"type": "number"
+						},
+						"uv": {
+							"type": "array",
+							"minItems": 2,
+							"maxItems": 2,
+							"items": {
+								"anyOf": [
+									{
+										"type": "string"
+									},
+									{
+										"type": "number"
+									}
+								]
+							}
+						},
+						"uv_size": {
+							"type": "array",
+							"minItems": 2,
+							"maxItems": 2,
+							"items": {
+								"anyOf": [
+									{
+										"type": "string"
+									},
+									{
+										"type": "number"
+									}
+								]
+							}
+						},
+						"flipbook": {
+							"additionalProperties": false,
+							"properties": {
+								"base_UV": {
+									"type": "array",
+									"minItems": 2,
+									"maxItems": 2,
+									"items": {
+										"anyOf": [
+											{
+												"type": "string"
+											},
+											{
+												"type": "number"
+											}
+										]
+									}
+								},
+								"size_UV": {
+									"type": "array",
+									"minItems": 2,
+									"maxItems": 2,
+									"items": {
+										"type": "number"
+									}
+								},
+								"step_UV": {
+									"type": "array",
+									"minItems": 2,
+									"maxItems": 2,
+									"items": {
+										"type": "number"
+									}
+								},
+								"frames_per_second": {
+									"type": "number"
+								},
+								"max_frame": {
+									"anyOf": [
+										{
+											"type": "string"
+										},
+										{
+											"type": "number"
+										}
+									]
+								},
+								"stretch_to_lifetime": {
+									"type": "boolean"
+								},
+								"loop": {
+									"type": "boolean"
+								}
+							}
+						}
+					}
+				}
+			}
+		},
+		"minecraft:particle_appearance_tinting": {
+			"additionalProperties": false,
+			"properties": {
+				"color": {
+					"additionalProperties": false,
+					"properties": {
+						"gradient": {
+							"type": "number"
+						},
+						"interpolant": {
+							"anyOf": [
+								{
+									"type": "string"
+								},
+								{
+									"type": "number"
+								}
+							]
+						}
+					}
+				}
+			}
+		},
+		"minecraft:particle_appearance_lighting": {
+			"additionalProperties": false
+		},
+		"minecraft:particle_lifetime_expression": {
+			"additionalProperties": false,
+			"properties": {
+				"expirations_expression": {
+					"anyOf": [
+						{
+							"type": "string"
+						},
+						{
+							"type": "number"
+						}
+					]
+				},
+				"max_lifetime": {
+					"anyOf": [
+						{
+							"type": "string"
+						},
+						{
+							"type": "number"
+						}
+					]
+				}
+			}
+		},
+		"minecraft:particle_lifetime_events": {
+			"additionalProperties": false,
+			"properties": {
+				"creation_event": {
+					"type": "array",
+					"items": {
+						"type": "string"
+					}
+				},
+				"expiration_event": {
+					"type": "array",
+					"items": {
+						"type": "string"
+					}
+				},
+				"timeline": {
+					"additionalProperties": false,
+					"properties": {
+						"time": {
+							"type": "array",
+							"items": {
+								"type": "string"
+							}
+						}
+					}
+				}
+			}
+		},
+		"minecraft:particle_expire_if_in_blocks": {
+			"type": "array",
+			"items": {
+				"type": "string"
+			}
+		},
+		"minecraft:particle_expire_if_not_in_blocks": {
+			"type": "array",
+			"items": {
+				"type": "string"
+			}
+		},
+		"minecraft:particle_kill_plane": {
+			"type": "array",
+			"minItems": 4,
+			"maxItems": 4,
+			"items": {
+				"type": "number"
+			}
 		}
-		// "minecraft:emitter_shape_sphere" continue from here...
 	}
 }
