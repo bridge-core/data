@@ -1,0 +1,11 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"$id": "bridge.general.vanilla.identifiers",
+	"definitions": {
+		"block_identifiers": {},
+		"item_identifiers": {},
+		"entity_identifiers": {},
+		"particle_identifiers": {},
+		"fog_identifiers": {}
+	}
+}
