@@ -28,6 +28,10 @@
 		"fileMatch": ["*/animation_controllers/*.json"]
 	},
 	{
+		"uri": "https://raw.githubusercontent.com/bridge-core/data/dev/packages/schema/spawn_rule/main.json",
+		"fileMatch": ["*/spawn_rules/*.json"]
+	},
+	{
 		"uri": "https://raw.githubusercontent.com/bridge-core/data/dev/packages/schema/particle/main.json",
 		"fileMatch": ["*/particles/*.json"]
 	}
