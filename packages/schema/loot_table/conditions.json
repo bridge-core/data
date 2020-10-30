@@ -26,6 +26,103 @@
 						}
 					}
 				}
+			},
+			{
+				"if": {
+					"properties": {
+						"condition": {
+							"const": "entity_properties"
+						}
+					}
+				},
+				"then": {
+					"properties": {
+						"entity": {
+							"type": "string",
+							"enum": ["this"]
+						},
+						"properties": {
+							"properties": {
+								"on_fire": {
+									"type": "boolean"
+								}
+							}
+						}
+					}
+				}
+			},
+			{
+				"if": {
+					"properties": {
+						"condition": {
+							"const": "random_chance"
+						}
+					}
+				},
+				"then": {
+					"properties": {
+						"chance": {
+							"type": "number"
+						}
+					}
+				}
+			},
+			{
+				"if": {
+					"properties": {
+						"condition": {
+							"const": "random_chance_with_looting"
+						}
+					}
+				},
+				"then": {
+					"properties": {
+						"chance": {
+							"type": "number"
+						},
+						"looting_multiplier": {
+							"type": "number"
+						}
+					}
+				}
+			},
+			{
+				"if": {
+					"properties": {
+						"condition": {
+							"const": "random_difficulty_chance"
+						}
+					}
+				},
+				"then": {
+					"properties": {
+						"default_chance": {
+							"type": "number"
+						},
+						"peaceful": {
+							"type": "number"
+						},
+						"hard": {
+							"type": "number"
+						}
+					}
+				}
+			},
+			{
+				"if": {
+					"properties": {
+						"condition": {
+							"const": "random_regional_difficulty_chance"
+						}
+					}
+				},
+				"then": {
+					"properties": {
+						"max_chance": {
+							"type": "number"
+						}
+					}
+				}
 			}
 		]
 	}
