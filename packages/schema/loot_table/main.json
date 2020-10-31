@@ -81,8 +81,17 @@
 												"type": "integer"
 											},
 											"name": {
-												"description": "Item identifier",
-												"type": "string"
+												"anyOf": [
+													{
+														"type": "string"
+													},
+													{
+														"$ref": "../general/vanilla/identifiers.json#/item_identifiers"
+													},
+													{
+														"$ref": "../general/vanilla/identifiers.json#/block_identifiers"
+													}
+												]
 											},
 											"pools": {
 												"$ref": "#/properties/pools"
