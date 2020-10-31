@@ -86,10 +86,7 @@
 														"type": "string"
 													},
 													{
-														"$ref": "../general/vanilla/identifiers.json#/item_identifiers"
-													},
-													{
-														"$ref": "../general/vanilla/identifiers.json#/block_identifiers"
+														"$ref": "../general/vanilla/identifiers.json#/definitions/item_identifiers"
 													}
 												]
 											},
