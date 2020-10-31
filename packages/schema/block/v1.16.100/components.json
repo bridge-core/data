@@ -114,7 +114,7 @@
 		},
 		"minecraft:random_ticking": {
 			"type": "object",
-			"description": "TODO",
+			"description": "Triggers an event at random intervals",
 			"additionalProperties": false,
 			"properties": {
 				"on_tick": {
@@ -162,7 +162,7 @@
 				},
 				"allowed_faces": {
 					"type": "array",
-					"description": "TODO",
+					"description": "Defines the block faces this block can be placed on, e.g 'down' means you can only place this block on th bottom face of the block. If the block it is placed on is removed, this block will be destroyed",
 					"items": {
 						"type": "string",
 						"enum": [

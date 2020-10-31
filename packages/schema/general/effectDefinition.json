@@ -8,11 +8,11 @@
 		},
 		"duration": {
 			"type": "integer",
-			"description": "The time duration in seconds of the particle effect"
+			"description": "The time duration in seconds of the effect"
 		},
 		"amplifier": {
 			"type": "integer",
-			"description": "The amplifier for the particle effect"
+			"description": "The amplifier for the effect"
 		}
 	}
 }

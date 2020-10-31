@@ -5,7 +5,7 @@
 	"properties": {
 		"condition": {
 			"type": "string",
-			"description": "This MoLang expression has to evaluate to 'true' in order for the event to run"
+			"description": "This MoLang expression has to evaluate to '1' (true) in order for the event to run"
 		},
 		"target": {
 			"type": "string",
