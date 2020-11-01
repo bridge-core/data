@@ -8,31 +8,31 @@
 		"fileMatch": ["*/items/*.json"]
 	},
 	{
-		"uri": "https://raw.githubusercontent.com/bridge-core/data/dev/packages/schema/block/main.json",
+		"uri": "https://raw.githubusercontent.com/bridge-core/data/next/packages/schema/block/main.json",
 		"fileMatch": ["*/blocks/*.json"]
 	},
 	{
-		"uri": "https://raw.githubusercontent.com/bridge-core/data/dev/packages/schema/loot_table/main.json",
+		"uri": "https://raw.githubusercontent.com/bridge-core/data/next/packages/schema/loot_table/main.json",
 		"fileMatch": ["*/loot_tables/*.json"]
 	},
 	{
-		"uri": "https://raw.githubusercontent.com/bridge-core/data/dev/packages/schema/fog/main.json",
+		"uri": "https://raw.githubusercontent.com/bridge-core/data/next/packages/schema/fog/main.json",
 		"fileMatch": ["*/fogs/*.json"]
 	},
 	{
-		"uri": "https://raw.githubusercontent.com/bridge-core/data/dev/packages/schema/animation/server.json",
+		"uri": "https://raw.githubusercontent.com/bridge-core/data/next/packages/schema/animation/server.json",
 		"fileMatch": ["*/animations/*.json"]
 	},
 	{
-		"uri": "https://raw.githubusercontent.com/bridge-core/data/dev/packages/schema/animationController/server.json",
+		"uri": "https://raw.githubusercontent.com/bridge-core/data/next/packages/schema/animationController/server.json",
 		"fileMatch": ["*/animation_controllers/*.json"]
 	},
 	{
-		"uri": "https://raw.githubusercontent.com/bridge-core/data/dev/packages/schema/spawn_rule/main.json",
+		"uri": "https://raw.githubusercontent.com/bridge-core/data/next/packages/schema/spawn_rule/main.json",
 		"fileMatch": ["*/spawn_rules/*.json"]
 	},
 	{
-		"uri": "https://raw.githubusercontent.com/bridge-core/data/dev/packages/schema/particle/main.json",
+		"uri": "https://raw.githubusercontent.com/bridge-core/data/next/packages/schema/particle/main.json",
 		"fileMatch": ["*/particles/*.json"]
 	}
 ]
