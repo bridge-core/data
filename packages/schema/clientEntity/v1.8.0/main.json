@@ -1,0 +1,136 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"required": ["format_version", "minecraft:client_entity"],
+	"additionalProperties": false,
+	"properties": {
+		"minecraft:client_entity": {
+			"additionalProperties": false,
+			"required": ["description"],
+			"properties": {
+				"description": {
+					"required": [
+						"texture",
+						"geometry",
+						"render_controllers",
+						"identifier",
+						"materials"
+					],
+					"additionalProperties": false,
+					"properties": {
+						"identifier": {
+							"type": "string"
+						},
+						"min_engine_version": {
+							"$ref": "../general/formatVersion.json"
+						},
+						"enable_attatchables": {
+							"type": "boolean"
+						},
+						"spawn_egg": {
+							"additionalProperties": false,
+							"properties": {
+								"texture": {
+									"type": "string"
+								},
+								"texture_index": {
+									"type": "integer"
+								},
+								"base_color": {
+									"$ref": "../general/hexColor.json"
+								},
+								"overlay_color": {
+									"$ref": "../general/hexColor.json"
+								}
+							}
+						},
+						"materials": {
+							"patternProperties": {
+								".*": {
+									"$ref": "./general.json#/materials"
+								}
+							}
+						},
+						"textures": {
+							"patternProperties": {
+								".*": {
+									"type": "string"
+								}
+							}
+						},
+						"geometry": {
+							"patternProperties": {
+								".*": {
+									"type": "string"
+								}
+							}
+						},
+						"animations": {
+							"patternProperties": {
+								".*": {
+									"type": "string"
+								}
+							}
+						},
+						"scripts": {
+							"additionalProperties": false,
+							"properties": {
+								"scale": {
+									"type": "number"
+								},
+								"initialize": {
+									"type": "array",
+									"items": {
+										"type": "string"
+									}
+								},
+								"pre_animation": {
+									"type": "array",
+									"items": {
+										"type": "string"
+									}
+								}
+							}
+						},
+						"sound_effects": {
+							"patternProperties": {
+								".*": {
+									"type": "string"
+								}
+							}
+						},
+						"render_controllers": {
+							"type": "array",
+							"items": {
+								"type": "string"
+							}
+						},
+						"particle_effects": {
+							"patternProperties": {
+								".*": {
+									"type": "string"
+								}
+							}
+						},
+						"particle_emitters": {
+							"patternProperties": {
+								".*": {
+									"type": "string"
+								}
+							}
+						},
+						"animation_controllers": {
+							"type": "array",
+							"items": {
+								"patternProperties": {
+									".*": {
+										"type": "string"
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

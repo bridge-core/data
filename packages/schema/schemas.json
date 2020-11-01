@@ -28,11 +28,19 @@
 		"fileMatch": ["*/animation_controllers/*.json"]
 	},
 	{
-		"uri": "https://raw.githubusercontent.com/bridge-core/data/next/packages/schema/spawn_rule/main.json",
+		"uri": "https://raw.githubusercontent.com/bridge-core/data/next/packages/schema/spawnRule/main.json",
 		"fileMatch": ["*/spawn_rules/*.json"]
 	},
 	{
 		"uri": "https://raw.githubusercontent.com/bridge-core/data/next/packages/schema/particle/main.json",
 		"fileMatch": ["*/particles/*.json"]
+	},
+	{
+		"uri": "https://raw.githubusercontent.com/bridge-core/data/next/packages/schema/clientEntity/main.json",
+		"fileMatch": ["*/entity/*.json"]
+	},
+	{
+		"uri": "https://raw.githubusercontent.com/bridge-core/data/next/packages/schema/attachable/main.json",
+		"fileMatch": ["*/attachables/*.json"]
 	}
 ]

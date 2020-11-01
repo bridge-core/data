@@ -1,0 +1,160 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"required": ["format_version", "minecraft:client_entity"],
+	"additionalProperties": false,
+	"properties": {
+		"minecraft:client_entity": {
+			"description": "TODO copy descriptions to v1.8.0 and attachable schema",
+			"additionalProperties": false,
+			"required": ["description"],
+			"properties": {
+				"description": {
+					"required": [
+						"texture",
+						"geometry",
+						"render_controllers",
+						"identifier",
+						"materials"
+					],
+					"additionalProperties": false,
+					"properties": {
+						"identifier": {
+							"type": "string"
+						},
+						"min_engine_version": {
+							"$ref": "../general/formatVersion.json"
+						},
+						"enable_attatchables": {
+							"type": "boolean",
+							"description": "TODO"
+						},
+						"spawn_egg": {
+							"description": "TODO",
+							"additionalProperties": false,
+							"properties": {
+								"texture": {
+									"type": "string"
+								},
+								"texture_index": {
+									"type": "integer"
+								},
+								"base_color": {
+									"$ref": "../general/hexColor.json"
+								},
+								"overlay_color": {
+									"$ref": "../general/hexColor.json"
+								}
+							}
+						},
+						"materials": {
+							"description": "TODO",
+							"patternProperties": {
+								".*": {
+									"$ref": "./general.json#/materials"
+								}
+							}
+						},
+						"textures": {
+							"description": "TODO",
+							"patternProperties": {
+								".*": {
+									"type": "string"
+								}
+							}
+						},
+						"geometry": {
+							"description": "TODO",
+							"patternProperties": {
+								".*": {
+									"type": "string"
+								}
+							}
+						},
+						"animations": {
+							"description": "TODO",
+							"patternProperties": {
+								".*": {
+									"type": "string"
+								}
+							}
+						},
+						"scripts": {
+							"description": "TODO",
+							"additionalProperties": false,
+							"properties": {
+								"scale": {
+									"description": "TODO",
+									"type": "number"
+								},
+								"initialize": {
+									"description": "TODO",
+									"type": "array",
+									"items": {
+										"type": "string"
+									}
+								},
+								"pre_animation": {
+									"description": "TODO",
+									"type": "array",
+									"items": {
+										"type": "string"
+									}
+								},
+								"animate": {
+									"description": "TODO",
+									"type": "array",
+									"items": {
+										"patternProperties": {
+											".*": {
+												"type": "string"
+											}
+										}
+									}
+								},
+								"variable": {
+									"description": "TODO",
+									"patternProperties": {
+										".*": {
+											"const": "public"
+										}
+									}
+								}
+							}
+						},
+						"sound_effects": {
+							"description": "TODO",
+							"patternProperties": {
+								".*": {
+									"type": "string"
+								}
+							}
+						},
+						"render_controllers": {
+							"description": "TODO",
+							"type": "array",
+							"items": {
+								"type": "string"
+							}
+						},
+						"particle_effects": {
+							"description": "TODO",
+							"patternProperties": {
+								".*": {
+									"type": "string"
+								}
+							}
+						},
+						"particle_emitters": {
+							"description": "TODO",
+							"patternProperties": {
+								".*": {
+									"type": "string"
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
