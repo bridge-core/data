@@ -1446,7 +1446,7 @@
 	},
 	"minecraft:timer": {
 		"looping": "$general.boolean",
-		"random_interval": "$general.boolean",
+		"randomInterval": "$general.boolean",
 		"time": {
 			"@import.value.decimal": "$general.decimal",
 			"@meta": {
