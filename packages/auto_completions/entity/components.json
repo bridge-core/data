@@ -418,18 +418,12 @@
 			"$data": {
 				"triggers": {
 					"$dynamic.list.next_index": {
-						"on_damage": "$entity.general.event_definition",
-						"cause": "$general.damage_type",
-						"deals_damage": "$general.boolean",
-						"damage_multiplier": "$general.decimal",
-						"damage_modifier": "$general.decimal",
-						"on_damage_sound_event": "$general.sound"
+						"damage_modifier": "$general.decimal"
 					}
 				}
 			}
 		},
 		{
-			"$if": "$format_version < 1.16.0",
 			"$data": {
 				"triggers": {
 					"$dynamic.list.next_index": {
