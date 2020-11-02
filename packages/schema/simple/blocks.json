@@ -1,0 +1,129 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"$id": "bridge.blocksClient",
+	"title": "Client Blocks",
+	"required": ["format_version"],
+	"additionalProperties": false,
+	"properties": {
+		"format_version": {
+			"type": "array",
+			"minItems": 3,
+			"maxItems": 3,
+			"items": {
+				"type": "integer"
+			}
+		}
+	},
+	"patternProperties": {
+		".*": {
+			"additionalProperties": false,
+			"properties": {
+				"sound": {
+					"$ref": "../general/vanilla/blockSound.json"
+				},
+				"brightness_gamma": {
+					"type": "number"
+				},
+				"isotropic": {
+					"anyOf": [
+						{
+							"type": "boolean"
+						},
+						{
+							"additionalProperties": false,
+							"properties": {
+								"up": {
+									"type": "boolean"
+								},
+								"down": {
+									"type": "boolean"
+								},
+								"side": {
+									"type": "boolean"
+								},
+								"north": {
+									"type": "boolean"
+								},
+								"south": {
+									"type": "boolean"
+								},
+								"east": {
+									"type": "boolean"
+								},
+								"west": {
+									"type": "boolean"
+								}
+							}
+						}
+					]
+				},
+				"textures": {
+					"anyOf": [
+						{
+							"type": "string"
+						},
+						{
+							"additionalProperties": false,
+							"properties": {
+								"up": {
+									"type": "boolean"
+								},
+								"down": {
+									"type": "boolean"
+								},
+								"side": {
+									"type": "boolean"
+								},
+								"north": {
+									"type": "boolean"
+								},
+								"south": {
+									"type": "boolean"
+								},
+								"east": {
+									"type": "boolean"
+								},
+								"west": {
+									"type": "boolean"
+								}
+							}
+						}
+					]
+				},
+				"carried_textures": {
+					"anyOf": [
+						{
+							"type": "string"
+						},
+						{
+							"additionalProperties": false,
+							"properties": {
+								"up": {
+									"type": "boolean"
+								},
+								"down": {
+									"type": "boolean"
+								},
+								"side": {
+									"type": "boolean"
+								},
+								"north": {
+									"type": "boolean"
+								},
+								"south": {
+									"type": "boolean"
+								},
+								"east": {
+									"type": "boolean"
+								},
+								"west": {
+									"type": "boolean"
+								}
+							}
+						}
+					]
+				}
+			}
+		}
+	}
+}

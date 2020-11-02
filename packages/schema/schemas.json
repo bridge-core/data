@@ -42,5 +42,13 @@
 	{
 		"uri": "https://raw.githubusercontent.com/bridge-core/data/next/packages/schema/attachable/main.json",
 		"fileMatch": ["*/attachables/*.json"]
+	},
+	{
+		"uri": "https://raw.githubusercontent.com/bridge-core/data/next/packages/schema/simple/blocks.json",
+		"fileMatch": ["*/blocks.json"]
+	},
+	{
+		"uri": "https://raw.githubusercontent.com/bridge-core/data/next/packages/schema/simple/biomesClient.json",
+		"fileMatch": ["*/biomes_client.json"]
 	}
 ]
