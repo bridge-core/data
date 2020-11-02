@@ -40,7 +40,7 @@
 					},
 					"sound_effects": {
 						"$dynamic.list.next_index": {
-							"$placeholder": "$dynamic.cache.client_entity.sound_references"
+							"effect": "$dynamic.cache.client_entity.sound_references"
 						}
 					}
 				},
