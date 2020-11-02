@@ -1,10 +1,10 @@
 [
 	{
-		"uri": "https://raw.githubusercontent.com/bridge-core/data/dev/packages/schema/manifest/main.json",
+		"uri": "https://raw.githubusercontent.com/bridge-core/data/next/packages/schema/manifest/main.json",
 		"fileMatch": ["*/manifest.json"]
 	},
 	{
-		"uri": "https://raw.githubusercontent.com/bridge-core/data/dev/packages/schema/item/main.json",
+		"uri": "https://raw.githubusercontent.com/bridge-core/data/next/packages/schema/item/main.json",
 		"fileMatch": ["*/items/*.json"]
 	},
 	{
