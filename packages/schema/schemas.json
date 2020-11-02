@@ -66,5 +66,17 @@
 	{
 		"uri": "https://raw.githubusercontent.com/bridge-core/data/next/packages/schema/simple/tick.json",
 		"fileMatch": ["*/functions/tick.json"]
+	},
+	{
+		"uri": "https://raw.githubusercontent.com/bridge-core/data/next/packages/schema/simple/sounds.json",
+		"fileMatch": ["*/sounds.json"]
+	},
+	{
+		"uri": "https://raw.githubusercontent.com/bridge-core/data/next/packages/schema/simple/soundDefinitions.json",
+		"fileMatch": ["*/sounds/sound_definitions.json"]
+	},
+	{
+		"uri": "https://raw.githubusercontent.com/bridge-core/data/next/packages/schema/simple/terrainTexture.json",
+		"fileMatch": ["*/textures/terrain_textures.json"]
 	}
 ]
