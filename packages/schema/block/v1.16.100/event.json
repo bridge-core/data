@@ -73,6 +73,9 @@
 		},
 		{
 			"$ref": "../../event/transformItem.json"
+		},
+		{
+			"$ref": "../../event/trigger.json"
 		}
 	]
 }

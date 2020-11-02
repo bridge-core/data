@@ -1,0 +1,18 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"type": "object",
+	"additionalProperties": false,
+	"properties": {
+		"filter": {
+			"type": "object",
+			"description": "TODO"
+		},
+		"target": {
+			"$ref": "../../general/filter/subject.json"
+		},
+		"event": {
+			"type": "string",
+			"description": "Identifier of the event to trigger"
+		}
+	}
+}
