@@ -36,6 +36,9 @@
 			}
 		},
 		{
+			"$ref": "../../event/componentGroup.json"
+		},
+		{
 			"$ref": "../../event/damage.json"
 		},
 		{
@@ -55,12 +58,6 @@
 		},
 		{
 			"$ref": "../../event/runCommand.json"
-		},
-		{
-			"$ref": "../../event/shoot.json"
-		},
-		{
-			"$ref": "../../event/swing.json"
 		},
 		{
 			"$ref": "../../event/teleport.json"
