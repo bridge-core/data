@@ -50,5 +50,21 @@
 	{
 		"uri": "https://raw.githubusercontent.com/bridge-core/data/next/packages/schema/simple/biomesClient.json",
 		"fileMatch": ["*/biomes_client.json"]
+	},
+	{
+		"uri": "https://raw.githubusercontent.com/bridge-core/data/next/packages/schema/simple/flipbookTextures.json",
+		"fileMatch": ["*/textures/flipbook_textures.json"]
+	},
+	{
+		"uri": "https://raw.githubusercontent.com/bridge-core/data/next/packages/schema/simple/itemTextures.json",
+		"fileMatch": ["*/textures/item_textures.json"]
+	},
+	{
+		"uri": "https://raw.githubusercontent.com/bridge-core/data/next/packages/schema/simple/langDef.json",
+		"fileMatch": ["*/lang/languages.json"]
+	},
+	{
+		"uri": "https://raw.githubusercontent.com/bridge-core/data/next/packages/schema/simple/tick.json",
+		"fileMatch": ["*/functions/tick.json"]
 	}
 ]
