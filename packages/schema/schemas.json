@@ -78,5 +78,9 @@
 	{
 		"uri": "https://raw.githubusercontent.com/bridge-core/data/next/packages/schema/simple/terrainTexture.json",
 		"fileMatch": ["*/textures/terrain_textures.json"]
+	},
+	{
+		"uri": "https://raw.githubusercontent.com/bridge-core/data/next/packages/schema/featureRule/main.json",
+		"fileMatch": ["*/feature_rules/*.json"]
 	}
 ]
