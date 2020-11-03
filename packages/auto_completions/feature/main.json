@@ -162,9 +162,24 @@
 			"grounded": {},
 			"unburied": {},
 			"block_intersection": {
-				"block_allowlist": {
-					"$dynamic.list.next_index": "$feature.general.block_reference"
-				}
+				"$versioned_template": [
+					{
+						"$if": "$format_version < 1.16.100",
+						"$data": {
+							"block_whitelist": {
+								"$dynamic.list.next_index": "$feature.general.block_reference"
+							}
+						}
+					},
+					{
+						"$if": "$format_version >= 1.16.100",
+						"$data": {
+							"block_allowlist": {
+								"$dynamic.list.next_index": "$feature.general.block_reference"
+							}
+						}
+					}
+				]
 			}
 		}
 	},
