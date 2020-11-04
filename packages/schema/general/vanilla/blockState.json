@@ -1,0 +1,40 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"type": "object",
+	"properties": {
+		"age_bit": {
+			"type": "boolean"
+		},
+		"age": {
+			"type": "number",
+			"enum": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
+		},
+		"attatched_bit": {
+			"type": "boolean"
+		},
+		"attatchment": {
+			"type": "string",
+			"enum": ["hanging", "multiple", "side", "standing"]
+		},
+		"allow_underwater_bit": {
+			"type": "boolean"
+		},
+		"portal_axis": {
+			"type": "string",
+			"enum": ["unknown", "x", "z"]
+		},
+		"bite_counter": {
+			"type": "integer",
+			"enum": [0, 1, 2, 3, 4, 5, 6]
+		},
+		"bamboo_leaf_size": {
+			"type": "string",
+			"enum": ["large_leaves", "no_leaves", "small_leaves"]
+		},
+		"bamboo_stalk_thickness": {
+			"type": "string",
+			"enum": ["thick", "thin"]
+		},
+		"TODO": {}
+	}
+}
