@@ -6,6 +6,7 @@
 	"properties": {
 		"format_version": {
 			"$ref": "../general/formatVersion.json"
-		}
+		},
+		"minecraft:aggregate_feature": {}
 	}
 }
