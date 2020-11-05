@@ -7,6 +7,72 @@
 		"format_version": {
 			"$ref": "../general/formatVersion.json"
 		},
-		"minecraft:aggregate_feature": {}
+		"minecraft:aggregate_feature": {
+			"additionalProperties": false,
+			"properties": {
+				"description": {
+					"additionalProperties": false,
+					"properties": {
+						"identifier": {
+							"type": "string"
+						}
+					}
+				},
+				"early_out": {
+					"$ref": "./general.json#/definitions/early_outs"
+				},
+				"features": {
+					"type": "array",
+					"items": {
+						"type": "string"
+					}
+				}
+			}
+		},
+		"minecraft:sequence_feature": {
+			"additionalProperties": false,
+			"properties": {
+				"description": {
+					"additionalProperties": false,
+					"properties": {
+						"identifier": {
+							"type": "string"
+						}
+					}
+				},
+				"features": {
+					"type": "array",
+					"items": {
+						"type": "string"
+					}
+				}
+			}
+		},
+		"minecraft:ore_feature": {
+			"additionalProperties": false,
+			"properties": {
+				"description": {
+					"additionalProperties": false,
+					"properties": {
+						"identifier": {
+							"type": "string"
+						}
+					}
+				},
+				"count": {
+					"type": "number"
+				},
+				"places_block": {
+					"$ref": "./general.json#/definitions/block_reference"
+				},
+				"may_replace": {
+					"type": "array",
+					"items": {
+						"$ref": "./general.json#/definitions/block_reference"
+					}
+				}
+			}
+		},
+		"TODO": {}
 	}
 }
