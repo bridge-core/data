@@ -365,6 +365,14 @@
 		"rp_definition": true
 	},
 	{
+		"id": "texture_set",
+		"includes": "textures/blocks/",
+		"highlighter": "texture_set",
+		"file_viewer": "json",
+		"start_state": "texture_set/main",
+		"rp_definition": true
+	},
+	{
 		"id": "flipbook_texture",
 		"includes": "textures/flipbook_textures.json",
 		"file_viewer": "json",

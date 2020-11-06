@@ -17,7 +17,8 @@
 	"decrement_stack": {},
 	"damage": {
 		"type": "$general.damage_type",
-		"amount": "$general.number"
+		"amount": "$general.number",
+		"target": ["self", "holder"]
 	},
 	"add_mob_effect": {
 		"effect": "$general.effect_name",
