@@ -12,7 +12,82 @@
 			"additionalProperties": false,
 			"required": ["color"],
 			"properties": {
-				"color": {}
+				"color": {
+					"$ref": "./color.json"
+				},
+				"color_unlit": {
+					"$ref": "./color.json"
+				},
+				"normal": {
+					"$ref": "./color.json"
+				},
+				"metalness": {
+					"anyOf": [
+						{
+							"$ref": "../general/hexColor.json"
+						},
+						{
+							"type": "string",
+							"description": "Reference to a texture"
+						},
+						{
+							"type": "integer",
+							"minimum": 0,
+							"maximum": 256
+						}
+					]
+				},
+				"emissive": {
+					"anyOf": [
+						{
+							"$ref": "../general/hexColor.json"
+						},
+						{
+							"type": "string",
+							"description": "Reference to a texture"
+						},
+						{
+							"type": "integer",
+							"minimum": 0,
+							"maximum": 256
+						}
+					]
+				},
+				"roughness": {
+					"anyOf": [
+						{
+							"$ref": "../general/hexColor.json"
+						},
+						{
+							"type": "string",
+							"description": "Reference to a texture"
+						},
+						{
+							"type": "integer",
+							"minimum": 0,
+							"maximum": 256
+						}
+					]
+				},
+				"metalness_emissive_roughness": {
+					"$ref": "./color.json"
+				},
+				"heightmap": {
+					"anyOf": [
+						{
+							"$ref": "../general/hexColor.json"
+						},
+						{
+							"type": "string",
+							"description": "Reference to a texture"
+						},
+						{
+							"type": "integer",
+							"minimum": 0,
+							"maximum": 256
+						}
+					]
+				}
 			}
 		}
 	}
