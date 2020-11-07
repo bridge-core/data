@@ -15,7 +15,7 @@
 			"@import.value": "$dynamic.item.events"
 		},
 		"target": ["self", "other", "target", "parent", "baby", "holder"],
-                "condition": "$molang.embedded"
+		"condition": "$molang.embedded"
 	},
 	"saturation_modifier": [
 		"poor",
@@ -54,7 +54,7 @@
 		"oak",
 		"spruce"
 	],
-	"item_groups_names": [
+	"item_group_names": [
 		"axe",
 		"pickaxe",
 		"shovel",
@@ -146,7 +146,7 @@
 		"scute",
 		"mobEgg"
 	],
-	"item_group_reference": "'itemGroup.name.' + $item.general.item_group_names",
+	"item_group_reference": "('itemGroup.name.' + $item.general.item_group_names)",
 	"music_events": [
 		"13",
 		"cat",

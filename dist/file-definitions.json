@@ -366,7 +366,7 @@
 	},
 	{
 		"id": "texture_set",
-		"includes": "textures/",
+		"includes": "textures/blocks/",
 		"rp_definition": true,
 		"file_viewer": "json",
 
