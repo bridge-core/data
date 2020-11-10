@@ -1,0 +1,190 @@
+[
+	// BP FILES
+	{
+		"id": "manifest",
+		"matcher": "BP/manifest.json",
+		"schema": "https://raw.githubusercontent.com/bridge-core/data/next/packages/schema/manifest/main.json"
+	},
+	{
+		"id": "animation",
+		"matcher": "BP/animations/*.json",
+		"schema": "https://raw.githubusercontent.com/bridge-core/data/next/packages/schema/animation/server.json"
+	},
+	{
+		"id": "animationController",
+		"matcher": "BP/animation_controllers/*.json",
+		"schema": "https://raw.githubusercontent.com/bridge-core/data/next/packages/schema/animation_controller/server.json"
+	},
+	{
+		"id": "biome",
+		"matcher": "BP/biomes/*.json"
+	},
+	{
+		"id": "block",
+		"matcher": "BP/blocks/*.json",
+		"schema": "https://raw.githubusercontent.com/bridge-core/data/next/packages/schema/block/main.json"
+	},
+	{
+		"id": "entity",
+		"matcher": "BP/entities/*.json",
+		"schema": "https://raw.githubusercontent.com/bridge-core/data/next/packages/schema/entity/main.json",
+		"packSpider": "entity.json"
+	},
+	{
+		"id": "feature",
+		"matcher": "BP/features/*.json",
+		"schema": "https://raw.githubusercontent.com/bridge-core/data/next/packages/schema/feature/main.json"
+	},
+	{
+		"id": "featureRule",
+		"matcher": "BP/feature_rules/*.json",
+		"schema": "https://raw.githubusercontent.com/bridge-core/data/next/packages/schema/feature_rule/main.json"
+	},
+	{
+		"id": "functionTick",
+		"matcher": "BP/functions/tick.json",
+		"schema": "https://raw.githubusercontent.com/bridge-core/data/next/packages/schema/simple/tick.json"
+	},
+	{
+		"id": "function",
+		"matcher": "BP/functions/*.mcfunction"
+	},
+	{
+		"id": "item",
+		"matcher": "BP/items/*.json",
+		"schema": "https://raw.githubusercontent.com/bridge-core/data/next/packages/schema/item/main.json"
+	},
+	{
+		"id": "lootTable",
+		"matcher": "BP/loot_tables/*.json",
+		"schema": "https://raw.githubusercontent.com/bridge-core/data/next/packages/schema/lootTable/main.json"
+	},
+	{
+		"id": "recipe",
+		"matcher": "recipes/",
+		"schema": "https://raw.githubusercontent.com/bridge-core/data/next/packages/schema/recipe/main.json"
+	},
+	{
+		"id": "script",
+		"matcher": "BP/scripts/*/*.js"
+	},
+	{
+		"id": "spawnRule",
+		"matcher": "BP/spawn_rules/*.json",
+		"schema": "https://raw.githubusercontent.com/bridge-core/data/next/packages/schema/spawnRule/main.json"
+	},
+	{
+		"id": "mcstructure",
+		"matcher": "BP/structures/*.mcstructure"
+	},
+	{
+		"id": "tradeTable",
+		"matcher": "BP/trading/*.json",
+		"schema": "https://raw.githubusercontent.com/bridge-core/data/next/packages/schema/tradeTable/main.json"
+	},
+
+	// RP FILES
+	{
+		"id": "clientManifest",
+		"matcher": "RP/manifest.json",
+		"schema": "https://raw.githubusercontent.com/bridge-core/data/next/packages/schema/manifest/main.json"
+	},
+	{
+		"id": "geometry",
+		"matcher": [
+			"RP/models/entity/.json",
+			"RP/models/block/*.json",
+			"RP/models/mobs.json"
+		]
+	},
+	{
+		"id": "clientAnimation",
+		"matcher": "RP/animations/*.json"
+	},
+	{
+		"id": "clientAnimationController",
+		"matcher": "RP/animation_controllers/*.json"
+	},
+	{
+		"id": "attachable",
+		"matcher": "RP/attachables/*.json",
+		"schema": "https://raw.githubusercontent.com/bridge-core/data/next/packages/schema/attachable/main.json"
+	},
+	{
+		"id": "clientEntity",
+		"matcher": "RP/entity/*.json",
+		"schema": "https://raw.githubusercontent.com/bridge-core/data/next/packages/schema/clientEntity/main.json",
+		"packSpider": "clientEntity.json"
+	},
+	{
+		"id": "clientItem",
+		"target_version": "$project_target_version < 1.16.100",
+		"matcher": "RP/items/*.json"
+	},
+	{
+		"id": "fog",
+		"target_version": "$project_target_version >= 1.16.100",
+		"matcher": "RP/fogs/*.json",
+		"schema": "https://raw.githubusercontent.com/bridge-core/data/next/packages/schema/fog/main.json"
+	},
+	{
+		"id": "particle",
+		"matcher": "RP/particles/*.json",
+		"schema": "https://raw.githubusercontent.com/bridge-core/data/next/packages/schema/particle/main.json"
+	},
+	{
+		"id": "renderController",
+		"matcher": "RP/render_controllers/*.json"
+	},
+	// SIMPLE RP FILES
+	{
+		"id": "item_texture",
+		"matcher": "RP/textures/item_texture.json",
+		"schema": "https://raw.githubusercontent.com/bridge-core/data/next/packages/schema/simple/itemTextures.json"
+	},
+	{
+		"id": "clientBlock",
+		"matcher": "RP/blocks.json",
+		"schema": "https://raw.githubusercontent.com/bridge-core/data/next/packages/schema/simple/blocks.json"
+	},
+	{
+		"id": "terrainTexture",
+		"matcher": "RP/textures/terrain_texture.json",
+		"schema": "https://raw.githubusercontent.com/bridge-core/data/next/packages/schema/simple/terrainTexture.json"
+	},
+	{
+		"id": "flipbookTexture",
+		"matcher": "RP/textures/flipbook_textures.json",
+		"schema": "https://raw.githubusercontent.com/bridge-core/data/next/packages/schema/simple/flipbookTexture.json"
+	},
+	{
+		"id": "clientBiome",
+		"matcher": "RP/biomes_client.json",
+		"schema": "https://raw.githubusercontent.com/bridge-core/data/next/packages/schema/simple/biomesClient.json"
+	},
+	{
+		"id": "soundDefinition",
+		"matcher": "RP/sounds/sound_definitions.json",
+		"schema": "https://raw.githubusercontent.com/bridge-core/data/next/packages/schema/simple/soundDefinitions.json"
+	},
+	{
+		"id": "clientSound",
+		"matcher": "RP/sounds.json",
+		"schema": "https://raw.githubusercontent.com/bridge-core/data/next/packages/schema/simple/sounds.json"
+	},
+
+	// COMMON FILES
+	{
+		"id": "langDef",
+		"matcher": "*/texts/languages.json",
+		"schema": "https://raw.githubusercontent.com/bridge-core/data/next/packages/schema/simple/langDef.json"
+	},
+	{
+		"id": "lang",
+		"matcher": "*/texts/*.lang"
+	},
+	{
+		"id": "molang",
+		"matcher": "*/molang/*.molang"
+	}
+]

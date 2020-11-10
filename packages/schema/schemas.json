@@ -12,7 +12,7 @@
 		"fileMatch": ["*/blocks/*.json"]
 	},
 	{
-		"uri": "https://raw.githubusercontent.com/bridge-core/data/next/packages/schema/loot_table/main.json",
+		"uri": "https://raw.githubusercontent.com/bridge-core/data/next/packages/schema/lootTable/main.json",
 		"fileMatch": ["*/loot_tables/*.json"]
 	},
 	{
