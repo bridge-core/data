@@ -1,0 +1,14 @@
+{
+	"connectTo": [
+		{
+			"type": "findMatch",
+			"in": "client_entity",
+			"what": "*/description/identifier"
+		},
+		{
+			"type": "findKeyMatch",
+			"in": "custom_component",
+			"what": ["*/components", "*/component_groups/*"]
+		}
+	]
+}

@@ -1,0 +1,38 @@
+{
+	"connectTo": [
+		{
+			"type": "findMatch",
+			"in": ["client_animation", "client_animation_controller"],
+			"what": "*/description/animations"
+		},
+		{
+			"type": "findMatch",
+			"in": "geometry",
+			"what": "*/description/geometry"
+		},
+		{
+			"type": "exactMatch",
+			"what": "*/description/textures"
+		},
+		{
+			"type": "findMatch",
+			"in": "render_controller",
+			"what": "*/description/render_controllers"
+		},
+		{
+			"type": "findMatch",
+			"in": "sound_definition",
+			"what": "*/description/sound_effects"
+		},
+		{
+			"type": "findMatch",
+			"in": "particle",
+			"what": "*/description/particle_effects"
+		},
+		{
+			"type": "findMatch",
+			"in": "particle",
+			"what": "*/description/particle_emitters"
+		}
+	]
+}
