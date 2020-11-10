@@ -2,7 +2,7 @@
 	"connectTo": [
 		{
 			"type": "findMatch",
-			"in": ["client_animation", "client_animation_controller"],
+			"in": ["clientAnimation", "clientAnimationController"],
 			"what": "*/description/animations"
 		},
 		{
@@ -16,12 +16,12 @@
 		},
 		{
 			"type": "findMatch",
-			"in": "render_controller",
+			"in": "renderController",
 			"what": "*/description/render_controllers"
 		},
 		{
 			"type": "findMatch",
-			"in": "sound_definition",
+			"in": "soundDefinition",
 			"what": "*/description/sound_effects"
 		},
 		{

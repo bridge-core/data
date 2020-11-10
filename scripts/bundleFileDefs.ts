@@ -5,12 +5,12 @@ await Promise.all([
 		'./dist/file-definitions.js',
 		`(() => JSON.parse("${JSON.stringify(
 			JSON5.parse(
-				await Deno.readTextFile('./packages/data/file_definitions.json')
+				await Deno.readTextFile('./packages/data/fileDefinitions.json')
 			)
 		).replace(/\"/g, '\\"')}"))()`
 	),
 	Deno.copyFile(
-		'./packages/data/file_definitions.json',
+		'./packages/data/fileDefinitions.json',
 		'./dist/file-definitions.json'
 	),
 ])

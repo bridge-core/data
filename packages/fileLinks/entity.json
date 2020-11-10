@@ -2,12 +2,12 @@
 	"connectTo": [
 		{
 			"type": "findMatch",
-			"in": "client_entity",
+			"in": "clientEntity",
 			"what": "*/description/identifier"
 		},
 		{
 			"type": "findKeyMatch",
-			"in": "custom_component",
+			"in": "customComponent",
 			"what": ["*/components", "*/component_groups/*"]
 		}
 	]
