@@ -1,7 +1,7 @@
 {
 	"$schema": "http://json-schema.org/draft-07/schema",
-	"$id": "bridge.item",
-	"title": "Item",
+	"$id": "bridge.entity",
+	"title": "Entity",
 	"type": "object",
 	"required": ["format_version", "minecraft:entity"],
 

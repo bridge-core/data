@@ -1,6 +1,7 @@
 {
 	"$schema": "http://json-schema.org/draft-07/schema",
 	"$id": "bridge.serverAnimationController",
+	"title": "Server Animation Controller",
 	"properties": {
 		"format_version": { "enum": ["1.10.0"] },
 		"animation_controllers": {

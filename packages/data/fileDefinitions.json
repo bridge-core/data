@@ -119,7 +119,8 @@
 	{
 		"id": "clientItem",
 		"target_version": "$project_target_version < 1.16.100",
-		"matcher": "RP/items/*.json"
+		"matcher": "RP/items/*.json",
+		"schema": "https://raw.githubusercontent.com/bridge-core/data/next/packages/schema/clientItem/main.json"
 	},
 	{
 		"id": "fog",
