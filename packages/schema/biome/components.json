@@ -1,0 +1,220 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"additionalProperties": true,
+	"properties": {
+		"minecraft:ignore_automatic_features": {
+			"type": "boolean",
+			"description": "TODO for all biome components"
+		},
+		"minecraft:climate": {
+			"additionalProperties": false,
+			"properties": {
+				"downfall": {
+					"type": "number"
+				},
+				"snow_accumulation": {
+					"type": "array",
+					"items": {
+						"type": "number"
+					}
+				},
+				"temperature": {
+					"type": "number"
+				},
+				"red_spores": {
+					"type": "number"
+				},
+				"blue_spores": {
+					"type": "number"
+				},
+				"ash": {
+					"type": "number"
+				},
+				"white_ash": {
+					"type": "number"
+				}
+			}
+		},
+		"minecraft:nether_generation_rules": {
+			"additionalProperties": false,
+			"properties": {
+				"target_temperature": {
+					"type": "number"
+				},
+				"target_humidity": {
+					"type": "number"
+				},
+				"target_altitude": {
+					"type": "number"
+				},
+				"target_weirdness": {
+					"type": "number"
+				},
+				"weight": {
+					"type": "number"
+				}
+			}
+		},
+		"minecraft:overworld_height": {
+			"additionalProperties": false,
+			"properties": {
+				"noise_type": {
+					"$ref": "./general.json#/definitions/noise_type"
+				},
+				"noise_params": {
+					"type": "array",
+					"items": {
+						"type": "number"
+					}
+				}
+			}
+		},
+		"minecraft:surface_parameters": {
+			"additionalProperties": false,
+			"properties": {
+				"sea_floor_depth": {
+					"type": "number"
+				},
+				"sea_floor_material": {
+					"$ref": "../general/vanilla/identifiers.json#/block_identifiers"
+				},
+				"sea_material": {
+					"$ref": "../general/vanilla/identifiers.json#/block_identifiers"
+				},
+				"floor_depth": {
+					"type": "number"
+				},
+				"floor_material": {
+					"$ref": "../general/vanilla/identifiers.json#/block_identifiers"
+				},
+				"foundation_material": {
+					"$ref": "../general/vanilla/identifiers.json#/block_identifiers"
+				},
+				"mid_material": {
+					"$ref": "../general/vanilla/identifiers.json#/block_identifiers"
+				},
+				"top_material": {
+					"$ref": "../general/vanilla/identifiers.json#/block_identifiers"
+				}
+			}
+		},
+		"minecraft:swamp_surface": {
+			"$ref": "#/properties/minecraft:surface_parameters"
+		},
+		"minecraft:frozen_ocean_surface": {
+			"$ref": "#/properties/minecraft:surface_parameters"
+		},
+		"minecraft:mesa_surface": {
+			"anyOf": [
+				{
+					"$ref": "#/properties/minecraft:surface_parameters"
+				},
+				{
+					"properties": {
+						"clay_material": {
+							"$ref": "../general/vanilla/identifiers.json#/block_identifiers"
+						},
+						"hard_clay_material": {
+							"$ref": "../general/vanilla/identifiers.json#/block_identifiers"
+						},
+						"bryce_pillars": {
+							"$ref": "../general/vanilla/identifiers.json#/block_identifiers"
+						},
+						"has_forest": {
+							"$ref": "../general/vanilla/identifiers.json#/block_identifiers"
+						}
+					}
+				}
+			]
+		},
+		"minecraft:the_end_surface": {},
+		"minecraft:overworld_generation_rules": {
+			"additionalProperties": false,
+			"properties": {
+				"hills_transformation": {
+					"type": "array",
+					"items": {
+						"$ref": "./general.json#/vanilla_biomes"
+					}
+				},
+				"mutate_transformation": {
+					"type": "array",
+					"items": {
+						"$ref": "./general.json#/vanilla_biomes"
+					}
+				},
+				"shore_transformation": {
+					"type": "array",
+					"items": {
+						"$ref": "./general.json#/definitions/vanilla_biomes"
+					}
+				},
+				"river_transformation": {
+					"type": "array",
+					"items": {
+						"$ref": "./general.json#/definitions/vanilla_biomes"
+					}
+				},
+				"generate_for_climates": {
+					"type": "array",
+					"items": {
+						"maxItems": 2,
+						"minItems": 2,
+						"type": "array",
+						"items": [
+							{
+								"$ref": "./general.json#/definitions/temperature"
+							},
+							{
+								"type": "number"
+							}
+						]
+					}
+				}
+			}
+		},
+		"minecraft:surface_material_adjustments": {
+			"additionalProperties": false,
+			"properties": {
+				"adjustments": {
+					"type": "array",
+					"items": {
+						"properties": {
+							"materials": {
+								"additionalProperties": false,
+								"properties": {
+									"floor_material": {
+										"$ref": "../general/vanilla/identifiers.json#/block_identifiers"
+									},
+									"foundation_material": {
+										"$ref": "../general/vanilla/identifiers.json#/block_identifiers"
+									},
+									"mid_material": {
+										"$ref": "../general/vanilla/identifiers.json#/block_identifiers"
+									},
+									"top_material": {
+										"$ref": "../general/vanilla/identifiers.json#/block_identifiers"
+									},
+									"sea_floor_material": {
+										"$ref": "../general/vanilla/identifiers.json#/block_identifiers"
+									}
+								}
+							},
+							"noise_range": {
+								"type": "array",
+								"minItems": 2,
+								"maxItems": 2,
+								"items": {
+									"type": "number"
+								}
+							},
+							"noise_frequency_scale": {
+								"type": "number"
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

@@ -17,7 +17,8 @@
 	},
 	{
 		"id": "biome",
-		"matcher": "BP/biomes/*.json"
+		"matcher": "BP/biomes/*.json",
+		"schema": "https://raw.githubusercontent.com/bridge-core/data/next/packages/schema/biome/main.json"
 	},
 	{
 		"id": "block",
