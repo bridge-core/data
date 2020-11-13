@@ -2,6 +2,7 @@
 	"$schema": "http://json-schema.org/draft-07/schema",
 	"$id": "bridge.clientAnimationController",
 	"title": "Client Animation Controller",
+	"required": ["format_version"],
 	"properties": {
 		"format_version": { "enum": ["1.10.0"] },
 		"animation_controllers": {
@@ -82,7 +83,7 @@
 												"additionalProperties": false,
 												"properties": {
 													"effect": {
-														"$ref": "../general/vanilla/identifiers.json#/definitions/particle_identifier"
+														"$ref": "../general/vanilla/identifiers.json#/definitions/particle_identifiers"
 													},
 													"locator": {
 														"type": "string"

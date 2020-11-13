@@ -100,7 +100,8 @@
 	},
 	{
 		"id": "clientAnimation",
-		"matcher": "RP/animations/*.json"
+		"matcher": "RP/animations/*.json",
+		"schema": "https://raw.githubusercontent.com/bridge-core/data/next/packages/schema/animation/client.json"
 	},
 	{
 		"id": "clientAnimationController",
