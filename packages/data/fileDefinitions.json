@@ -104,7 +104,8 @@
 	},
 	{
 		"id": "clientAnimationController",
-		"matcher": "RP/animation_controllers/*.json"
+		"matcher": "RP/animation_controllers/*.json",
+		"schema": "https://raw.githubusercontent.com/bridge-core/data/next/packages/schema/animationController/client.json"
 	},
 	{
 		"id": "attachable",
