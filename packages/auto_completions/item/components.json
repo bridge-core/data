@@ -386,7 +386,7 @@
 		{
 			"$if": "$format_version >= 1.16.100",
 			"$data": {
-				"type": "$item.general.fertilizer_type"
+				"type": "$item.general.fertilizer_types"
 			}
 		}
 	],
