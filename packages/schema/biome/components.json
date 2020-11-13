@@ -76,25 +76,25 @@
 					"type": "number"
 				},
 				"sea_floor_material": {
-					"$ref": "../general/vanilla/identifiers.json#/block_identifiers"
+					"$ref": "../general/vanilla/identifiers.json#/definitions/block_identifiers"
 				},
 				"sea_material": {
-					"$ref": "../general/vanilla/identifiers.json#/block_identifiers"
+					"$ref": "../general/vanilla/identifiers.json#/definitions/block_identifiers"
 				},
 				"floor_depth": {
 					"type": "number"
 				},
 				"floor_material": {
-					"$ref": "../general/vanilla/identifiers.json#/block_identifiers"
+					"$ref": "../general/vanilla/identifiers.json#/definitions/block_identifiers"
 				},
 				"foundation_material": {
-					"$ref": "../general/vanilla/identifiers.json#/block_identifiers"
+					"$ref": "../general/vanilla/identifiers.json#/definitions/block_identifiers"
 				},
 				"mid_material": {
-					"$ref": "../general/vanilla/identifiers.json#/block_identifiers"
+					"$ref": "../general/vanilla/identifiers.json#/definitions/block_identifiers"
 				},
 				"top_material": {
-					"$ref": "../general/vanilla/identifiers.json#/block_identifiers"
+					"$ref": "../general/vanilla/identifiers.json#/definitions/block_identifiers"
 				}
 			}
 		},
@@ -112,16 +112,16 @@
 				{
 					"properties": {
 						"clay_material": {
-							"$ref": "../general/vanilla/identifiers.json#/block_identifiers"
+							"$ref": "../general/vanilla/identifiers.json#/definitions/block_identifiers"
 						},
 						"hard_clay_material": {
-							"$ref": "../general/vanilla/identifiers.json#/block_identifiers"
+							"$ref": "../general/vanilla/identifiers.json#/definitions/block_identifiers"
 						},
 						"bryce_pillars": {
-							"$ref": "../general/vanilla/identifiers.json#/block_identifiers"
+							"$ref": "../general/vanilla/identifiers.json#/definitions/block_identifiers"
 						},
 						"has_forest": {
-							"$ref": "../general/vanilla/identifiers.json#/block_identifiers"
+							"$ref": "../general/vanilla/identifiers.json#/definitions/block_identifiers"
 						}
 					}
 				}
@@ -184,19 +184,19 @@
 								"additionalProperties": false,
 								"properties": {
 									"floor_material": {
-										"$ref": "../general/vanilla/identifiers.json#/block_identifiers"
+										"$ref": "../general/vanilla/identifiers.json#/definitions/block_identifiers"
 									},
 									"foundation_material": {
-										"$ref": "../general/vanilla/identifiers.json#/block_identifiers"
+										"$ref": "../general/vanilla/identifiers.json#/definitions/block_identifiers"
 									},
 									"mid_material": {
-										"$ref": "../general/vanilla/identifiers.json#/block_identifiers"
+										"$ref": "../general/vanilla/identifiers.json#/definitions/block_identifiers"
 									},
 									"top_material": {
-										"$ref": "../general/vanilla/identifiers.json#/block_identifiers"
+										"$ref": "../general/vanilla/identifiers.json#/definitions/block_identifiers"
 									},
 									"sea_floor_material": {
-										"$ref": "../general/vanilla/identifiers.json#/block_identifiers"
+										"$ref": "../general/vanilla/identifiers.json#/definitions/block_identifiers"
 									}
 								}
 							},

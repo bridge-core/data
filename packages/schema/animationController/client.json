@@ -1,0 +1,112 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"$id": "bridge.clientAnimationController",
+	"title": "Client Animation Controller",
+	"properties": {
+		"format_version": { "enum": ["1.10.0"] },
+		"animation_controllers": {
+			"patternProperties": {
+				"^controller.animation\\..+$": {
+					"properties": {
+						"initial_state": { "type": "string" },
+						"states": {
+							"patternProperties": {
+								".+": {
+									"properties": {
+										"animations": {
+											"type": "array",
+											"items": {
+												"anyOf": [
+													{ "type": "string" },
+													{
+														"type": "object",
+														"patternProperties": {
+															".+": {
+																"type": "string"
+															}
+														}
+													}
+												]
+											}
+										},
+										"transitions": {
+											"type": "array",
+											"items": {
+												"anyOf": [
+													{ "type": "string" },
+													{
+														"type": "object",
+														"patternProperties": {
+															".+": {
+																"type": "string"
+															}
+														}
+													}
+												]
+											}
+										},
+										"blend_transition": {
+											"type": "boolean"
+										},
+										"blend_via_shortest_path": {
+											"type": "boolean"
+										},
+										"parameters": {
+											"type": "array",
+											"items": {
+												"$ref": "../molang/embeddedBeta.json"
+											}
+										},
+										"variables": {
+											"patternProperties": {
+												".*": {
+													"additionalProperties": false,
+													"properties": {
+														"input": {
+															"$ref": "../molang/embeddedBeta.json"
+														},
+														"remap_curve": {
+															"patternProperties": {
+																"^[0-9]*$": {
+																	"type": "number"
+																}
+															}
+														}
+													}
+												}
+											}
+										},
+										"particle_effects": {
+											"type": "array",
+											"items": {
+												"additionalProperties": false,
+												"properties": {
+													"effect": {
+														"$ref": "../general/vanilla/identifiers.json#/definitions/particle_identifier"
+													},
+													"locator": {
+														"type": "string"
+													}
+												}
+											}
+										},
+										"sound_effects": {
+											"type": "array",
+											"items": {
+												"patternProperties": {
+													".*": {
+														"$ref": "../general/vanilla/soundDefinitions.json"
+													}
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
