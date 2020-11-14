@@ -138,7 +138,8 @@
 	},
 	{
 		"id": "renderController",
-		"matcher": "RP/render_controllers/*.json"
+		"matcher": "RP/render_controllers/*.json",
+		"schema": "https://raw.githubusercontent.com/bridge-core/data/next/packages/schema/renderController/main.json"
 	},
 	// SIMPLE RP FILES
 	{
