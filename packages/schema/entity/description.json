@@ -1,0 +1,48 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"properties": {
+		"identifier": {
+			"type": "string"
+		},
+		"runtime_identifier": {
+			"$ref": "../general/vanilla/identifiers.json#/definitions/entity_identifiers"
+		},
+		"is_spawnable": {
+			"type": "boolean"
+		},
+		"is_summonable": {
+			"type": "boolean"
+		},
+		"is_experimental": {
+			"type": "boolean"
+		},
+		"animations": {
+			"patternProperties": {
+				".*": {
+					"type": "string"
+				}
+			}
+		},
+		"scripts": {
+			"properties": {
+				"animate": {
+					"type": "array",
+					"items": {
+						"anyOf": [
+							{
+								"type": "string"
+							},
+							{
+								"patternProperties": {
+									".*": {
+										"$ref": "../molang/embeddedBeta.json"
+									}
+								}
+							}
+						]
+					}
+				}
+			}
+		}
+	}
+}

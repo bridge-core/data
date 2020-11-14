@@ -31,7 +31,7 @@
 				}
 			},
 			"then": {
-				"$ref": "./v1.10.0/main.json"
+				"$ref": "./v1.16.0/main.json"
 			}
 		},
 		{
