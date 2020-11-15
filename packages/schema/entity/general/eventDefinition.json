@@ -5,6 +5,7 @@
 	"properties": {
 		"filter": {
 			"type": "object",
+			"$ref": "./filter.json",
 			"description": "TODO"
 		},
 		"target": {

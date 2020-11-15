@@ -2,11 +2,38 @@
 	"$schema": "http://json-schema.org/draft-07/schema",
 	"allOf": [
 		{
-			"$ref": "../general/v1.16.0/components.json"
+			"$ref": "../v1.16.0/components.json"
 		},
 		{
 			"properties": {
-				"TODO": {}
+				"minecraft:ageable": {
+					"properties": {
+						"feed_items": {
+							"type": "array",
+							"items": {
+								"properties": {
+									"item": {
+										"anyOf": [
+											{
+												"$ref": "../../general/vanilla/identifiers.json#/definitions/item_identifiers"
+											},
+											{
+												"properties": {
+													"any_tag": {
+														"type": "array",
+														"items": {
+															"type": "string"
+														}
+													}
+												}
+											}
+										]
+									}
+								}
+							}
+						}
+					}
+				}
 			}
 		}
 	]

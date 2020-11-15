@@ -1,6 +1,127 @@
 {
 	"$schema": "http://json-schema.org/draft-07/schema",
 	"properties": {
-		"TODO": {}
+		"minecraft:addrider": {
+			"additionalProperties": false,
+			"description": "Adds a rider to the entity. Requires minecraft:rideable.",
+			"properties": {
+				"entity_type": {
+					"$ref": "../../general/vanilla/identifiers.json#/definitions/entity_identifiers"
+				},
+				"spawn_event": {
+					"type": "string"
+				}
+			}
+		},
+		"minecraft:admire_item": {
+			"additionalProperties": false,
+			"description": "Causes the mob to ignore attackable targets for a given duration.",
+			"properties": {
+				"duration": {
+					"type": "number"
+				},
+				"spawn_event": {
+					"type": "string"
+				}
+			}
+		},
+		"minecraft:ageable": {
+			"description": "Adds a timer for the entity to grow up. It can be accelerated by giving the entity the items it likes as defined by feedItems.",
+			"properties": {
+				"duration": {
+					"type": "number"
+				},
+				"feed_items": {
+					"type": "array",
+					"items": {
+						"properties": {
+							"item": {
+								"$ref": "../../general/vanilla/identifiers.json#/definitions/item_identifiers"
+							},
+							"growth": {
+								"type": "number"
+							}
+						}
+					}
+				},
+				"drop_items": {
+					"type": "array",
+					"items": {
+						"$ref": "../../general/vanilla/identifiers.json#/definitions/item_identifiers"
+					}
+				},
+				"grow_up": {
+					"$ref": "../general/eventDefinition.json"
+				}
+			}
+		},
+		"minecraft:ambient_sound_interval": {
+			"additionalProperties": false,
+			"description": "Sets the entity's delay between playing its ambient sound.",
+			"properties": {
+				"range": {
+					"type": "number"
+				},
+				"value": {
+					"type": "number"
+				},
+				"event_name": {
+					"type": "string"
+				}
+			}
+		},
+		"minecraft:angry": {
+			"additionalProperties": false,
+			"description": "Defines the entity's 'angry' state using a timer.",
+			"properties": {
+				"broadcast_anger": {
+					"type": "boolean"
+				},
+				"broadcast_anger_on_attack": {
+					"type": "boolean"
+				},
+				"broadcast_anger_on_being_attacked": {
+					"type": "boolean"
+				},
+				"broadcast_range": {
+					"type": "number"
+				},
+				"broadcast_filters": {
+					// TODO filter
+				},
+				"filters": {
+					// TODO filter
+				},
+				"broadcast_targets": {
+					"type": "array",
+					"items": {
+						"type": "string"
+					}
+				},
+				"calm_event": {
+					"$ref": "../general/eventDefinition.json"
+				},
+				"duration": {
+					"type": "number"
+				},
+				"duration_delta": {
+					"type": "number"
+				},
+				"angry_sound": {
+					"type": "string"
+				},
+				"sound_interval": {
+					"additionalProperties": false,
+					"properties": {
+						"range_min": {
+							"type": "number"
+						},
+						"range_max": {
+							"type": "number"
+						}
+					}
+				}
+			}
+		}
 	}
 }
