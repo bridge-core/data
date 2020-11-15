@@ -141,9 +141,14 @@
 		"matcher": "RP/render_controllers/*.json",
 		"schema": "https://raw.githubusercontent.com/bridge-core/data/next/packages/schema/renderController/main.json"
 	},
+	{
+		"id": "textureSet",
+		"matcher": "RP/textures/blocks/*.json",
+		"schema": "https://raw.githubusercontent.com/bridge-core/data/next/packages/schema/textureSet/main.json"
+	}
 	// SIMPLE RP FILES
 	{
-		"id": "item_texture",
+		"id": "itemTexture",
 		"matcher": "RP/textures/item_texture.json",
 		"schema": "https://raw.githubusercontent.com/bridge-core/data/next/packages/schema/simple/itemTextures.json"
 	},
