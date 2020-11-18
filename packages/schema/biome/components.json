@@ -104,6 +104,32 @@
 		"minecraft:frozen_ocean_surface": {
 			"$ref": "#/properties/minecraft:surface_parameters"
 		},
+		"minecraft:capped_surface": {
+			"additionalProperties": false,
+			"properties": {
+				"floor_materials": {
+					"type": "array",
+					"items": {
+						"$ref": "../general/vanilla/identifiers.json#/definitions/block_identifiers"
+					}
+				},
+				"ceiling_materials": {
+					"type": "array",
+					"items": {
+						"$ref": "../general/vanilla/identifiers.json#/definitions/block_identifiers"
+					}
+				},
+				"sea_material": {
+					"$ref": "../general/vanilla/identifiers.json#/definitions/block_identifiers"
+				},
+				"foundation_material": {
+					"$ref": "../general/vanilla/identifiers.json#/definitions/block_identifiers"
+				},
+				"beach_material": {
+					"$ref": "../general/vanilla/identifiers.json#/definitions/block_identifiers"
+				}
+			}
+		},
 		"minecraft:mesa_surface": {
 			"anyOf": [
 				{
