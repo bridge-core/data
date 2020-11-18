@@ -18,6 +18,7 @@
 						"min": "$general.number",
 						"max": "$general.number"
 					},
+					"functions": "$loot_table.functions",
 					"price_multiplier": "$general.decimal"
 				}
 			},
