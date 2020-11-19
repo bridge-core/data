@@ -50,7 +50,7 @@
 						"$if": "$format_version >= 1.16.100",
 						"$data": {
 							"command": {
-								"$dynamic.list.next_index": "asValue($function.main)"
+								"$dynamic.list.next_index": "$function.embedded_no_slash"
 							}
 						}
 					}
@@ -184,14 +184,17 @@
 						"$default": "$entity.components.minecraft:spell_effects.remove_effects"
 					}
 				},
-				"$dynamic_template.execute": {
-					"$if": "$dynamic.bridge_core.is_active",
-					"$default": {
-						"commands": {
-							"$dynamic.list.next_index": "$function.embedded"
+				"$versioned_template.execute": [
+					{
+						"$if": "$format_version < 1.16.100",
+						"$legacy_if": "$dynamic.bridge_core.is_active",
+						"$data": {
+							"commands": {
+								"$dynamic.list.next_index": "$function.embedded"
+							}
 						}
 					}
-				}
+				]
 			}
 		}
 	}

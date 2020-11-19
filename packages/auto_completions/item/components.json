@@ -506,10 +506,13 @@
 		}
 	],
 
-	"$dynamic_template.bridge:weapon_damage": {
-		"$if": "$dynamic.bridge_core.is_active",
-		"$default": "$general.number"
-	},
+	"$versioned_template.bridge:weapon_damage": [
+		{
+			"$if": "$format_version < 1.16.100",
+			"$legacy_if": "$dynamic.bridge_core.is_active",
+			"$data": "$general.number"
+		}
+	],
 	"$dynamic_template.bridge:item_equipped_sensor": {
 		"$if": "$dynamic.bridge_core.is_active",
 
