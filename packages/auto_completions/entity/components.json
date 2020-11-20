@@ -414,7 +414,7 @@
 	},
 	"$versioned_template.minecraft:damage_sensor": [
 		{
-			"$if": "$format_version >= 1.16.100",
+			"$if": "$format_version >= 1.16.200",
 			"$data": {
 				"triggers": {
 					"$dynamic.list.next_index": {

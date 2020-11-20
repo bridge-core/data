@@ -118,7 +118,8 @@
 			"1.13.0",
 			"1.14.0",
 			"1.16.0",
-			"1.16.100"
+			"1.16.100",
+			"1.16.200"
 		]
 	},
 	"translatable_text": {
@@ -594,5 +595,12 @@
 		"black",
 		"minecoin_gold"
 	],
-	"item_category": ["nature", "construction", "items", "equipment"]
+	"item_category": [
+		"nature",
+		"construction",
+		"items",
+		"equipment",
+		"none",
+		"commands"
+	]
 }
