@@ -380,7 +380,7 @@
 		"file_viewer": "json",
 
 		"highlighter": "texture_set",
-		"target_version": "$project_target_version >= 1.16.100",
+		"target_version": "$project_target_version >= 1.16.200",
 		"start_state": "texture_set/main",
 		"file_creator": "texture_set"
 	},
