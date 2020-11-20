@@ -481,7 +481,7 @@
 	},
 	"$versioned_template.minecraft:behavior.jump_to_block": [
 		{
-			"$if": "$format_version >= 1.16.100",
+			"$if": "$format_version >= 1.16.200",
 			"$data": {
 				"priority": "$general.number",
 				"search_width": "$general.number",
@@ -892,7 +892,7 @@
 	},
 	"$versioned_template.minecraft:behavior.ram_attack": [
 		{
-			"$if": "$format_version >= 1.16.100",
+			"$if": "$format_version >= 1.16.200",
 			"$data": {
 				"priority": "$general.number",
 				"run_speed": "$general.decimal",
