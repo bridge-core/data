@@ -224,6 +224,15 @@
 		"lightning_cache": "model"
 	},
 	{
+		"id": "entity_model",
+		"includes": "models/blocks",
+		"file_viewer": "model",
+		"player": "model",
+		"rp_definition": true,
+
+		"lightning_cache": "model"
+	},
+	{
 		"id": "rp_animation",
 		"includes": "animations/",
 		"file_viewer": "json",
