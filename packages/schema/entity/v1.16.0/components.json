@@ -87,10 +87,10 @@
 					"type": "number"
 				},
 				"broadcast_filters": {
-					// TODO filter
+					"$ref": "../general/filter.json"
 				},
 				"filters": {
-					// TODO filter
+					"$ref": "../general/filter.json"
 				},
 				"broadcast_targets": {
 					"type": "array",
