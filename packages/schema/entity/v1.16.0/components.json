@@ -1,127 +1,342 @@
 {
 	"$schema": "http://json-schema.org/draft-07/schema",
-	"properties": {
-		"minecraft:addrider": {
-			"additionalProperties": false,
-			"description": "Adds a rider to the entity. Requires minecraft:rideable.",
+	"allOf": [
+		{
 			"properties": {
-				"entity_type": {
-					"$ref": "../../general/vanilla/identifiers.json#/definitions/entity_identifiers"
+				"minecraft:addrider": {
+					"additionalProperties": false,
+					"description": "Adds a rider to the entity. Requires minecraft:rideable.",
+					"properties": {
+						"entity_type": {
+							"$ref": "../../general/vanilla/identifiers.json#/definitions/entity_identifiers"
+						},
+						"spawn_event": {
+							"type": "string"
+						}
+					}
 				},
-				"spawn_event": {
-					"type": "string"
-				}
-			}
-		},
-		"minecraft:admire_item": {
-			"additionalProperties": false,
-			"description": "Causes the mob to ignore attackable targets for a given duration.",
-			"properties": {
-				"duration": {
-					"type": "number"
+				"minecraft:admire_item": {
+					"additionalProperties": false,
+					"description": "Causes the mob to ignore attackable targets for a given duration.",
+					"properties": {
+						"duration": {
+							"type": "number"
+						},
+						"spawn_event": {
+							"type": "string"
+						}
+					}
 				},
-				"spawn_event": {
-					"type": "string"
-				}
-			}
-		},
-		"minecraft:ageable": {
-			"description": "Adds a timer for the entity to grow up. It can be accelerated by giving the entity the items it likes as defined by feedItems.",
-			"properties": {
-				"duration": {
-					"type": "number"
-				},
-				"feed_items": {
-					"type": "array",
-					"items": {
-						"properties": {
-							"item": {
+				"minecraft:ageable": {
+					"description": "Adds a timer for the entity to grow up. It can be accelerated by giving the entity the items it likes as defined by feedItems.",
+					"properties": {
+						"duration": {
+							"type": "number"
+						},
+						"feed_items": {
+							"type": "array",
+							"items": {
+								"properties": {
+									"item": {
+										"$ref": "../../general/vanilla/identifiers.json#/definitions/item_identifiers"
+									},
+									"growth": {
+										"type": "number"
+									}
+								}
+							}
+						},
+						"drop_items": {
+							"type": "array",
+							"items": {
 								"$ref": "../../general/vanilla/identifiers.json#/definitions/item_identifiers"
-							},
-							"growth": {
-								"type": "number"
+							}
+						},
+						"grow_up": {
+							"$ref": "../general/eventDefinition.json"
+						}
+					}
+				},
+				"minecraft:ambient_sound_interval": {
+					"additionalProperties": false,
+					"description": "Sets the entity's delay between playing its ambient sound.",
+					"properties": {
+						"range": {
+							"type": "number"
+						},
+						"value": {
+							"type": "number"
+						},
+						"event_name": {
+							"type": "string"
+						}
+					}
+				},
+				"minecraft:angry": {
+					"additionalProperties": false,
+					"description": "Defines the entity's 'angry' state using a timer.",
+					"properties": {
+						"broadcast_anger": {
+							"type": "boolean"
+						},
+						"broadcast_anger_on_attack": {
+							"type": "boolean"
+						},
+						"broadcast_anger_on_being_attacked": {
+							"type": "boolean"
+						},
+						"broadcast_range": {
+							"type": "number"
+						},
+						"broadcast_filters": {
+							"$ref": "../general/filter.json"
+						},
+						"filters": {
+							"$ref": "../general/filter.json"
+						},
+						"broadcast_targets": {
+							"type": "array",
+							"items": {
+								"type": "string"
+							}
+						},
+						"calm_event": {
+							"$ref": "../general/eventDefinition.json"
+						},
+						"duration": {
+							"type": "number"
+						},
+						"duration_delta": {
+							"type": "number"
+						},
+						"angry_sound": {
+							"type": "string"
+						},
+						"sound_interval": {
+							"additionalProperties": false,
+							"properties": {
+								"range_min": {
+									"type": "number"
+								},
+								"range_max": {
+									"type": "number"
+								}
 							}
 						}
 					}
 				},
-				"drop_items": {
-					"type": "array",
-					"items": {
-						"$ref": "../../general/vanilla/identifiers.json#/definitions/item_identifiers"
-					}
-				},
-				"grow_up": {
-					"$ref": "../general/eventDefinition.json"
-				}
-			}
-		},
-		"minecraft:ambient_sound_interval": {
-			"additionalProperties": false,
-			"description": "Sets the entity's delay between playing its ambient sound.",
-			"properties": {
-				"range": {
-					"type": "number"
-				},
-				"value": {
-					"type": "number"
-				},
-				"event_name": {
-					"type": "string"
-				}
-			}
-		},
-		"minecraft:angry": {
-			"additionalProperties": false,
-			"description": "Defines the entity's 'angry' state using a timer.",
-			"properties": {
-				"broadcast_anger": {
-					"type": "boolean"
-				},
-				"broadcast_anger_on_attack": {
-					"type": "boolean"
-				},
-				"broadcast_anger_on_being_attacked": {
-					"type": "boolean"
-				},
-				"broadcast_range": {
-					"type": "number"
-				},
-				"broadcast_filters": {
-					"$ref": "../general/filter.json"
-				},
-				"filters": {
-					"$ref": "../general/filter.json"
-				},
-				"broadcast_targets": {
-					"type": "array",
-					"items": {
-						"type": "string"
-					}
-				},
-				"calm_event": {
-					"$ref": "../general/eventDefinition.json"
-				},
-				"duration": {
-					"type": "number"
-				},
-				"duration_delta": {
-					"type": "number"
-				},
-				"angry_sound": {
-					"type": "string"
-				},
-				"sound_interval": {
+				"minecraft:area_attack": {
+					"description": "A component that does damage to entities that get within range.",
 					"additionalProperties": false,
 					"properties": {
-						"range_min": {
+						"damage_range": {
 							"type": "number"
 						},
-						"range_max": {
+						"damage_per_tick": {
 							"type": "number"
+						},
+						"cause": {
+							"$ref": "../../general/vanilla/damageType.json"
+						},
+						"entity_filter": {
+							"$ref": "../general/filter.json"
+						}
+					}
+				},
+				"minecraft:attack": {
+					"description": "Defines an entity's melee attack and any additional effects on it.",
+					"additionalProperties": false,
+					"properties": {
+						"damage": {
+							"type": "number"
+						},
+						"effect_name": {
+							"$ref": "../../general/vanilla/effectName.json"
+						},
+						"effect_duration": {
+							"type": "number"
+						}
+					}
+				},
+				"minecraft:attack_cooldown": {
+					"description": "Adds a cooldown to a mob. The intention of this cooldown is to be used to prevent the mob from attempting to aquire new attack targets.",
+					"additionalProperties": false,
+					"properties": {
+						"attack_cooldown_time": {
+							"anyOf": [
+								{
+									"type": "number"
+								},
+								{
+									"type": "array",
+									"minItems": 2,
+									"maxItems": 2,
+									"items": {
+										"type": "number"
+									}
+								}
+							]
+						},
+						"attack_cooldown_complete_event": {
+							"$ref": "../general/eventDefinition.json"
+						}
+					}
+				},
+				"minecraft:attack_damage": {
+					"description": "Defines an entity's melee attack damage.",
+					"additionalProperties": false,
+					"properties": {
+						"value": {
+							"type": "number"
+						}
+					}
+				},
+				"minecraft:balloonable": {
+					"description": "Whether or not this entity can be attatched to a balloon.",
+					"properties": {
+						"mass": {
+							"type": "number"
+						}
+					}
+				},
+				"minecraft:barter": {
+					"description": "Enables the component to drop an item as a barter exchange.",
+					"additionalProperties": false,
+					"properties": {
+						"barter_table": {
+							"type": "string"
+						},
+						"cooldown_after_being_attacked": {
+							"type": "number"
+						}
+					}
+				},
+				"minecraft:block_sensor": {
+					"description": "Fires off a specified event when a block in the block list is broken within the sensor range.",
+					"additionalProperties": false,
+					"properties": {
+						"sensor_radius": {
+							"type": "number"
+						},
+						"on_break": {
+							"type": "array",
+							"items": {
+								"properties": {
+									"block_list": {
+										"type": "array",
+										"items": {
+											"$ref": "../../general/vanilla/identifiers.json#/definitions/block_identfiers"
+										}
+									},
+									"on_block_broken": {
+										"type": "string"
+									}
+								}
+							}
+						}
+					}
+				},
+				"minecraft:boostable": {
+					"description": "Defines the conditions and behavior of a rideable entity's boost.",
+					"additionalProperties": false,
+					"properties": {
+						"speed_multiplier": {
+							"type": "number"
+						},
+						"duration": {
+							"type": "number"
+						},
+						"boost_items": {
+							"type": "array",
+							"items": {
+								"properties": {
+									"item": {
+										"$ref": "../../general/vanilla/identifiers.json#/definitions/item_identifiers"
+									},
+									"item_damage": {
+										"type": "number"
+									},
+									"replace_item": {
+										"$ref": "../../general/vanilla/identifiers.json#/definitions/item_identifiers"
+									}
+								}
+							}
+						}
+					}
+				},
+				"minecraft:boss": {
+					"description": "The current state of the boss for updating the boss HUD.",
+					"additionalProperties": false,
+					"properties": {
+						"should_darken_sky": {
+							"type": "boolean"
+						},
+						"hud_range": {
+							"type": "number"
+						},
+						"name": {
+							"type": "string"
+						}
+					}
+				},
+				"minecraft:break_blocks": {
+					"description": "Specifies the blocks that this entity can break as it moves around.",
+					"additionalProperties": false,
+					"properties": {
+						"breakable_blocks": {
+							"type": "array",
+							"items": {
+								"$ref": "../../general/vanilla/identifiers.json#/definitions/block_identifiers"
+							}
+						}
+					}
+				},
+				"minecraft:breathable": {
+					"description": "Defines what blocks this entity can breathe in and gives them the ability to suffocate.",
+					"additionalProperties": false,
+					"properties": {
+						"breathe_blocks": {
+							"type": "array",
+							"items": {
+								"$ref": "../../general/vanilla/identifiers.json#/definitions/block_identifiers"
+							}
+						},
+						"breathes_water": {
+							"type": "boolean"
+						},
+						"breathes_lava": {
+							"type": "boolean"
+						},
+						"breathes_air": {
+							"type": "boolean"
+						},
+						"breathes_solids": {
+							"type": "boolean"
+						},
+						"generates_bubbles": {
+							"type": "boolean"
+						},
+						"inhale_time": {
+							"type": "number"
+						},
+						"suffocate_time": {
+							"type": "number"
+						},
+						"total_supply": {
+							"type": "number"
+						},
+						"non_breathe_blocks": {
+							"type": "array",
+							"items": {
+								"$ref": "../../general/vanilla/identifiers.json#/definitions/block_identifiers"
+							}
 						}
 					}
 				}
 			}
+		},
+		{
+			"$ref": "./annotations.json"
 		}
-	}
+	]
 }
