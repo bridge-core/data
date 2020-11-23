@@ -225,7 +225,7 @@
 									"block_list": {
 										"type": "array",
 										"items": {
-											"$ref": "../../general/vanilla/identifiers.json#/definitions/block_identfiers"
+											"$ref": "../../general/vanilla/identifiers.json#/definitions/block_identifiers"
 										}
 									},
 									"on_block_broken": {
@@ -332,11 +332,255 @@
 							}
 						}
 					}
+				},
+				"minecraft:buoyant": {
+					"description": "Enables an entity to float on the specified liquid blocks.",
+					"additionalProperties": false,
+					"properties": {
+						"apply_gravity": {
+							"type": "boolean"
+						},
+						"base_buoyancy": {
+							"type": "number"
+						},
+						"big_wave_probablity": {
+							"type": "number"
+						},
+						"big_wave_speed": {
+							"type": "number"
+						},
+						"drag_down_on_buoyancy_removed": {
+							"type": "number"
+						},
+						"liquid_blocks": {
+							"type": "array",
+							"items": {
+								"$ref": "../../general/vanilla/identifiers.json#/definitions/block_identifiers"
+							}
+						},
+						"simulate_waves": {
+							"type": "boolean"
+						}
+					}
+				},
+				"minecraft:breedable": {
+					"description": "Defines the way an entity can get into the 'love' state.",
+					"properties": {
+						"allow_sitting": {
+							"type": "boolean"
+						},
+						"blend_attributes": {
+							"type": "boolean"
+						},
+						"breed_cooldown": {
+							"type": "number"
+						},
+						"love_filters": {
+							"$ref": "../general/filter.json"
+						},
+						"breed_items": {
+							"type": "array",
+							"items": {
+								"anyOf": [
+									{
+										"$ref": "../../general/vanilla/identifiers.json#/definitions/item_identifiers"
+									}
+								]
+							}
+						},
+						"breeds_with": {
+							"properties": {
+								"mate_type": {
+									"$ref": "../../general/vanilla/identifiers.json#/definitions/entity_identifiers"
+								},
+								"baby_type": {
+									"$ref": "../../general/vanilla/identifiers.json#/definitions/entity_identifiers"
+								},
+								"breed_event": {
+									"$ref": "../general/eventDefinition.json"
+								}
+							}
+						},
+						"causes_pregnancy": {
+							"type": "boolean"
+						},
+						"environment_requirements": {
+							"type": "array",
+							"items": {
+								"properties": {
+									"blocks": {
+										"$ref": "../../general/vanilla/identifiers.json#/definitions/block_identifiers"
+									},
+									"count": {
+										"type": "number"
+									},
+									"radius": {
+										"type": "number"
+									}
+								}
+							}
+						},
+						"extra_baby_chance": {
+							"type": "number"
+						},
+						"inherit_tamed": {
+							"type": "boolean"
+						},
+						"mutation_factor": {
+							"properties": {
+								"color": {
+									"type": "number"
+								},
+								"extra_variant": {
+									"type": "number"
+								},
+								"variant": {
+									"type": "number"
+								}
+							}
+						},
+						"deny_parents_variant": {
+							"properties": {
+								"chance": {
+									"type": "number"
+								},
+								"min_variant": {
+									"type": "number"
+								},
+								"max_variant": {
+									"type": "number"
+								}
+							}
+						},
+						"require_tame": {
+							"type": "boolean"
+						},
+						"require_full_health": {
+							"type": "boolean"
+						}
+					}
+				},
+				"minecraft:bribeable": {
+					"description": "Defines the way an entity can get into the 'bribed' state.",
+					"properties": {
+						"bribe_cooldown": {
+							"type": "number"
+						},
+						"bribe_items": {
+							"anyOf": [
+								{
+									"$ref": "../../general/vanilla/identifiers.json#/definitions/item_identifiers"
+								}
+							]
+						}
+					}
+				},
+				"minecraft:burns_in_daylight": {
+					"description": "Specifies if/how a mob burns in daylight."
+				},
+				"minecraft:can_climb": {
+					"description": "Allows this entity to climb up ladders."
+				},
+				"minecraft:can_fly": {
+					"description": "Marks the entity as being able to fly, the pathfinder won't be restricted to paths where a solid block is required underneath it.",
+					"type": "boolean"
+				},
+				"minecraft:celebrate_hunt": {
+					"description": "Specifies hunt celebration behaviour.",
+					"additionalProperties": false,
+					"properties": {
+						"celebration_targets": {
+							"$ref": "../general/filter.json"
+						},
+						"broadcast": {
+							"type": "boolean"
+						},
+						"duration": {
+							"type": "number"
+						},
+						"radius": {
+							"type": "number"
+						},
+						"celebrate_sound": {
+							"type": "string"
+						},
+						"sound_interval": {
+							"properties": {
+								"range_min": {
+									"type": "number"
+								},
+								"range_max": {
+									"type": "number"
+								}
+							}
+						}
+					}
+				},
+				"minecraft:collision_box": {
+					"description": "Sets the width and height of the Entity's collision box.",
+					"additionalProperties": false,
+					"properties": {
+						"width": {
+							"type": "number"
+						},
+						"height": {
+							"type": "number"
+						}
+					}
+				},
+				"minecraft:color": {
+					"description": "Defines the entity's color. Only works on vanilla entities that have predefined color values (sheep, llama, shulker).",
+					"additionalProperties": false,
+					"properties": {
+						"value": {
+							"type": "integer"
+						}
+					}
+				},
+				"minecraft:color2": {
+					"description": "Defines the entity's second texture color. Only works on vanilla entities that have a second predefined color values (tropical fish).",
+					"additionalProperties": false,
+					"properties": {
+						"value": {
+							"type": "integer"
+						}
+					}
+				},
+				"minecraft:custom_hit_test": {
+					"description": "List of hitboxes for melee and ranged hits against the entity.",
+					"additionalProperties": false,
+					"properties": {
+						"hitboxes": {
+							"type": "array",
+							"items": {
+								"properties": {
+									"width": {
+										"type": "number"
+									},
+									"height": {
+										"type": "number"
+									},
+									"pivot": {
+										"type": "array",
+										"minItems": 3,
+										"maxItems": 3,
+										"items": {
+											"type": "number"
+										}
+									}
+								}
+							}
+						}
+					}
 				}
+				// TODO minecraft:damage_over_time next
 			}
 		},
 		{
 			"$ref": "./annotations.json"
+		},
+		{
+			"$ref": "./behaviors.json"
 		}
 	]
 }
