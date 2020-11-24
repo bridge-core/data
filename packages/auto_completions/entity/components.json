@@ -1260,7 +1260,9 @@
 	"minecraft:scheduler": {
 		"min_delay_secs": "$general.number",
 		"max_delay_secs": "$general.number",
-		"scheduled_events": "$entity.general.event_definition"
+		"scheduled_events": {
+			"$dynamic.list.next_index": "$entity.general.internal_event_definition"
+		}
 	},
 	"minecraft:shareables": {
 		"all_items": "$general.boolean",
