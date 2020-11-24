@@ -134,6 +134,56 @@
 							}
 						}
 					}
+				},
+				"minecraft:equippable": {
+					"properties": {
+						"slots": {
+							"type": "array",
+							"items": {
+								"properties": {
+									"accepted_items": {
+										"type": "array",
+										"items": {
+											"anyOf": [
+												{
+													"properties": {
+														"any_tag": {
+															"type": "string"
+														}
+													}
+												}
+											]
+										}
+									}
+								}
+							}
+						}
+					}
+				},
+				"minecraft:giveable": {
+					"properties": {
+						"triggers": {
+							"type": "array",
+							"items": {
+								"properties": {
+									"items": {
+										"type": "array",
+										"items": {
+											"anyOf": [
+												{
+													"properties": {
+														"any_tag": {
+															"type": "string"
+														}
+													}
+												}
+											]
+										}
+									}
+								}
+							}
+						}
+					}
 				}
 			}
 		}

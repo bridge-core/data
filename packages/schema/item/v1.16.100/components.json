@@ -185,7 +185,7 @@
 			"description": "Makes an item wearable",
 			"additionalProperties": false,
 			"properties": {
-				"slot": { "type": "string" },
+				"slot": { "$ref": "../../general/slotType.json" },
 				"dispensable": { "type": "boolean" }
 			}
 		},

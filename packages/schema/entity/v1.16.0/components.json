@@ -572,8 +572,564 @@
 							}
 						}
 					}
+				},
+				"minecraft:damage_over_time": {
+					"description": "Applies defined amount of damage to the entity at specified intervals.",
+					"additionalProperties": false,
+					"properties": {
+						"damage_per_hurt": {
+							"type": "number"
+						},
+						"time_between_hurt": {
+							"type": "number"
+						}
+					}
+				},
+				"minecraft:damage_sensor": {
+					"description": "Defines what events to call when this entity is damaged by specific entities or items.",
+					"additionalProperties": false,
+					"properties": {
+						"triggers": {
+							"type": "array",
+							"items": {
+								"properties": {
+									"on_damage": {
+										"$ref": "../general/eventDefinition.json"
+									},
+									"cause": {
+										"$ref": "../../general/vanilla/damageType.json"
+									},
+									"deals_damage": {
+										"type": "boolean"
+									},
+									"damage_multiplier": {
+										"type": "number"
+									},
+									"on_damage_sound_event": {
+										"type": "string"
+									}
+								}
+							}
+						}
+					}
+				},
+				"minecraft:default_look_angle": {
+					"description": "Sets this entity's default head rotation angle.",
+					"additionalProperties": false,
+					"properties": {
+						"value": {
+							"type": "number"
+						}
+					}
+				},
+				"minecraft:despawn": {
+					"description": "Despawns the Actor when the despawn rules or optional filters evaluate to true.",
+					"additionalProperties": false,
+					"properties": {
+						"remove_child_entities": {
+							"type": "boolean"
+						},
+						"filters": {
+							"$ref": "../general/filter.json"
+						},
+						"despawn_from_distance": {
+							"additionalProperties": false,
+							"properties": {
+								"max_distance": {
+									"type": "number"
+								},
+								"min_distance": {
+									"type": "number"
+								}
+							}
+						},
+						"despawn_from_chance": {
+							"type": "boolean"
+						},
+						"despawn_from_inactivity": {
+							"type": "boolean"
+						},
+						"despawn_from_simulation_edge": {
+							"type": "boolean"
+						},
+						"min_range_inactivity_timer": {
+							"type": "number"
+						},
+						"min_range_random_chance": {
+							"type": "number"
+						}
+					}
+				},
+				"minecraft:dweller": {
+					"description": "Defines the entity as a dweller in a village",
+					"additionalProperties": false,
+					"properties": {
+						"dwelling_type": {
+							"const": "village",
+							"type": "string"
+						},
+						"dweller_role": {
+							"type": "string",
+							"enum": ["hostile", "inhabitant", "defender"]
+						},
+						"update_interval_base": {
+							"type": "number"
+						},
+						"update_interval_variant": {
+							"type": "number"
+						},
+						"can_find_poi": {
+							"type": "boolean"
+						},
+						"can_migrate": {
+							"type": "boolean"
+						},
+						"first_founding_reward": {
+							"type": "number"
+						},
+						"preferred_profession": {
+							"type": "string",
+							"enum": [
+								"farmer",
+								"fisherman",
+								"shepard",
+								"fletcher",
+								"librarian",
+								"cartographer",
+								"cleric",
+								"armorer",
+								"weaponsmith",
+								"toolsmith",
+								"butcher",
+								"leatherworker",
+								"mason"
+							]
+						}
+					}
+				},
+				"minecraft:economy_trade_table": {
+					"description": "Defines this entity's ability to trade with players.",
+					"additionalProperties": false,
+					"properties": {
+						"display_name": {
+							"type": "string"
+						},
+						"table": {
+							"type": "string"
+						},
+						"new_screen": {
+							"type": "boolean"
+						},
+						"hero_demand_discount": {
+							"type": "number"
+						},
+						"persist_trades": {
+							"type": "boolean"
+						},
+						"convert_trades_economy": {
+							"type": "boolean"
+						},
+						"cured_discount": {
+							"type": "array",
+							"minItems": 2,
+							"maxItems": 2,
+							"items": {
+								"type": "number"
+							}
+						},
+						"max_cured_discount": {
+							"type": "array",
+							"minItems": 2,
+							"maxItems": 2,
+							"items": {
+								"type": "number"
+							}
+						},
+						"nearby_cured_discount": {
+							"type": "number"
+						},
+						"show_trade_screen": {
+							"type": "boolean"
+						}
+					}
+				},
+				"minecraft:environment_sensor": {
+					"description": "Creates a trigger based on environment conditions.",
+					"additionalProperties": false,
+					"properties": {
+						"triggers": {
+							"type": "array",
+							"items": {
+								"$ref": "../general/eventDefinition.json"
+							}
+						}
+					}
+				},
+				"minecraft:entity_sensor": {
+					"description": "A component that fires an event when a set of conditions are met by other entities within the defined range.",
+					"additionalProperties": false,
+					"properties": {
+						"sensor_range": {
+							"type": "number"
+						},
+						"minimum_count": {
+							"type": "number"
+						},
+						"maximum_count": {
+							"type": "number"
+						},
+						"relative_range": {
+							"type": "boolean"
+						},
+						"require_all": {
+							"type": "boolean"
+						},
+						"event_filters": {
+							"$ref": "../general/filter.json"
+						},
+						"event": {
+							"type": "string"
+						}
+					}
+				},
+				"minecraft:equipment": {
+					"description": "Sets the Equipment table to use for this Entity.",
+					"additionalProperties": false,
+					"properties": {
+						"table": {
+							"type": "string"
+						},
+						"slot_drop_chance": {
+							"type": "array",
+							"items": {
+								"properties": {
+									"slot": {
+										"$ref": "../../general/slotType.json"
+									},
+									"drop_chance": {
+										"type": "number"
+									}
+								}
+							}
+						}
+					}
+				},
+				"minecraft:equip_item": {
+					"description": "The entity puts on the desired equipment."
+				},
+				"minecraft:equippable": {
+					"description": "Defines an entity's behavior for having items equipped to it.",
+					"properties": {
+						"slots": {
+							"type": "array",
+							"items": {
+								"properties": {
+									"accepted_items": {
+										"type": "array",
+										"items": {
+											"anyOf": [
+												{
+													"$ref": "../../general/vanilla/identifiers.json#/definitions/item_identifiers"
+												}
+											]
+										}
+									},
+									"interact_text": {
+										"type": "string"
+									},
+									"item": {
+										"$ref": "../../general/vanilla/identifiers.json#/definitions/item_identifiers"
+									},
+									"on_equip": {
+										"$ref": "../general/eventDefinition.json"
+									},
+									"on_unequip": {
+										"$ref": "../general/eventDefinition.json"
+									},
+									"slot": {
+										"type": "number"
+									}
+								}
+							}
+						}
+					}
+				},
+				"minecraft:experience_reward": {
+					"description": "Defines the experience dropped by the entity.",
+					"additionalProperties": false,
+					"properties": {
+						"on_bred": {
+							"$ref": "../../molang/embeddedBeta.json"
+						},
+						"on_death": {
+							"$ref": "../../molang/embeddedBeta.json"
+						}
+					}
+				},
+				"minecraft:explode": {
+					"description": "Defines how the entity explodes.",
+					"additionalProperties": false,
+					"properties": {
+						"fuse_length": {
+							"anyOf": [
+								{
+									"type": "number"
+								},
+								{
+									"type": "array",
+									"minItems": 2,
+									"maxItems": 2,
+									"items": {
+										"type": "number"
+									}
+								}
+							]
+						},
+						"power": {
+							"type": "number"
+						},
+						"max_resistance": {
+							"type": "number"
+						},
+						"fuse_lit": {
+							"type": "boolean"
+						},
+						"causes_fire": {
+							"type": "boolean"
+						},
+						"breaks_blocks": {
+							"type": "boolean"
+						},
+						"fire_affected_by_griefing": {
+							"type": "boolean"
+						},
+						"destroy_affected_by_griefing": {
+							"type": "boolean"
+						},
+						"allow_damage_underwater": {
+							"type": "boolean"
+						}
+					}
+				},
+				"minecraft:fire_immune": {
+					"description": "Sets that this entity doesn't take damage from fire.",
+					"type": "boolean",
+					"additionalProperties": false
+				},
+				"minecraft:floats_in_liquid": {
+					"additionalProperties": false,
+					"description": "Sets that this entity can float in liquid blocks."
+				},
+				"minecraft:flocking": {
+					"description": "Allows entities to flock in groups in water or not.",
+					"additionalProperties": false,
+					"properties": {
+						"in_water": {
+							"type": "boolean"
+						},
+						"match_variants": {
+							"type": "boolean"
+						},
+						"use_center_of_mass": {
+							"type": "boolean"
+						},
+						"low_flock_limit": {
+							"type": "number"
+						},
+						"high_flock_limit": {
+							"type": "number"
+						},
+						"goal_weight": {
+							"type": "number"
+						},
+						"loner_chance": {
+							"type": "number"
+						},
+						"influence_raidus": {
+							"type": "number"
+						},
+						"breach_influence": {
+							"type": "number"
+						},
+						"separation_weight": {
+							"type": "string"
+						},
+						"separation_threshold": {
+							"type": "number"
+						},
+						"cohesion_weight": {
+							"type": "number"
+						},
+						"cohesion_threshold": {
+							"type": "number"
+						},
+						"inner_cohesion_threshold": {
+							"type": "number"
+						},
+						"min_height": {
+							"type": "number"
+						},
+						"max_height": {
+							"type": "number"
+						},
+						"block_distance": {
+							"type": "number"
+						},
+						"block_weight": {
+							"type": "number"
+						}
+					}
+				},
+				"minecraft:flying_speed": {
+					"description": "Speed in Blocks that this entity flies at.",
+					"additionalProperties": false,
+					"properties": {
+						"value": {
+							"type": "number"
+						}
+					}
+				},
+				"minecraft:follow_range": {
+					"description": "The follow range for the entity.",
+					"additionalProperties": false,
+					"properties": {
+						"value": {
+							"type": "number"
+						},
+						"max": {
+							"type": "number"
+						}
+					}
+				},
+				"minecraft:foot_size": {
+					"DoNotSuggest": true,
+					"description": "**DEPRECATED** Sets the number of blocks the entity can step without jumping.",
+					"additionalProperties": false,
+					"properties": {
+						"value": {
+							"type": "number"
+						}
+					}
+				},
+				"minecraft:friction_modifier": {
+					"description": "Defines how much friction affects this entity.",
+					"additionalProperties": false,
+					"properties": {
+						"value": {
+							"type": "number"
+						}
+					}
+				},
+				"minecraft:genetics": {
+					"description": "Defines the way a mob's genes and alleles are passed on to it's offspring, and how those traits manifest in the child. Compatible parent genes are crossed together, the alleles are handed down from the parents to the child, and any matching genetic variants fire off JSON events to modify the child and express the traits.",
+					"additionalProperties": false,
+					"properties": {
+						"mutation_rate": {
+							"type": "number"
+						},
+						"genes": {
+							"type": "array",
+							"items": {
+								"properties": {
+									"name": {
+										"type": "string"
+									},
+									"allele_range": {
+										"type": "number"
+									},
+									"genetic_variants": {
+										"type": "array",
+										"items": {
+											"properties": {
+												"main_allele": {
+													"type": "number"
+												},
+												"both_allele": {
+													"type": "number"
+												},
+												"hidden_allele": {
+													"type": "number"
+												},
+												"either_allele": {
+													"type": "number"
+												},
+												"birth_event": {
+													"$ref": "../general/eventDefinition.json"
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				},
+				"minecraft:giveable": {
+					"description": "Defines sets of items that can be used to trigger events when used on this entity. The item will also be taken and placed in the entity's inventory.",
+					"properties": {
+						"triggers": {
+							"type": "array",
+							"items": {
+								"properties": {
+									"cooldown": {
+										"type": "number"
+									},
+									"items": {
+										"type": "array",
+										"items": {
+											"anyOf": [
+												{
+													"$ref": "../../general/vanilla/identifiers.json#/definitions/item_identifiers"
+												}
+											]
+										}
+									},
+									"on_give": {
+										"$ref": "../general/eventDefinition.json"
+									}
+								}
+							}
+						}
+					}
+				},
+				"minecraft:ground_offset": {
+					"description": "Sets the offset from the ground that the entity is actually at.",
+					"additionalProperties": false,
+					"properties": {
+						"value": {
+							"type": "number"
+						}
+					}
+				},
+				"minecraft:group_size": {
+					"description": "Keeps track of entity group size in the given radius.",
+					"additionalProperties": false,
+					"properties": {
+						"radius": {
+							"type": "number"
+						},
+						"filters": {
+							"$ref": "../general/filter.json"
+						}
+					}
+				},
+				"minecraft:grows_crop": {
+					"description": "Could increase crop growth when entity walks over crop",
+					"additionalProperties": false,
+					"properties": {
+						"charges": {
+							"type": "number"
+						},
+						"chance": {
+							"type": "number"
+						}
+					}
+				},
+				"minecraft:healable": {
+					"description": "Defines the interactions with this entity for healing it.",
+					"properties": {}
+					// TODO
 				}
-				// TODO minecraft:damage_over_time next
 			}
 		},
 		{
