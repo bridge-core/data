@@ -142,7 +142,9 @@
 						"blend",
 						"alpha_test",
 						"double_sided"
-					]
+					],
+					"ambient_occlusion": "$general.boolean",
+					"face_dimming": "$general.boolean"
 				},
 				"*": {
 					"texture": "$dynamic.rp.terrain_texture",
