@@ -43,10 +43,7 @@
 				}
 			},
 			"geometry": {
-				"$placeholder": {
-          			"@meta": { "is_value": true },
-          			"@import.value": "$dynamic.cache.model.identifiers"
-        			}
+				"$placeholder": "$general.model_identifier"
 			},
 			"animations": {
 				"$placeholder": {
@@ -104,25 +101,18 @@
 						"$if": "$format_version >= 1.16.100",
 						"$data": {
 							"$placeholder": ["public"]
-							
 						}
 					}
 				]
 			},
 			"sound_effects": {
-				"$placeholder": {
-					"@meta": {
-						"is_value": true
-					}
-				}
+				"$placeholder": "$function.general.sound_definitions"
 			},
 			"render_controllers": {
 				"$dynamic.list.next_index": {
 					"@meta": {
 						"is_value": true,
-						"definitions": [
-							"render_controller"
-						]
+						"definitions": ["render_controller"]
 					},
 					"@import.value.render_controller": "$dynamic.cache.render_controller.ids"
 				}
@@ -131,9 +121,7 @@
 				"$placeholder": {
 					"@meta": {
 						"is_value": true,
-						"definitions": [
-							"particle"
-						]
+						"definitions": ["particle"]
 					},
 					"@import.value.particle": "$dynamic.cache.particle.ids",
 					"@import.value": "$vanilla.particle_identifier"

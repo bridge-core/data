@@ -142,7 +142,9 @@
 						"blend",
 						"alpha_test",
 						"double_sided"
-					]
+					],
+					"ambient_occlusion": "$general.boolean",
+					"face_dimming": "$general.boolean"
 				},
 				"*": {
 					"texture": "$dynamic.rp.terrain_texture",
@@ -159,10 +161,7 @@
 	"$versioned_template.minecraft:geometry": [
 		{
 			"$if": "$format_version >= 1.16.100",
-			"$data": {
-				"@meta": { "is_value": true },
-				"@import.value.model": "$dynamic.cache.model.identifiers"
-			}
+			"$data": "$general.model_identifier"
 		}
 	],
 	"$versioned_template.minecraft:on_step_on": [
