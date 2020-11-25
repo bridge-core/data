@@ -267,19 +267,29 @@
 
 	"minecraft:behavior.drop_item_for": {
 		"priority": "$general.number",
+		"cooldown": "$general.number",
 		"drop_item_chance": "$general.decimal",
 		"entity_types": "$entity.general.entity_types",
 		"goal_radius": "$general.decimal",
 		"loot_table": "$dynamic.loot_table_files",
 		"max_dist": "$general.number",
+		"max_head_look_at_height": "$general.number",
+		"minimum_teleport_distance": "$general.number",
 		"offering_distance": "$general.number",
 		"on_drop_attempt": "$entity.general.event_definition",
 		"search_count": "$general.number",
 		"search_height": "$general.number",
 		"search_range": "$general.number",
+		"seconds_before_pickup": "$general.number",
 		"speed_multiplier": "$general.decimal",
 		"time_of_day_range": {
 			"$dynamic.list.index_pair": "$general.decimal"
+		},
+		"target_range": {
+			"$dynamic.list.index_triple": "$general.number"
+		},
+		"teleport_offset": {
+			"$dynamic.list.index_triple": "$general.number"
 		}
 	},
 	"$versioned_template.minecraft:behavior.eat_block": [
