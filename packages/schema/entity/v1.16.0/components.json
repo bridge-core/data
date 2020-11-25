@@ -1127,7 +1127,914 @@
 				},
 				"minecraft:healable": {
 					"description": "Defines the interactions with this entity for healing it.",
-					"properties": {}
+					"properties": {
+						"force_use": {
+							"type": "boolean"
+						},
+						"filters": {
+							"$ref": "../general/filter.json"
+						},
+						"items": {
+							"type": "array",
+							"items": {
+								"properties": {
+									"item": {
+										"anyOf": [
+											{
+												"$ref": "../../general/vanilla/identifiers.json#/definitions/item_identifiers"
+											}
+										]
+									},
+									"heal_amount": {
+										"type": "number"
+									},
+									"filters": {
+										"$ref": "../general/filter.json"
+									},
+									"effects": {
+										"type": "array",
+										"items": {
+											"properties": {
+												"name": {
+													"$ref": "../../general/vanilla/effectName.json"
+												},
+												"chance": {
+													"type": "number"
+												},
+												"duration": {
+													"type": "number"
+												},
+												"amplifier": {
+													"type": "number"
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				},
+				"minecraft:health": {
+					"description": "Sets the health for the entity.",
+					"additionalProperties": false,
+					"properties": {
+						"value": {
+							"type": "number"
+						},
+						"max": {
+							"type": "number"
+						},
+						"min": {
+							"type": "number"
+						}
+					}
+				},
+				"minecraft:hide": {
+					"additionalProperties": false
+				},
+				"minecraft:home": {
+					"description": "Saves a home pos for when the the entity is spawned."
+				},
+				"minecraft:horse.jump_strength": {
+					"description": "Sets the strength of the entity's jump.",
+					"additionalProperties": false,
+					"properties": {
+						"value": {
+							"type": "number"
+						}
+					}
+				},
+				"minecraft:hurt_on_condition": {
+					"description": "Defines a set of conditions under which an entity should take damage.",
+					"additionalProperties": false,
+					"properties": {
+						"damage_conditions": {
+							"type": "array",
+							"items": {
+								"properties": {
+									"filters": {
+										"$ref": "../general/filter.json"
+									},
+									"cause": {
+										"$ref": "../../general/vanilla/damageType.json"
+									},
+									"damage_per_tick": {
+										"type": "number"
+									}
+								}
+							}
+						}
+					}
+				},
+				"minecraft:input_ground_controlled": {
+					"description": "When configured as a rideable entity, the entity will be controlled using WASD controls.",
+					"additionalProperties": false
+				},
+				"minecraft:insomnia": {
+					"description": "Adds a timer since last rested to see if phantoms should spawn.",
+					"additionalProperties": false,
+					"properties": {
+						"days_until_insomnia": {
+							"type": "number"
+						}
+					}
+				},
+				"minecraft:instant_despawn": {
+					"description": "Despawns the Actor immediately.",
+					"additionalProperties": false,
+					"properties": {
+						"remove_child_entities": {
+							"type": "boolean"
+						}
+					}
+				},
+				"minecraft:interact": {
+					"description": "Defines interactions with this entity.",
+					"additionalProperties": false,
+					"properties": {
+						"interactions": {
+							"type": "array",
+							"items": {
+								"properties": {
+									"add_items": {
+										"properties": {
+											"table": {
+												"type": "string"
+											}
+										}
+									},
+									"cooldown": {
+										"type": "number"
+									},
+									"hurt_item": {
+										"type": "number"
+									},
+									"interact_text": {
+										"type": "string"
+									},
+									"on_interact": {
+										"$ref": "../general/eventDefinition.json"
+									},
+									"particle_on_start": {
+										"$ref": "../general/particleDefinition.json"
+									},
+									"play_sounds": {
+										"type": "string"
+									},
+									"spawn_entities": {
+										"type": "array",
+										"items": {
+											"$ref": "../../general/vanilla/identifiers.json#/definitions/entity_identifiers"
+										}
+									},
+									"spawn_items": {
+										"properties": {
+											"table": {
+												"type": "string"
+											}
+										}
+									},
+									"swing": {
+										"type": "boolean"
+									},
+									"transform_to_item": {
+										"$ref": "../../general/vanilla/identifiers.json#/definitions/item_identifiers"
+									},
+									"barter": {
+										"type": "boolean"
+									},
+									"admire": {
+										"type": "boolean"
+									},
+									"use_item": {
+										"type": "boolean"
+									}
+								}
+							}
+						}
+					}
+				},
+				"minecraft:inventory": {
+					"description": "Defines this entity's inventory properties.",
+					"additionalProperties": false,
+					"properties": {
+						"additional_slots_per_strength": {
+							"type": "number"
+						},
+						"can_be_siphoned_from": {
+							"type": "boolean"
+						},
+						"conatiner_type": {
+							"$ref": "../../general/inventoryType.json"
+						},
+						"inventory_size": {
+							"type": "number"
+						},
+						"private": {
+							"type": "boolean"
+						},
+						"restrict_to_owner": {
+							"type": "boolean"
+						}
+					}
+				},
+				"minecraft:is_baby": {
+					"description": "Sets that this entity is a baby.",
+					"additionalProperties": false
+				},
+				"minecraft:is_charged": {
+					"description": "Sets that this entity is charged.",
+					"additionalProperties": false
+				},
+				"minecraft:is_chested": {
+					"description": "Sets that this entity is currently carrying a chest.",
+					"additionalProperties": false
+				},
+				"minecraft:is_dyeable": {
+					"description": "Allows dyes to be used on this entity to change its color.",
+					"additionalProperties": false,
+					"properties": {
+						"interact_text": {
+							"type": "string"
+						}
+					}
+				},
+				"minecraft:is_hidden_when_invisible": {
+					"description": "Sets that this entity can hide from hostile mobs while invisible.",
+					"additionalProperties": false
+				},
+				"minecraft:is_ignited": {
+					"description": "Sets that this entity is currently on fire.",
+					"additionalProperties": false
+				},
+				"minecraft:is_illager_captain": {
+					"description": "Sets that this entity is an illager captain.",
+					"additionalProperties": false
+				},
+				"minecraft:is_saddled": {
+					"description": "Sets that this entity is currently saddled.",
+					"additionalProperties": false
+				},
+				"minecraft:is_shaking": {
+					"description": "Sets that this entity is currently shaking.",
+					"additionalProperties": false
+				},
+				"minecraft:is_sheared": {
+					"description": "Sets that this entity is currently sheared.",
+					"additionalProperties": false
+				},
+				"minecraft:is_stackable": {
+					"description": "Sets that this entity can be stacked.",
+					"additionalProperties": false
+				},
+				"minecraft:is_stunned": {
+					"description": "Sets that this entity is currently stunned.",
+					"additionalProperties": false
+				},
+				"minecraft:is_tamed": {
+					"description": "Sets that this entity is currently tamed.",
+					"additionalProperties": false
+				},
+				"minecraft:item_controllable": {
+					"description": "Defines what items can be used to control this entity while ridden.",
+					"additionalProperties": false,
+					"properties": {
+						"control_items": {
+							"type": "array",
+							"items": {
+								"$ref": "../../general/vanilla/identifiers.json#/definitions/item_identifiers"
+							}
+						}
+					}
+				},
+				"minecraft:item_hopper": {
+					"description": "Determines that this entity is an item hopper.",
+					"additionalProperties": false
+				},
+				"minecraft:jump.static": {
+					"description": "Gives the entity the ability to jump.",
+					"additionalProperties": false,
+					"properties": {
+						"jump_power": {
+							"type": "number"
+						}
+					}
+				},
+				"minecraft:jump.dynamic": {
+					"description": "Defines a dynamic type jump control that will change jump properties based on the speed modifier of the mob.",
+					"additionalProperties": false
+				},
+				"minecraft:knockback_resistance": {
+					"description": "Gives the entity resistance to knockback.",
+					"additionalProperties": false
+				},
+				"minecraft:lava_movement": {
+					"description": "Sets the movement speed of the entity in lava.",
+					"additionalProperties": false
+				},
+				"minecraft:leashable": {
+					"description": "Allows this entity to be leashed and defines the conditions and events for this entity when is leashed.",
+					"additionalProperties": false,
+					"properties": {
+						"soft_distance": {
+							"type": "number"
+						},
+						"hard_distance": {
+							"type": "number"
+						},
+						"max_distance": {
+							"type": "number"
+						},
+						"on_leash": {
+							"$ref": "../general/eventDefinition.json"
+						},
+						"on_unleash": {
+							"$ref": "../general/eventDefinition.json"
+						},
+						"can_be_stolen": {
+							"type": "boolean"
+						}
+					}
+				},
+				"minecraft:lookat": {
+					"description": "Defines the behavior when another entity looks at this entity.",
+					"additionalProperties": false,
+					"properties": {
+						"search_radius": {
+							"type": "number"
+						},
+						"set_target": {
+							"type": "boolean"
+						},
+						"look_cooldown": {
+							"type": "number"
+						},
+						"filters": {
+							"$ref": "../general/filter.json"
+						},
+						"look_event": {
+							"$ref": "../general/eventDefinition.json"
+						},
+						"allow_invulnerable": {
+							"type": "boolean"
+						}
+					}
+				},
+				"minecraft:loot": {
+					"description": "Sets the loot table for what items this entity drops upon death.",
+					"additionalProperties": false,
+					"properties": {
+						"table": {
+							"type": "string"
+						}
+					}
+				},
+				"minecraft:managed_wandering_trader": {
+					"description": "This component is used to implement part of the Wandering Trader behavior.",
+					"additionalProperties": false
+				},
+				"minecraft:mark_variant": {
+					"description": "Additional variant value. Can be used to further differentiate variants.",
+					"additionalProperties": false,
+					"properties": {
+						"value": {
+							"type": "number"
+						}
+					}
+				},
+				"minecraft:mob_effect": {
+					"description": "A component that applies a mob effect to entities that get within range.",
+					"additionalProperties": false,
+					"properties": {
+						"effect_range": {
+							"type": "number"
+						},
+						"mob_effect": {
+							"$ref": "../../general/vanilla/effectName.json"
+						},
+						"effect_time": {
+							"type": "number"
+						},
+						"entity_filter": {
+							"$ref": "../general/filter.json"
+						}
+					}
+				},
+				"minecraft:movement": {
+					"description": "Defines the movement speed for the entity.",
+					"additionalProperties": false,
+					"properties": {
+						"value": {
+							"type": "number"
+						}
+					}
+				},
+				"minecraft:movement.amphibious": {
+					"description": "This move control allows the mob to swim in water and walk on land.",
+					"additionalProperties": false,
+					"properties": {
+						"max_turn": {
+							"$ref": "../../general/degree.json"
+						}
+					}
+				},
+				"minecraft:movement.basic": {
+					"description": "This component accents the movement of an entity.",
+					"additionalProperties": false,
+					"properties": {
+						"max_turn": {
+							"$ref": "../../general/degree.json"
+						}
+					}
+				},
+				"minecraft:movement.fly": {
+					"description": "This move control causes the mob to fly.",
+					"additionalProperties": false,
+					"properties": {
+						"max_turn": {
+							"$ref": "../../general/degree.json"
+						}
+					}
+				},
+				"minecraft:movement.generic": {
+					"description": "This move control allows a mob to fly, swim, climb, etc.",
+					"additionalProperties": false,
+					"properties": {
+						"max_turn": {
+							"$ref": "../../general/degree.json"
+						}
+					}
+				},
+				"minecraft:movement.hover": {
+					"description": "This move control causes the mob to hover.",
+					"additionalProperties": false,
+					"properties": {
+						"max_turn": {
+							"$ref": "../../general/degree.json"
+						}
+					}
+				},
+				"minecraft:movement.jump": {
+					"description": "Move control that causes the mob to jump as it moves with a specified delay between jumps.",
+					"additionalProperties": false,
+					"properties": {
+						"max_turn": {
+							"$ref": "../../general/degree.json"
+						},
+						"jump_delay": {
+							"type": "array",
+							"minItems": 2,
+							"maxItems": 2,
+							"items": {
+								"type": "number"
+							}
+						}
+					}
+				},
+				"minecraft:movement.glide": {
+					"description": "This move causes the mob to glide.",
+					"additionalProperties": false,
+					"properties": {
+						"max_turn": {
+							"$ref": "../../general/degree.json"
+						},
+						"start_speed": {
+							"type": "number"
+						},
+						"speed_when_turning": {
+							"type": "number"
+						}
+					}
+				},
+				"minecraft:skin_id": {
+					"description": "Skin ID value. Can be used to differentiate skins, such as base skins for villagers.",
+					"additionalProperties": false,
+					"properties": {
+						"value": {
+							"type": "number"
+						}
+					}
+				},
+				"minecraft:movement.skip": {
+					"description": "This move control causes the mob to hop as it moves.",
+					"additionalProperties": false,
+					"properties": {
+						"max_turn": {
+							"$ref": "../../general/degree.json"
+						}
+					}
+				},
+				"minecraft:movement.sway": {
+					"description": "This move control causes the mob to sway side to side giving the impression it is swimming.",
+					"additionalProperties": false,
+					"properties": {
+						"max_turn": {
+							"$ref": "../../general/degree.json"
+						},
+						"sway_amplitude": {
+							"type": "number"
+						}
+					}
+				},
+				"minecraft:nameable": {
+					"description": "Allows this entity to be named (e.g. using a name tag).",
+					"additionalProperties": false,
+					"properties": {
+						"allow_name_tag_renaming": {
+							"type": "boolean"
+						},
+						"always_show": {
+							"type": "boolean"
+						},
+						"default_trigger": {
+							"$ref": "../general/eventDefinition.json"
+						},
+						"name_actions": {
+							"type": "array",
+							"items": {
+								"properties": {
+									"name_filter": {
+										"type": "string"
+									},
+									"on_named": {
+										"$ref": "../general/eventDefinition.json"
+									}
+								}
+							}
+						}
+					}
+				},
+				"minecraft:navigation.climb": {
+					"description": "Allows this entity to generate paths that include vertical walls like the vanilla Spiders do.",
+					"properties": {
+						"is_amphibious": {
+							"type": "boolean"
+						},
+						"avoid_portals": {
+							"type": "boolean"
+						},
+						"avoid_sun": {
+							"type": "boolean"
+						},
+						"avoid_water": {
+							"type": "boolean"
+						},
+						"avoid_damage_blocks": {
+							"type": "boolean"
+						},
+						"can_break_doors": {
+							"type": "boolean"
+						},
+						"can_open_doors": {
+							"type": "boolean"
+						},
+						"can_pass_doors": {
+							"type": "boolean"
+						},
+						"can_pass_over_water": {
+							"type": "boolean"
+						},
+						"can_pass_over_lava": {
+							"type": "boolean"
+						},
+						"can_path_from_air": {
+							"type": "boolean"
+						},
+						"can_sink": {
+							"type": "boolean"
+						},
+						"can_walk_in_lava": {
+							"type": "boolean"
+						}
+					}
+				},
+				"minecraft:navigation.float": {
+					"description": "Allows this entity to generate paths that include vertical walls like the vanilla Spiders do.",
+					"properties": {
+						"is_amphibious": {
+							"type": "boolean"
+						},
+						"avoid_portals": {
+							"type": "boolean"
+						},
+						"avoid_sun": {
+							"type": "boolean"
+						},
+						"avoid_water": {
+							"type": "boolean"
+						},
+						"avoid_damage_blocks": {
+							"type": "boolean"
+						},
+						"can_break_doors": {
+							"type": "boolean"
+						},
+						"can_open_doors": {
+							"type": "boolean"
+						},
+						"can_pass_doors": {
+							"type": "boolean"
+						},
+						"can_pass_over_water": {
+							"type": "boolean"
+						},
+						"can_pass_over_lava": {
+							"type": "boolean"
+						},
+						"can_path_from_air": {
+							"type": "boolean"
+						},
+						"can_sink": {
+							"type": "boolean"
+						},
+						"can_walk_in_lava": {
+							"type": "boolean"
+						}
+					}
+				},
+				"minecraft:navigation.fly": {
+					"description": "Allows this entity to generate paths that include vertical walls like the vanilla Spiders do.",
+					"properties": {
+						"is_amphibious": {
+							"type": "boolean"
+						},
+						"avoid_portals": {
+							"type": "boolean"
+						},
+						"avoid_sun": {
+							"type": "boolean"
+						},
+						"avoid_water": {
+							"type": "boolean"
+						},
+						"avoid_damage_blocks": {
+							"type": "boolean"
+						},
+						"can_break_doors": {
+							"type": "boolean"
+						},
+						"can_open_doors": {
+							"type": "boolean"
+						},
+						"can_pass_doors": {
+							"type": "boolean"
+						},
+						"can_pass_over_water": {
+							"type": "boolean"
+						},
+						"can_pass_over_lava": {
+							"type": "boolean"
+						},
+						"can_path_from_air": {
+							"type": "boolean"
+						},
+						"can_sink": {
+							"type": "boolean"
+						},
+						"can_walk_in_lava": {
+							"type": "boolean"
+						}
+					}
+				},
+				"minecraft:navigation.generic": {
+					"description": "Allows this entity to generate paths that include vertical walls like the vanilla Spiders do.",
+					"properties": {
+						"is_amphibious": {
+							"type": "boolean"
+						},
+						"avoid_portals": {
+							"type": "boolean"
+						},
+						"avoid_sun": {
+							"type": "boolean"
+						},
+						"avoid_water": {
+							"type": "boolean"
+						},
+						"avoid_damage_blocks": {
+							"type": "boolean"
+						},
+						"can_break_doors": {
+							"type": "boolean"
+						},
+						"can_open_doors": {
+							"type": "boolean"
+						},
+						"can_pass_doors": {
+							"type": "boolean"
+						},
+						"can_pass_over_water": {
+							"type": "boolean"
+						},
+						"can_pass_over_lava": {
+							"type": "boolean"
+						},
+						"can_path_from_air": {
+							"type": "boolean"
+						},
+						"can_sink": {
+							"type": "boolean"
+						},
+						"can_walk_in_lava": {
+							"type": "boolean"
+						}
+					}
+				},
+				"minecraft:navigation.hover": {
+					"description": "Allows this entity to generate paths that include vertical walls like the vanilla Spiders do.",
+					"properties": {
+						"is_amphibious": {
+							"type": "boolean"
+						},
+						"avoid_portals": {
+							"type": "boolean"
+						},
+						"avoid_sun": {
+							"type": "boolean"
+						},
+						"avoid_water": {
+							"type": "boolean"
+						},
+						"avoid_damage_blocks": {
+							"type": "boolean"
+						},
+						"can_break_doors": {
+							"type": "boolean"
+						},
+						"can_open_doors": {
+							"type": "boolean"
+						},
+						"can_pass_doors": {
+							"type": "boolean"
+						},
+						"can_pass_over_water": {
+							"type": "boolean"
+						},
+						"can_pass_over_lava": {
+							"type": "boolean"
+						},
+						"can_path_from_air": {
+							"type": "boolean"
+						},
+						"can_sink": {
+							"type": "boolean"
+						},
+						"can_walk_in_lava": {
+							"type": "boolean"
+						}
+					}
+				},
+				"minecraft:navigation.swim": {
+					"description": "Allows this entity to generate paths that include vertical walls like the vanilla Spiders do.",
+					"properties": {
+						"is_amphibious": {
+							"type": "boolean"
+						},
+						"avoid_portals": {
+							"type": "boolean"
+						},
+						"avoid_sun": {
+							"type": "boolean"
+						},
+						"avoid_water": {
+							"type": "boolean"
+						},
+						"avoid_damage_blocks": {
+							"type": "boolean"
+						},
+						"can_break_doors": {
+							"type": "boolean"
+						},
+						"can_open_doors": {
+							"type": "boolean"
+						},
+						"can_pass_doors": {
+							"type": "boolean"
+						},
+						"can_pass_over_water": {
+							"type": "boolean"
+						},
+						"can_pass_over_lava": {
+							"type": "boolean"
+						},
+						"can_path_from_air": {
+							"type": "boolean"
+						},
+						"can_sink": {
+							"type": "boolean"
+						},
+						"can_walk_in_lava": {
+							"type": "boolean"
+						}
+					}
+				},
+				"minecraft:navigation.walk": {
+					"description": "Allows this entity to generate paths that include vertical walls like the vanilla Spiders do.",
+					"properties": {
+						"is_amphibious": {
+							"type": "boolean"
+						},
+						"avoid_portals": {
+							"type": "boolean"
+						},
+						"avoid_sun": {
+							"type": "boolean"
+						},
+						"avoid_water": {
+							"type": "boolean"
+						},
+						"avoid_damage_blocks": {
+							"type": "boolean"
+						},
+						"can_break_doors": {
+							"type": "boolean"
+						},
+						"can_open_doors": {
+							"type": "boolean"
+						},
+						"can_pass_doors": {
+							"type": "boolean"
+						},
+						"can_pass_over_water": {
+							"type": "boolean"
+						},
+						"can_pass_over_lava": {
+							"type": "boolean"
+						},
+						"can_path_from_air": {
+							"type": "boolean"
+						},
+						"can_sink": {
+							"type": "boolean"
+						},
+						"can_walk_in_lava": {
+							"type": "boolean"
+						}
+					}
+				},
+				"minecraft:npc": {
+					"description": "Gives the entity the npc menu when interacted with.",
+					"additionalProperties": false,
+					"properties": {
+						"npc_data": {
+							"properties": {
+								"portrait_offsets": {
+									"properties": {
+										"translate": {
+											"type": "array",
+											"minItems": 3,
+											"maxItems": 3,
+											"items": {
+												"type": "number"
+											}
+										},
+										"scale": {
+											"type": "array",
+											"minItems": 3,
+											"maxItems": 3,
+											"items": {
+												"type": "number"
+											}
+										}
+									}
+								},
+								"picker_offsets": {
+									"properties": {
+										"translate": {
+											"type": "array",
+											"minItems": 3,
+											"maxItems": 3,
+											"items": {
+												"type": "number"
+											}
+										},
+										"scale": {
+											"type": "array",
+											"minItems": 3,
+											"maxItems": 3,
+											"items": {
+												"type": "number"
+											}
+										}
+									}
+								},
+								"skin_list": {
+									"type": "array",
+									"items": {
+										"properties": {
+											"variant": {
+												"type": "number"
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				},
+				"minecraft:on_death": {
+					"description": "Triggers an event upon the entity's death."
 					// TODO
 				}
 			}
