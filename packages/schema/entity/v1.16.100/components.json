@@ -535,6 +535,10 @@
 							"type": "boolean"
 						}
 					}
+				},
+				"minecraft:out_of_control": {
+					"description": "Defines the entity's 'out of control' state.",
+					"additionalProperties": false
 				}
 			}
 		}

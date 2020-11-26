@@ -2034,7 +2034,831 @@
 					}
 				},
 				"minecraft:on_death": {
-					"description": "Triggers an event upon the entity's death."
+					"description": "Triggers an event upon the entity's death.",
+					"$ref": "../general/eventDefinition.json"
+				},
+				"minecraft:on_friendly_anger": {
+					"description": "Adds a trigger that will run when a nearby entity of the same type as this entity becomes angry.",
+					"$ref": "../general/eventDefinition.json"
+				},
+				"minecraft:on_hurt": {
+					"description": "Adds a trigger to call when this entity takes damage.",
+					"$ref": "../general/eventDefinition.json"
+				},
+				"minecraft:on_hurt_by_player": {
+					"description": "Adds a trigger to call when this entity is attacked by the player.",
+					"$ref": "../general/eventDefinition.json"
+				},
+				"minecraft:on_ignite": {
+					"description": "Adds a trigger to call when this entity is set on fire.",
+					"$ref": "../general/eventDefinition.json"
+				},
+				"minecraft:on_start_landing": {
+					"description": "Only usable by the Ender Dragon. Adds a trigger to call when this entity lands.",
+					"$ref": "../general/eventDefinition.json"
+				},
+				"minecraft:on_start_takeoff": {
+					"description": "Only usable by the Ender Dragon. Adds a trigger to call when this entity starts flying.",
+					"$ref": "../general/eventDefinition.json"
+				},
+				"minecraft:on_target_acquired": {
+					"description": "Adds a trigger to call when this entity finds a target.",
+					"$ref": "../general/eventDefinition.json"
+				},
+				"minecraft:on_target_escape": {
+					"description": "Adds a trigger to call when this entity loses the target it currently has.",
+					"$ref": "../general/eventDefinition.json"
+				},
+				"minecraft:on_wake_with_owner": {
+					"description": "Adds a trigger to call when this pet's owner awakes after sleeping with the pet.",
+					"$ref": "../general/eventDefinition.json"
+				},
+				"minecraft:peek": {
+					"description": "Defines the entity's 'peek' behavior, defining the events that should be called during it.",
+					"additionalProperties": false,
+					"properties": {
+						"on_open": {
+							"$ref": "../general/eventDefinition.json"
+						},
+						"on_close": {
+							"$ref": "../general/eventDefinition.json"
+						},
+						"on_target_open": {
+							"$ref": "../general/eventDefinition.json"
+						}
+					}
+				},
+				"minecraft:persistent": {
+					"description": "Defines whether an entity should be persistent in the game world.",
+					"additionalProperties": false
+				},
+				"minecraft:physics": {
+					"description": "Defines physics properties of an actor, including if it is affected by gravity or if it collides with objects.",
+					"additionalProperties": false,
+					"properties": {
+						"has_collision": {
+							"type": "boolean"
+						},
+						"has_gravity": {
+							"type": "boolean"
+						}
+					}
+				},
+				"minecraft.player:saturation": {
+					"description": "Defines the player's saturation.",
+					"additionalProperties": false,
+					"properties": {
+						"value": {
+							"type": "number"
+						},
+						"min": {
+							"type": "number"
+						},
+						"max": {
+							"type": "number"
+						}
+					}
+				},
+				"minecraft.player:exhaustion": {
+					"description": "Defines the player's exhaustion.",
+					"additionalProperties": false,
+					"properties": {
+						"value": {
+							"type": "number"
+						},
+						"min": {
+							"type": "number"
+						},
+						"max": {
+							"type": "number"
+						}
+					}
+				},
+				"minecraft.player:level": {
+					"description": "Defines the player's level.",
+					"additionalProperties": false,
+					"properties": {
+						"value": {
+							"type": "number"
+						},
+						"min": {
+							"type": "number"
+						},
+						"max": {
+							"type": "number"
+						}
+					}
+				},
+				"minecraft.player:experience": {
+					"description": "Defines the player's experience.",
+					"additionalProperties": false,
+					"properties": {
+						"value": {
+							"type": "number"
+						},
+						"min": {
+							"type": "number"
+						},
+						"max": {
+							"type": "number"
+						}
+					}
+				},
+				"minecraft:pushable": {
+					"description": "Defines what can push an entity between other entities and pistons.",
+					"additionalProperties": false,
+					"properties": {
+						"is_pushable": {
+							"type": "boolean"
+						},
+						"is_pushable_by_piston": {
+							"type": "boolean"
+						}
+					}
+				},
+				"minecraft:push_through": {
+					"description": "Sets the distance through which the entity can push through.",
+					"additionalProperties": false,
+					"properties": {
+						"value": {
+							"type": "number"
+						}
+					}
+				},
+				"minecraft:preferred_path": {
+					"description": "Specifies costing information for mobs that prefer to walk on preferred paths.",
+					"additionalProperties": false,
+					"properties": {
+						"max_fall_blocks": {
+							"type": "number"
+						},
+						"jump_cost": {
+							"type": "number"
+						},
+						"default_block_cost": {
+							"type": "number"
+						},
+						"preferred_path_blocks": {
+							"type": "array",
+							"items": {
+								"properties": {
+									"cost": {
+										"type": "number"
+									},
+									"blocks": {
+										"type": "array",
+										"items": {
+											"$ref": "../../general/vanilla/identifiers.json#/definitions/block_identifiers"
+										}
+									}
+								}
+							}
+						}
+					}
+				},
+				"minecraft:projectile": {
+					"description": "Allows the entity to be a thrown entity.",
+					"additionalProperties": false,
+					"properties": {
+						"on_hit": {
+							"properties": {
+								"definition_event": {
+									"properties": {
+										"affect_projectile": {
+											"type": "boolean"
+										},
+										"affect_shooter": {
+											"type": "boolean"
+										},
+										"affect_target": {
+											"type": "boolean"
+										},
+										"affect_splash_area": {
+											"type": "boolean"
+										},
+										"splash_area": {
+											"type": "number"
+										},
+										"event_trigger": {
+											"$ref": "../general/eventDefinition.json"
+										}
+									}
+								},
+								"grant_xp": {
+									"properties": {
+										"minXP": {
+											"type": "number"
+										},
+										"maxXP": {
+											"type": "number"
+										},
+										"xp": {
+											"type": "number"
+										}
+									}
+								},
+								"spawn_aoe_cloud": {
+									"properties": {
+										"radius": {
+											"type": "number"
+										},
+										"radius_on_use": {
+											"type": "number"
+										},
+										"potion": {
+											"type": "integer",
+											"minimum": 0,
+											"maximum": 41
+										},
+										"particle": {
+											"$ref": "../../general/particleName.json"
+										},
+										"duration": {
+											"type": "number"
+										},
+										"color": {
+											"type": "array",
+											"minItems": 3,
+											"maxItems": 3,
+											"items": {
+												"type": "number"
+											}
+										},
+										"affect_owner": {
+											"type": "boolean"
+										},
+										"reapplication_delay": {
+											"type": "number"
+										}
+									}
+								},
+								"impact_damage": {
+									"properties": {
+										"filter": {
+											"$ref": "../../molang/embeddedBeta.json"
+										},
+										"damage": {
+											"type": "array",
+											"minItems": 2,
+											"maxItems": 2,
+											"items": {
+												"type": "number"
+											}
+										},
+										"knockback": {
+											"type": "boolean"
+										},
+										"semi_random_diff_damage": {
+											"type": "boolean"
+										},
+										"destroy_on_hit": {
+											"type": "boolean"
+										},
+										"max_critical_damage": {
+											"type": "number"
+										},
+										"min_critical_damage": {
+											"type": "number"
+										},
+										"power_multiplier": {
+											"type": "number"
+										},
+										"should_bounce": {
+											"type": "boolean"
+										},
+										"channeling": {
+											"type": "boolean"
+										},
+										"set_last_hurt_requires_damage": {
+											"type": "boolean"
+										},
+										"destroy_on_hit_requres_damage": {
+											"type": "boolean"
+										}
+									}
+								},
+								"spawn_chance": {
+									"properties": {
+										"first_spawn_percent_chance": {
+											"type": "number"
+										},
+										"first_spawn_chance": {
+											"type": "number"
+										},
+										"second_spawn_percent_chance": {
+											"type": "number"
+										},
+										"second_spawn_chance": {
+											"type": "number"
+										},
+										"first_spawn_count": {
+											"type": "number"
+										},
+										"second_spawn_count": {
+											"type": "number"
+										},
+										"spawn_mob": {
+											"type": "string"
+										},
+										"spawn_definition": {
+											"$ref": "../../general/vanilla/identifiers.json#/definitions/entity_identifiers"
+										},
+										"spawn_baby": {
+											"type": "boolean"
+										}
+									}
+								},
+								"mob_effect": {
+									"properties": {
+										"effect": {
+											"$ref": "../../general/vanilla/effectName.json"
+										},
+										"duration": {
+											"type": "number"
+										},
+										"duration_easy": {
+											"type": "number"
+										},
+										"duration_normal": {
+											"type": "number"
+										},
+										"duration_hard": {
+											"type": "number"
+										},
+										"amplifier": {
+											"type": "number"
+										}
+									}
+								},
+								"stick_in_ground": {
+									"properties": {
+										"shake_time": {
+											"type": "number"
+										}
+									}
+								},
+								"thrown_potion_effect": {
+									"additionalProperties": false
+								},
+								"douse_fire": {
+									"additionalProperties": false
+								},
+								"arrow_effect": {
+									"additionalProperties": false
+								},
+								"remove_on_hit": {
+									"additionalProperties": false
+								},
+								"teleport_owner": {
+									"additionalProperties": false
+								},
+								"particle_on_hit": {
+									"properties": {
+										"particle_type": {
+											"$ref": ".././general/particleName.json"
+										},
+										"num_particles": {
+											"type": "number"
+										},
+										"on_entity_hit": {
+											"type": "boolean"
+										},
+										"on_other_hit": {
+											"type": "boolean"
+										}
+									}
+								},
+								"catch_fire": {
+									"properties": {
+										"fire_affected_by_griefing": {
+											"type": "boolean"
+										}
+									}
+								}
+							}
+						},
+						"shoot_sound": {
+							"type": "string"
+						},
+						"hit_sound": {
+							"type": "string"
+						},
+						"hit_ground_sound": {
+							"type": "string"
+						},
+						"is_dangerous": {
+							"type": "boolean"
+						},
+						"inertia": {
+							"type": "number"
+						},
+						"liquid_inertia": {
+							"type": "number"
+						},
+						"power": {
+							"type": "number"
+						},
+						"gravity": {
+							"type": "number"
+						},
+						"uncertainty": {
+							"type": "number"
+						},
+						"uncertainty_multiplier": {
+							"type": "number"
+						},
+						"anchor": {
+							"type": "number"
+						},
+						"angleoffset": {
+							"type": "number"
+						},
+						"semi_random_diff_damage": {
+							"type": "boolean"
+						},
+						"shoot_target": {
+							"type": "boolean"
+						},
+						"stop_on_hurt": {
+							"type": "boolean"
+						},
+						"multiple_targets": {
+							"type": "boolean"
+						},
+						"should_bounce": {
+							"type": "boolean"
+						},
+						"reflect_on_hurt": {
+							"type": "boolean"
+						},
+						"catch_fire": {
+							"type": "boolean"
+						},
+						"offset": {
+							"type": "array",
+							"minItems": 3,
+							"maxItems": 3,
+							"items": {
+								"type": "number"
+							}
+						},
+						"homing": {
+							"type": "boolean"
+						}
+					}
+				},
+				"minecraft:raid_trigger": {
+					"description": "Attempts to trigger a raid at the entity's location.",
+					"additionalProperties": false,
+					"properties": {
+						"triggered_event": {
+							"$ref": "../general/eventDefinition.json"
+						}
+					}
+				},
+				"minecraft:rail_movement": {
+					"description": "Defines the entity's movement on the rails. An entity with this component is only allowed to move on the rail.",
+					"additionalProperties": false,
+					"properties": {
+						"max_speed": {
+							"type": "number"
+						}
+					}
+				},
+				"minecraft:rail_sensor": {
+					"description": "Triggers based on rail conditions",
+					"additionalProperties": false,
+					"properties": {
+						"check_block_types": {
+							"type": "boolean"
+						},
+						"eject_on_activate": {
+							"type": "boolean"
+						},
+						"eject_on_deactivate": {
+							"type": "boolean"
+						},
+						"on_activate": {
+							"$ref": "../general/eventDefinition.json"
+						},
+						"on_deactivate": {
+							"$ref": "../general/eventDefinition.json"
+						},
+						"tick_command_block_on_activate": {
+							"type": "boolean"
+						},
+						"tick_command_block_on_deactivate": {
+							"type": "boolean"
+						}
+					}
+				},
+				"minecraft:ravager_blocked": {
+					"description": "Defines the ravager's response to their melee attack being blocked.",
+					"additionalProperties": false,
+					"properties": {
+						"knockback_strength": {
+							"type": "number"
+						},
+						"reaction_choices": {
+							"type": "array",
+							"items": {
+								"properties": {
+									"weight": {
+										"type": "number"
+									},
+									"value": {
+										"$ref": "../general/eventDefinition.json"
+									}
+								}
+							}
+						}
+					}
+				},
+				"minecraft:rideable": {
+					"description": "Determines whether this entity can be ridden. Allows specifying the different seat positions and quantity.",
+					"additionalProperties": false,
+					"properties": {
+						"controlling_seat": {
+							"type": "number"
+						},
+						"crouching_skip_interact": {
+							"type": "boolean"
+						},
+						"family_types": {
+							"type": "array",
+							"items": {
+								"type": "string"
+							}
+						},
+						"interact_text": {
+							"type": "string"
+						},
+						"pull_in_entities": {
+							"type": "boolean"
+						},
+						"rider_can_interact": {
+							"type": "boolean"
+						},
+						"seat_count": {
+							"type": "number"
+						},
+						"seats": {
+							"type": "array",
+							"items": {
+								"properties": {
+									"lock_rider_rotation": {
+										"$ref": "../../general/degree.json"
+									},
+									"max_rider_count": {
+										"type": "number"
+									},
+									"min_rider_count": {
+										"type": "number"
+									},
+									"position": {
+										"type": "array",
+										"minItems": 3,
+										"maxItems": 3,
+										"items": {
+											"type": "number"
+										}
+									},
+									"rotate_rider_by": {
+										"anyOf": [
+											{
+												"$ref": "../../general/degree.json"
+											},
+											{
+												"$ref": "../../molang/embeddedBeta.json"
+											}
+										]
+									}
+								}
+							}
+						}
+					}
+				},
+				"minecraft:scaffolding_climber": {
+					"description": "Allows the player to detect and manuever on the scaffolding block.",
+					"additionalProperties": false
+				},
+				"minecraft:scale": {
+					"description": "Sets the entity's visual size.",
+					"additionalProperties": false,
+					"properties": {
+						"value": {
+							"type": "number"
+						}
+					}
+				},
+				"minecraft:scale_by_age": {
+					"description": "Defines the entity's size interpolation based on the entity's age.",
+					"additionalProperties": false,
+					"properties": {
+						"start_scale": {
+							"type": "number"
+						},
+						"end_scale": {
+							"type": "number"
+						}
+					}
+				},
+				"minecraft:scheduler": {
+					"description": "Fires off scheduled mob events at time of day events.",
+					"additionalProperties": false,
+					"properties": {
+						"min_delay_secs": {
+							"type": "number"
+						},
+						"max_delay_secs": {
+							"type": "number"
+						},
+						"scheduled_events": {
+							"type": "array",
+							"items": {
+								"$ref": "../general/eventDefinition.json"
+							}
+						}
+					}
+				},
+				"minecraft:shareables": {
+					"description": "Defines a list of items the mob wants to share or pick up.",
+					"additionalProperties": false,
+					"properties": {
+						"all_items": {
+							"type": "boolean"
+						},
+						"all_items_max_amount": {
+							"type": "number"
+						},
+						"all_items_surplus_amount": {
+							"type": "number"
+						},
+						"all_items_want_amount": {
+							"type": "number"
+						},
+						"items": {
+							"type": "array",
+							"items": {
+								"properties": {
+									"priority": {
+										"type": "number"
+									},
+									"item": {
+										"$ref": "../../general/vanilla/identifiers.json#/definitions/item_identifiers"
+									},
+									"item_aux": {
+										"type": "number"
+									},
+									"craft_into": {
+										"$ref": "../../general/vanilla/identifiers.json#/definitions/item_identifiers"
+									},
+									"max_amount": {
+										"type": "number"
+									},
+									"want_amount": {
+										"type": "number"
+									},
+									"surplus_amount": {
+										"type": "number"
+									},
+									"pickup_limit": {
+										"type": "number"
+									},
+									"admire": {
+										"type": "boolean"
+									},
+									"barter": {
+										"type": "boolean"
+									},
+									"consume_item": {
+										"type": "boolean"
+									},
+									"stored_in_inventory": {
+										"type": "boolean"
+									}
+								}
+							}
+						}
+					}
+				},
+				"minecraft:shooter": {
+					"description": "Defines the entity's ranged attack behavior.",
+					"additionalProperties": false,
+					"properties": {
+						"def": {
+							"$ref": "../../general/vanilla/identifiers.json#/definitions/entity_identifiers"
+						},
+						"aux_val": {
+							"type": "integer",
+							"minimum": 0,
+							"maximum": 41
+						}
+					}
+				},
+				"minecraft:sittable": {
+					"description": "Defines the entity's 'sit' state.",
+					"additionalProperties": false,
+					"properties": {
+						"sit_event": {
+							"$ref": "../general/eventDefinition.json"
+						},
+						"stand_event": {
+							"$ref": "../general/eventDefinition.json"
+						}
+					}
+				},
+				"minecraft:sound_volume": {
+					"description": "Sets the entity's base volume for sound effects.",
+					"additionalProperties": false,
+					"properties": {
+						"value": {
+							"type": "number"
+						}
+					}
+				},
+				"minecraft:spawn_entity": {
+					"description": "Adds a timer after which this entity will spawn another entity or item (similar to vanilla's chicken's egg-laying behavior).",
+					"additionalProperties": false,
+					"properties": {
+						"entities": {
+							"type": "array",
+							"items": {
+								"properties": {
+									"should_leash": {
+										"type": "boolean"
+									},
+									"num_to_spawn": {
+										"type": "number"
+									},
+									"min_wait_time": {
+										"type": "number"
+									},
+									"max_wait_time": {
+										"type": "number"
+									},
+									"spawn_entity": {
+										"$ref": "../../general/vanilla/identifiers.json#/definitions/entity_identifiers"
+									},
+									"spawn_event": {
+										"type": "string"
+									},
+									"spawn_item": {
+										"$ref": "../../general/vanilla/identifiers.json#/definitions/item_identifiers"
+									},
+									"spawn_method": {
+										"type": "string",
+										"const": "born"
+									},
+									"spawn_sound": {
+										"type": "string"
+									},
+									"filters": {
+										"$ref": "../general/filter.json"
+									},
+									"single_use": {
+										"type": "boolean"
+									}
+								}
+							}
+						}
+					}
+				},
+				"minecraft:spell_effects": {
+					"description": "Defines what mob effects to add and remove to the entity when adding this component.",
+					"additionalProperties": false,
+					"properties": {
+						"add_effects": {
+							"type": "array",
+							"items": {
+								"$ref": "../../general/effectDefinition.json"
+							}
+						},
+						"remove_effects": {
+							"type": "array",
+							"items": {
+								"$ref": "../../general/vanilla/effectName.json"
+							}
+						}
+					}
+				},
+				"minecraft:strength": {
+					"description": "Defines the entity's strength to carry items.",
+					"additionalProperties": false,
+					"properties": {
+						"value": {
+							"type": "number"
+						},
+						"max": {
+							"type": "number"
+						},
+						"min": {
+							"type": "number"
+						}
+					}
+				},
+				"minecraft:tameable": {
+					"description": "Defines the rules for a mob to be tamed by the player."
 					// TODO
 				}
 			}
