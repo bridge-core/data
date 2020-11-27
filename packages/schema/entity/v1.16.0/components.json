@@ -2858,8 +2858,349 @@
 					}
 				},
 				"minecraft:tameable": {
-					"description": "Defines the rules for a mob to be tamed by the player."
-					// TODO
+					"description": "Defines the rules for a mob to be tamed by the player.",
+					"additionalProperties": false,
+					"properties": {
+						"probability": {
+							"type": "number"
+						},
+						"tame_items": {
+							"type": "array",
+							"items": {
+								"$ref": "../../general/vanilla/identifiers.json#/definitions/item_identifiers"
+							}
+						},
+						"tame_event": {
+							"$ref": "../general/eventDefinition.json"
+						}
+					}
+				},
+				"minecraft:tamemount": {
+					"description": "Allows the Entity to be tamed by mounting it.",
+					"properties": {
+						"attempt_temper_mod": {
+							"type": "number"
+						},
+						"auto_reject_items": {
+							"type": "array",
+							"properties": {
+								"item": {
+									"anyOf": [
+										{
+											"$ref": "../../general/vanilla/identifiers.json#/definitions/item_identifiers"
+										}
+									]
+								}
+							}
+						},
+						"feed_items": {
+							"type": "array",
+							"properties": {
+								"item": {
+									"anyOf": [
+										{
+											"$ref": "../../general/vanilla/identifiers.json#/definitions/item_identifiers"
+										}
+									]
+								},
+								"temper_mod": {
+									"type": "number"
+								}
+							}
+						},
+						"feed_text": {
+							"type": "string"
+						},
+						"min_temper": {
+							"type": "number"
+						},
+						"max_temper": {
+							"type": "number"
+						},
+						"ride_text": {
+							"type": "string"
+						},
+						"tame_event": {
+							"$ref": "../general/eventDefinition.json"
+						}
+					}
+				},
+				"minecraft:target_nearby_sensor": {
+					"description": "Defines the entity's range within which it can see or sense other entities to target them.",
+					"additionalProperties": false,
+					"properties": {
+						"inside_range": {
+							"type": "number"
+						},
+						"outside_range": {
+							"type": "number"
+						},
+						"on_inside_range": {
+							"$ref": "../general/eventDefinition.json"
+						},
+						"on_outside_range": {
+							"$ref": "../general/eventDefinition.json"
+						}
+					}
+				},
+				"minecraft:teleport": {
+					"description": "Defines an entity's teleporting behavior.",
+					"additionalProperties": false,
+					"properties": {
+						"random_teleports": {
+							"type": "boolean"
+						},
+						"max_random_teleport_time": {
+							"type": "number"
+						},
+						"min_random_teleport_time": {
+							"type": "number"
+						},
+						"random_telport_cube": {
+							"type": "array",
+							"minItems": 3,
+							"maxItems": 3,
+							"items": {
+								"type": "number"
+							}
+						},
+						"target_distance": {
+							"type": "number"
+						},
+						"target_teleport_chance": {
+							"type": "number"
+						},
+						"light_teleport_chance": {
+							"type": "number"
+						},
+						"dark_teleport_chance": {
+							"type": "number"
+						}
+					}
+				},
+				"minecraft:tick_world": {
+					"description": "Defines if the entity ticks the world and the radius around it to tick.",
+					"additionalProperties": false,
+					"properties": {
+						"radius": {
+							"type": "number"
+						},
+						"distacne_to_players": {
+							"type": "number"
+						},
+						"never_despawn": {
+							"type": "boolean"
+						}
+					}
+				},
+				"minecraft:timer": {
+					"description": "Adds a timer after which an event will fire.",
+					"additionalProperties": false,
+					"properties": {
+						"looping": {
+							"type": "boolean"
+						},
+						"randomInterval": {
+							"type": "boolean"
+						},
+						"time": {
+							"anyOf": [
+								{
+									"type": "number"
+								},
+								{
+									"type": "array",
+									"minItems": 2,
+									"maxItems": 2,
+									"items": {
+										"type": "number"
+									}
+								}
+							]
+						},
+						"random_time_choices": {
+							"type": "array",
+							"items": {
+								"properties": {
+									"weight": {
+										"type": "number"
+									},
+									"value": {
+										"type": "number"
+									}
+								}
+							}
+						},
+						"time_down_event": {
+							"$ref": "../general/eventDefinition.json"
+						}
+					}
+				},
+				"minecraft:trade_resupply": {
+					"additionalProperties": false
+				},
+				"minecraft:trade_table": {
+					"description": "Defines this entity's ability to trade with players.",
+					"additionalProperties": false,
+					"properties": {
+						"display_name": {
+							"type": "string"
+						},
+						"table": {
+							"type": "string"
+						},
+						"new_screen": {
+							"type": "boolean"
+						},
+						"hero_demand_discount": {
+							"type": "number"
+						},
+						"persist_trades": {
+							"type": "boolean"
+						},
+						"convert_trades_economy": {
+							"type": "boolean"
+						}
+					}
+				},
+				"minecraft:trail": {
+					"description": "Causes an entity to leave a trail of blocks as it moves about the world.",
+					"additionalProperties": false,
+					"properties": {
+						"block_type": {
+							"$ref": "../../general/vanilla/identifiers.json#/definitions/block_identifiers"
+						},
+						"spawn_filter": {
+							"$ref": "../general/filter.json"
+						},
+						"spawn_offset": {
+							"type": "array",
+							"minItems": 3,
+							"maxItems": 3,
+							"items": {
+								"type": "number"
+							}
+						}
+					}
+				},
+				"minecraft:transformation": {
+					"description": "Defines an entity's transformation from the current definition into another",
+					"additionalProperties": false,
+					"properties": {
+						"into": {
+							"$ref": "../../general/vanilla/identifiers.json#/definitions/entity_identifiers"
+						},
+						"begin_transformation_sound": {
+							"type": "string"
+						},
+						"transformation_sound": {
+							"type": "string"
+						},
+						"drop_equipment": {
+							"type": "boolean"
+						},
+						"keep_owner": {
+							"type": "boolean"
+						},
+						"keep_level": {
+							"type": "boolean"
+						},
+						"delay": {
+							"properties": {
+								"value": {
+									"type": "number"
+								},
+								"block_assist_chance": {
+									"type": "number"
+								},
+								"block_chance": {
+									"type": "number"
+								},
+								"block_max": {
+									"type": "number"
+								},
+								"block_radius": {
+									"type": "number"
+								},
+								"keep_owner": {
+									"type": "boolean"
+								},
+								"block_types": {
+									"type": "array",
+									"items": {
+										"$ref": "../../general/vanilla/identifiers.json#/definitions/block_identifiers"
+									}
+								}
+							}
+						}
+					}
+				},
+				"minecraft:trusting": {
+					"description": "Defines the rules for a mob to trust players.",
+					"additionalProperties": false,
+					"properties": {
+						"probability": {
+							"type": "number"
+						},
+						"trust_items": {
+							"type": "array",
+							"items": {
+								"$ref": "../../general/vanilla/identifiers.json#/definitions/item_identifiers"
+							}
+						},
+						"trust_event": {
+							"$ref": "../general/eventDefinition.json"
+						}
+					}
+				},
+				"minecraft:trust": {
+					"additionalProperties": false
+				},
+				"minecraft:type_family": {
+					"description": "Defines the families this entity belongs to.",
+					"additionalProperties": false,
+					"properties": {
+						"family": {
+							"type": "array",
+							"items": {
+								"$ref": "../general/family.json"
+							}
+						}
+					}
+				},
+				"minecraft:underwater_movement": {
+					"additionalProperties": false
+				},
+				"minecraft:variant": {
+					"description": "Used to differentiate the component group of a variant of an entity from others. (e.g. ocelot, villager)",
+					"additionalProperties": false,
+					"properties": {
+						"value": {
+							"type": "integer"
+						}
+					}
+				},
+				"minecraft:walk_animation_speed": {
+					"description": "Sets the speed multiplier for this entity's walk animation speed.",
+					"additionalProperties": false,
+					"properties": {
+						"value": {
+							"type": "number"
+						}
+					}
+				},
+				"minecraft:wants_jockey": {
+					"description": "Sets that this entity wants to become a jockey.",
+					"additionalProperties": false
+				},
+				"minecraft:water_movement": {
+					"description": "Sets the entity's movement speed in water.",
+					"additionalProperties": false,
+					"properties": {
+						"drag_factor": {
+							"type": "number"
+						}
+					}
 				}
 			}
 		},

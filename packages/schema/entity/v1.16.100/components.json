@@ -5,6 +5,9 @@
 			"$ref": "../v1.16.0/components.json"
 		},
 		{
+			"$ref": "./behaviors.json"
+		},
+		{
 			"properties": {
 				"minecraft:ageable": {
 					"properties": {
@@ -539,6 +542,42 @@
 				"minecraft:out_of_control": {
 					"description": "Defines the entity's 'out of control' state.",
 					"additionalProperties": false
+				},
+				"minecraft:tamemount": {
+					"properties": {
+						"auto_reject_items": {
+							"type": "array",
+							"properties": {
+								"item": {
+									"anyOf": [
+										{
+											"properties": {
+												"any_tag": {
+													"type": "string"
+												}
+											}
+										}
+									]
+								}
+							}
+						},
+						"feed_items": {
+							"type": "array",
+							"properties": {
+								"item": {
+									"anyOf": [
+										{
+											"properties": {
+												"any_tag": {
+													"type": "string"
+												}
+											}
+										}
+									]
+								}
+							}
+						}
+					}
 				}
 			}
 		}
