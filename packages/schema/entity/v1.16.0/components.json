@@ -2415,7 +2415,7 @@
 								"particle_on_hit": {
 									"properties": {
 										"particle_type": {
-											"$ref": ".././general/particleName.json"
+											"$ref": "../../general/particleName.json"
 										},
 										"num_particles": {
 											"type": "number"
