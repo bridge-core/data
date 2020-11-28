@@ -1,4 +1,5 @@
 {
+	"ability": ["worldbuilder", "mayfly", "mute"],
 	"location": ["~", "^", "@wildcard"],
 	"target_selector": ["@a", "@e", "@p", "@r", "@s", "@wildcard"],
 	"fill_option": ["outline", "hollow", "destroy", "keep"],
