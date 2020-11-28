@@ -172,7 +172,350 @@
 			}
 		},
 		"minecraft:behavior.breed": {
-			"description": "Allows this mob to breed with other mobs."
+			"description": "Allows this mob to breed with other mobs.",
+			"additionalProperties": false,
+			"properties": {
+				"priority": {
+					"type": "number"
+				},
+				"speed_multiplier": {
+					"type": "number"
+				}
+			}
+		},
+		"minecraft:behavior.celebrate": {
+			"additionalProperties": false,
+			"properties": {
+				"priority": {
+					"type": "number"
+				},
+				"celebration_sound": {
+					"type": "string",
+					"description": "The sound to occasionally play."
+				},
+				"sound_interval": {
+					"description": "The range of time in seconds to randomly wait before playing the sound again.",
+					"properties": {
+						"range_min": {
+							"type": "number"
+						},
+						"range_max": {
+							"type": "number"
+						}
+					}
+				},
+				"jump_interval": {
+					"description": "The range of time in seconds to randomly wait before jumping again.",
+					"properties": {
+						"range_min": {
+							"type": "number"
+						},
+						"range_max": {
+							"type": "number"
+						}
+					}
+				},
+				"duration": {
+					"description": "The duration of the celebration (in seconds).",
+					"type": "number"
+				},
+				"on_celebration_end_event": {
+					"description": "The event to trigger when the goal's duration expires.",
+					"$ref": "../general/eventDefinition.json"
+				}
+			}
+		},
+		"minecraft:behavior.charge_attack": {
+			"description": "Allows the mob to attack its target by running at it.",
+			"additionalProperties": false,
+			"properties": {
+				"priority": {
+					"type": "number"
+				}
+			}
+		},
+		"minecraft:behavior.charge_held_item": {
+			"description": "Allows this mob to charge and use their held item.",
+			"additionalProperties": false,
+			"properties": {
+				"priority": {
+					"type": "number"
+				},
+				"items": {
+					"description": "The list of items that can be used to charge the held item.",
+					"type": "array",
+					"items": {
+						"$ref": "../../general/vanilla/identifiers.json#/definitions/item_identifiers"
+					}
+				}
+			}
+		},
+		"minecraft:circle_around_anchor": {
+			"description": "Allows the mob to move in a circle around a point or a target.",
+			"additionalProperties": false,
+			"properties": {
+				"priority": {
+					"type": "number"
+				},
+				"radius_range": {
+					"description": "Range of radius in blocks of the circle to move around.",
+					"type": "array",
+					"minItems": 2,
+					"maxItems": 2,
+					"items": {
+						"type": "number"
+					}
+				},
+				"radius_change": {
+					"type": "number"
+				},
+				"radius_adjustment_chance": {
+					"description": "A random value to determine when to increase the size of the radius up to the maximum. This has a 1/value chance every tick to do so.",
+					"type": "number"
+				},
+				"height_above_target_range": {
+					"description": "When the mob finds a target, the range of height in blocks above the target to start the anchor point.",
+					"type": "array",
+					"minItems": 2,
+					"maxItems": 2,
+					"items": {
+						"type": "number"
+					}
+				},
+				"height_offset_range": {
+					"description": "The range of height in blocks offset the mob can have from it's anchor point.",
+					"type": "array",
+					"minItems": 2,
+					"maxItems": 2,
+					"items": {
+						"type": "number"
+					}
+				},
+				"height_adjustment_chance": {
+					"description": "A random value to determine when to change the height of the mob from the anchor point. This has a 1/value chance every tick to do so.",
+					"type": "number"
+				},
+				"goal_radius": {
+					"description": "Distance in blocks within the mob considers it has reached the goal. This is the 'wiggle room' to stop the AI from bouncing back and forth trying to reach a specific spot.",
+					"type": "number"
+				},
+				"angle_chance": {
+					"type": "number"
+				},
+				"speed_multiplier": {
+					"description": "Movement speed multiplier of the mob when using this AI Goal.",
+					"type": "number"
+				}
+			}
+		},
+		"minecraft:behavior.controller_by_player": {
+			"description": "Allows the mob to be controlled by the player.",
+			"additionalProperties": false,
+			"properties": {
+				"priority": {
+					"type": "number"
+				},
+				"mount_speed_multiplier": {
+					"description": "Speed multiplier for the mount when it is being controlled by a player.",
+					"type": "number"
+				}
+			}
+		},
+		"minecraft:behavior.defend_trusted_target": {
+			"description": "Allows the mob to target another mob that hurts an entity it trusts.",
+			"additionalProperties": false,
+			"properties": {
+				"priority": {
+					"type": "number"
+				},
+				"attack_interval": {
+					"description": "Time in seconds between attacks.",
+					"type": "number"
+				},
+				"within_radius": {
+					"type": "number",
+					"description": "Distance in blocks that the target can be within to launch an attack."
+				},
+				"must_see": {
+					"description": "If true, only entities in this mob's viewing range can be selected as targets.",
+					"type": "boolean"
+				},
+				"aggro_sound": {
+					"description": "Sound to occasionally play while defending.",
+					"type": "string"
+				},
+				"sound_chance": {
+					"type": "number"
+				},
+				"on_defend_start": {
+					"$ref": "../general/eventDefinition.json"
+				},
+				"must_see_forget_duration": {
+					"description": "Determines the amount of time in seconds that this mob will look for a target before forgetting about it and looking for a new one when the target isn't visible any more.",
+					"type": "number"
+				},
+				"entity_types": {
+					"description": "List of entity types that this mob considers valid targets.",
+					"$ref": "../general/entityType.json"
+				}
+			}
+		},
+		"minecraft:behavior.defend_village_target": {
+			"description": "Allows the mob to stay in the village and fight mobs hostile to the villagers.",
+			"additionalProperties": false,
+			"properties": {
+				"priority": {
+					"type": "number"
+				},
+				"entity_types": {
+					"description": "List of entity types that this mob considers valid targets.",
+					"$ref": "../general/entityType.json"
+				}
+			}
+		},
+		"minecraft:behavior.delayed_attack": {
+			"additionalProperties": false,
+			"properties": {
+				"priority": {
+					"type": "number"
+				},
+				"speed_multiplier": {
+					"type": "number"
+				},
+				"attack_once": {
+					"type": "boolean"
+				},
+				"require_complete_path": {
+					"type": "boolean"
+				},
+				"random_stop_interval": {
+					"type": "number"
+				},
+				"reach_multiplier": {
+					"type": "number"
+				},
+				"attack_duration": {
+					"type": "number"
+				},
+				"hit_delay_pct": {
+					"type": "number"
+				},
+				"track_target": {
+					"type": "boolean"
+				},
+				"sound_event": {
+					"type": "string"
+				}
+			}
+		},
+		"minecraft.behavior.door_interact": {
+			"description": "Allows the mob to open and close doors.",
+			"additionalProperties": false,
+			"properties": {
+				"priority": {
+					"type": "number"
+				}
+			}
+		},
+		"minecraft:behavior.drink_potion": {
+			"description": "Allows the mob to drink potions based on specified environment conditions.",
+			"additionalProperties": false,
+			"properties": {
+				"priority": {
+					"type": "number"
+				},
+				"speed_modifier": {
+					"type": "number"
+				},
+				"potions": {
+					"description": "A list of potions that this entity can drink.",
+					"type": "array",
+					"items": {
+						"properties": {
+							"id": {
+								"description": "The registry ID of the potion to use.",
+								"type": "integer",
+								"minimum": 0,
+								"maximum": 41
+							},
+							"chance": {
+								"description": "The percent chance (from 0.0 to 1.0) of this potion being selected when searching for a potion to use.",
+								"type": "number"
+							},
+							"filters": {
+								"description": "The filters to use when determining if this potion can be selected.",
+								"$ref": "../general/filter.json"
+							}
+						}
+					}
+				}
+			}
+		},
+		"minecraft:behavior.dragonlanding": {
+			"description": "Allows the Dragon to stop flying and transition into perching mode. Can only be used by the Ender Dragon.",
+			"additionalProperties": false,
+			"properties": {
+				"priority": {
+					"type": "number"
+				}
+			}
+		},
+		"minecraft:behavior.dragonscanning": {
+			"description": "Allows the dragon to look around for a player to attack while in perch mode. Can only be used by the Ender Dragon.",
+			"additionalProperties": false,
+			"properties": {
+				"priority": {
+					"type": "number"
+				}
+			}
+		},
+		"minecraft:behavior.dragontakeoff": {
+			"description": "Allows the dragon to leave perch mode and go back to flying around. Can only be used by the Ender Dragon.",
+			"additionalProperties": false,
+			"properties": {
+				"priority": {
+					"type": "number"
+				}
+			}
+		},
+		"minecraft:behavior.dragonchargeplayer": {
+			"description": "Allows the dragon to charge at the players. Can only be used by the Ender Dragon.",
+			"additionalProperties": false,
+			"properties": {
+				"priority": {
+					"type": "number"
+				}
+			}
+		},
+		"minecraft:behavior.dragonstrafeplayer": {
+			"description": "Can only be used by the Ender Dragon.",
+			"additionalProperties": false,
+			"properties": {
+				"priority": {
+					"type": "number"
+				}
+			}
+		},
+		"minecraft:behavior.dragonholdingpattern": {
+			"description": "Allows the Dragon to fly around in a circle around the center podium. Can only be used by the Ender Dragon.",
+			"additionalProperties": false,
+			"properties": {
+				"priority": {
+					"type": "number"
+				}
+			}
+		},
+		"minecraft:behavior.dragondeath": {
+			"description": "Allows the dragon to go out with glory. This controls the Ender Dragon's death animation and can't be used by other mobs.",
+			"additionalProperties": false,
+			"properties": {
+				"priority": {
+					"type": "number"
+				}
+			}
+		},
+		"minecraft:behavior.drop_item_for": {
+			"description": "Allows the mob to move near a target and drop an item."
 			// TODO
 		}
 	}
