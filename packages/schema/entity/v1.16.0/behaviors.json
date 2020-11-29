@@ -817,7 +817,7 @@
 				}
 			}
 		},
-		"minecraft:beahvior.follow_caravan": {
+		"minecraft:behavior.follow_caravan": {
 			"description": "Allows the mob to follow mobs that are in a caravan.",
 			"additionalProperties": false,
 			"properties": {
@@ -1422,6 +1422,1047 @@
 					"type": "number"
 				}
 			}
+		},
+		"minecraft:behavior.mount_pathing": {
+			"description": "Allows the mob to move around on its own while mounted seeking a target to attack.",
+			"additionalProperties": false,
+			"properties": {
+				"priority": {
+					"type": "number"
+				},
+				"speed_multiplier": {
+					"description": "Movement speed multiplier of the mob when using this AI Goal.",
+					"type": "number"
+				},
+				"target_dist": {
+					"description": "The distance at which this mob wants to be away from its target.",
+					"type": "number"
+				},
+				"track_target": {
+					"description": "If true, this mob will chase after the target as long as it's a valid target.",
+					"type": "boolean"
+				}
+			}
+		},
+		"minecraft:behavior.move_indoors": {
+			"description": "Can only be used by Villagers. Allows them to seek shelter indoors.",
+			"additionalProperties": false,
+			"properties": {
+				"priority": {
+					"type": "number"
+				},
+				"speed_multiplier": {
+					"description": "Movement speed multiplier of the mob when using this AI Goal.",
+					"type": "number"
+				},
+				"timeout_cooldown": {
+					"description": "The cooldown time in seconds before the goal can be reused after a internal failure or timeout condition.",
+					"type": "number"
+				}
+			}
+		},
+		"minecraft:behavior.move_through_village": {
+			"description": "Can only be used by Villagers. Allows the villagers to create paths around the village.",
+			"additionalProperties": false,
+			"properties": {
+				"priority": {
+					"type": "number"
+				},
+				"speed_multiplier": {
+					"description": "Movement speed multiplier of the mob when using this AI Goal.",
+					"type": "number"
+				},
+				"only_at_night": {
+					"description": "If true, the mob will only move through the village during night time.",
+					"type": "boolean"
+				}
+			}
+		},
+		"minecraft:behavior.move_towards_restiction": {
+			"description": "Allows Guardians, Iron Golems and Villagers to move within their pre-defined area that the mob should be restricted to. Other mobs don't have a restriction defined.",
+			"additionalProperties": false,
+			"properties": {
+				"priority": {
+					"type": "number"
+				},
+				"speed_multiplier": {
+					"description": "Movement speed multiplier of the mob when using this AI Goal.",
+					"type": "number"
+				},
+				"control_flags": {
+					"type": "string",
+					"enum": ["move", "look"]
+				}
+			}
+		},
+		"minecraft:behavior.move_towards_target": {
+			"description": "Allows mob to move towards its current target.",
+			"additionalProperties": false,
+			"properties": {
+				"priority": {
+					"type": "number"
+				},
+				"speed_multiplier": {
+					"type": "number"
+				},
+				"within_radius": {
+					"description": "Defines the radius in blocks that the mob tries to be from the target. A value of 0 means it tries to occupy the same block as the target.",
+					"type": "number"
+				}
+			}
+		},
+		"minecraft:behavior.move_to_block": {
+			"description": "Allows mob to move towards a certain block.",
+			"additionalProperties": false,
+			"properties": {
+				"priority": {
+					"type": "number"
+				},
+				"speed_multiplier": {
+					"type": "number"
+				},
+				"tick_interval": {
+					"type": "number"
+				},
+				"start_chance": {
+					"type": "number"
+				},
+				"search_range": {
+					"type": "number"
+				},
+				"search_height": {
+					"type": "number"
+				},
+				"goal_radius": {
+					"type": "number"
+				},
+				"stay_duration": {
+					"type": "number"
+				},
+				"target_selection_method": {
+					"type": "string",
+					"enum": ["nearest", "random"]
+				},
+				"target_offset": {
+					"type": "array",
+					"minItems": 3,
+					"maxItems": 3,
+					"items": {
+						"type": "number"
+					}
+				},
+				"target_block": {
+					"type": "array",
+					"items": {
+						"$ref": "../../general/vanilla/identifiers.json#/definitions/block_identifiers"
+					}
+				},
+				"on_stay_completed": {
+					"$ref": "../general/eventDefinition.json"
+				},
+				"on_reach": {
+					"$ref": "../general/eventDefinition.json"
+				}
+			}
+		},
+		"minecraft:move_to_land": {
+			"description": "Allows the mob to move back onto land when in water.",
+			"additionalProperties": false,
+			"properties": {
+				"priority": {
+					"type": "number"
+				},
+				"goal_radius": {
+					"description": "Distance in blocks within the mob considers it has reached the goal. This is the 'wiggle room' to stop the AI from bouncing back and forth trying to reach a specific spot.",
+					"type": "number"
+				},
+				"search_count": {
+					"description": "The number of blocks each tick that the mob will check within it's search range and height for a valid block to move to. A value of 0 will have the mob check every block within range in one tick.",
+					"type": "number"
+				},
+				"search_height": {
+					"description": "Height in blocks the mob will look for land to move towards.",
+					"type": "number"
+				},
+				"search_range": {
+					"description": "The distance in blocks it will look for land to move towards.",
+					"type": "number"
+				},
+				"speed_multiplier": {
+					"description": "Movement speed multiplier of the mob when using this AI Goal.",
+					"type": "number"
+				}
+			}
+		},
+		"minecraft:behavior.move_to_poi": {
+			"description": "Allows the mob to move to a POI if able to.",
+			"additionalProperties": false,
+			"properties": {
+				"priority": {
+					"type": "number"
+				},
+				"speed_multiplier": {
+					"type": "number"
+				},
+				"poi_type": {
+					"type": "string",
+					"const": "bed"
+				}
+			}
+		},
+		"minecraft:behavior.move_to_lava": {
+			"description": "Allows the mob to move back into lava when on land.",
+			"additionalProperties": false,
+			"properties": {
+				"priority": {
+					"type": "number"
+				},
+				"goal_radius": {
+					"description": "Distance in blocks within the mob considers it has reached the goal. This is the 'wiggle room' to stop the AI from bouncing back and forth trying to reach a specific spot.",
+					"type": "number"
+				},
+				"search_count": {
+					"description": "The number of blocks each tick that the mob will check within it's search range and height for a valid block to move to. A value of 0 will have the mob check every block within range in one tick.",
+					"type": "number"
+				},
+				"search_height": {
+					"description": "Height in blocks the mob will look for land to move towards.",
+					"type": "number"
+				},
+				"search_range": {
+					"description": "The distance in blocks it will look for land to move towards.",
+					"type": "number"
+				},
+				"speed_multiplier": {
+					"description": "Movement speed multiplier of the mob when using this AI Goal.",
+					"type": "number"
+				}
+			}
+		},
+		"minecraft:behavior.move_to_random_block": {
+			"description": "Allows mob to move towards a random block.",
+			"additionalProperties": false,
+			"properties": {
+				"priority": {
+					"type": "number"
+				},
+				"speed_multiplier": {
+					"type": "number"
+				},
+				"within_raidus": {
+					"description": "Defines the distance in blocks the mob has to be from the block for the movement to be finished.",
+					"type": "number"
+				},
+				"block_distance": {
+					"description": "Defines the distance from the mob, in blocks, that the block to move to will be chosen.",
+					"type": "number"
+				}
+			}
+		},
+		"minecraft:behavior.move_to_village": {
+			"description": "Allows the mob to move into a random location within a village.",
+			"additionalProperties": false,
+			"properties": {
+				"priority": {
+					"type": "number"
+				},
+				"speed_multiplier": {
+					"type": "number"
+				}
+			}
+		},
+		"minecraft:behavior.move_to_water": {
+			"description": "Allows the mob to move back into water when on land.",
+			"additionalProperties": false,
+			"properties": {
+				"priority": {
+					"type": "number"
+				},
+				"goal_radius": {
+					"description": "Distance in blocks within the mob considers it has reached the goal. This is the 'wiggle room' to stop the AI from bouncing back and forth trying to reach a specific spot.",
+					"type": "number"
+				},
+				"search_count": {
+					"description": "The number of blocks each tick that the mob will check within it's search range and height for a valid block to move to. A value of 0 will have the mob check every block within range in one tick.",
+					"type": "number"
+				},
+				"search_height": {
+					"description": "Height in blocks the mob will look for land to move towards.",
+					"type": "number"
+				},
+				"search_range": {
+					"description": "The distance in blocks it will look for land to move towards.",
+					"type": "number"
+				},
+				"speed_multiplier": {
+					"description": "Movement speed multiplier of the mob when using this AI Goal.",
+					"type": "number"
+				}
+			}
+		},
+		"minecraft:behavior.nap": {
+			"description": "Allows mobs to occassionally stop and take a nap under certain conditions.",
+			"additionalProperties": false,
+			"properties": {
+				"priority": {
+					"type": "number"
+				},
+				"cooldown_min": {
+					"type": "number"
+				},
+				"cooldown_max": {
+					"type": "number"
+				},
+				"mob_detect_dist": {
+					"type": "number"
+				},
+				"mob_detect_height": {
+					"type": "number"
+				},
+				"cap_nap_filters": {
+					"$ref": "../general/filter.json"
+				},
+				"wake_mob_exceptions": {
+					"$ref": "../general/filter.json"
+				}
+			}
+		},
+		"minecraft:behavior.nearest_attackable_target": {
+			"description": "Allows an entity to attack the closest target within a given subset of specific target types.",
+			"additionalProperties": false,
+			"properties": {
+				"priority": {
+					"type": "number"
+				},
+				"set_persistent": {
+					"type": "boolean"
+				},
+				"attack_owner": {
+					"description": "If true, this entity can attack its owner.",
+					"type": "boolean"
+				},
+				"attack_interval": {
+					"description": "Time range (in seconds) between searching for an attack target, range is in (0, 'attack_interval']. Only used if 'attack_interval' is greater than 0, otherwise 'scan_interval' is used.",
+					"type": "number"
+				},
+				"attack_interval_min": {
+					"description": "Alias for 'attack_interval'; provides the same functionality as 'attack_interval'.",
+					"type": "number"
+				},
+				"entity_types": {
+					"description": "Filters which types of targets are valid for this entity.",
+					"$ref": "../general/entityType.json"
+				},
+				"must_reach": {
+					"description": "If true, this entity requires a path to the target.",
+					"type": "boolean"
+				},
+				"must_see": {
+					"description": "Determines if target-validity requires this entity to be in range only, or both in range and in sight.",
+					"type": "boolean"
+				},
+				"must_see_forget_duration": {
+					"description": "Time (in seconds) the target must not be seen by this entity to become invalid. Used only if 'must_see' is true.",
+					"type": "number"
+				},
+				"persist_time": {
+					"description": "Time (in seconds) this entity can continue attacking the target after the target is no longer valid.",
+					"type": "number"
+				},
+				"reselect_targets": {
+					"description": "Allows the attacking entity to update the nearest target, otherwise a target is only reselected after each 'scan_interval' or 'attack_interval'.",
+					"type": "boolean"
+				},
+				"scan_interval": {
+					"description": "If 'attack_interval' is 0 or isn't declared, then between attacks: scanning for a new target occurs every amount of ticks equal to 'scan_interval', minimum value is 10.",
+					"type": "number"
+				},
+				"target_search_height": {
+					"description": "Maximum vertical target-search distance, if it's greater than the target type's 'max_dist'. A negative value defaults to 'entity_types' greatest 'max_dist'.",
+					"type": "number"
+				},
+				"target_invisible_multiplier": {
+					"description": "Multiplied with the target's armor coverage percentage to modify 'max_dist' when detecting an invisible target.",
+					"type": "number"
+				},
+				"target_sneak_visibility_multiplier": {
+					"description": "Multiplied with the target type's 'max_dist' when trying to detect a sneaking target.",
+					"type": "number"
+				},
+				"within_radius": {
+					"description": "Maximum distance this entity can be from the target when following it, otherwise the target becomes invalid. This value is only used if the entity doesn't declare 'minecraft:follow_range'.",
+					"type": "number"
+				}
+			}
+		},
+		"minecraft:behavior.nearest_prioritized_attackable_target": {
+			"description": "Allows the mob to check for and pursue the nearest valid target.",
+			"additionalProperties": false,
+			"properties": {
+				"priority": {
+					"type": "number"
+				},
+				"set_persistent": {
+					"type": "boolean"
+				},
+				"attack_interval": {
+					"description": "Time in seconds before selecting a target.",
+					"type": "number"
+				},
+				"must_reach": {
+					"description": "If true, only entities that this mob can path to can be selected as targets.",
+					"type": "boolean"
+				},
+				"must_see": {
+					"description": "If true, only entities in this mob's viewing range can be selected as targets.",
+					"type": "boolean"
+				},
+				"must_see_forget_duration": {
+					"description": "Determines the amount of time in seconds that this mob will look for a target before forgetting about it and looking for a new one when the target isn't visible any more.",
+					"type": "boolean"
+				},
+				"reselect_targets": {
+					"description": "If true, the target will change to the current closest entity whenever a different entity is closer.",
+					"type": "boolean"
+				},
+				"target_search_height": {
+					"description": "Height in blocks to search for a target mob. -1.0f means the height does not matter.",
+					"type": "number"
+				},
+				"persist_time": {
+					"description": "Time in seconds for a valid target to stay targeted when it becomes and invalid target.",
+					"type": "number"
+				},
+				"entity_types": {
+					"description": "List of entity types that this mob considers valid targets.",
+					"$ref": "../general/prioritizedEntityType.json"
+				}
+			}
+		},
+		"minecraft:behavior.ocelotattack": {
+			"description": "Can only be used by the Ocelot. Allows it to perform the sneak and pounce attack.",
+			"additionalProperties": false,
+			"properties": {
+				"priority": {
+					"type": "number"
+				},
+				"sneak_speed_multiplier": {
+					"description": "Multiplier for the sneaking speed. 1.0 means the ocelot will move at the speed it normally sneaks.",
+					"type": "number"
+				},
+				"sprint_speed_multiplier": {
+					"description": "Multiplier for the running speed of this mob while using this attack.",
+					"type": "number"
+				},
+				"walk_speed_multiplier": {
+					"description": "Multiplier for the walking speed while using this attack.",
+					"type": "number"
+				},
+				"cooldown_time": {
+					"type": "number"
+				},
+				"x_max_rotation": {
+					"type": "number"
+				},
+				"y_max_head_rotation": {
+					"type": "number"
+				},
+				"max_distance": {
+					"type": "number"
+				},
+				"max_sneak_range": {
+					"type": "number"
+				},
+				"max_sprint_range": {
+					"type": "number"
+				},
+				"reach_multiplier": {
+					"type": "number"
+				}
+			}
+		},
+		"minecraft:behavior.ocelot_sit_on_block": {
+			"description": "Allows to mob to be able to sit in place like the ocelot.",
+			"additionalProperties": false,
+			"properties": {
+				"priority": {
+					"type": "number"
+				},
+				"speed_multiplier": {
+					"description": "Movement speed multiplier of the mob when using this AI Goal.",
+					"type": "number"
+				}
+			}
+		},
+		"minecraft:behavior.offer_flower": {
+			"description": "Allows the mob to offer the player a flower like the Iron Golem does.",
+			"additionalProperties": false,
+			"properties": {
+				"priority": {
+					"type": "number"
+				}
+			}
+		},
+		"minecraft:behavior.open_door": {
+			"description": "Allows the mob to open doors. Requires the mob to be able to path through doors, otherwise the mob won't even want to try opening them.",
+			"additionalProperties": false,
+			"properties": {
+				"priority": {
+					"type": "number"
+				},
+				"close_door_after": {
+					"description": "If true, the mob will close the door after opening it and going through it.",
+					"type": "boolean"
+				}
+			}
+		},
+		"minecraft:behavior.owner_hurt_by_target": {
+			"description": "Allows the mob to target another mob that hurts their owner.",
+			"additionalProperties": false,
+			"properties": {
+				"priority": {
+					"type": "number"
+				},
+				"entity_types": {
+					"description": "List of entity types that this mob can target if they hurt their owner.",
+					"$ref": "../general/entityType.json"
+				}
+			}
+		},
+		"minecraft:behavior.owner_hurt_target": {
+			"description": "Allows the mob to target a mob that is hurt by their owner.",
+			"additionalProperties": false,
+			"properties": {
+				"priority": {
+					"type": "number"
+				},
+				"entity_types": {
+					"description": "List of entity types that this entity can target if the potential target is hurt by this mob's owner.",
+					"$ref": "../general/entityType.json"
+				}
+			}
+		},
+		"minecraft:behavior.panic": {
+			"description": "Allows the mob to enter the panic state, which makes it run around and away from the damage source that made it enter this state.",
+			"additionalProperties": false,
+			"properties": {
+				"priority": {
+					"type": "number"
+				},
+				"force": {
+					"description": "If true, this mob will not stop panicking until it can't move anymore or the goal is removed from it.",
+					"type": "boolean"
+				},
+				"damage_sources": {
+					"$ref": "../../general/vanilla/damageType.json"
+				},
+				"ignore_mob_damage": {
+					"description": "If true, the mob will not panic in response to damage from other mobs (only fire/lava etc).",
+					"type": "boolean"
+				},
+				"prefer_water": {
+					"description": "If true, the mob will prefer water over land.",
+					"type": "boolean"
+				},
+				"speed_multiplier": {
+					"description": "Movement speed multiplier of the mob when using this AI Goal.",
+					"type": "number"
+				}
+			}
+		},
+		"minecraft:behavior.peek": {
+			"description": "Allows the mob to peek out. This is what the shulker uses to look out of its shell.",
+			"additionalProperties": false,
+			"properties": {
+				"priority": {
+					"type": "number"
+				}
+			}
+		},
+		"minecraft:behavior.pet_sleep_with_owner": {
+			"description": "Allows the pet mob to move onto a bed with it's owner while sleeping.",
+			"additionalProperties": false,
+			"properties": {
+				"priority": {
+					"type": "number"
+				},
+				"goal_radius": {
+					"description": "Distance in blocks within the mob considers it has reached the goal. This is the 'wiggle room' to stop the AI from bouncing back and forth trying to reach a specific spot.",
+					"type": "number"
+				},
+				"search_height": {
+					"description": "Height in blocks from the owner the pet can be to sleep with owner.",
+					"type": "number"
+				},
+				"search_range": {
+					"description": "The distance in blocks from the owner the pet can be to sleep with owner.",
+					"type": "number"
+				},
+				"speed_multipier": {
+					"description": "Movement speed multiplier of the mob when using this AI Goal.",
+					"type": "number"
+				}
+			}
+		},
+		"minecraft:behavior.pickup_items": {
+			"description": "Allows the mob to pick up items on the ground.",
+			"additionalProperties": false,
+			"properties": {
+				"priority": {
+					"type": "number"
+				},
+				"max_dist": {
+					"description": "Maximum distance this mob will look for items to pick up.",
+					"type": "number"
+				},
+				"goal_radius": {
+					"description": "Distance in blocks within the mob considers it has reached the goal. This is the 'wiggle room' to stop the AI from bouncing back and forth trying to reach a specific spot.",
+					"type": "number"
+				},
+				"speed_muliplier": {
+					"description": "Movement speed multiplier of the mob when using this AI Goal.",
+					"type": "number"
+				},
+				"track_target": {
+					"description": "If true, this mob will chase after the target as long as it's a valid target.",
+					"type": "boolean"
+				},
+				"pickup_based_on_chance": {
+					"type": "boolean"
+				},
+				"can_pickup_any_item": {
+					"type": "boolean"
+				},
+				"can_pickup_to_hand_or_equipment": {
+					"type": "boolean"
+				},
+				"cooldown_after_being_attacked": {
+					"type": "number"
+				}
+			}
+		},
+		"minecraft:behavior.play": {
+			"description": "Allows the mob to play with other baby villagers. This can only be used by Villagers.",
+			"additionalProperties": false,
+			"properties": {
+				"priority": {
+					"type": "number"
+				},
+				"speed_multiplier": {
+					"type": "number"
+				}
+			}
+		},
+		"minecraft:behavior.player_ride_tamed": {
+			"description": "Allows the mob to be ridden by the player after being tamed.",
+			"additionalProperties": false,
+			"properties": {
+				"priority": {
+					"type": "number"
+				}
+			}
+		},
+		"minecraft:behavior.raid_garden": {
+			"description": "Allows the mob to eat/raid crops out of farms until they are full.",
+			"additionalProperties": false,
+			"properties": {
+				"priority": {
+					"type": "number"
+				},
+				"blocks": {
+					"description": "Blocks that the mob is looking for to eat/raid.",
+					"type": "array",
+					"items": {
+						"$ref": "../../general/vanilla/identifiers.json#/definitions/block_identifiers"
+					}
+				},
+				"eat_delay": {
+					"description": "Time in seconds between each time it eats/raids.",
+					"type": "number"
+				},
+				"initial_eat_delay": {
+					"description": "Time in seconds before starting to eat/raid once it arrives at it.",
+					"type": "number"
+				},
+				"full_delay": {
+					"description": "Amount of time in seconds before this mob wants to eat/raid again after eating its maximum.",
+					"type": "number"
+				},
+				"max_to_eat": {
+					"description": "Maximum number of crops this entity wants to eat/raid. If set to zero or less then it doesn't have a maximum.",
+					"type": "number"
+				},
+				"search_range": {
+					"description": "Distance in blocks the mob will look for crops to eat.",
+					"type": "number"
+				},
+				"goal_radius": {
+					"description": "Distance in blocks within the mob considers it has reached the goal. This is the 'wiggle room' to stop the AI from bouncing back and forth trying to reach a specific spot.",
+					"type": "number"
+				},
+				"speed_multiplier": {
+					"description": "Movement speed multiplier of the mob when using this AI Goal.",
+					"type": "number"
+				}
+			}
+		},
+		"minecraft:behavior.random_breach": {
+			"description": "Allows the mob to randomly break surface of the water.",
+			"additionalProperties": false,
+			"properties": {
+				"priority": {
+					"type": "number"
+				},
+				"interval": {
+					"description": "A random value to determine when to randomly move somewhere. This has a 1/interval chance to choose this goal.",
+					"type": "number"
+				},
+				"speed_multiplier": {
+					"description": "Movement speed multiplier of the mob when using this AI Goal.",
+					"type": "number"
+				},
+				"xz_dist": {
+					"description": "Distance in blocks on ground that the mob will look for a new spot to move to. Must be at least 1.",
+					"type": "number"
+				},
+				"y_dist": {
+					"description": "Distance in blocks that the mob will look up or down for a new spot to move to. Must be at least 1.",
+					"type": "number"
+				},
+				"cooldown_time": {
+					"description": "Time in seconds the mob has to wait before using the goal again.",
+					"type": "number"
+				}
+			}
+		},
+		"minecraft:behavior.random_fly": {
+			"description": "Allows a mob to randomly fly around.",
+			"additionalProperties": false,
+			"properties": {
+				"priority": {
+					"type": "number"
+				},
+				"xz_dist": {
+					"description": "Distance in blocks on ground that the mob will look for a new spot to move to. Must be at least 1.",
+					"type": "number"
+				},
+				"y_dist": {
+					"description": "Distance in blocks that the mob will look up or down for a new spot to move to. Must be at least 1.",
+					"type": "number"
+				},
+				"y_offset": {
+					"type": "number"
+				},
+				"speed_multiplier": {
+					"description": "Movement speed multiplier of the mob when using this AI Goal.",
+					"type": "number"
+				},
+				"can_land_on_trees": {
+					"description": "If true, the mob can stop flying and land on a tree instead of the ground.",
+					"type": "boolean"
+				},
+				"avoid_damage_blocks": {
+					"type": "boolean"
+				}
+			}
+		},
+		"minecraft:behavior.random_hover": {
+			"description": "Allows the mob to hover around randomly, close to the surface.",
+			"additionalProperties": false,
+			"properties": {
+				"priority": {
+					"type": "number"
+				},
+				"speed_multiplier": {
+					"description": "Movement speed multiplier of the mob when using this AI Goal.",
+					"type": "number"
+				},
+				"xz_dist": {
+					"description": "Distance in blocks on ground that the mob will look for a new spot to move to. Must be at least 1.",
+					"type": "number"
+				},
+				"y_dist": {
+					"description": "Distance in blocks that the mob will look up or down for a new spot to move to. Must be at least 1.",
+					"type": "number"
+				},
+				"y_offset": {
+					"description": "Height in blocks to add to the selected target position.",
+					"type": "number"
+				},
+				"interval": {
+					"description": "A random value to determine when to randomly move somewhere. This has a 1/interval chance to choose this goal.",
+					"type": "number"
+				},
+				"hover_height": {
+					"type": "array",
+					"maxItems": 2,
+					"minItems": 2,
+					"items": {
+						"type": "number"
+					}
+				}
+			}
+		},
+		"minecraft:behavior.random_look_around": {
+			"description": "Allows the mob to randomly look around.",
+			"additionalProperties": false,
+			"properties": {
+				"priority": {
+					"type": "number"
+				},
+				"look_time": {
+					"type": "array",
+					"maxItems": 2,
+					"minItems": 2,
+					"items": {
+						"type": "number"
+					}
+				}
+			}
+		},
+		"minecraft:behavior.random_look_around_and_sit": {
+			"description": "Allows the mob to randomly sit and look around for a duration. Note: Must have a sitting animation set up to use this.",
+			"additionalProperties": false,
+			"properties": {
+				"priority": {
+					"type": "number"
+				},
+				"min_look_count": {
+					"description": "The min amount of unique looks a mob will have while looking around.",
+					"type": "number"
+				},
+				"max_look_count": {
+					"description": "The max amount of unique looks a mob will have while looking around.",
+					"type": "number"
+				},
+				"min_look_time": {
+					"description": "The min amount of time (in ticks) a mob will stay looking at a direction while looking around.",
+					"type": "number"
+				},
+				"max_look_time": {
+					"description": "The max amount of time (in ticks) a mob will stay looking at a direction while looking around.",
+					"type": "number"
+				},
+				"probability": {
+					"description": "The probability of randomly looking around/sitting.",
+					"type": "number"
+				}
+			}
+		},
+		"minecraft:behavior.random_sitting": {
+			"description": "Allows the mob to randomly sit for a duration.",
+			"additionalProperties": false,
+			"properties": {
+				"priority": {
+					"type": "number"
+				},
+				"start_chance": {
+					"description": "This is the chance that the mob will start this goal, from 0 to 1.",
+					"type": "number"
+				},
+				"stop_chance": {
+					"description": "This is the chance that the mob will stop this goal, from 0 to 1.",
+					"type": "number"
+				},
+				"cooldown_time": {
+					"description": "Time in seconds the mob has to wait before using the goal again.",
+					"type": "number"
+				},
+				"min_sit_time": {
+					"description": "The minimum amount of time in seconds before the mob can stand back up.",
+					"type": "number"
+				}
+			}
+		},
+		"minecraft:behavior.random_stroll": {
+			"description": "Allows a mob to randomly stroll around.",
+			"additionalProperties": false,
+			"properties": {
+				"priority": {
+					"type": "number"
+				},
+				"interval": {
+					"description": "A random value to determine when to randomly move somewhere. This has a 1/interval chance to choose this goal.",
+					"type": "number"
+				},
+				"speed_multiplier": {
+					"description": "Movement speed multiplier of the mob when using this AI Goal.",
+					"type": "number"
+				},
+				"xz_dist": {
+					"description": "Distance in blocks on ground that the mob will look for a new spot to move to. Must be at least 1.",
+					"type": "number"
+				},
+				"y_dist": {
+					"description": "Distance in blocks that the mob will look up or down for a new spot to move to. Must be at least 1.",
+					"type": "number"
+				}
+			}
+		},
+		"minecraft:behavior.random_swim": {
+			"description": "Allows an entity to randomly move through water.",
+			"additionalProperties": false,
+			"properties": {
+				"priority": {
+					"type": "number"
+				},
+				"interval": {
+					"description": "A random value to determine when to randomly move somewhere. This has a 1/interval chance to choose this goal.",
+					"type": "number"
+				},
+				"speed_multiplier": {
+					"description": "Movement speed multiplier of the mob when using this AI Goal.",
+					"type": "number"
+				},
+				"xz_dist": {
+					"description": "Distance in blocks on ground that the mob will look for a new spot to move to. Must be at least 1.",
+					"type": "number"
+				},
+				"y_dist": {
+					"description": "Distance in blocks that the mob will look up or down for a new spot to move to. Must be at least 1.",
+					"type": "number"
+				},
+				"avoid_surface": {
+					"description": "If true, the mob will avoid surface water blocks by swimming below them.",
+					"type": "boolean"
+				}
+			}
+		},
+		"minecraft:behavior.ranged_attack": {
+			"description": "Allows the mob to use ranged attacks like shooting arrows.",
+			"additionalProperties": false,
+			"properties": {
+				"priority": {
+					"type": "number"
+				},
+				"attack_interval_max": {
+					"description": "Maximum amount of time in seconds the entity will wait after an attack before launching another.",
+					"type": "number"
+				},
+				"attack_interval_min": {
+					"description": "Minimum amount of time in seconds the entity will wait after an attack before launching another.",
+					"type": "number"
+				},
+				"attack_radius": {
+					"description": "Maximum distance the target can be for this mob to fire. If the target is further away, this mob will move first before firing.",
+					"type": "number"
+				},
+				"burst_shots": {
+					"description": "Number of shots fired every time the mob uses a charged attack.",
+					"type": "number"
+				},
+				"burst_interval": {
+					"description": "Amount of time in seconds between each individual shot when firing multiple shots per attack.",
+					"type": "number"
+				},
+				"charge_charged_trigger": {
+					"description": "The minimum amount of time in ticks the mob has to charge before firing a charged attack.",
+					"type": "number"
+				},
+				"charge_shoot_trigger": {
+					"description": "The minimum amount of time in ticks for the mob to start charging a charged shot. Must be greater than 0 to enable burst shots.",
+					"type": "number"
+				},
+				"ranged_fov": {
+					"description": "The allowable FOV the actor will use to determine if it can make a valid ranged attack.",
+					"$ref": "../../general/degree.json"
+				},
+				"speed_multiplier": {
+					"description": "Movement speed multiplier of the mob when using this AI Goal.",
+					"type": "number"
+				},
+				"target_in_sight_time": {
+					"type": "number"
+				}
+			}
+		},
+		"minecraft:behavior.recieve_love": {
+			"description": "Allows the villager to stop so another villager can breed with it. Can only be used by a Villager.",
+			"additionalProperties": false,
+			"properties": {
+				"priority": {
+					"type": "number"
+				}
+			}
+		},
+		"minecraft:behavior.restrict_sun": {
+			"description": "Allows the mob to automatically start avoiding the sun when its a clear day out.",
+			"additionalProperties": false,
+			"properties": {
+				"priority": {
+					"type": "number"
+				}
+			}
+		},
+		"minecraft:behavior.restrict_open_door": {
+			"description": "Allows the mob to stay indoors during night time.",
+			"additionalProperties": false,
+			"properties": {
+				"priority": {
+					"type": "number"
+				}
+			}
+		},
+		"minecraft:behavior.rise_to_liquid_level": {
+			"description": "Allows the mob to rise to the liquid surface.",
+			"additionalProperties": false,
+			"properties": {
+				"priority": {
+					"type": "number"
+				},
+				"liquid_y_offset": {
+					"type": "number"
+				},
+				"rise_delta": {
+					"type": "number"
+				},
+				"sink_delta": {
+					"type": "number"
+				}
+			}
+		},
+		"minecraft:behavior.roll": {
+			"description": "This allows the mob to roll forward.",
+			"additionalProperties": false,
+			"properties": {
+				"priority": {
+					"type": "number"
+				},
+				"probability": {
+					"description": "The probability that the mob will use the goal.",
+					"type": "number"
+				}
+			}
+		},
+		"minecraft:behavior.run_around_like_crazy": {
+			"description": "Allows the mob to run around aimlessly.",
+			"additionalProperties": false,
+			"properties": {
+				"priority": {
+					"type": "number"
+				},
+				"speed_multiplier": {
+					"description": "Movement speed multiplier of the mob when using this AI Goal.",
+					"type": "number"
+				}
+			}
+		},
+		"minecraft:behavior.scared": {
+			"description": "Allows the a mob to become scared when the weather outside is thundering.",
+			"additionalProperties": false,
+			"properties": {
+				"priority": {
+					"type": "number"
+				},
+				"sound_interval": {
+					"description": "The interval in which a sound will play when active in a 1/delay chance to kick off.",
+					"type": "number"
+				}
+			}
+		},
+		"minecraft:behavior.send_event": {
+			"description": "Allows the mob to send an event to another mob."
+			// TODO
 		}
 	}
 }

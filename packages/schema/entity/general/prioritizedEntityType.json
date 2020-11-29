@@ -3,6 +3,9 @@
 	"type": "array",
 	"items": {
 		"properties": {
+			"priority": {
+				"type": "number"
+			},
 			"filters": {
 				"description": "Conditions that make this entry in the list valid.",
 				"$ref": "./filter.json"
@@ -26,9 +29,6 @@
 			"walk_speed_multiplier": {
 				"description": "Multiplier for the walking speed. A value of 1.0 means the speed is unchanged.",
 				"type": "number"
-			},
-			"check_if_outnumbered": {
-				"type": "boolean"
 			}
 		}
 	}
