@@ -34,6 +34,21 @@
 					"enum": ["move", "look"]
 				}
 			}
+		},
+		"minecraft:behavior.send_event": {
+			"properties": {
+				"event_choices": {
+					"type": "array",
+					"items": {
+						"properties": {
+							"look_at_target": {
+								"description": "If true, the mob will face the entity it sends an event to.",
+								"type": "boolean"
+							}
+						}
+					}
+				}
+			}
 		}
 	}
 }

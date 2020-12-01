@@ -19,7 +19,11 @@
 					}
 				},
 				"events": {
-					"TODO": {}
+					"patternProperties": {
+						".*": {
+							"$ref": "./event.json"
+						}
+					}
 				},
 				"do_not_upgrade": {}
 			}

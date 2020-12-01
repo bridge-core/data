@@ -2461,8 +2461,841 @@
 			}
 		},
 		"minecraft:behavior.send_event": {
-			"description": "Allows the mob to send an event to another mob."
-			// TODO
+			"description": "Allows the mob to send an event to another mob.",
+			"properties": {
+				"priority": {
+					"type": "number"
+				},
+				"event_choices": {
+					"type": "array",
+					"items": {
+						"properties": {
+							"min_activation_range": {
+								"type": "number"
+							},
+							"max_activation_range": {
+								"type": "number"
+							},
+							"cooldown_time": {
+								"type": "number"
+							},
+							"cast_duration": {
+								"description": "Time in seconds for the entire event sending process.",
+								"type": "number"
+							},
+							"particle_color": {
+								"type": "number"
+							},
+							"weight": {
+								"type": "number"
+							},
+							"filters": {
+								"$ref": "../general/filter.json"
+							},
+							"start_sound_event": {
+								"type": "string"
+							},
+							"sequence": {
+								"type": "array",
+								"items": {
+									"properties": {
+										"base_delay": {
+											"description": "Amount of time in seconds before starting this step.",
+											"type": "number"
+										},
+										"event": {
+											"description": "The event to send to the entity.",
+											"type": "string"
+										},
+										"sound_event": {
+											"description": "The sound event to play when this step happens.",
+											"type": "string"
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		},
+		"minecraft:behavior.share_items": {
+			"description": "Allows the mob to give items it has to others.",
+			"additionalProperties": false,
+			"properties": {
+				"priority": {
+					"type": "number"
+				},
+				"max_dist": {
+					"type": "number"
+				},
+				"goal_radius": {
+					"type": "number"
+				},
+				"speed_multiplier": {
+					"type": "number"
+				},
+				"entity_types": {
+					"$ref": "../general/entityType.json"
+				}
+			}
+		},
+		"minecraft:behavior.skeleton_horse_trap": {
+			"description": "Allows Equine mobs to be Horse Traps and be triggered like them, spawning a lightning bolt and a bunch of horses when a player is nearby. Can only be used by Horses, Mules, Donkeys and Skeleton Horses.",
+			"additionalProperties": false,
+			"properties": {
+				"priority": {
+					"type": "number"
+				},
+				"within_radius": {
+					"description": "Distance in blocks that the player has to be within to trigger the horse trap.",
+					"type": "number"
+				},
+				"duration": {
+					"description": "Amount of time in seconds the trap exists. After this amount of time is elapsed, the trap is removed from the world if it hasn't been activated.",
+					"type": "number"
+				}
+			}
+		},
+		"minecraft:behavior.silverfish_wake_up_friends": {
+			"description": "Allows the mob to alert mobs in nearby blocks to come out. Currently it can only be used by Silverfish.",
+			"additionalProperties": false,
+			"properties": {
+				"priority": {
+					"type": "number"
+				}
+			}
+		},
+		"minecraft:behavior.silverfish_merge_with_stone": {
+			"description": "Allows the mob to go into stone blocks like Silverfish do. Currently it can only be used by Silverfish.",
+			"additionalProperties": false,
+			"properties": {
+				"priority": {
+					"type": "number"
+				}
+			}
+		},
+		"minecraft:behavior.sleep": {
+			"description": "Allows mobs that own a bed to in a village to move to and sleep in it.",
+			"additionalProperties": false,
+			"properties": {
+				"priority": {
+					"type": "number"
+				},
+				"goal_radius": {
+					"type": "number"
+				},
+				"cooldown_time": {
+					"description": "Time in seconds the mob has to wait before using the goal again.",
+					"type": "number"
+				},
+				"timeout_cooldown": {
+					"description": "The cooldown time in seconds before the goal can be reused after a internal failure or timeout condition.",
+					"type": "number"
+				},
+				"speed_multiplier": {
+					"description": "Movement speed multiplier of the mob when using this AI Goal.",
+					"type": "number"
+				},
+				"sleep_collider_height": {
+					"description": "The height of the mob's collider while sleeping.",
+					"type": "number"
+				},
+				"sleep_collider_width": {
+					"description": "The width of the mob's collider while sleeping.",
+					"type": "number"
+				},
+				"sleep_y_offset": {
+					"description": "The y offset of the mob's collider while sleeping.",
+					"type": "number"
+				}
+			}
+		},
+		"minecraft:behavior.slime_float": {
+			"additionalProperties": false,
+			"properties": {
+				"priority": {
+					"type": "number"
+				},
+				"jump_chance_percentage": {
+					"type": "number"
+				},
+				"speed_multiplier": {
+					"type": "number"
+				}
+			}
+		},
+		"minecraft:behavior.slime_attack": {
+			"additionalProperties": false,
+			"properties": {
+				"priority": {
+					"type": "number"
+				},
+				"set_persistent": {
+					"description": "Allows the actor to be set to persist upon targeting a player.",
+					"type": "boolean"
+				}
+			}
+		},
+		"minecraft:behavior.slime_random_direction": {
+			"additionalProperties": false,
+			"properties": {
+				"priority": {
+					"type": "number"
+				},
+				"add_random_time_range": {
+					"type": "number"
+				},
+				"turn_range": {
+					"$ref": "../../general/degree.json"
+				},
+				"min_change_direction_time": {
+					"type": "number"
+				}
+			}
+		},
+		"minecraft:behavior.slime_keep_on_jumping": {
+			"additionalProperties": false,
+			"properties": {
+				"priority": {
+					"type": "number"
+				},
+				"speed_multiplier": {
+					"type": "number"
+				}
+			}
+		},
+		"minecraft:behavior.snacking": {
+			"description": "Allows the mob to take a load off and snack on food that it found nearby.",
+			"additionalProperties": false,
+			"properties": {
+				"priority": {
+					"type": "number"
+				},
+				"snacking_cooldown": {
+					"description": "The cooldown time in seconds before the mob is able to snack again.",
+					"type": "number"
+				},
+				"snacking_cooldown_min": {
+					"description": "The minimum time in seconds before the mob is able to snack again.",
+					"type": "number"
+				},
+				"snacking_stop_chance": {
+					"description": "This is the chance that the mob will stop snacking, from 0 to 1.",
+					"type": "number"
+				},
+				"items": {
+					"description": "Items that we are interested in snacking on.",
+					"type": "array",
+					"items": {
+						"$ref": "../../general/vanilla/identifiers.json#/definitions/item_identifiers"
+					}
+				}
+			}
+		},
+		"minecraft:behavior.sneeze": {
+			"description": "Allows the mob to stop and sneeze possibly startling nearby mobs and dropping an item.",
+			"additionalProperties": false,
+			"properties": {
+				"priority": {
+					"type": "number"
+				},
+				"probability": {
+					"description": "The probability of sneezing. A value of 1.00 is 100%.",
+					"type": "number"
+				},
+				"cooldown_time": {
+					"description": "Time in seconds the mob has to wait before using the goal again.",
+					"type": "number"
+				},
+				"within_radius": {
+					"description": "Distance in blocks that mobs will be startled.",
+					"type": "number"
+				},
+				"entity_types": {
+					"description": "List of entity types this mob will startle (cause to jump) when it sneezes.",
+					"$ref": "../general/entityType.json"
+				},
+				"drop_item_chance": {
+					"description": "The probability that the mob will drop an item when it sneezes.",
+					"type": "number"
+				},
+				"loot_table": {
+					"description": "Loot table to select dropped items from.",
+					"type": "string"
+				},
+				"prepare_sound": {
+					"description": "Sound to play when the sneeze is about to happen.",
+					"type": "string"
+				},
+				"prepare_time": {
+					"description": "The time in seconds that the mob takes to prepare to sneeze (while the prepare_sound is playing).",
+					"type": "number"
+				},
+				"sound": {
+					"description": "Sound to play when the sneeze occurs.",
+					"type": "string"
+				}
+			}
+		},
+		"minecraft:behavior.squid_move_away_from_ground": {
+			"description": "Allows the squid to move away from ground blocks and back to water. Can only be used by the Squid.",
+			"additionalProperties": false,
+			"properties": {
+				"priority": {
+					"type": "number"
+				}
+			}
+		},
+		"minecraft:behavior.squid_flee": {
+			"description": "Allows the squid to swim away. Can only be used by the Squid.",
+			"additionalProperties": false,
+			"properties": {
+				"priority": {
+					"type": "number"
+				}
+			}
+		},
+		"minecraft:behavior.squid_idle": {
+			"description": "Allows the squid to swim in place idly. Can only be used by the Squid.",
+			"additionalProperties": false,
+			"properties": {
+				"priority": {
+					"type": "number"
+				}
+			}
+		},
+		"minecraft:behavior.squid_dive": {
+			"description": "Allows the squid to dive down in water. Can only be used by the Squid.",
+			"additionalProperties": false,
+			"properties": {
+				"priority": {
+					"type": "number"
+				}
+			}
+		},
+		"minecraft:behavior.squid_out_of_water": {
+			"description": "Allows the squid to stick to the ground when outside water. Can only be used by the Squid.",
+			"additionalProperties": false,
+			"properties": {
+				"priority": {
+					"type": "number"
+				}
+			}
+		},
+		"minecraft:behavior.stalk_and_pounce_on_target": {
+			"description": "Allows a mob to stalk a target, then once within range pounce onto a target, on success the target will be attacked dealing damage defined by the attack component. On failure, the mob will risk getting stuck.",
+			"additionalProperties": false,
+			"properties": {
+				"priority": {
+					"type": "number"
+				},
+				"set_persistent": {
+					"type": "boolean"
+				},
+				"stalk_speed": {
+					"description": "The movement speed in which you stalk your target.",
+					"type": "number"
+				},
+				"max_stalk_dist": {
+					"description": "The maximum distance away a target can be before the mob gives up on stalking.",
+					"type": "number"
+				},
+				"leap_height": {
+					"description": "The height in blocks the mob jumps when leaping at its target.",
+					"type": "number"
+				},
+				"leap_dist": {
+					"description": "The distance in blocks the mob jumps in the direction of its target.",
+					"type": "number"
+				},
+				"pounce_max_dist": {
+					"description": "The maximum distance away from the target in blocks to begin pouncing at the target.",
+					"type": "number"
+				},
+				"interest_time": {
+					"description": "The amount of time the mob will be interested before pouncing. This happens when the mob is within range of pouncing.",
+					"type": "number"
+				},
+				"stuck_time": {
+					"description": "The amount of time the mob will be stuck if they fail and land on a block they can be stuck on.",
+					"type": "number"
+				},
+				"strike_dist": {
+					"description": "The max distance away from the target when landing from the pounce that will still result in damaging the target.",
+					"type": "number"
+				},
+				"struck_blocks": {
+					"$ref": "../general/filter.json"
+				}
+			}
+		},
+		"minecraft:behavior.stay_while_sitting": {
+			"description": "Allows the mob to stay put while it is in a sitting state instead of doing something else.",
+			"additionalProperties": false,
+			"properties": {
+				"priority": {
+					"type": "number"
+				}
+			}
+		},
+		"minecraft:behavior.stomp_attack": {
+			"description": "Allows the mob to use the polar bear's melee attack.",
+			"additionalProperties": false,
+			"properties": {
+				"priority": {
+					"type": "number"
+				},
+				"attack_once": {
+					"description": "If true, this mob will attack only one time.",
+					"type": "boolean"
+				},
+				"attack_types": {
+					"description": "Defines the entity types this mob will attack.",
+					"type": "string"
+				},
+				"random_stop_interval": {
+					"description": "Defines the probability the mob will stop fighting. A value of 0 disables randomly stopping, while a value of 1 defines a 50% chance.",
+					"type": "number"
+				},
+				"reach_multiplier": {
+					"description": "Multiplier for how far outside its box the mob can reach its target (this can be used to simulate a mob with longer arms by making this bigger).",
+					"type": "number"
+				},
+				"track_target": {
+					"description": "If true, this mob will chase after the target as long as it's a valid target.",
+					"type": "boolean"
+				},
+				"speed_multiplier": {
+					"description": "Movement speed multiplier of the mob when using this AI Goal.",
+					"type": "number"
+				},
+				"require_complete_path": {
+					"description": "If true, this goal will only trigger if the mob can reach its target.",
+					"type": "boolean"
+				},
+				"stomp_range_multiplier": {
+					"type": "number"
+				},
+				"no_damage_range_multiplier": {
+					"type": "number"
+				}
+			}
+		},
+		"minecraft:behavior.stomp_turtle_egg": {
+			"description": "Allows this mob to stomp turtle eggs.",
+			"additionalProperties": false,
+			"properties": {
+				"priority": {
+					"type": "number"
+				},
+				"speed_multiplier": {
+					"description": "Movement speed multiplier of the mob when using this AI Goal.",
+					"type": "number"
+				},
+				"search_range": {
+					"description": "The distance in blocks it will look for turtle eggs to move towards.",
+					"type": "number"
+				},
+				"search_height": {
+					"description": "Height in blocks the mob will look for turtle eggs to move towards.",
+					"type": "number"
+				},
+				"search_count": {
+					"description": "The number of blocks each tick that the mob will check within it's search range and height for a valid block to move to. A value of 0 will have the mob check every block within range in one tick.",
+					"type": "number"
+				},
+				"goal_radius": {
+					"description": "Distance in blocks within the mob considers it has reached the goal. This is the 'wiggle room' to stop the AI from bouncing back and forth trying to reach a specific spot.",
+					"type": "number"
+				},
+				"interval": {
+					"description": "A random value to determine when to randomly move somewhere. This has a 1/interval chance to choose this goal.",
+					"type": "number"
+				}
+			}
+		},
+		"minecraft:behavior.summon_entity": {
+			"description": "Allows the mob to attack the player by summoning other entities.",
+			"additionalProperties": false,
+			"properties": {
+				"priority": {
+					"type": "number"
+				},
+				"summon_choices": {
+					"type": "array",
+					"items": {
+						"properties": {
+							"do_casting": {
+								"type": "boolean"
+							},
+							"filters": {
+								"$ref": "../general/filter.json"
+							},
+							"min_activation_range": {
+								"type": "number"
+							},
+							"max_activation_range": {
+								"type": "number"
+							},
+							"cooldown_time": {
+								"type": "number"
+							},
+							"weight": {
+								"type": "number"
+							},
+							"cast_duration": {
+								"type": "number"
+							},
+							"particle_color": {
+								"type": "string"
+							},
+							"start_sound_event": {
+								"type": "string"
+							},
+							"sequence": {
+								"type": "array",
+								"items": {
+									"properties": {
+										"shape": {
+											"type": "string",
+											"enum": ["circle", "line"]
+										},
+										"target": {
+											"$ref": "../../general/filter/subject.json"
+										},
+										"base_delay": {
+											"type": "number"
+										},
+										"delay_per_summon": {
+											"type": "number"
+										},
+										"num_entities_spawned": {
+											"type": "number"
+										},
+										"entity_type": {
+											"$ref": "../../general/vanilla/identifiers.json#/definitions/entity_identifiers"
+										},
+										"size": {
+											"type": "number"
+										},
+										"entity_lifespan": {
+											"type": "number"
+										},
+										"sound_event": {
+											"type": "string"
+										},
+										"summon_cap": {
+											"type": "number"
+										},
+										"summon_cap_radius": {
+											"type": "number"
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		},
+		"minecraft:behavior.swell": {
+			"description": "Allows the creeper to swell up when a player is nearby. It can only be used by Creepers.",
+			"additionalProperties": false,
+			"properties": {
+				"priority": {
+					"type": "number"
+				},
+				"start_distance": {
+					"description": "This mob starts swelling when a target is at least this many blocks away.",
+					"type": "number"
+				},
+				"stop_distance": {
+					"description": "This mob stops swelling when a target has moved away at least this many blocks.",
+					"type": "number"
+				}
+			}
+		},
+		"minecraft:behavior.swim_idle": {
+			"additionalProperties": false,
+			"properties": {
+				"priority": {
+					"type": "number"
+				},
+				"idle_time": {
+					"type": "number"
+				},
+				"success_rate": {
+					"type": "number"
+				}
+			}
+		},
+		"minecraft:behavior.swim_wander": {
+			"description": "Has the fish swim around when they can't pathfind.",
+			"additionalProperties": false,
+			"properties": {
+				"priority": {
+					"type": "number"
+				},
+				"speed_multiplier": {
+					"description": "Speed of the entity."
+				},
+				"interval": {
+					"type": "number"
+				},
+				"look_ahead": {
+					"type": "number"
+				},
+				"wander_time": {
+					"type": "number"
+				}
+			}
+		},
+		"minecraft:behavior.swim_with_entity": {
+			"additionalProperties": false,
+			"properties": {
+				"priority": {
+					"type": "number"
+				},
+				"success_rate": {
+					"type": "number"
+				},
+				"chance_to_stop": {
+					"type": "number"
+				},
+				"state_check_interval": {
+					"type": "number"
+				},
+				"catch_up_threshold": {
+					"type": "number"
+				},
+				"match_directional_threshold": {
+					"type": "number"
+				},
+				"catch_up_multiplier": {
+					"type": "number"
+				},
+				"speed_multiplier": {
+					"type": "number"
+				},
+				"search_range": {
+					"type": "number"
+				},
+				"stop_distance": {
+					"type": "number"
+				},
+				"entity_types": {
+					"type": "array",
+					"items": {
+						"properties": {
+							"filters": {
+								"$ref": "../general/entityType.json"
+							}
+						}
+					}
+				}
+			}
+		},
+		"minecraft:behavior.swoop_attack": {
+			"description": "Allows the mob to move to attack a target. The goal ends if it has a horizontal collision or gets hit. Built to be used with flying mobs.",
+			"additionalProperties": false,
+			"properties": {
+				"priority": {
+					"type": "number"
+				},
+				"damage_reach": {
+					"type": "number"
+				},
+				"speed_multiplier": {
+					"description": "Movement speed multiplier of the mob when using this AI Goal.",
+					"type": "number"
+				},
+				"delay_range": {
+					"description": "Range of time in seconds between uses of this goal.",
+					"type": "array",
+					"minItems": 2,
+					"maxItems": 2,
+					"items": {
+						"type": "number"
+					}
+				}
+			}
+		},
+		"minecraft:behvaior.take_flower": {
+			"description": "Can only be used by Villagers. Allows the mob to accept flowers from Iron Golems.",
+			"additionalProperties": false,
+			"properties": {
+				"priority": {
+					"type": "number"
+				}
+			}
+		},
+		"minecraft:behavior.tempt": {
+			"description": "Allows the mob to be tempted by food they like.",
+			"additionalProperties": false,
+			"properties": {
+				"priority": {
+					"type": "number"
+				},
+				"can_get_scared": {
+					"description": "If true, the mob can stop being tempted if the player moves too fast while close to this mob.",
+					"type": "boolean"
+				},
+				"can_tempt_vertically": {
+					"type": "boolean"
+				},
+				"items": {
+					"description": "List of items this mob is tempted by.",
+					"type": "array",
+					"items": {
+						"$ref": "../../general/vanilla/identifiers.json#/definitions/item_identifiers"
+					}
+				},
+				"speed_multiplier": {
+					"description": "Movement speed multiplier of the mob when using this AI Goal.",
+					"type": "number"
+				},
+				"within_radius": {
+					"description": "Distance in blocks this mob can get tempted by a player holding an item they like.",
+					"type": "number"
+				},
+				"tempt_sound": {
+					"type": "string"
+				},
+				"sound_interval": {
+					"properties": {
+						"range_min": {
+							"type": "number"
+						},
+						"range_max": {
+							"type": "number"
+						}
+					}
+				}
+			}
+		},
+		"minecraft:behavior.trade_interest": {
+			"description": "Allows the mob to look at a player that is holding a tradable item.",
+			"additionalProperties": false,
+			"properties": {
+				"priority": {
+					"type": "number"
+				},
+				"within_radius": {
+					"description": "Distance in blocks this mob can be interested by a player holding an item they like.",
+					"type": "number"
+				},
+				"interest_time": {
+					"description": "The max time in seconds that the trader will be interested with showing it's trade items.",
+					"type": "number"
+				},
+				"remove_item_time": {
+					"description": "The max time in seconds that the trader will wait when you no longer have items to trade.",
+					"type": "number"
+				},
+				"carried_item_switch_time": {
+					"description": "The max time in seconds that the trader will hold an item before attempting to switch for a different item that takes the same trade.",
+					"type": "number"
+				},
+				"cooldown": {
+					"description": "The time in seconds before the trader can use this goal again.",
+					"type": "number"
+				}
+			}
+		},
+		"minecraft:behavior.trade_with_player": {
+			"description": "Allows the player to trade with this mob.",
+			"additionalProperties": false,
+			"properties": {
+				"priority": {
+					"type": "number"
+				}
+			}
+		},
+		"minecraft:behavior.vex_copy_owner_target": {
+			"description": "Allows the mob to target the same entity its owner is targeting.",
+			"additionalProperties": false,
+			"properties": {
+				"priority": {
+					"type": "number"
+				},
+				"entity_types": {
+					"description": "List of entities this mob can copy the owner from.",
+					"$ref": "../general/entityType.json"
+				}
+			}
+		},
+		"minecraft:behavior.vex_random_move": {
+			"description": "Allows the mob to move around randomly like the Vex.",
+			"additionalProperties": false,
+			"properties": {
+				"priority": {
+					"type": "number"
+				}
+			}
+		},
+		"minecraft:behavior.wither_random_attack_pos_goal": {
+			"description": "Allows the wither to launch random attacks. Can only be used by the Wither Boss.",
+			"additionalProperties": false,
+			"properties": {
+				"priority": {
+					"type": "number"
+				}
+			}
+		},
+		"minecraft:behavior.wither_target_highest_damage": {
+			"description": "Allows the wither to focus its attacks on whichever mob has dealt the most damage to it.",
+			"additionalProperties": false,
+			"properties": {
+				"priority": {
+					"type": "number"
+				},
+				"entity_types": {
+					"description": "List of entity types the wither takes into account to find who dealt the most damage to it.",
+					"$ref": "../general/entityType.json"
+				}
+			}
+		},
+		"minecraft:behavior.work": {
+			"description": "Allows the NPC to use their jobsite POI.",
+			"additionalProperties": false,
+			"properties": {
+				"priority": {
+					"type": "number"
+				},
+				"speed_multiplier": {
+					"description": "Movement speed multiplier of the mob when using this AI Goal.",
+					"type": "number"
+				},
+				"goal_cooldown": {
+					"description": "The amount of ticks the goal will be on cooldown before it can be used again.",
+					"type": "number"
+				},
+				"sound_delay_min": {
+					"description": "The min interval in which a sound will play.",
+					"type": "number"
+				},
+				"sound_delay_max": {
+					"description": "The max interval in which a sound will play.",
+					"type": "number"
+				},
+				"active_time": {
+					"description": "The amount of ticks the NPC will stay in their the work location.",
+					"type": "number"
+				},
+				"can_work_in_rain": {
+					"description": "If true, this entity can work when their jobsite POI is being rained on.",
+					"type": "boolean"
+				},
+				"work_in_rain_tolerance": {
+					"description": "If 'can_work_in_rain' is false, this is the maximum number of ticks left in the goal where rain will not interrupt the goal.",
+					"type": "number"
+				},
+				"on_arrival": {
+					"description": "Event to run when the mob reaches their jobsite and finishes working.",
+					"$ref": "../general/eventDefinition.json"
+				}
+			}
 		}
 	}
 }
