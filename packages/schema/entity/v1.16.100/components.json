@@ -52,16 +52,17 @@
 				"minecraft:bribeable": {
 					"properties": {
 						"bribe_items": {
-							"anyOf": [
-								{
-									"type": "object",
-									"properties": {
-										"any_tag": {
-											"type": "string"
+							"items": {
+								"anyOf": [
+									{
+										"properties": {
+											"any_tag": {
+												"type": "string"
+											}
 										}
 									}
-								}
-							]
+								]
+							}
 						}
 					}
 				},
