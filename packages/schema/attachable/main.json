@@ -26,11 +26,13 @@
 							"type": "string"
 						},
 						"item": {
+							"description": "Sets an item identifier with a Molang script to decide when to render the attachable.",
 							"propertyNames": {
 								"$ref": "../general/vanilla/identifiers.json#/definitions/item_identifier"
 							}
 						},
 						"materials": {
+							"description": "Defines the materials used in the attachable.",
 							"patternProperties": {
 								".*": {
 									"$ref": "./general.json#/materials"
@@ -38,6 +40,7 @@
 							}
 						},
 						"textures": {
+							"description": "Defines the textures used in the attachable.",
 							"patternProperties": {
 								".*": {
 									"type": "string"
@@ -45,6 +48,7 @@
 							}
 						},
 						"geometry": {
+							"description": "Defines the geometries used in the attachable.",
 							"patternProperties": {
 								".*": {
 									"type": "string"
@@ -55,9 +59,11 @@
 							"additionalProperties": false,
 							"properties": {
 								"parent_setup": {
+									"description": "Sets up the parent bone for the attachable.",
 									"type": "string"
 								},
 								"pre_animation": {
+									"description": "Pre-computes any expensive and complex values you may want to reuse in your scripts, long-living index variable updates, or generally any one-off computation per render tick.",
 									"type": "array",
 									"items": {
 										"type": "string"
@@ -66,6 +72,7 @@
 							}
 						},
 						"render_controllers": {
+							"description": "References all render controllers used to render the attachable.",
 							"type": "array",
 							"items": {
 								"type": "string"
