@@ -6,14 +6,14 @@
 		"filter": {
 			"type": "object",
 			"$ref": "./filter.json",
-			"description": "TODO"
+			"description": "A filter allows you to set a condition for the event to trigger."
 		},
 		"target": {
 			"$ref": "../../general/filter/subject.json"
 		},
 		"event": {
 			"type": "string",
-			"description": "Identifier of the event to trigger"
+			"description": "Identifier of the event to trigger."
 		}
 	}
 }
