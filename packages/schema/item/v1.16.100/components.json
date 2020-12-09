@@ -32,26 +32,27 @@
 		},
 		"minecraft:mirrored_art": {
 			"type": "boolean",
-			"description": "Mirror the item icon"
+			"description": "Mirror the item icon."
 		},
 		"minecraft:explodable": {
 			"type": "boolean",
-			"description": "Whether the item entity survives an explosion"
+			"description": "Whether the item entity survives an explosion."
 		},
 		"minecraft:liquid_clipped": {
 			"type": "boolean",
-			"description": "Whether the item rendering clips liquids"
+			"description": "Whether the item rendering clips liquids."
 		},
 		"minecraft:allow_off_hand": {
 			"type": "boolean",
-			"description": "Whether the item can be placed inside of the off hand"
+			"description": "Whether the item can be placed inside of the off hand."
 		},
 		"minecraft:projectile": {
 			"type": "object",
-			"description": "Sets the projectile used by minecraft:shooter and minecraft:throwable",
+			"description": "Sets the projectile used by minecraft:shooter and minecraft:throwable.",
 			"additionalProperties": false,
 			"properties": {
 				"projectile_entity": {
+					"description": "The entity to use as the projectile for this item when it is used as ammunition.",
 					"type": "string"
 				},
 				"minimum_critical_power": {
@@ -86,14 +87,14 @@
 		},
 		"minecraft:knockback_resistance": {
 			"type": "number",
-			"description": "For items that provide knockback resistance",
+			"description": "For items that provide knockback resistance.",
 
 			"minimum": 0.0,
 			"maximum": 1.0
 		},
 		"minecraft:enchantable": {
 			"type": "object",
-			"description": "Makes an item enchantable",
+			"description": "Makes an item enchantable.",
 			"properties": {
 				"slot": {
 					"type": "string"
@@ -136,12 +137,15 @@
 								"type": "string"
 							},
 							"use_offhand": {
+								"description": "Whether ammunition can be taken from the offhand.",
 								"type": "boolean"
 							},
 							"search_inventory": {
+								"description": "Whether the whole inventory should be searched for the ammunition",
 								"type": "boolean"
 							},
 							"use_in_creative": {
+								"description": "Whether this ammunition can be used in creative mode.",
 								"type": "boolean"
 							}
 						}
@@ -209,11 +213,11 @@
 		},
 		"minecraft:record": {
 			"type": "object",
-			"description": "TODO",
+			"description": "Allows the item to be put in a jukebox and play music.",
 			"properties": {
 				"sound_event": {
 					"type": "string",
-					"description": "TODO",
+					"description": "A string value correseponding to a sound event in the game code.",
 					"enum": [
 						"13",
 						"cat",
@@ -232,11 +236,11 @@
 				},
 				"duration": {
 					"type": "integer",
-					"description": "TODO"
+					"description": "A float value that determines how long particles are spawned from the JukeBox Block, should approximately match length of sound event."
 				},
 				"comparator_signal": {
 					"type": "integer",
-					"description": "TODO",
+					"description": "An integer value that represents the strength of the analog signal, used by the Comparator Block.",
 					"min": 0,
 					"max": 15
 				}
@@ -244,14 +248,15 @@
 		},
 		"minecraft:repairable": {
 			"type": "object",
-			"description": "TODO",
+			"description": "Repairable item component: how much damage can this item repair, what items can repair it.",
 			"properties": {
 				"on_repaired": {
+					"description": "Event that is called when this item has been repaired.",
 					"$ref": "../general/eventDefinition.json"
 				},
 				"repair_items": {
 					"type": "array",
-					"description": "TODO",
+					"description": "Repair item entries.",
 					"items": {
 						"type": "object",
 						"properties": {
@@ -285,18 +290,20 @@
 		},
 		"minecraft:on_use_on": {
 			"type": "object",
-			"description": "TODO",
+			"description": "The on_use_on item component allows you to receive an event when the item is used on a block in the world.",
 			"properties": {
 				"on_use_on": {
+					"description": "Event trigger for when the item is used.",
 					"$ref": "../general/eventDefinition.json"
 				}
 			}
 		},
 		"minecraft:on_use": {
 			"type": "object",
-			"description": "TODO",
+			"description": "The on_use item component allows you to receive an event when the item is used.",
 			"properties": {
 				"on_use": {
+					"description": "Event trigger for when the item is used.",
 					"$ref": "../general/eventDefinition.json"
 				}
 			}
@@ -311,7 +318,7 @@
 				},
 				"destroy_speeds": {
 					"type": "array",
-					"description": "Destroy speed per block",
+					"description": "Destroy speed per block.",
 					"items": {
 						"type": "object",
 						"properties": {
@@ -406,7 +413,7 @@
 		},
 		"minecraft:creative_category": {
 			"type": "object",
-			"description": "TODO",
+			"description": "The category for the item to be in the creative menu.",
 			"properties": {
 				"parent": {
 					"$ref": "../general/itemGroups.json"
@@ -415,19 +422,21 @@
 		},
 		"minecraft:icon": {
 			"type": "object",
-			"description": "TODO",
+			"description": "The icon item componenent determines the icon to represent the item in the UI and elsewhere.",
 			"properties": {
 				"texture": {
+					"description": "The key from the resource_pack/textures/item_texture.json 'texture_data' object associated with the texture file Example: blaze_powder.",
 					"type": "string"
 				},
 				"frame": {
+					"description": "An index or expression for which frame of the icon to display. Default resolves to 0.",
 					"$ref": "../../molang/embeddedBeta.json"
 				}
 			}
 		},
 		"minecraft:use_animation": {
 			"type": "string",
-			"description": "TODO",
+			"description": "The animation to use when this item is being used, e.g when the item is being eaten.",
 			"enum": ["bow", "eat", "drink", "crossbow", "camera"]
 		},
 		"minecraft:render_offsets": {
@@ -437,14 +446,14 @@
 		},
 		"minecraft:hover_text_color": {
 			"type": "string",
-			"description": "TODO",
+			"description": "The color of the item's name",
 			"$ref": "../../general/minecraftColor.json"
 		},
 		"minecraft:food": {
 			"type": "object",
 			"properties": {
 				"on_consume": {
-					"description": "TODO",
+					"description": "Event to fire once the item has been consumed.",
 					"$ref": "../general/eventDefinition.json"
 				},
 				"using_converts_to": {

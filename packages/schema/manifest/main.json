@@ -150,6 +150,11 @@
 						"type": "string",
 						"const": "chemistry",
 						"description": "Allows the pack to add, change or replace Chemistry functionality."
+					},
+					{
+						"type": "string",
+						"const": "raytraced",
+						"description": "Allows the pack to use ray tracing features."
 					}
 				]
 			}

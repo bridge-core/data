@@ -1192,8 +1192,8 @@
 					}
 				},
 				"minecraft:foot_size": {
-					"DoNotSuggest": true,
-					"description": "**DEPRECATED** Sets the number of blocks the entity can step without jumping.",
+					"doNotSuggest": true,
+					"despricationMessage": "Deprecated - Sets the number of blocks the entity can step without jumping.",
 					"additionalProperties": false,
 					"properties": {
 						"value": {

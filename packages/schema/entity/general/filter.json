@@ -245,7 +245,7 @@
 				"properties": {
 					"value": {
 						"type": "string"
-						//TODO
+						// TODO
 					}
 				}
 			}

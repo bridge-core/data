@@ -192,13 +192,13 @@
 				"hills_transformation": {
 					"type": "array",
 					"items": {
-						"$ref": "./general.json#/vanilla_biomes"
+						"$ref": "./general.json#/definitions/vanilla_biomes"
 					}
 				},
 				"mutate_transformation": {
 					"type": "array",
 					"items": {
-						"$ref": "./general.json#/vanilla_biomes"
+						"$ref": "./general.json#/definitions/vanilla_biomes"
 					}
 				},
 				"shore_transformation": {
@@ -302,7 +302,72 @@
 			"description": "Force specific decorative features (trees, plants, etc.) to appear in this Biome, regardless of normal decoration rules.",
 			"additionalProperties": false,
 			"properties": {
-				// TODO
+				"first_pass": {
+					"type": "array",
+					"items": {
+						"$ref": "./general.json#/definitions/forced_features"
+					}
+				},
+				"before_underground_pass": {
+					"type": "array",
+					"items": {
+						"$ref": "./general.json#/definitions/forced_features"
+					}
+				},
+				"underground_pass": {
+					"type": "array",
+					"items": {
+						"$ref": "./general.json#/definitions/forced_features"
+					}
+				},
+				"after_underground_pass": {
+					"type": "array",
+					"items": {
+						"$ref": "./general.json#/definitions/forced_features"
+					}
+				},
+				"before_surface_pass": {
+					"type": "array",
+					"items": {
+						"$ref": "./general.json#/definitions/forced_features"
+					}
+				},
+				"surface_pass": {
+					"type": "array",
+					"items": {
+						"$ref": "./general.json#/definitions/forced_features"
+					}
+				},
+				"after_surface_pass": {
+					"type": "array",
+					"items": {
+						"$ref": "./general.json#/definitions/forced_features"
+					}
+				},
+				"before_sky_pass": {
+					"type": "array",
+					"items": {
+						"$ref": "./general.json#/definitions/forced_features"
+					}
+				},
+				"sky_pass": {
+					"type": "array",
+					"items": {
+						"$ref": "./general.json#/definitions/forced_features"
+					}
+				},
+				"after_sky_pass": {
+					"type": "array",
+					"items": {
+						"$ref": "./general.json#/definitions/forced_features"
+					}
+				},
+				"final_pass": {
+					"type": "array",
+					"items": {
+						"$ref": "./general.json#/definitions/forced_features"
+					}
+				}
 			}
 		}
 	}

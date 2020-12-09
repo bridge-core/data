@@ -110,6 +110,74 @@
 				"fixed_grid",
 				"jittered_grid"
 			]
+		},
+		"forced_features": {
+			"properties": {
+				"iterations": {
+					"description": "Number of scattered positions to generate.",
+					"$ref": "../molang/embeddedBeta.json"
+				},
+				"scatter_chance": {
+					"anyOf": [
+						{
+							"$ref": "../feature/general.json#/definitions/chance_information"
+						},
+						{
+							"type": "number"
+						}
+					]
+				},
+				"coordinate_eval_order": {
+					"$ref": "../feature/general.json#/definitions/coordinate_eval_order"
+				},
+				"x": {
+					"anyOf": [
+						{
+							"type": "string"
+						},
+						{
+							"properties": {
+								"extent": {
+									"minItems": 2,
+									"maxItems": 2,
+									"type": "array",
+									"items": {
+										"anyOf": [
+											{
+												"type": "number"
+											},
+											{
+												"type": "string"
+											}
+										]
+									}
+								},
+								"distribution": {
+									"$ref": "../feature/general.json#/definitions/distributions"
+								},
+								"step_size": {
+									"type": "number"
+								},
+								"grid_offset": {
+									"type": "number"
+								}
+							}
+						}
+					]
+				},
+				"y": {
+					"$ref": "#/definitions/forced_features/properties/x"
+				},
+				"z": {
+					"$ref": "#/definitions/forced_features/properties/x"
+				},
+				"places_feature": {
+					"type": "array",
+					"items": {
+						"type": "string"
+					}
+				}
+			}
 		}
 	}
 }
