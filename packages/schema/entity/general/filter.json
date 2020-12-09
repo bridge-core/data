@@ -244,8 +244,7 @@
 			"then": {
 				"properties": {
 					"value": {
-						"type": "string"
-						// TODO
+						"$ref": "./componentsList.json"
 					}
 				}
 			}
