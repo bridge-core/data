@@ -5,7 +5,8 @@
 	"main": "dist/auto-completions.js",
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1",
-		"build": "deno run --allow-read --allow-write scripts/build.ts"
+		"build": "deno run --allow-read --allow-write scripts/build.ts",
+		"dev": "deno run --allow-read --allow-write scripts/watch.ts"
 	},
 	"repository": {
 		"type": "git",

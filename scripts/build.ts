@@ -1,6 +1,15 @@
-try {
-	await Deno.mkdir('./dist')
-} catch {}
+import { bundleFileDefs } from './bundleFileDefs.ts'
+import { bundleAutoCompletions } from './bundleAutoCompletions.ts'
 
-await import('./bundleAutoCompletions.ts')
-await import('./bundleFileDefs.ts')
+export async function build() {
+	try {
+		await Deno.mkdir('./dist')
+	} catch {}
+
+	await bundleFileDefs()
+	await bundleAutoCompletions()
+}
+
+if (import.meta.main) {
+	await build()
+}

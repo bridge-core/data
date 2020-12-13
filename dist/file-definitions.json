@@ -224,6 +224,15 @@
 		"lightning_cache": "model"
 	},
 	{
+		"id": "entity_model",
+		"includes": "models/blocks",
+		"file_viewer": "model",
+		"player": "model",
+		"rp_definition": true,
+
+		"lightning_cache": "model"
+	},
+	{
 		"id": "rp_animation",
 		"includes": "animations/",
 		"file_viewer": "json",
@@ -368,10 +377,9 @@
 		"id": "texture_set",
 		"includes": "textures/blocks/",
 		"rp_definition": true,
-		"file_viewer": "json",
 
 		"highlighter": "texture_set",
-		"target_version": "$project_target_version >= 1.16.100",
+		"target_version": "$project_target_version >= 1.16.200",
 		"start_state": "texture_set/main",
 		"file_creator": "texture_set"
 	},

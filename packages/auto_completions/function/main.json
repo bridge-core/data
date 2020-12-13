@@ -1,5 +1,10 @@
 {
 	"alwaysday": "$general.boolean",
+	"ability": {
+		"$function.general.target_selector": {
+			"$function.general.ability": "$general.boolean"
+		}
+	},
 	"clear": {
 		"$function.general.target_selector": {
 			"$function.general.item_identifier": {
