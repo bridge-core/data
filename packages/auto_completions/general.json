@@ -390,6 +390,11 @@
 		},
 		"@import.value.item": "$dynamic.cache.item.identifiers and $vanilla.item_identifier"
 	},
+	"model_identifier": {
+		"@meta": { "is_value": true, "definitions": ["entity_model"] },
+		"@import.value": "$dynamic.cache.model.identifiers",
+		"@import.value_old": "$dynamic.cache.model.old_identifiers"
+	},
 	"fog_identifier": "$dynamic.cache.fog.identifiers and $vanilla.fog_identifier",
 	"effect_name": [
 		"all",

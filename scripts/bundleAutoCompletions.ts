@@ -1,7 +1,7 @@
 import JSON5 from 'https://cdn.skypack.dev/json5@2.0.0'
 import { join, basename } from 'https://deno.land/std/path/mod.ts'
 
-const autoCompletions: any = {}
+let autoCompletions: any = {}
 
 async function loadDir(
 	dirPath: string,
@@ -20,17 +20,22 @@ async function loadDir(
 		}
 	}
 }
-loadDir('./packages/auto_completions').then(async () => {
-	await Promise.all([
-		Deno.writeTextFile(
-			'./dist/auto-completions.js',
-			`(() => JSON.parse("${JSON.stringify(autoCompletions)
-				.replace(/\\\"/g, '\\\\"')
-				.replace(/\"/g, '\\"')}"))()`
-		),
-		Deno.writeTextFile(
-			'./dist/auto-completions.json',
-			JSON.stringify(autoCompletions)
-		),
-	])
-})
+
+export async function bundleAutoCompletions() {
+	autoCompletions = {}
+
+	await loadDir('./packages/auto_completions').then(async () => {
+		await Promise.all([
+			Deno.writeTextFile(
+				'./dist/auto-completions.js',
+				`(() => JSON.parse("${JSON.stringify(autoCompletions)
+					.replace(/\\\"/g, '\\\\"')
+					.replace(/\"/g, '\\"')}"))()`
+			),
+			Deno.writeTextFile(
+				'./dist/auto-completions.json',
+				JSON.stringify(autoCompletions)
+			),
+		])
+	})
+}
