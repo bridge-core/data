@@ -1,0 +1,10 @@
+[
+	{ "identifier": "minecraft:block/description/identifier" },
+	{ "event": "minecraft:block/events" },
+	{
+		"recipeTag": [
+			"minecraft:block/components/minecraft:crafting_table/crafting_tags",
+			"minecraft:block/permutations/*/components/minecraft:crafting_table/crafting_tags"
+		]
+	}
+]

@@ -1,9 +1,9 @@
 [
 	{ "identifiers": "minecraft:entity/description/identifier" },
-	{ "events": "minecraft:entity/events" },
-	{ "componentGroups": "minecraft:entity/component_groups" },
+	{ "event": "minecraft:entity/events" },
+	{ "componentGroup": "minecraft:entity/component_groups" },
 	{
-		"families": [
+		"family": [
 			"minecraft:entity/components/minecraft:type_family/family",
 			"minecraft:entity/component_groups/*/minecraft:type_family/family"
 		]

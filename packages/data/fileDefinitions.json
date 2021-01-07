@@ -8,12 +8,14 @@
 	{
 		"id": "animation",
 		"matcher": "BP/animations/**/*.json",
-		"schema": "https://raw.githubusercontent.com/bridge-core/data/next/packages/schema/animation/server.json"
+		"schema": "https://raw.githubusercontent.com/bridge-core/data/next/packages/schema/animation/server.json",
+		"lightningCache": "animation.json"
 	},
 	{
 		"id": "animationController",
 		"matcher": "BP/animation_controllers/**/*.json",
-		"schema": "https://raw.githubusercontent.com/bridge-core/data/next/packages/schema/animation_controller/server.json"
+		"schema": "https://raw.githubusercontent.com/bridge-core/data/next/packages/schema/animation_controller/server.json",
+		"lightningCache": "animationController.json"
 	},
 	{
 		"id": "biome",
@@ -23,7 +25,8 @@
 	{
 		"id": "block",
 		"matcher": "BP/blocks/**/*.json",
-		"schema": "https://raw.githubusercontent.com/bridge-core/data/next/packages/schema/block/main.json"
+		"schema": "https://raw.githubusercontent.com/bridge-core/data/next/packages/schema/block/main.json",
+		"lightningCache": "block.json"
 	},
 	{
 		"id": "entity",
@@ -54,7 +57,8 @@
 	{
 		"id": "item",
 		"matcher": "BP/items/**/*.json",
-		"schema": "https://raw.githubusercontent.com/bridge-core/data/next/packages/schema/item/main.json"
+		"schema": "https://raw.githubusercontent.com/bridge-core/data/next/packages/schema/item/main.json",
+		"lightningCache": "item.json"
 	},
 	{
 		"id": "lootTable",
@@ -64,7 +68,8 @@
 	{
 		"id": "recipe",
 		"matcher": "BP/recipes/**/*.json",
-		"schema": "https://raw.githubusercontent.com/bridge-core/data/next/packages/schema/recipe/main.json"
+		"schema": "https://raw.githubusercontent.com/bridge-core/data/next/packages/schema/recipe/main.json",
+		"lightningCache": "recipe.json"
 	},
 	{
 		"id": "script",
