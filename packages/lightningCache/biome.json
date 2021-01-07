@@ -11,6 +11,7 @@
 			"minecraft:frozen_ocean_surface",
 			"minecraft:mesa_surface",
 			"minecraft:the_end_surface",
+			"minecraft:nether_surface",
 			"minecraft:overworld_generation_rules",
 			"minecraft:surface_material_adjustments",
 			"animal",
