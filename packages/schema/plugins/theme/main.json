@@ -2,59 +2,45 @@
 	"$schema": "http://json-schema.org/draft-07/schema",
 	"title": "Theme",
 	"definitions": {
-		"theme_variant": {
+		"style_object": {
 			"properties": {
-				"highlighter": {
-					"description": "Syntax highlighter colors of your bridge. theme.",
-					"properties": {
-						"property": {
-							"description": "Custom style for syntax highlighter; affects format_version.",
-							"$ref": "#/definitions/style_object"
-						},
-						"keyword": {
-							"description": "Custom style for syntax highlighter; affects namespaces.",
-							"$ref": "#/definitions/style_object"
-						},
-						"definition": {
-							"description": "Custom style for syntax highlighter; affects special objects.",
-							"$ref": "#/definitions/style_object"
-						},
-						"atom": {
-							"description": "Custom style for syntax highlighter; affects booleans.",
-							"$ref": "#/definitions/style_object"
-						},
-						"number": {
-							"description": "Custom style for syntax highlighter; affects numbers.",
-							"$ref": "#/definitions/style_object"
-						},
-						"string": {
-							"description": "Custom style for syntax highlighter; affects all other values.",
-							"$ref": "#/definitions/style_object"
-						},
-						"variable": {
-							"description": "Custom style for syntax highlighter.",
-							"$ref": "#/definitions/style_object"
-						},
-						"variable_strong": {
-							"description": "Custom style for syntax highlighter.",
-							"$ref": "#/definitions/style_object"
-						},
-						"meta": {
-							"description": "Custom style for syntax highlighter.",
-							"$ref": "#/definitions/style_object"
-						},
-						"comment": {
-							"description": "Custom style for syntax highlighter.",
-							"$ref": "#/definitions/style_object"
-						}
-					}
+				"color": {
+					"$ref": "../../general/hexColor.json"
+				},
+				"text_decoration": {
+					"type": "string",
+					"enum": ["underline", "overline", "line-through", "blink"]
+				},
+				"is_italic": {
+					"type": "boolean"
+				}
+			}
+		}
+	},
+	"additionalProperties": false,
+	"properties": {
+		"id": {
+			"description": "UUID for your theme.",
+			"type": "string"
+		},
+		"colorScheme": {
+			"enum": ["dark", "light"],
+			"description": "The color scheme of this theme.",
+			"type": "string"
+		},
+		"colors": {
+			"description": "Colors of this theme.",
+			"properties": {
+				"text": {
+					"description": "Text color.",
+					"$ref": "../../general/hexColor.json"
 				},
 				"primary": {
 					"description": "Color; affects menu icons, active tabs, MoLang edit icons, and more.",
 					"$ref": "../../general/hexColor.json"
 				},
 				"secondary": {
-					"description": "Color",
+					"description": "Color.",
 					"$ref": "../../general/hexColor.json"
 				},
 				"accent": {
@@ -66,7 +52,7 @@
 					"$ref": "../../general/hexColor.json"
 				},
 				"info": {
-					"description": "Color",
+					"description": "Color.",
 					"$ref": "../../general/hexColor.json"
 				},
 				"success": {
@@ -74,18 +60,18 @@
 					"$ref": "../../general/hexColor.json"
 				},
 				"warning": {
-					"description": "Color",
+					"description": "Color.",
 					"$ref": "../../general/hexColor.json"
 				},
 				"background": {
 					"description": "Color; affects background of editor.",
 					"$ref": "../../general/hexColor.json"
 				},
-				"sidebar_navigation": {
+				"sidebarNavigation": {
 					"description": "Color; affects navigation sidebar.",
 					"$ref": "../../general/hexColor.json"
 				},
-				"expanded_sidebar": {
+				"expandedSidebar": {
 					"description": "Color; affects sidebar containing folders and files.",
 					"$ref": "../../general/hexColor.json"
 				},
@@ -104,62 +90,59 @@
 				"tooltip": {
 					"description": "Color; affects the tooltip that shows when you hover over buttons.",
 					"$ref": "../../general/hexColor.json"
-				},
-				"default_button": {
-					"description": "Color; affects the + buttons in the JSON tree editor."
 				}
 			}
 		},
-		"style_object": {
+		"highlighter": {
+			"description": "Syntax highlighter colors of your bridge. theme.",
 			"properties": {
-				"color": {
+				"property": {
+					"description": "Custom style for syntax highlighter; affects format_version.",
+					"$ref": "#/definitions/style_object"
+				},
+				"keyword": {
+					"description": "Custom style for syntax highlighter; affects namespaces.",
+					"$ref": "#/definitions/style_object"
+				},
+				"definition": {
+					"description": "Custom style for syntax highlighter; affects special objects.",
+					"$ref": "#/definitions/style_object"
+				},
+				"atom": {
+					"description": "Custom style for syntax highlighter; affects booleans.",
+					"$ref": "#/definitions/style_object"
+				},
+				"number": {
+					"description": "Custom style for syntax highlighter; affects numbers.",
+					"$ref": "#/definitions/style_object"
+				},
+				"string": {
+					"description": "Custom style for syntax highlighter; affects all other values.",
+					"$ref": "#/definitions/style_object"
+				},
+				"variable": {
+					"description": "Custom style for syntax highlighter.",
+					"$ref": "#/definitions/style_object"
+				},
+				"variable_strong": {
+					"description": "Custom style for syntax highlighter.",
+					"$ref": "#/definitions/style_object"
+				},
+				"meta": {
+					"description": "Custom style for syntax highlighter.",
+					"$ref": "#/definitions/style_object"
+				},
+				"comment": {
+					"description": "Custom style for syntax highlighter.",
+					"$ref": "#/definitions/style_object"
+				}
+			}
+		},
+		"monaco": {
+			"description": "Colors for the monaco editor.",
+			"patternProperties": {
+				".*": {
 					"$ref": "../../general/hexColor.json"
-				},
-				"text_decoration": {
-					"type": "string",
-					"enum": ["underline", "overline", "line-through", "blink"]
-				},
-				"is_italic": {
-					"type": "boolean"
-				}
-			}
-		}
-	},
-	"additionalProperties": false,
-	"properties": {
-		"name": {
-			"description": "Name of your theme.",
-			"type": "string"
-		},
-		"id": {
-			"description": "UUID for your theme.",
-			"type": "string"
-		},
-		"options": {
-			"description": "Theme option definition.",
-			"properties": {
-				"no_logo_display": {
-					"description": "Whether to display the blue bridge. logo or simply 'bridge.'",
-					"type": "boolean"
-				},
-				"inherit_highlighter": {
-					"description": "Whether your theme highlighter should use the default bridge. highlighter as a basis.",
-					"type": "boolean"
-				},
-				"styles": {
-					"description": "A CSS file to use (CSS files are loaded from the <PLUGIN NAME>/styles folder).",
-					"type": "string"
-				}
-			}
-		},
-		"definition": {
-			"description": "Theme definition object.",
-			"properties": {
-				"dark": {
-					"$ref": "#/definitions/theme_variant"
-				},
-				"light": {
-					"$ref": "#/definitions/theme_variant"
 				}
 			}
 		}
