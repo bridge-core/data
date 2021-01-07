@@ -1,6 +1,8 @@
 [
 	{ "identifier": "animation_controllers" },
-	{ "animationReference": "animations/*/states/*/animations/*" },
-	{ "particleEffect": "animations/*/states/*/particle_effects/*/effect" },
-	{ "soundEffect": "animations/*/states/*/sound_effects/*/effect" }
+	{ "animationReference": "animation_controllers/*/states/*/animations/*" },
+	{
+		"particleEffect": "animation_controllers/*/states/*/particle_effects/*/effect"
+	},
+	{ "soundEffect": "animation_controllers/*/states/*/sound_effects/*/effect" }
 ]
