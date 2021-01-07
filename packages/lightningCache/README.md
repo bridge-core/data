@@ -15,8 +15,6 @@ Please note that this path refers to the actual local save path of bridge.'s sch
 -   `[fileType]Enum.json` saves data related to \[fileType\] as enums
 -   `[fileType]Properties.json` saves data related to \[fileType\] as properties
 
-The files would look
-
 ## General lightning cache JSON format
 
 -   `Record<CacheKey, CacheDef>[]`

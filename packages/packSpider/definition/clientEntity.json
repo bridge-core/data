@@ -3,32 +3,27 @@
 		{
 			"find": ["clientAnimation", "clientAnimationController"],
 			"where": "identifier",
-			"matches": "animationAndAnimationController"
+			"matches": "animationIdentifier"
 		},
 		{
 			"find": "geometry",
 			"where": "identifier",
-			"matches": "geometry"
+			"matches": "geometryIdentifier"
 		},
 		{
 			"find": "renderController",
 			"where": "identifier",
-			"matches": "renderController"
+			"matches": "renderControllerIdentifier"
 		},
 		{
 			"find": "soundDefinition",
 			"where": "identifier",
-			"matches": "soundEffect"
+			"matches": "soundEffectIdentifier"
 		},
 		{
 			"find": "particle",
 			"where": "identifier",
-			"matches": "particleEffect"
-		},
-		{
-			"find": "particle",
-			"where": "identifier",
-			"matches": "particleEmitter"
+			"matches": "particleIdentifier"
 		}
 	],
 	"includeFiles": ["texture"]
