@@ -93,22 +93,26 @@
 								}
 							}
 						},
-						"sound_effects": {
+						"particle_effects": {
 							"type": "array",
 							"items": {
-								"patternProperties": {
-									".*": {
-										"$ref": "../general/vanilla/soundDefinitions.json"
+								"additionalProperties": false,
+								"properties": {
+									"effect": {
+										"type": "string"
+									},
+									"locator": {
+										"type": "string"
 									}
 								}
 							}
 						},
-						"particle_effects": {
+						"sound_effects": {
 							"type": "array",
 							"items": {
 								"patternProperties": {
-									".*": {
-										"$ref": "../general/vanilla/identifiers.json#/definitions/particle_identifier"
+									"effect": {
+										"type": "string"
 									}
 								}
 							}

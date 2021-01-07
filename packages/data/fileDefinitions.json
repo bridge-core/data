@@ -115,7 +115,8 @@
 	{
 		"id": "clientAnimation",
 		"matcher": ["RP/animations/**/*.json", "RP/animations/*.json"],
-		"schema": "https://raw.githubusercontent.com/bridge-core/data/next/packages/schema/animation/client.json"
+		"schema": "https://raw.githubusercontent.com/bridge-core/data/next/packages/schema/animation/client.json",
+		"lightningCache": "clientAnimation.json"
 	},
 	{
 		"id": "clientAnimationController",
@@ -123,7 +124,8 @@
 			"RP/animation_controllers/**/*.json",
 			"RP/animation_controllers/*.json"
 		],
-		"schema": "https://raw.githubusercontent.com/bridge-core/data/next/packages/schema/animationController/client.json"
+		"schema": "https://raw.githubusercontent.com/bridge-core/data/next/packages/schema/animationController/client.json",
+		"lightningCache": "clientAnimation.json"
 	},
 	{
 		"id": "attachable",

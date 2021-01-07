@@ -83,7 +83,7 @@
 												"additionalProperties": false,
 												"properties": {
 													"effect": {
-														"$ref": "../general/vanilla/identifiers.json#/definitions/particle_identifiers"
+														"type": "string"
 													},
 													"locator": {
 														"type": "string"
@@ -95,8 +95,8 @@
 											"type": "array",
 											"items": {
 												"patternProperties": {
-													".*": {
-														"$ref": "../general/vanilla/soundDefinitions.json"
+													"effect": {
+														"type": "string"
 													}
 												}
 											}
