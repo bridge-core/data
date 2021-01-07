@@ -35,7 +35,7 @@
 		"id": "entity",
 		"matcher": ["BP/entities/**/*.json", "BP/entities/*.json"],
 		"schema": "https://raw.githubusercontent.com/bridge-core/data/next/packages/schema/entity/main.json",
-		"packSpider": "entity.json",
+		"packSpider": "definition/entity.json",
 		"lightningCache": "entity.json"
 	},
 	{
@@ -136,7 +136,7 @@
 		"id": "clientEntity",
 		"matcher": ["RP/entity/**/*.json", "RP/entity/*.json"],
 		"schema": "https://raw.githubusercontent.com/bridge-core/data/next/packages/schema/clientEntity/main.json",
-		"packSpider": "clientEntity.json"
+		"packSpider": "definition/clientEntity.json"
 	},
 	{
 		"id": "clientItem",
