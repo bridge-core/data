@@ -1,0 +1,20 @@
+{
+	"connect": [
+		{
+			"find": "clientEntity",
+			"where": "identifier",
+			"matches": "identifier"
+		},
+		{
+			"find": "animationController",
+			"where": "identifier",
+			"matches": "animationAndAnimationController"
+		},
+		{
+			"find": "animation",
+			"where": "identifier",
+			"matches": "animationAndAnimationController"
+		}
+	],
+	"includeFiles": ["lootTable", "tradeTable"]
+}

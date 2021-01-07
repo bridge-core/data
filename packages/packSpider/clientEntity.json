@@ -1,0 +1,35 @@
+{
+	"connect": [
+		{
+			"find": ["clientAnimation", "clientAnimationController"],
+			"where": "identifier",
+			"matches": "animationAndAnimationController"
+		},
+		{
+			"find": "geometry",
+			"where": "identifier",
+			"matches": "geometry"
+		},
+		{
+			"find": "renderController",
+			"where": "identifier",
+			"matches": "renderController"
+		},
+		{
+			"find": "soundDefinition",
+			"where": "identifier",
+			"matches": "soundEffect"
+		},
+		{
+			"find": "particle",
+			"where": "identifier",
+			"matches": "particleEffect"
+		},
+		{
+			"find": "particle",
+			"where": "identifier",
+			"matches": "particleEmitter"
+		}
+	],
+	"includeFiles": ["texture"]
+}
