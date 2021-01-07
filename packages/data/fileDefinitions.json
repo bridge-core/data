@@ -125,7 +125,7 @@
 			"RP/animation_controllers/*.json"
 		],
 		"schema": "https://raw.githubusercontent.com/bridge-core/data/next/packages/schema/animationController/client.json",
-		"lightningCache": "clientAnimation.json"
+		"lightningCache": "clientAnimationController.json"
 	},
 	{
 		"id": "attachable",
