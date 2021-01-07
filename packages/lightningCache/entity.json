@@ -1,5 +1,5 @@
 [
-	{ "identifiers": "minecraft:entity/description/identifier" },
+	{ "identifier": "minecraft:entity/description/identifier" },
 	{ "event": "minecraft:entity/events" },
 	{ "componentGroup": "minecraft:entity/component_groups" },
 	{

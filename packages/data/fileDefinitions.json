@@ -23,7 +23,8 @@
 	{
 		"id": "biome",
 		"matcher": ["BP/biomes/**/*.json", "BP/biomes/**/*.json"],
-		"schema": "https://raw.githubusercontent.com/bridge-core/data/next/packages/schema/biome/main.json"
+		"schema": "https://raw.githubusercontent.com/bridge-core/data/next/packages/schema/biome/main.json",
+		"lightningCache": "biome.json"
 	},
 	{
 		"id": "block",
@@ -41,7 +42,8 @@
 	{
 		"id": "feature",
 		"matcher": "BP/features/*.json",
-		"schema": "https://raw.githubusercontent.com/bridge-core/data/next/packages/schema/feature/main.json"
+		"schema": "https://raw.githubusercontent.com/bridge-core/data/next/packages/schema/feature/main.json",
+		"lightningCache": "feature.json"
 	},
 	{
 		"id": "featureRule",
@@ -148,12 +150,14 @@
 		"id": "fog",
 		"target_version": "$project_target_version >= 1.16.100",
 		"matcher": ["RP/fogs/**/*.json", "RP/fogs/*.json"],
-		"schema": "https://raw.githubusercontent.com/bridge-core/data/next/packages/schema/fog/main.json"
+		"schema": "https://raw.githubusercontent.com/bridge-core/data/next/packages/schema/fog/main.json",
+		"lightningCache": "fog.json"
 	},
 	{
 		"id": "particle",
 		"matcher": ["RP/particles/**/*.json", "RP/particles/*.json"],
-		"schema": "https://raw.githubusercontent.com/bridge-core/data/next/packages/schema/particle/main.json"
+		"schema": "https://raw.githubusercontent.com/bridge-core/data/next/packages/schema/particle/main.json",
+		"lightningCache": "particle.json"
 	},
 	{
 		"id": "renderController",
@@ -161,7 +165,8 @@
 			"RP/render_controllers/**/*.json",
 			"RP/render_controllers/*.json"
 		],
-		"schema": "https://raw.githubusercontent.com/bridge-core/data/next/packages/schema/renderController/main.json"
+		"schema": "https://raw.githubusercontent.com/bridge-core/data/next/packages/schema/renderController/main.json",
+		"lightningCache": "renderController.json"
 	},
 	{
 		"id": "textureSet",
@@ -200,7 +205,8 @@
 	{
 		"id": "soundDefinition",
 		"matcher": "RP/sounds/sound_definitions.json",
-		"schema": "https://raw.githubusercontent.com/bridge-core/data/next/packages/schema/simple/soundDefinitions.json"
+		"schema": "https://raw.githubusercontent.com/bridge-core/data/next/packages/schema/simple/soundDefinitions.json",
+		"lightningCache": "soundDefinition.json"
 	},
 	{
 		"id": "clientSound",

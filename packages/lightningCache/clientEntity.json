@@ -1,0 +1,10 @@
+[
+	{ "identifier": "minecraft:client_entity/description/identifier" },
+	{
+		"particleReference": "minecraft:client_entity/description/particle_effects"
+	},
+	{ "animationReference": "minecraft:client_entity/description/animations" },
+	{ "textureReference": "minecraft:client_entity/description/textures" },
+	{ "materialReference": "minecraft:client_entity/description/materials" },
+	{ "geometryReference": "minecraft:client_entity/description/geometry" }
+]

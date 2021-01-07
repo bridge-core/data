@@ -1,0 +1,5 @@
+[
+	{ "textureReference": "minecraft:attachable/description/textures" },
+	{ "materialReference": "minecraft:attachable/description/materials" },
+	{ "geometryReference": "minecraft:attachable/description/geometry" }
+]
