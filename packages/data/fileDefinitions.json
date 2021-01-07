@@ -29,7 +29,8 @@
 		"id": "entity",
 		"matcher": "BP/entities/**/*.json",
 		"schema": "https://raw.githubusercontent.com/bridge-core/data/next/packages/schema/entity/main.json",
-		"packSpider": "entity.json"
+		"packSpider": "entity.json",
+		"lightningCache": "entity.json"
 	},
 	{
 		"id": "feature",
