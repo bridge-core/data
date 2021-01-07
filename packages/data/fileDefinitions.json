@@ -112,7 +112,8 @@
 			"RP/models/entity/*.json",
 			"RP/models/block/*.json",
 			"RP/models/mobs.json"
-		]
+		],
+		"lightningCache": "model.json"
 	},
 	{
 		"id": "clientAnimation",
