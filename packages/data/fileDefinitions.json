@@ -7,30 +7,33 @@
 	},
 	{
 		"id": "animation",
-		"matcher": "BP/animations/**/*.json",
+		"matcher": ["BP/animations/**/*.json", "BP/animations/*.json"],
 		"schema": "https://raw.githubusercontent.com/bridge-core/data/next/packages/schema/animation/server.json",
 		"lightningCache": "animation.json"
 	},
 	{
 		"id": "animationController",
-		"matcher": "BP/animation_controllers/**/*.json",
+		"matcher": [
+			"BP/animation_controllers/**/*.json",
+			"BP/animation_controllers/*.json"
+		],
 		"schema": "https://raw.githubusercontent.com/bridge-core/data/next/packages/schema/animation_controller/server.json",
 		"lightningCache": "animationController.json"
 	},
 	{
 		"id": "biome",
-		"matcher": "BP/biomes/**/*.json",
+		"matcher": ["BP/biomes/**/*.json", "BP/biomes/**/*.json"],
 		"schema": "https://raw.githubusercontent.com/bridge-core/data/next/packages/schema/biome/main.json"
 	},
 	{
 		"id": "block",
-		"matcher": "BP/blocks/**/*.json",
+		"matcher": ["BP/blocks/**/*.json", "BP/blocks/*.json"],
 		"schema": "https://raw.githubusercontent.com/bridge-core/data/next/packages/schema/block/main.json",
 		"lightningCache": "block.json"
 	},
 	{
 		"id": "entity",
-		"matcher": "BP/entities/**/*.json",
+		"matcher": ["BP/entities/**/*.json", "BP/entities/*.json"],
 		"schema": "https://raw.githubusercontent.com/bridge-core/data/next/packages/schema/entity/main.json",
 		"packSpider": "entity.json",
 		"lightningCache": "entity.json"
@@ -52,22 +55,22 @@
 	},
 	{
 		"id": "function",
-		"matcher": "BP/functions/**/*.mcfunction"
+		"matcher": ["BP/functions/**/*.mcfunction", "BP/functions/*.mcfunction"]
 	},
 	{
 		"id": "item",
-		"matcher": "BP/items/**/*.json",
+		"matcher": ["BP/items/**/*.json", "BP/items/*.json"],
 		"schema": "https://raw.githubusercontent.com/bridge-core/data/next/packages/schema/item/main.json",
 		"lightningCache": "item.json"
 	},
 	{
 		"id": "lootTable",
-		"matcher": "BP/loot_tables/**/*.json",
+		"matcher": ["BP/loot_tables/**/*.json", "BP/loot_tables/*.json"],
 		"schema": "https://raw.githubusercontent.com/bridge-core/data/next/packages/schema/lootTable/main.json"
 	},
 	{
 		"id": "recipe",
-		"matcher": "BP/recipes/**/*.json",
+		"matcher": ["BP/recipes/**/*.json", "BP/recipes/*.json"],
 		"schema": "https://raw.githubusercontent.com/bridge-core/data/next/packages/schema/recipe/main.json",
 		"lightningCache": "recipe.json"
 	},
@@ -77,16 +80,19 @@
 	},
 	{
 		"id": "spawnRule",
-		"matcher": "BP/spawn_rules/**/*.json",
+		"matcher": ["BP/spawn_rules/**/*.json", "BP/spawn_rules/*.json"],
 		"schema": "https://raw.githubusercontent.com/bridge-core/data/next/packages/schema/spawnRule/main.json"
 	},
 	{
 		"id": "mcstructure",
-		"matcher": "BP/structures/**/*.mcstructure"
+		"matcher": [
+			"BP/structures/**/*.mcstructure",
+			"BP/structures/*.mcstructure"
+		]
 	},
 	{
 		"id": "tradeTable",
-		"matcher": "BP/trading/**/*.json",
+		"matcher": ["BP/trading/**/*.json", "BP/trading/*.json"],
 		"schema": "https://raw.githubusercontent.com/bridge-core/data/next/packages/schema/tradeTable/main.json"
 	},
 
@@ -101,55 +107,66 @@
 		"matcher": [
 			"RP/models/entity/**/*.json",
 			"RP/models/block/**/*.json",
+			"RP/models/entity/*.json",
+			"RP/models/block/*.json",
 			"RP/models/mobs.json"
 		]
 	},
 	{
 		"id": "clientAnimation",
-		"matcher": "RP/animations/**/*.json",
+		"matcher": ["RP/animations/**/*.json", "RP/animations/*.json"],
 		"schema": "https://raw.githubusercontent.com/bridge-core/data/next/packages/schema/animation/client.json"
 	},
 	{
 		"id": "clientAnimationController",
-		"matcher": "RP/animation_controllers/**/*.json",
+		"matcher": [
+			"RP/animation_controllers/**/*.json",
+			"RP/animation_controllers/*.json"
+		],
 		"schema": "https://raw.githubusercontent.com/bridge-core/data/next/packages/schema/animationController/client.json"
 	},
 	{
 		"id": "attachable",
-		"matcher": "RP/attachables/**/*.json",
+		"matcher": ["RP/attachables/**/*.json", "RP/attachables/*.json"],
 		"schema": "https://raw.githubusercontent.com/bridge-core/data/next/packages/schema/attachable/main.json"
 	},
 	{
 		"id": "clientEntity",
-		"matcher": "RP/entity/**/*.json",
+		"matcher": ["RP/entity/**/*.json", "RP/entity/*.json"],
 		"schema": "https://raw.githubusercontent.com/bridge-core/data/next/packages/schema/clientEntity/main.json",
 		"packSpider": "clientEntity.json"
 	},
 	{
 		"id": "clientItem",
 		"target_version": "$project_target_version < 1.16.100",
-		"matcher": "RP/items/**/*.json",
+		"matcher": ["RP/items/**/*.json", "RP/items/*.json"],
 		"schema": "https://raw.githubusercontent.com/bridge-core/data/next/packages/schema/clientItem/main.json"
 	},
 	{
 		"id": "fog",
 		"target_version": "$project_target_version >= 1.16.100",
-		"matcher": "RP/fogs/**/*.json",
+		"matcher": ["RP/fogs/**/*.json", "RP/fogs/*.json"],
 		"schema": "https://raw.githubusercontent.com/bridge-core/data/next/packages/schema/fog/main.json"
 	},
 	{
 		"id": "particle",
-		"matcher": "RP/particles/**/*.json",
+		"matcher": ["RP/particles/**/*.json", "RP/particles/*.json"],
 		"schema": "https://raw.githubusercontent.com/bridge-core/data/next/packages/schema/particle/main.json"
 	},
 	{
 		"id": "renderController",
-		"matcher": "RP/render_controllers/**/*.json",
+		"matcher": [
+			"RP/render_controllers/**/*.json",
+			"RP/render_controllers/*.json"
+		],
 		"schema": "https://raw.githubusercontent.com/bridge-core/data/next/packages/schema/renderController/main.json"
 	},
 	{
 		"id": "textureSet",
-		"matcher": "RP/textures/blocks/**/*.json",
+		"matcher": [
+			"RP/textures/blocks/**/*.json",
+			"RP/textures/blocks/*.json"
+		],
 		"schema": "https://raw.githubusercontent.com/bridge-core/data/next/packages/schema/textureSet/main.json"
 	},
 	// SIMPLE RP FILES
@@ -201,7 +218,7 @@
 	},
 	{
 		"id": "molang",
-		"matcher": "*/molang/**/*.molang"
+		"matcher": ["*/molang/**/*.molang", "*/molang/*.molang"]
 	},
 
 	// BRIDGE PLUGINS
