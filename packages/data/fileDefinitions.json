@@ -83,7 +83,8 @@
 	{
 		"id": "spawnRule",
 		"matcher": ["BP/spawn_rules/**/*.json", "BP/spawn_rules/*.json"],
-		"schema": "https://raw.githubusercontent.com/bridge-core/data/next/packages/schema/spawnRule/main.json"
+		"schema": "https://raw.githubusercontent.com/bridge-core/data/next/packages/schema/spawnRule/main.json",
+		"lightningCache": "spawnRule.json"
 	},
 	{
 		"id": "mcstructure",
