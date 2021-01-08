@@ -6,6 +6,11 @@
 			"matches": "identifier"
 		},
 		{
+			"find": "spawnRule",
+			"where": "identifier",
+			"matches": "identifier"
+		},
+		{
 			"find": ["animation", "animationController"],
 			"where": "identifier",
 			"matches": "animationIdentifier"
