@@ -6,14 +6,9 @@
 			"matches": "identifier"
 		},
 		{
-			"find": "animationController",
+			"find": ["animation", "animationController"],
 			"where": "identifier",
-			"matches": "animationAndAnimationController"
-		},
-		{
-			"find": "animation",
-			"where": "identifier",
-			"matches": "animationAndAnimationController"
+			"matches": "animationIdentifier"
 		}
 	],
 	"includeFiles": ["lootTable", "tradeTable"]

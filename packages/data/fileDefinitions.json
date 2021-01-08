@@ -139,7 +139,8 @@
 		"id": "clientEntity",
 		"matcher": ["RP/entity/**/*.json", "RP/entity/*.json"],
 		"schema": "https://raw.githubusercontent.com/bridge-core/data/next/packages/schema/clientEntity/main.json",
-		"packSpider": "clientEntity.json"
+		"packSpider": "clientEntity.json",
+		"lightningCache": "clientEntity.json"
 	},
 	{
 		"id": "clientItem",
