@@ -10,8 +10,8 @@
 	},
 	{
 		"lootTablePath": [
-			"minecraft:entity/components/minecraft:loot_table/table",
-			"minecraft:entity/component_groups/*/minecraft:loot_table/table",
+			"minecraft:entity/components/minecraft:loot/table",
+			"minecraft:entity/component_groups/*/minecraft:loot/table",
 			"minecraft:entity/components/minecraft:behavior.sneeze/loot_table",
 			"minecraft:entity/component_groups/*/minecraft:behavior.sneeze/loot_table",
 			"minecraft:entity/components/minecraft:barter/barter_table",
