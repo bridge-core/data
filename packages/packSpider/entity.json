@@ -11,5 +11,5 @@
 			"matches": "animationIdentifier"
 		}
 	],
-	"includeFiles": ["lootTable", "tradeTable"]
+	"includeFiles": ["lootTablePath", "tradeTablePath"]
 }

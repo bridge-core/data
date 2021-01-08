@@ -26,5 +26,5 @@
 			"matches": "particleIdentifier"
 		}
 	],
-	"includeFiles": ["texture"]
+	"includeFiles": ["texturePath"]
 }
