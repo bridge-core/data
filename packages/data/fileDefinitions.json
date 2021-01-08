@@ -30,7 +30,8 @@
 		"id": "block",
 		"matcher": ["BP/blocks/**/*.json", "BP/blocks/*.json"],
 		"schema": "https://raw.githubusercontent.com/bridge-core/data/next/packages/schema/block/main.json",
-		"lightningCache": "block.json"
+		"lightningCache": "block.json",
+		"packSpider": "block.json"
 	},
 	{
 		"id": "entity",
