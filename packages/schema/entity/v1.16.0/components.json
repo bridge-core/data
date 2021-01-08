@@ -2680,9 +2680,7 @@
 											"type": "number"
 										},
 										"potion": {
-											"type": "integer",
-											"minimum": 0,
-											"maximum": 41
+											"$ref": "../../general/vanilla/potionIds.json"
 										},
 										"particle": {
 											"$ref": "../../general/particleName.json"
@@ -3242,9 +3240,7 @@
 						},
 						"aux_val": {
 							"description": "ID of the Potion effect to be applied on hit.",
-							"type": "integer",
-							"minimum": 0,
-							"maximum": 41
+							"$ref": "../../general/vanilla/potionIds.json"
 						}
 					}
 				},
