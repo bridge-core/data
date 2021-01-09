@@ -1,4 +1,5 @@
 [
+	{ "identifier": "*/description/identifier" },
 	{ "recipeTag": "*/tags" },
 	{
 		"itemIdentifier": [
