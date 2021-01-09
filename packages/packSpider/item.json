@@ -9,6 +9,11 @@
 			"find": "clientItem",
 			"where": "identifier",
 			"matches": "identifier"
+		},
+		{
+			"find": "recipe",
+			"where": "itemIdentifier",
+			"matches": "identifier"
 		}
 	],
 	"includeFiles": ["lootTablePath", "texturePath"],
