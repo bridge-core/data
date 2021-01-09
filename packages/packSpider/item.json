@@ -1,0 +1,16 @@
+{
+	"connect": [
+		{
+			"find": "attachable",
+			"where": "itemIdentifier",
+			"matches": "identifier"
+		},
+		{
+			"find": "clientItem",
+			"where": "identifier",
+			"matches": "identifier"
+		}
+	],
+	"includeFiles": ["lootTablePath", "texturePath"],
+	"sharedFiles": ["RP/textures/item_texture.json"]
+}

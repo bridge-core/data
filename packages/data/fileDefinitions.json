@@ -64,7 +64,8 @@
 		"id": "item",
 		"matcher": ["BP/items/**/*.json", "BP/items/*.json"],
 		"schema": "https://raw.githubusercontent.com/bridge-core/data/next/packages/schema/item/main.json",
-		"lightningCache": "item.json"
+		"lightningCache": "item.json",
+		"packSpider": "item.json"
 	},
 	{
 		"id": "lootTable",
@@ -148,7 +149,8 @@
 		"id": "clientItem",
 		"target_version": "$project_target_version < 1.16.100",
 		"matcher": ["RP/items/**/*.json", "RP/items/*.json"],
-		"schema": "https://raw.githubusercontent.com/bridge-core/data/next/packages/schema/clientItem/main.json"
+		"schema": "https://raw.githubusercontent.com/bridge-core/data/next/packages/schema/clientItem/main.json",
+		"lightningCache": "clientItem.json"
 	},
 	{
 		"id": "fog",
