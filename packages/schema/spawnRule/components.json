@@ -11,10 +11,18 @@
 			"additionalProperties": false
 		},
 		"minecraft:spawns_on_block_filter": {
-			"type": "array",
-			"items": {
-				"type": "string"
-			}
+			"anyOf": [
+				{
+					"type": "array",
+					"items": {
+						"$ref": "../general/vanilla/identifiers.json#/definitions/block_identifiers"
+					}
+				},
+				{
+					"type": "string",
+					"$ref": "../general/vanilla/identifiers.json#/definitions/block_identifiers"
+				}
+			]
 		},
 		"minecraft:spawns_on_block_prevented_filter": {
 			"type": "array",
