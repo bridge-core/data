@@ -576,14 +576,22 @@
 					}
 				},
 				"minecraft:burns_in_daylight": {
-					"description": "Specifies if/how a mob burns in daylight."
+					"description": "Specifies if/how a mob burns in daylight.",
+					"additionalProperties": false
 				},
 				"minecraft:can_climb": {
-					"description": "Allows this entity to climb up ladders."
+					"description": "Allows this entity to climb up ladders.",
+					"additionalProperties": false
 				},
 				"minecraft:can_fly": {
 					"description": "Marks the entity as being able to fly, the pathfinder won't be restricted to paths where a solid block is required underneath it.",
-					"type": "boolean"
+					"additionalProperties": false,
+					"anyOf": [
+						{
+							"type": "boolean"
+						},
+						{}
+					]
 				},
 				"minecraft:celebrate_hunt": {
 					"description": "Specifies hunt celebration behaviour.",
@@ -702,32 +710,61 @@
 					"additionalProperties": false,
 					"properties": {
 						"triggers": {
-							"description": "List of triggers with the events to call when taking specific kinds of damage.",
-							"type": "array",
-							"items": {
-								"properties": {
-									"on_damage": {
-										"description": "Specifies filters for entity definitions and events.",
-										"$ref": "../general/eventDefinition.json"
-									},
-									"cause": {
-										"description": "Type of damage that triggers the events.",
-										"$ref": "../../general/vanilla/damageType.json"
-									},
-									"deals_damage": {
-										"description": "If true, the damage dealt to the entity will take away health from it, set to false to make the entity ignore that damage.",
-										"type": "boolean"
-									},
-									"damage_multiplier": {
-										"description": "A multiplier that modifies the base damage from the damage cause. If deals_damage is true the multiplier can only reduce the damage the entity will take to a minimum of 1.",
-										"type": "number"
-									},
-									"on_damage_sound_event": {
-										"description": "Defines what sound to play, if any, when the on_damage filters are met.",
-										"type": "string"
+							"anyOf": [
+								{
+									"description": "List of triggers with the events to call when taking specific kinds of damage.",
+									"type": "array",
+									"items": {
+										"properties": {
+											"on_damage": {
+												"description": "Specifies filters for entity definitions and events.",
+												"$ref": "../general/eventDefinition.json"
+											},
+											"cause": {
+												"description": "Type of damage that triggers the events.",
+												"$ref": "../../general/vanilla/damageType.json"
+											},
+											"deals_damage": {
+												"description": "If true, the damage dealt to the entity will take away health from it, set to false to make the entity ignore that damage.",
+												"type": "boolean"
+											},
+											"damage_multiplier": {
+												"description": "A multiplier that modifies the base damage from the damage cause. If deals_damage is true the multiplier can only reduce the damage the entity will take to a minimum of 1.",
+												"type": "number"
+											},
+											"on_damage_sound_event": {
+												"description": "Defines what sound to play, if any, when the on_damage filters are met.",
+												"type": "string"
+											}
+										}
+									}
+								},
+								{
+									"type": "object",
+									"properties": {
+										"on_damage": {
+											"description": "Specifies filters for entity definitions and events.",
+											"$ref": "../general/eventDefinition.json"
+										},
+										"cause": {
+											"description": "Type of damage that triggers the events.",
+											"$ref": "../../general/vanilla/damageType.json"
+										},
+										"deals_damage": {
+											"description": "If true, the damage dealt to the entity will take away health from it, set to false to make the entity ignore that damage.",
+											"type": "boolean"
+										},
+										"damage_multiplier": {
+											"description": "A multiplier that modifies the base damage from the damage cause. If deals_damage is true the multiplier can only reduce the damage the entity will take to a minimum of 1.",
+											"type": "number"
+										},
+										"on_damage_sound_event": {
+											"description": "Defines what sound to play, if any, when the on_damage filters are met.",
+											"type": "string"
+										}
 									}
 								}
-							}
+							]
 						}
 					}
 				},
@@ -1084,8 +1121,13 @@
 				},
 				"minecraft:fire_immune": {
 					"description": "Sets that this entity doesn't take damage from fire.",
-					"type": "boolean",
-					"additionalProperties": false
+					"additionalProperties": false,
+					"anyOf": [
+						{
+							"type": "boolean"
+						},
+						{}
+					]
 				},
 				"minecraft:floats_in_liquid": {
 					"additionalProperties": false,
@@ -1123,7 +1165,7 @@
 							"description": "The percentage chance between 0-1 that a fish will spawn and not want to join flocks. Invalid values will be capped at the end points.",
 							"type": "number"
 						},
-						"influence_raidus": {
+						"influence_radius": {
 							"description": "The area around the entity that allows others to be added to the flock.",
 							"type": "number"
 						},
@@ -1431,7 +1473,21 @@
 					"additionalProperties": false,
 					"properties": {
 						"value": {
-							"type": "number"
+							"anyOf": [
+								{
+									"type": "number"
+								},
+								{
+									"properties": {
+										"range_min": {
+											"type": "number"
+										},
+										"range_max": {
+											"type": "number"
+										}
+									}
+								}
+							]
 						}
 					}
 				},
@@ -2710,12 +2766,19 @@
 											"$ref": "../../molang/embeddedBeta.json"
 										},
 										"damage": {
-											"type": "array",
-											"minItems": 2,
-											"maxItems": 2,
-											"items": {
-												"type": "number"
-											}
+											"anyOf": [
+												{
+													"type": "array",
+													"minItems": 2,
+													"maxItems": 2,
+													"items": {
+														"type": "integer"
+													}
+												},
+												{
+													"type": "integer"
+												}
+											]
 										},
 										"knockback": {
 											"description": "If true, the projectile will knock back the entity it hits.",
@@ -3065,44 +3128,85 @@
 							"type": "number"
 						},
 						"seats": {
-							"description": "The list of positions and number of riders for each position for entities riding this entity.",
-							"type": "array",
-							"items": {
-								"properties": {
-									"lock_rider_rotation": {
-										"description": "Angle in degrees that a rider is allowed to rotate while riding this entity. Omit this property for no limit.",
-										"$ref": "../../general/degree.json"
-									},
-									"max_rider_count": {
-										"description": "Defines the maximum number of riders that can be riding this entity for this seat to be valid.",
-										"type": "number"
-									},
-									"min_rider_count": {
-										"description": "Defines the minimum number of riders that need to be riding this entity before this seat can be used.",
-										"type": "number"
-									},
-									"position": {
-										"description": "Position of this seat relative to this entity's position.",
-										"type": "array",
-										"minItems": 3,
-										"maxItems": 3,
-										"items": {
-											"type": "number"
-										}
-									},
-									"rotate_rider_by": {
-										"description": "Offset to rotate riders by.",
-										"anyOf": [
-											{
+							"anyOf": [
+								{
+									"description": "The list of positions and number of riders for each position for entities riding this entity.",
+									"type": "array",
+									"items": {
+										"properties": {
+											"lock_rider_rotation": {
+												"description": "Angle in degrees that a rider is allowed to rotate while riding this entity. Omit this property for no limit.",
 												"$ref": "../../general/degree.json"
 											},
-											{
-												"$ref": "../../molang/embeddedBeta.json"
+											"max_rider_count": {
+												"description": "Defines the maximum number of riders that can be riding this entity for this seat to be valid.",
+												"type": "number"
+											},
+											"min_rider_count": {
+												"description": "Defines the minimum number of riders that need to be riding this entity before this seat can be used.",
+												"type": "number"
+											},
+											"position": {
+												"description": "Position of this seat relative to this entity's position.",
+												"type": "array",
+												"minItems": 3,
+												"maxItems": 3,
+												"items": {
+													"type": "number"
+												}
+											},
+											"rotate_rider_by": {
+												"description": "Offset to rotate riders by.",
+												"anyOf": [
+													{
+														"$ref": "../../general/degree.json"
+													},
+													{
+														"$ref": "../../molang/embeddedBeta.json"
+													}
+												]
 											}
-										]
+										}
+									}
+								},
+								{
+									"type": "object",
+									"properties": {
+										"lock_rider_rotation": {
+											"description": "Angle in degrees that a rider is allowed to rotate while riding this entity. Omit this property for no limit.",
+											"$ref": "../../general/degree.json"
+										},
+										"max_rider_count": {
+											"description": "Defines the maximum number of riders that can be riding this entity for this seat to be valid.",
+											"type": "number"
+										},
+										"min_rider_count": {
+											"description": "Defines the minimum number of riders that need to be riding this entity before this seat can be used.",
+											"type": "number"
+										},
+										"position": {
+											"description": "Position of this seat relative to this entity's position.",
+											"type": "array",
+											"minItems": 3,
+											"maxItems": 3,
+											"items": {
+												"type": "number"
+											}
+										},
+										"rotate_rider_by": {
+											"description": "Offset to rotate riders by.",
+											"anyOf": [
+												{
+													"$ref": "../../general/degree.json"
+												},
+												{
+													"$ref": "../../molang/embeddedBeta.json"
+												}
+											]
+										}
 									}
 								}
-							}
+							]
 						}
 					}
 				},
@@ -3758,7 +3862,12 @@
 					}
 				},
 				"minecraft:underwater_movement": {
-					"additionalProperties": false
+					"additionalProperties": false,
+					"properties": {
+						"value": {
+							"type": "number"
+						}
+					}
 				},
 				"minecraft:variant": {
 					"description": "Used to differentiate the component group of a variant of an entity from others. (e.g. ocelot, villager)",

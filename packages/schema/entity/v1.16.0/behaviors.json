@@ -1007,6 +1007,9 @@
 			"description": "Allows the mob to target another mob that hurts them.",
 			"additionalProperties": false,
 			"properties": {
+				"priority": {
+					"type": "number"
+				},
 				"alert_same_type": {
 					"description": "If true, nearby mobs of the same type will be alerted about the damage.",
 					"type": "boolean"
@@ -1231,7 +1234,7 @@
 						"type": "number"
 					}
 				},
-				"probablity": {
+				"probability": {
 					"description": "The probability of looking at the target. A value of 1.00 is 100%.",
 					"type": "number"
 				}
@@ -1549,7 +1552,7 @@
 						"type": "number"
 					}
 				},
-				"target_block": {
+				"target_blocks": {
 					"type": "array",
 					"items": {
 						"$ref": "../../general/vanilla/identifiers.json#/definitions/block_identifiers"
@@ -2017,7 +2020,7 @@
 					"description": "Distance in blocks within the mob considers it has reached the goal. This is the 'wiggle room' to stop the AI from bouncing back and forth trying to reach a specific spot.",
 					"type": "number"
 				},
-				"speed_muliplier": {
+				"speed_multiplier": {
 					"description": "Movement speed multiplier of the mob when using this AI Goal.",
 					"type": "number"
 				},
@@ -2331,6 +2334,10 @@
 			"additionalProperties": false,
 			"properties": {
 				"priority": {
+					"type": "number"
+				},
+				"attack_interval": {
+					"description": "Time in seconds the entity will wait after an attack before launching another.",
 					"type": "number"
 				},
 				"attack_interval_max": {
