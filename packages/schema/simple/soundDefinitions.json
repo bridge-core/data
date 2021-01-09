@@ -15,6 +15,7 @@
 						"category": {
 							"type": "string",
 							"enum": [
+								"ambient",
 								"weather",
 								"block",
 								"hostile",

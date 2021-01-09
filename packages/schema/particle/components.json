@@ -566,19 +566,33 @@
 		},
 		"minecraft:particle_initial_speed": {
 			"description": "Evaluated once",
-			"type": "array",
-			"minItems": 3,
-			"maxItems": 3,
-			"items": {
-				"anyOf": [
-					{
-						"type": "string"
-					},
-					{
-						"type": "number"
+			"anyOf": [
+				{
+					"type": "array",
+					"minItems": 3,
+					"maxItems": 3,
+					"items": {
+						"anyOf": [
+							{
+								"type": "string"
+							},
+							{
+								"type": "number"
+							}
+						]
 					}
-				]
-			}
+				},
+				{
+					"anyOf": [
+						{
+							"type": "string"
+						},
+						{
+							"type": "number"
+						}
+					]
+				}
+			]
 		},
 		"minecraft:particle_motion_dynamic": {
 			"additionalProperties": false,
@@ -599,7 +613,7 @@
 						]
 					}
 				},
-				"linear_drag_coeffiecient": {
+				"linear_drag_coefficient": {
 					"description": "Using the equation: acceleration = -linear_drag_coefficient*velocity where velocity is the current direction times speed. Think of this as air-drag. The higher the value, the more drag. Evaluated every frame",
 					"anyOf": [
 						{
@@ -704,7 +718,7 @@
 					"description": "Alters the speed of the particle when it has collided useful for emulating friction/drag when colliding, e.g a particle that hits the ground would slow to a stop. This drag slows down the particle by this amount in blocks/sec when in contact",
 					"type": "number"
 				},
-				"coeffiecient_of_restitution": {
+				"coefficient_of_restitution": {
 					"type": "number",
 					"description": "Used for bouncing/not-bouncing. Set to 0.0 to not bounce, 1.0 to bounce back up to original hight and in-between to lose speed after bouncing.  Set to >1.0 to gain energy on each bounce"
 				},
@@ -749,7 +763,7 @@
 						]
 					}
 				},
-				"face_camera_mode": {
+				"facing_camera_mode": {
 					"description": "Used to orient the billboard",
 					"type": "string",
 					"enum": [
@@ -799,7 +813,9 @@
 					"additionalProperties": false,
 					"properties": {
 						"texture_height": {
-							"description": "Specifies the assumed texture width/height",
+							"type": "number"
+						},
+						"texture_width": {
 							"type": "number"
 						},
 						"uv": {
@@ -903,7 +919,31 @@
 					"additionalProperties": false,
 					"properties": {
 						"gradient": {
-							"type": "number"
+							"anyOf": [
+								{
+									"type": "number"
+								},
+								{
+									"type": "array",
+									"minItems": 2,
+									"maxItems": 2,
+									"items": {
+										"type": "array",
+										"minItems": 4,
+										"maxItems": 4,
+										"items": {
+											"anyOf": [
+												{
+													"type": "number"
+												},
+												{
+													"type": "string"
+												}
+											]
+										}
+									}
+								}
+							]
 						},
 						"interpolant": {
 							"anyOf": [
@@ -1000,6 +1040,17 @@
 			"maxItems": 4,
 			"items": {
 				"type": "number"
+			}
+		},
+		"minecraft:particle_initialization": {
+			"additionalProperties": false,
+			"properties": {
+				"per_update_expression": {
+					"type": "string"
+				},
+				"per_render_expression": {
+					"type": "string"
+				}
 			}
 		}
 	}
