@@ -136,7 +136,8 @@
 	{
 		"id": "attachable",
 		"matcher": ["RP/attachables/**/*.json", "RP/attachables/*.json"],
-		"schema": "https://raw.githubusercontent.com/bridge-core/data/next/packages/schema/attachable/main.json"
+		"schema": "https://raw.githubusercontent.com/bridge-core/data/next/packages/schema/attachable/main.json",
+		"lightningCache": "attachable.json"
 	},
 	{
 		"id": "clientEntity",
