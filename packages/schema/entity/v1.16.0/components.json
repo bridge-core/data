@@ -941,11 +941,18 @@
 					"additionalProperties": false,
 					"properties": {
 						"triggers": {
-							"description": "The list of triggers that fire when the environment conditions match the given filter criteria.",
-							"type": "array",
-							"items": {
-								"$ref": "../general/eventDefinition.json"
-							}
+							"anyOf": [
+								{
+									"description": "The list of triggers that fire when the environment conditions match the given filter criteria.",
+									"type": "array",
+									"items": {
+										"$ref": "../general/eventDefinition.json"
+									}
+								},
+								{
+									"$ref": "../general/eventDefinition.json"
+								}
+							]
 						}
 					}
 				},
@@ -1713,11 +1720,19 @@
 					"additionalProperties": false,
 					"properties": {
 						"control_items": {
-							"description": "List of items that can be used to control this entity.",
-							"type": "array",
-							"items": {
-								"$ref": "../../general/vanilla/identifiers.json#/definitions/item_identifiers"
-							}
+							"anyOf": [
+								{
+									"description": "List of items that can be used to control this entity.",
+									"type": "array",
+									"items": {
+										"$ref": "../../general/vanilla/identifiers.json#/definitions/item_identifiers"
+									}
+								},
+								{
+									"description": "Item that can be used to control this entity.",
+									"$ref": "../../general/vanilla/identifiers.json#/definitions/item_identifiers"
+								}
+							]
 						}
 					}
 				},
@@ -3011,6 +3026,9 @@
 						"homing": {
 							"description": "If true, the projectile homes in to the nearest entity.",
 							"type": "boolean"
+						},
+						"destroyOnHurt": {
+							"type": "boolean"
 						}
 					}
 				},
@@ -3434,16 +3452,30 @@
 					"additionalProperties": false,
 					"properties": {
 						"add_effects": {
-							"type": "array",
-							"items": {
-								"$ref": "../../general/effectDefinition.json"
-							}
+							"anyOf": [
+								{
+									"type": "array",
+									"items": {
+										"$ref": "../../general/effectDefinition.json"
+									}
+								},
+								{
+									"$ref": "../../general/effectDefinition.json"
+								}
+							]
 						},
 						"remove_effects": {
-							"type": "array",
-							"items": {
-								"$ref": "../../general/vanilla/effectName.json"
-							}
+							"anyOf": [
+								{
+									"type": "array",
+									"items": {
+										"$ref": "../../general/vanilla/effectName.json"
+									}
+								},
+								{
+									"$ref": "../../general/vanilla/effectName.json"
+								}
+							]
 						}
 					}
 				},

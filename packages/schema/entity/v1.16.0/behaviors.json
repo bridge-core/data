@@ -75,7 +75,20 @@
 					"type": "number"
 				},
 				"entity_types": {
-					"$ref": "../../general/vanilla/identifiers.json#/definitions/entity_identifiers"
+					"anyOf": [
+						{
+							"$ref": "../../general/vanilla/identifiers.json#/definitions/entity_identifiers"
+						},
+						{
+							"$ref": "../general/entityType.json"
+						},
+						{
+							"type": "array",
+							"items": {
+								"$ref": "../general/entityType.json"
+							}
+						}
+					]
 				},
 				"ignore_visibility": {
 					"description": "If true, visbility between this entity and the mob type will not be checked.",
@@ -936,11 +949,31 @@
 				},
 				"on_home": {
 					"description": "Event to run when this mob gets home.",
-					"$ref": "../general/eventDefinition.json"
+					"anyOf": [
+						{
+							"$ref": "../general/eventDefinition.json"
+						},
+						{
+							"type": "array",
+							"items": {
+								"$ref": "../general/eventDefinition.json"
+							}
+						}
+					]
 				},
 				"on_failed": {
 					"description": "Event to run if this entity fails to get home.",
-					"$ref": "../general/eventDefinition.json"
+					"anyOf": [
+						{
+							"$ref": "../general/eventDefinition.json"
+						},
+						{
+							"type": "array",
+							"items": {
+								"$ref": "../general/eventDefinition.json"
+							}
+						}
+					]
 				}
 			}
 		},
@@ -1559,10 +1592,30 @@
 					}
 				},
 				"on_stay_completed": {
-					"$ref": "../general/eventDefinition.json"
+					"anyOf": [
+						{
+							"$ref": "../general/eventDefinition.json"
+						},
+						{
+							"type": "array",
+							"items": {
+								"$ref": "../general/eventDefinition.json"
+							}
+						}
+					]
 				},
 				"on_reach": {
-					"$ref": "../general/eventDefinition.json"
+					"anyOf": [
+						{
+							"$ref": "../general/eventDefinition.json"
+						},
+						{
+							"type": "array",
+							"items": {
+								"$ref": "../general/eventDefinition.json"
+							}
+						}
+					]
 				}
 			}
 		},
@@ -2489,7 +2542,14 @@
 								"type": "number"
 							},
 							"particle_color": {
-								"type": "number"
+								"anyOf": [
+									{
+										"type": "integer"
+									},
+									{
+										"$ref": "../../general/hexColor.json"
+									}
+								]
 							},
 							"weight": {
 								"type": "number"
