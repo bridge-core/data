@@ -202,7 +202,7 @@
 	"$versioned_template.minecraft:on_player_placing": [
 		{
 			"$if": "$format_version >= 1.16.100",
-			"$data": "$block.general.event_defintion"
+			"$data": "$block.general.event_definition"
 		}
 	],
 	"$versioned_template.minecraft:on_interact": [
