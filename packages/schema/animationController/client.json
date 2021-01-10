@@ -47,7 +47,14 @@
 											}
 										},
 										"blend_transition": {
-											"type": "boolean"
+											"anyOf": [
+												{
+													"type": "boolean"
+												},
+												{
+													"type": "number"
+												}
+											]
 										},
 										"blend_via_shortest_path": {
 											"type": "boolean"

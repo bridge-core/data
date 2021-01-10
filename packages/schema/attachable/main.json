@@ -35,7 +35,7 @@
 							"description": "Defines the materials used in the attachable.",
 							"patternProperties": {
 								".*": {
-									"$ref": "./general.json#/materials"
+									"$ref": "../clientEntity/general.json#/definitions/materials"
 								}
 							}
 						},

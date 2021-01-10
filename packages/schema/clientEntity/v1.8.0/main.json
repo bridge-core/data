@@ -53,7 +53,7 @@
 							"description": "Defines the materials used in this entity.",
 							"patternProperties": {
 								".*": {
-									"$ref": "./general.json#/materials"
+									"$ref": "../general.json#/definitions/materials"
 								}
 							}
 						},

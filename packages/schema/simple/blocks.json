@@ -66,25 +66,25 @@
 							"additionalProperties": false,
 							"properties": {
 								"up": {
-									"type": "boolean"
+									"type": "string"
 								},
 								"down": {
-									"type": "boolean"
+									"type": "string"
 								},
 								"side": {
-									"type": "boolean"
+									"type": "string"
 								},
 								"north": {
-									"type": "boolean"
+									"type": "string"
 								},
 								"south": {
-									"type": "boolean"
+									"type": "string"
 								},
 								"east": {
-									"type": "boolean"
+									"type": "string"
 								},
 								"west": {
-									"type": "boolean"
+									"type": "string"
 								}
 							}
 						}
@@ -99,25 +99,25 @@
 							"additionalProperties": false,
 							"properties": {
 								"up": {
-									"type": "boolean"
+									"type": "string"
 								},
 								"down": {
-									"type": "boolean"
+									"type": "string"
 								},
 								"side": {
-									"type": "boolean"
+									"type": "string"
 								},
 								"north": {
-									"type": "boolean"
+									"type": "string"
 								},
 								"south": {
-									"type": "boolean"
+									"type": "string"
 								},
 								"east": {
-									"type": "boolean"
+									"type": "string"
 								},
 								"west": {
-									"type": "boolean"
+									"type": "string"
 								}
 							}
 						}
