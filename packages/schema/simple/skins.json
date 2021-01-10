@@ -8,7 +8,14 @@
 				"additionalProperties": false,
 				"properties": {
 					"localization_name": {
-						"type": "string"
+						"anyOf": [
+							{
+								"type": "string"
+							},
+							{
+								"type": "integer"
+							}
+						]
 					},
 					"geometry": {
 						"examples": [
