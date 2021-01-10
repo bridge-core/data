@@ -391,6 +391,13 @@
 		"rp_definition": true
 	},
 	{
+		"id": "textures_list",
+		"includes": "textures/textures_list.json",
+		"file_viewer": "json",
+		"start_state": "simple/textures_list",
+		"rp_definition": true
+	},
+	{
 		"id": "client_biome",
 		"includes": "biomes_client.json",
 		"file_viewer": "json",
