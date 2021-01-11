@@ -69,7 +69,11 @@
 	{
 		"id": "function",
 		"icon": "mdi-function",
-		"matcher": ["BP/functions/**/*.mcfunction", "BP/functions/*.mcfunction"]
+		"matcher": [
+			"BP/functions/**/*.mcfunction",
+			"BP/functions/*.mcfunction"
+		],
+		"packSpider": "function.json"
 	},
 	{
 		"id": "item",
