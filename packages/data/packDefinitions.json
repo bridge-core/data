@@ -1,17 +1,17 @@
 [
 	{
 		"id": "behaviorPack",
-		"matcher": "BP/**",
+		"matcher": "projects/*BP/**",
 		"color": "error"
 	},
 	{
 		"id": "resourcePack",
-		"matcher": "RP/**",
+		"matcher": "projects/*RP/**",
 		"color": "info"
 	},
 	{
 		"id": "skinPack",
-		"matcher": "SP/**",
+		"matcher": "projects/*SP/**",
 		"color": "warning"
 	}
 ]
