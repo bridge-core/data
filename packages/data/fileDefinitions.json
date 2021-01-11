@@ -2,19 +2,20 @@
 	// BP FILES
 	{
 		"id": "manifest",
+		"icon": "mdi-alpha-m-box",
 		"matcher": "BP/manifest.json",
 		"schema": "https://raw.githubusercontent.com/bridge-core/data/next/packages/schema/manifest/main.json"
 	},
 	{
 		"id": "animation",
-		"icon": "mdi-movie-open-outline",
+		"icon": "mdi-movie-open-cog",
 		"matcher": ["BP/animations/**/*.json", "BP/animations/*.json"],
 		"schema": "https://raw.githubusercontent.com/bridge-core/data/next/packages/schema/animation/server.json",
 		"lightningCache": "animation.json"
 	},
 	{
 		"id": "animationController",
-		"icon": "mdi-movie-open-cog-outline",
+		"icon": "mdi-movie-cog-outline",
 		"matcher": [
 			"BP/animation_controllers/**/*.json",
 			"BP/animation_controllers/*.json"
@@ -119,6 +120,7 @@
 	// RP FILES
 	{
 		"id": "clientManifest",
+		"icon": "mdi-alpha-m-box",
 		"matcher": "RP/manifest.json",
 		"schema": "https://raw.githubusercontent.com/bridge-core/data/next/packages/schema/manifest/main.json"
 	},
@@ -142,7 +144,7 @@
 	},
 	{
 		"id": "clientAnimationController",
-		"icon": "mdi-movie-open-cog-outline",
+		"icon": "mdi-movie-open-cog",
 		"matcher": [
 			"RP/animation_controllers/**/*.json",
 			"RP/animation_controllers/*.json"
@@ -246,7 +248,6 @@
 	},
 
 	// SP FILES
-
 	{
 		"id": "skins",
 		"matcher": "SP/skins.json",
@@ -261,10 +262,12 @@
 	},
 	{
 		"id": "lang",
+		"icon": "mdi-web",
 		"matcher": "*/texts/**/*.lang"
 	},
 	{
 		"id": "molang",
+		"icon": "mdi-alpha-m",
 		"matcher": ["*/molang/**/*.molang", "*/molang/*.molang"]
 	},
 
