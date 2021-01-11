@@ -2,20 +2,20 @@
 	// BP FILES
 	{
 		"id": "manifest",
-		"icon": "mdi-alpha-m-box",
+		"icon": "mdi-alpha-m-box-outline",
 		"matcher": "BP/manifest.json",
 		"schema": "https://raw.githubusercontent.com/bridge-core/data/next/packages/schema/manifest/main.json"
 	},
 	{
 		"id": "animation",
-		"icon": "mdi-movie-open-cog",
+		"icon": "mdi-movie-open-outline",
 		"matcher": ["BP/animations/**/*.json", "BP/animations/*.json"],
 		"schema": "https://raw.githubusercontent.com/bridge-core/data/next/packages/schema/animation/server.json",
 		"lightningCache": "animation.json"
 	},
 	{
 		"id": "animationController",
-		"icon": "mdi-movie-cog-outline",
+		"icon": "mdi-movie-search-outline",
 		"matcher": [
 			"BP/animation_controllers/**/*.json",
 			"BP/animation_controllers/*.json"
@@ -120,7 +120,7 @@
 	// RP FILES
 	{
 		"id": "clientManifest",
-		"icon": "mdi-alpha-m-box",
+		"icon": "mdi-alpha-m-box-outline",
 		"matcher": "RP/manifest.json",
 		"schema": "https://raw.githubusercontent.com/bridge-core/data/next/packages/schema/manifest/main.json"
 	},
@@ -144,7 +144,7 @@
 	},
 	{
 		"id": "clientAnimationController",
-		"icon": "mdi-movie-open-cog",
+		"icon": "mdi-movie-search-outline",
 		"matcher": [
 			"RP/animation_controllers/**/*.json",
 			"RP/animation_controllers/*.json"
