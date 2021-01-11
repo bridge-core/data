@@ -11,7 +11,8 @@
 		"icon": "mdi-movie-open-outline",
 		"matcher": ["BP/animations/**/*.json", "BP/animations/*.json"],
 		"schema": "https://raw.githubusercontent.com/bridge-core/data/next/packages/schema/animation/server.json",
-		"lightningCache": "animation.json"
+		"lightningCache": "animation.json",
+		"packSpider": "animation.json"
 	},
 	{
 		"id": "animationController",
@@ -21,7 +22,8 @@
 			"BP/animation_controllers/*.json"
 		],
 		"schema": "https://raw.githubusercontent.com/bridge-core/data/next/packages/schema/animation_controller/server.json",
-		"lightningCache": "animationController.json"
+		"lightningCache": "animationController.json",
+		"packSpider": "animationController.json"
 	},
 	{
 		"id": "biome",
