@@ -38,6 +38,6 @@
 	},
 	{
 		"functionPath": ["minecraft:entity/events/*/run_command"],
-		"@map": "const func = /\\/function\\s+([aA-zZ0-9\\/]+)/g.exec(Bridge.value); if(func) return func[1] + '.mcfunction'"
+		"@map": "const func = /\\/function\\s+([aA-zZ0-9\\/]+)/g.exec(Bridge.value); if(func) return `functions/${func[1]}.mcfunction`"
 	}
 ]
