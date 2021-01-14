@@ -8,7 +8,8 @@
 		{
 			"find": "clientItem",
 			"where": "identifier",
-			"matches": "identifier"
+			"matches": "identifier",
+			"shouldFindMultiple": false
 		},
 		{
 			"find": "recipe",

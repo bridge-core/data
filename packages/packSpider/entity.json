@@ -3,12 +3,14 @@
 		{
 			"find": "clientEntity",
 			"where": "identifier",
-			"matches": "identifier"
+			"matches": "identifier",
+			"shouldFindMultiple": false
 		},
 		{
 			"find": "spawnRule",
 			"where": "identifier",
-			"matches": "identifier"
+			"matches": "identifier",
+			"shouldFindMultiple": false
 		},
 		{
 			"find": ["animation", "animationController"],
