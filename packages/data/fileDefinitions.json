@@ -8,6 +8,7 @@
 	},
 	{
 		"id": "animation",
+		"scope": "BP/animations",
 		"icon": "mdi-movie-open-outline",
 		"matcher": ["BP/animations/**/*.json", "BP/animations/*.json"],
 		"schema": "https://raw.githubusercontent.com/bridge-core/data/next/packages/schema/animation/server.json",
@@ -17,6 +18,7 @@
 	{
 		"id": "animationController",
 		"icon": "mdi-movie-search-outline",
+		"scope": "BP/animation_controllers",
 		"matcher": [
 			"BP/animation_controllers/**/*.json",
 			"BP/animation_controllers/*.json"
@@ -28,6 +30,7 @@
 	{
 		"id": "biome",
 		"icon": "mdi-earth-box",
+		"scope": "BP/biomes",
 		"matcher": ["BP/biomes/**/*.json", "BP/biomes/*.json"],
 		"schema": "https://raw.githubusercontent.com/bridge-core/data/next/packages/schema/biome/main.json",
 		"lightningCache": "biome.json"
@@ -35,6 +38,7 @@
 	{
 		"id": "block",
 		"icon": "mdi-cube-outline",
+		"scope": "BP/blocks",
 		"matcher": ["BP/blocks/**/*.json", "BP/blocks/*.json"],
 		"schema": "https://raw.githubusercontent.com/bridge-core/data/next/packages/schema/block/main.json",
 		"lightningCache": "block.json",
@@ -43,6 +47,7 @@
 	{
 		"id": "entity",
 		"icon": "mdi-minecraft",
+		"scope": "BP/entities",
 		"matcher": ["BP/entities/**/*.json", "BP/entities/*.json"],
 		"schema": "https://raw.githubusercontent.com/bridge-core/data/next/packages/schema/entity/main.json",
 		"packSpider": "entity.json",
@@ -51,6 +56,7 @@
 	{
 		"id": "feature",
 		"icon": "mdi-flower",
+		"scope": "BP/features",
 		"matcher": "BP/features/*.json",
 		"schema": "https://raw.githubusercontent.com/bridge-core/data/next/packages/schema/feature/main.json",
 		"lightningCache": "feature.json"
@@ -58,6 +64,7 @@
 	{
 		"id": "featureRule",
 		"icon": "mdi-map-plus",
+		"scope": "BP/feature_rules",
 		"matcher": "BP/feature_rules/*.json",
 		"schema": "https://raw.githubusercontent.com/bridge-core/data/next/packages/schema/feature_rule/main.json"
 	},
@@ -69,6 +76,7 @@
 	{
 		"id": "function",
 		"icon": "mdi-function",
+		"scope": "BP/functions",
 		"matcher": [
 			"BP/functions/**/*.mcfunction",
 			"BP/functions/*.mcfunction"
@@ -78,6 +86,7 @@
 	{
 		"id": "item",
 		"icon": "mdi-sword",
+		"scope": "BP/items",
 		"matcher": ["BP/items/**/*.json", "BP/items/*.json"],
 		"schema": "https://raw.githubusercontent.com/bridge-core/data/next/packages/schema/item/main.json",
 		"lightningCache": "item.json",
@@ -86,12 +95,14 @@
 	{
 		"id": "lootTable",
 		"icon": "mdi-skull-outline",
+		"scope": "BP/loot_tables",
 		"matcher": ["BP/loot_tables/**/*.json", "BP/loot_tables/*.json"],
 		"schema": "https://raw.githubusercontent.com/bridge-core/data/next/packages/schema/lootTable/main.json"
 	},
 	{
 		"id": "recipe",
 		"icon": "mdi-book-outline",
+		"scope": "BP/recipes",
 		"matcher": ["BP/recipes/**/*.json", "BP/recipes/*.json"],
 		"schema": "https://raw.githubusercontent.com/bridge-core/data/next/packages/schema/recipe/main.json",
 		"lightningCache": "recipe.json"
@@ -104,6 +115,7 @@
 	{
 		"id": "spawnRule",
 		"icon": "mdi-egg-outline",
+		"scope": "BP/spawn_rules",
 		"matcher": ["BP/spawn_rules/**/*.json", "BP/spawn_rules/*.json"],
 		"schema": "https://raw.githubusercontent.com/bridge-core/data/next/packages/schema/spawnRule/main.json",
 		"lightningCache": "spawnRule.json"
@@ -111,6 +123,7 @@
 	{
 		"id": "mcstructure",
 		"icon": "mdi-castle",
+		"scope": "BP/structures",
 		"matcher": [
 			"BP/structures/**/*.mcstructure",
 			"BP/structures/*.mcstructure"
@@ -119,6 +132,7 @@
 	{
 		"id": "tradeTable",
 		"icon": "mdi-store-outline",
+		"scope": "BP/trading",
 		"matcher": ["BP/trading/**/*.json", "BP/trading/*.json"],
 		"schema": "https://raw.githubusercontent.com/bridge-core/data/next/packages/schema/tradeTable/main.json"
 	},
@@ -139,11 +153,13 @@
 			"RP/models/block/*.json",
 			"RP/models/mobs.json"
 		],
+		"scope": "RP/models",
 		"lightningCache": "model.json"
 	},
 	{
 		"id": "clientAnimation",
 		"icon": "mdi-movie-open-outline",
+		"scope": "RP/animations",
 		"matcher": ["RP/animations/**/*.json", "RP/animations/*.json"],
 		"schema": "https://raw.githubusercontent.com/bridge-core/data/next/packages/schema/animation/client.json",
 		"lightningCache": "clientAnimation.json"
@@ -151,6 +167,7 @@
 	{
 		"id": "clientAnimationController",
 		"icon": "mdi-movie-search-outline",
+		"scope": "RP/animation_controllers",
 		"matcher": [
 			"RP/animation_controllers/**/*.json",
 			"RP/animation_controllers/*.json"
@@ -161,6 +178,7 @@
 	{
 		"id": "attachable",
 		"icon": "mdi-hat-fedora",
+		"scope": "RP/attachables",
 		"matcher": ["RP/attachables/**/*.json", "RP/attachables/*.json"],
 		"schema": "https://raw.githubusercontent.com/bridge-core/data/next/packages/schema/attachable/main.json",
 		"lightningCache": "attachable.json"
@@ -168,6 +186,7 @@
 	{
 		"id": "clientEntity",
 		"icon": "mdi-minecraft",
+		"scope": "RP/entity",
 		"matcher": ["RP/entity/**/*.json", "RP/entity/*.json"],
 		"schema": "https://raw.githubusercontent.com/bridge-core/data/next/packages/schema/clientEntity/main.json",
 		"packSpider": "clientEntity.json",
@@ -176,6 +195,7 @@
 	{
 		"id": "clientItem",
 		"icon": "mdi-sword",
+		"scope": "RP/items",
 		"target_version": "$project_target_version < 1.16.100",
 		"matcher": ["RP/items/**/*.json", "RP/items/*.json"],
 		"schema": "https://raw.githubusercontent.com/bridge-core/data/next/packages/schema/clientItem/main.json",
@@ -184,6 +204,7 @@
 	{
 		"id": "fog",
 		"icon": "mdi-weather-fog",
+		"scope": "RP/fogs",
 		"target_version": "$project_target_version >= 1.16.100",
 		"matcher": ["RP/fogs/**/*.json", "RP/fogs/*.json"],
 		"schema": "https://raw.githubusercontent.com/bridge-core/data/next/packages/schema/fog/main.json",
@@ -192,6 +213,7 @@
 	{
 		"id": "particle",
 		"icon": "mdi-snowflake",
+		"scope": "RP/particles",
 		"matcher": ["RP/particles/**/*.json", "RP/particles/*.json"],
 		"schema": "https://raw.githubusercontent.com/bridge-core/data/next/packages/schema/particle/main.json",
 		"lightningCache": "particle.json"
@@ -199,6 +221,7 @@
 	{
 		"id": "renderController",
 		"icon": "mdi-pentagon-outline",
+		"scope": "RP/render_controllers",
 		"matcher": [
 			"RP/render_controllers/**/*.json",
 			"RP/render_controllers/*.json"
