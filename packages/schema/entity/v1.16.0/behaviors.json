@@ -596,6 +596,14 @@
 						"type": "number"
 					}
 				},
+				"target_range": {
+					"type": "array",
+					"minItems": 3,
+					"maxItems": 3,
+					"items": {
+						"type": "number"
+					}
+				},
 				"teleport_offset": {
 					"type": "array",
 					"minItems": 3,
@@ -2052,7 +2060,10 @@
 					"description": "The distance in blocks from the owner the pet can be to sleep with owner.",
 					"type": "number"
 				},
-				"speed_multipier": {
+				"search_radius": {
+					"type": "number"
+				},
+				"speed_multiplier": {
 					"description": "Movement speed multiplier of the mob when using this AI Goal.",
 					"type": "number"
 				}
