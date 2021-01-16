@@ -1640,7 +1640,7 @@
 							"description": "If true, the contents of this inventory can be removed by a hopper.",
 							"type": "boolean"
 						},
-						"conatiner_type": {
+						"container_type": {
 							"description": "Type of container this entity has. Can be horse, minecart_chest, minecart_hopper, inventory, container or hopper.",
 							"$ref": "../../general/inventoryType.json"
 						},
@@ -3677,7 +3677,7 @@
 							"description": "Minimum amount of time in seconds between random teleports.",
 							"type": "number"
 						},
-						"random_telport_cube": {
+						"random_teleport_cube": {
 							"description": "Entity will teleport to a random position within the area defined by this cube.",
 							"type": "array",
 							"minItems": 3,
