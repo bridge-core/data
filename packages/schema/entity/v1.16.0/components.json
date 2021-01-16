@@ -42,17 +42,31 @@
 						},
 						"feed_items": {
 							"description": "List of items that can be fed to the entity. Includes 'item' for the item name and 'growth' to define how much time it grows up by.",
-							"type": "array",
-							"items": {
-								"properties": {
-									"item": {
-										"$ref": "../../general/vanilla/identifiers.json#/definitions/item_identifiers"
-									},
-									"growth": {
-										"type": "number"
+							"anyOf": [
+								{
+									"type": "array",
+									"items": {
+										"anyOf": [
+											{
+												"properties": {
+													"item": {
+														"$ref": "../../general/vanilla/identifiers.json#/definitions/item_identifiers"
+													},
+													"growth": {
+														"type": "number"
+													}
+												}
+											},
+											{
+												"$ref": "../../general/vanilla/identifiers.json#/definitions/item_identifiers"
+											}
+										]
 									}
+								},
+								{
+									"$ref": "../../general/vanilla/identifiers.json#/definitions/item_identifiers"
 								}
-							}
+							]
 						},
 						"drop_items": {
 							"description": "List of items that the entity drops when it grows up.",
@@ -835,7 +849,12 @@
 						},
 						"dweller_role": {
 							"type": "string",
-							"enum": ["hostile", "inhabitant", "defender", "passive"]
+							"enum": [
+								"hostile",
+								"inhabitant",
+								"defender",
+								"passive"
+							]
 						},
 						"update_interval_base": {
 							"type": "number"
@@ -1459,7 +1478,21 @@
 					"additionalProperties": false,
 					"properties": {
 						"value": {
-							"type": "number"
+							"anyOf": [
+								{
+									"type": "number"
+								},
+								{
+									"properties": {
+										"range_min": {
+											"type": "number"
+										},
+										"range_max": {
+											"type": "number"
+										}
+									}
+								}
+							]
 						},
 						"max": {
 							"type": "number"
