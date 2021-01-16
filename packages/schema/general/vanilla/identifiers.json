@@ -563,7 +563,7 @@
 				},
 				{
 					"type": "string",
-					"pattern": "/^minecraft:([a-z]*|[a-z]*[_][a-z]*):[0-9]/i"
+					"pattern": "^minecraft:.*:[0-9]"
 				},
 				{
 					"type": "string",
@@ -1941,7 +1941,7 @@
 				},
 				{
 					"type": "string",
-					"pattern": "/^minecraft:([a-z]*|[a-z]*[_][a-z]*):[0-9]/i"
+					"pattern": "^minecraft:.*:[0-9]"
 				},
 				{
 					"type": "string",
