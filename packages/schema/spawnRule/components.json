@@ -173,19 +173,23 @@
 			}
 		},
 		"minecraft:distance_filter": {
-			"min": {
-				"type": "number"
-			},
-			"max": {
-				"type": "number"
+			"properties": {
+				"min": {
+					"type": "number"
+				},
+				"max": {
+					"type": "number"
+				}
 			}
 		},
 		"minecraft:height_filter": {
-			"min": {
-				"type": "number"
-			},
-			"max": {
-				"type": "number"
+			"properties": {
+				"min": {
+					"type": "number"
+				},
+				"max": {
+					"type": "number"
+				}
 			}
 		},
 		"minecraft:permute_type": {

@@ -383,6 +383,12 @@
 				"entity_types": {
 					"description": "List of entity types that this mob considers valid targets.",
 					"$ref": "../general/entityType.json"
+				},
+				"must_reach": {
+					"type": "boolean"
+				},
+				"attack_chance": {
+					"type": "number"
 				}
 			}
 		},
@@ -703,6 +709,38 @@
 				"speed_multiplier": {
 					"description": "Movement speed multiplier of the mob when using this AI Goal.",
 					"type": "number"
+				},
+				"next_xz": {
+					"type": "number"
+				},
+				"next_y": {
+					"type": "number"
+				},
+				"min_wait_time": {
+					"type": "number"
+				},
+				"max_wait_time": {
+					"type": "number"
+				},
+				"max_travel_time": {
+					"type": "number"
+				},
+				"min_perimeter": {
+					"type": "number"
+				},
+				"min_dist_from_target": {
+					"type": "number"
+				},
+				"timer_ratio": {
+					"type": "number"
+				},
+				"dist_from_boundary": {
+					"type": "array",
+					"minItems": 3,
+					"maxItems": 3,
+					"items": {
+						"type": "number"
+					}
 				}
 			}
 		},
@@ -1003,6 +1041,15 @@
 				"speed_multiplier": {
 					"description": "Movement speed multiplier of the mob when using this AI Goal.",
 					"type": "number"
+				},
+				"max_seconds_before_search": {
+					"type": "number"
+				},
+				"search_cooldown_max_seconds": {
+					"type": "number"
+				},
+				"seconds_until_new_task": {
+					"type": "number"
 				}
 			}
 		},
@@ -1237,7 +1284,7 @@
 						"type": "number"
 					}
 				},
-				"probablity": {
+				"probability": {
 					"description": "The probability of looking at the target. A value of 1.00 is 100%.",
 					"type": "number"
 				},
@@ -1264,6 +1311,9 @@
 				},
 				"look_distance": {
 					"description": "The distance in blocks from which the entity will look at.",
+					"type": "number"
+				},
+				"target_distance": {
 					"type": "number"
 				},
 				"look_time": {
@@ -1454,10 +1504,17 @@
 				},
 				"mingle_partner_type": {
 					"description": "The entity type that this entity is allowed to mingle with.",
-					"type": "array",
-					"items": {
-						"$ref": "../../general/vanilla/identifiers.json#/definitions/entity_identifiers"
-					}
+					"anyOf": [
+						{
+							"type": "array",
+							"items": {
+								"$ref": "../../general/vanilla/identifiers.json#/definitions/entity_identifiers"
+							}
+						},
+						{
+							"$ref": "../../general/vanilla/identifiers.json#/definitions/entity_identifiers"
+						}
+					]
 				},
 				"mingle_distance": {
 					"description": "The distance from its partner that this entity will mingle. If the entity type is not the same as the entity, this value needs to be identical on both entities.",
@@ -1711,7 +1768,7 @@
 				"speed_multiplier": {
 					"type": "number"
 				},
-				"within_raidus": {
+				"within_radius": {
 					"description": "Defines the distance in blocks the mob has to be from the block for the movement to be finished.",
 					"type": "number"
 				},
@@ -1729,6 +1786,10 @@
 					"type": "number"
 				},
 				"speed_multiplier": {
+					"type": "number"
+				},
+				"goal_radius": {
+					"description": "Distance in blocks within the mob considers it has reached the goal. This is the 'wiggle room' to stop the AI from bouncing back and forth trying to reach a specific spot.",
 					"type": "number"
 				}
 			}
@@ -1869,6 +1930,9 @@
 				},
 				"attack_interval": {
 					"description": "Time in seconds before selecting a target.",
+					"type": "number"
+				},
+				"within_radius": {
 					"type": "number"
 				},
 				"must_reach": {
@@ -2282,6 +2346,9 @@
 					"items": {
 						"type": "number"
 					}
+				},
+				"look_distance": {
+					"type": "number"
 				}
 			}
 		},
@@ -2330,6 +2397,10 @@
 					"type": "number"
 				},
 				"cooldown_time": {
+					"description": "Time in seconds the mob has to wait before using the goal again.",
+					"type": "number"
+				},
+				"cooldown": {
 					"description": "Time in seconds the mob has to wait before using the goal again.",
 					"type": "number"
 				},
@@ -2414,6 +2485,10 @@
 				},
 				"attack_radius": {
 					"description": "Maximum distance the target can be for this mob to fire. If the target is further away, this mob will move first before firing.",
+					"type": "number"
+				},
+				"attack_radius_min": {
+					"description": "Minimum distance the target can be for this mob to fire. If the target is further away, this mob will move first before firing.",
 					"type": "number"
 				},
 				"burst_shots": {

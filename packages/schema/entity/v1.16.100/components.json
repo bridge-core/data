@@ -12,40 +12,48 @@
 				"minecraft:ageable": {
 					"properties": {
 						"feed_items": {
-							"type": "array",
-							"items": {
-								"properties": {
-									"item": {
+							"anyOf": [
+								{
+									"type": "array",
+									"items": {
 										"properties": {
-											"any_tag": {
-												"type": "array",
-												"items": {
-													"type": "string"
+											"item": {
+												"properties": {
+													"any_tag": {
+														"type": "array",
+														"items": {
+															"type": "string"
+														}
+													}
 												}
 											}
 										}
 									}
 								}
-							}
+							]
 						}
 					}
 				},
 				"minecraft:breedable": {
 					"properties": {
 						"breed_items": {
-							"type": "array",
-							"items": {
-								"anyOf": [
-									{
-										"type": "object",
-										"properties": {
-											"any_tag": {
-												"type": "string"
+							"anyOf": [
+								{
+									"type": "array",
+									"items": {
+										"anyOf": [
+											{
+												"type": "object",
+												"properties": {
+													"any_tag": {
+														"type": "string"
+													}
+												}
 											}
-										}
+										]
 									}
-								]
-							}
+								}
+							]
 						}
 					}
 				},
@@ -167,25 +175,29 @@
 				"minecraft:giveable": {
 					"properties": {
 						"triggers": {
-							"type": "array",
-							"items": {
-								"properties": {
+							"anyOf": [
+								{
+									"type": "array",
 									"items": {
-										"type": "array",
-										"items": {
-											"anyOf": [
-												{
-													"properties": {
-														"any_tag": {
-															"type": "string"
+										"properties": {
+											"items": {
+												"type": "array",
+												"items": {
+													"anyOf": [
+														{
+															"properties": {
+																"any_tag": {
+																	"type": "string"
+																}
+															}
 														}
-													}
+													]
 												}
-											]
+											}
 										}
 									}
 								}
-							}
+							]
 						}
 					}
 				},

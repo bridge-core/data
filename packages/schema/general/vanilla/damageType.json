@@ -7,6 +7,7 @@
 		"override",
 		"contact",
 		"entity_attack",
+		"fatal",
 		"projectile",
 		"suffocation",
 		"fall",

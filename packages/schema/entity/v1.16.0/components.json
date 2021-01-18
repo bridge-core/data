@@ -107,6 +107,10 @@
 							"description": "f true, other entities of the same entity definition within the broadcastRange will also become angry.",
 							"type": "boolean"
 						},
+						"broadcastAnger": {
+							"description": "f true, other entities of the same entity definition within the broadcastRange will also become angry.",
+							"type": "boolean"
+						},
 						"broadcast_anger_on_attack": {
 							"description": "If true, other entities of the same entity definition within the broadcastRange will also become angry whenever this mob attacks.",
 							"type": "boolean"
@@ -116,6 +120,10 @@
 							"type": "boolean"
 						},
 						"broadcast_range": {
+							"description": "Distance in blocks within which other entities of the same entity definition will become angry.",
+							"type": "number"
+						},
+						"broadcastRange": {
 							"description": "Distance in blocks within which other entities of the same entity definition will become angry.",
 							"type": "number"
 						},
@@ -190,7 +198,21 @@
 					"properties": {
 						"damage": {
 							"description": "Range of the random amount of damage the melee attack deals. A negative value can heal the entity instead of hurting it.",
-							"type": "number"
+							"anyOf": [
+								{
+									"type": "number"
+								},
+								{
+									"properties": {
+										"range_min": {
+											"type": "number"
+										},
+										"range_max": {
+											"type": "number"
+										}
+									}
+								}
+							]
 						},
 						"effect_name": {
 							"description": "Identifier of the status ailment to apply to an entity attacked by this entity's melee attack.",
@@ -388,7 +410,15 @@
 							"description": "Time in seconds between suffocation damage.",
 							"type": "number"
 						},
+						"suffocateTime": {
+							"description": "Time in seconds between suffocation damage.",
+							"type": "number"
+						},
 						"total_supply": {
+							"description": "Time in seconds the entity can hold its breath.",
+							"type": "number"
+						},
+						"totalSupply": {
 							"description": "Time in seconds the entity can hold its breath.",
 							"type": "number"
 						},
@@ -459,14 +489,21 @@
 						},
 						"breed_items": {
 							"description": "The list of items that can be used to get the entity into the 'love' state.",
-							"type": "array",
-							"items": {
-								"anyOf": [
-									{
-										"$ref": "../../general/vanilla/identifiers.json#/definitions/item_identifiers"
+							"anyOf": [
+								{
+									"type": "array",
+									"items": {
+										"anyOf": [
+											{
+												"$ref": "../../general/vanilla/identifiers.json#/definitions/item_identifiers"
+											}
+										]
 									}
-								]
-							}
+								},
+								{
+									"$ref": "../../general/vanilla/identifiers.json#/definitions/item_identifiers"
+								}
+							]
 						},
 						"breeds_with": {
 							"description": "The list of entity definitions that this entity can breed with.",
@@ -491,23 +528,43 @@
 						},
 						"environment_requirements": {
 							"description": "The list of nearby block requirements to get the entity into the 'love' state.",
-							"type": "array",
-							"items": {
-								"properties": {
-									"blocks": {
-										"description": "The block types required nearby for the entity to breed.",
-										"$ref": "../../general/vanilla/identifiers.json#/definitions/block_identifiers"
-									},
-									"count": {
-										"description": "The number of the required block types nearby for the entity to breed.",
-										"type": "number"
-									},
-									"radius": {
-										"description": "How many blocks radius from the mob's center to search in for the required blocks. Bounded between 0 and 16.",
-										"type": "number"
+							"anyOf": [
+								{
+									"type": "array",
+									"items": {
+										"properties": {
+											"blocks": {
+												"description": "The block types required nearby for the entity to breed.",
+												"$ref": "../../general/vanilla/identifiers.json#/definitions/block_identifiers"
+											},
+											"count": {
+												"description": "The number of the required block types nearby for the entity to breed.",
+												"type": "number"
+											},
+											"radius": {
+												"description": "How many blocks radius from the mob's center to search in for the required blocks. Bounded between 0 and 16.",
+												"type": "number"
+											}
+										}
+									}
+								},
+								{
+									"properties": {
+										"blocks": {
+											"description": "The block types required nearby for the entity to breed.",
+											"$ref": "../../general/vanilla/identifiers.json#/definitions/block_identifiers"
+										},
+										"count": {
+											"description": "The number of the required block types nearby for the entity to breed.",
+											"type": "number"
+										},
+										"radius": {
+											"description": "How many blocks radius from the mob's center to search in for the required blocks. Bounded between 0 and 16.",
+											"type": "number"
+										}
 									}
 								}
-							}
+							]
 						},
 						"extra_baby_chance": {
 							"description": "Chance that up to 16 babies will spawn between 0.0 and 1.0, where 1.0 is 100%.",
@@ -1109,6 +1166,17 @@
 									"items": {
 										"type": "number"
 									}
+								},
+								{
+									"type": "object",
+									"properties": {
+										"range_min": {
+											"type": "number"
+										},
+										"range_max": {
+											"type": "number"
+										}
+									}
 								}
 							]
 						},
@@ -1323,19 +1391,75 @@
 											"properties": {
 												"main_allele": {
 													"description": "If this value is non-negative, compare the mob's main allele with this value for a match. Can also be a range of integers.",
-													"type": "number"
+													"anyOf": [
+														{
+															"type": "number"
+														},
+														{
+															"properties": {
+																"range_min": {
+																	"type": "number"
+																},
+																"range_max": {
+																	"type": "number"
+																}
+															}
+														}
+													]
 												},
 												"both_allele": {
 													"description": "If this value is non-negative, compare both the mob's main and hidden alleles with this value for a match with both. Can also be a range of integers.",
-													"type": "number"
+													"anyOf": [
+														{
+															"type": "number"
+														},
+														{
+															"properties": {
+																"range_min": {
+																	"type": "number"
+																},
+																"range_max": {
+																	"type": "number"
+																}
+															}
+														}
+													]
 												},
 												"hidden_allele": {
 													"description": "If this value is non-negative, compare the mob's hidden allele with this value for a match. Can also be a range of integers.",
-													"type": "number"
+													"anyOf": [
+														{
+															"type": "number"
+														},
+														{
+															"properties": {
+																"range_min": {
+																	"type": "number"
+																},
+																"range_max": {
+																	"type": "number"
+																}
+															}
+														}
+													]
 												},
 												"either_allele": {
 													"description": "If this value is non-negative, compare both the mob's main and hidden alleles with this value for a match with either. Can also be a range of integers.",
-													"type": "number"
+													"anyOf": [
+														{
+															"type": "number"
+														},
+														{
+															"properties": {
+																"range_min": {
+																	"type": "number"
+																},
+																"range_max": {
+																	"type": "number"
+																}
+															}
+														}
+													]
 												},
 												"birth_event": {
 													"description": "Event to run when this mob is created and matches the above allele conditions.",
@@ -1353,30 +1477,57 @@
 					"description": "Defines sets of items that can be used to trigger events when used on this entity. The item will also be taken and placed in the entity's inventory.",
 					"properties": {
 						"triggers": {
-							"type": "array",
-							"items": {
-								"properties": {
-									"cooldown": {
-										"description": "An optional cool down in seconds to prevent spamming interactions.",
-										"type": "number"
-									},
+							"anyOf": [
+								{
+									"type": "array",
 									"items": {
-										"description": "The list of items that can be given to the entity to place in their inventory.",
-										"type": "array",
-										"items": {
-											"anyOf": [
-												{
-													"$ref": "../../general/vanilla/identifiers.json#/definitions/item_identifiers"
+										"properties": {
+											"cooldown": {
+												"description": "An optional cool down in seconds to prevent spamming interactions.",
+												"type": "number"
+											},
+											"items": {
+												"description": "The list of items that can be given to the entity to place in their inventory.",
+												"type": "array",
+												"items": {
+													"anyOf": [
+														{
+															"$ref": "../../general/vanilla/identifiers.json#/definitions/item_identifiers"
+														}
+													]
 												}
-											]
+											},
+											"on_give": {
+												"description": "Event to fire when the correct item is given.",
+												"$ref": "../general/eventDefinition.json"
+											}
 										}
-									},
-									"on_give": {
-										"description": "Event to fire when the correct item is given.",
-										"$ref": "../general/eventDefinition.json"
+									}
+								},
+								{
+									"properties": {
+										"cooldown": {
+											"description": "An optional cool down in seconds to prevent spamming interactions.",
+											"type": "number"
+										},
+										"items": {
+											"description": "The list of items that can be given to the entity to place in their inventory.",
+											"type": "array",
+											"items": {
+												"anyOf": [
+													{
+														"$ref": "../../general/vanilla/identifiers.json#/definitions/item_identifiers"
+													}
+												]
+											}
+										},
+										"on_give": {
+											"description": "Event to fire when the correct item is given.",
+											"$ref": "../general/eventDefinition.json"
+										}
 									}
 								}
-							}
+							]
 						}
 					}
 				},
@@ -1918,6 +2069,9 @@
 					"additionalProperties": false,
 					"properties": {
 						"value": {
+							"type": "number"
+						},
+						"max": {
 							"type": "number"
 						}
 					}
@@ -3592,10 +3746,17 @@
 						},
 						"tame_items": {
 							"description": "The list of items that can be used to tame this entity.",
-							"type": "array",
-							"items": {
-								"$ref": "../../general/vanilla/identifiers.json#/definitions/item_identifiers"
-							}
+							"anyOf": [
+								{
+									"type": "array",
+									"items": {
+										"$ref": "../../general/vanilla/identifiers.json#/definitions/item_identifiers"
+									}
+								},
+								{
+									"$ref": "../../general/vanilla/identifiers.json#/definitions/item_identifiers"
+								}
+							]
 						},
 						"tame_event": {
 							"description": "Event to run when this entity becomes tamed.",

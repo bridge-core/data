@@ -4,9 +4,19 @@
 	"additionalProperties": false,
 	"properties": {
 		"filters": {
-			"type": "object",
-			"$ref": "./filter.json",
-			"description": "A filter allows you to set a condition for the event to trigger."
+			"description": "A filter allows you to set a condition for the event to trigger.",
+			"anyOf": [
+				{
+					"type": "object",
+					"$ref": "./filter.json"
+				},
+				{
+					"type": "array",
+					"items": {
+						"$ref": "./filter.json"
+					}
+				}
+			]
 		},
 		"target": {
 			"$ref": "../../general/filter/subject.json"
