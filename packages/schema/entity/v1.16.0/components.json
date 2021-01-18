@@ -42,17 +42,31 @@
 						},
 						"feed_items": {
 							"description": "List of items that can be fed to the entity. Includes 'item' for the item name and 'growth' to define how much time it grows up by.",
-							"type": "array",
-							"items": {
-								"properties": {
-									"item": {
-										"$ref": "../../general/vanilla/identifiers.json#/definitions/item_identifiers"
-									},
-									"growth": {
-										"type": "number"
+							"anyOf": [
+								{
+									"type": "array",
+									"items": {
+										"anyOf": [
+											{
+												"properties": {
+													"item": {
+														"$ref": "../../general/vanilla/identifiers.json#/definitions/item_identifiers"
+													},
+													"growth": {
+														"type": "number"
+													}
+												}
+											},
+											{
+												"$ref": "../../general/vanilla/identifiers.json#/definitions/item_identifiers"
+											}
+										]
 									}
+								},
+								{
+									"$ref": "../../general/vanilla/identifiers.json#/definitions/item_identifiers"
 								}
-							}
+							]
 						},
 						"drop_items": {
 							"description": "List of items that the entity drops when it grows up.",
@@ -835,7 +849,12 @@
 						},
 						"dweller_role": {
 							"type": "string",
-							"enum": ["hostile", "inhabitant", "defender"]
+							"enum": [
+								"hostile",
+								"inhabitant",
+								"defender",
+								"passive"
+							]
 						},
 						"update_interval_base": {
 							"type": "number"
@@ -1459,7 +1478,21 @@
 					"additionalProperties": false,
 					"properties": {
 						"value": {
-							"type": "number"
+							"anyOf": [
+								{
+									"type": "number"
+								},
+								{
+									"properties": {
+										"range_min": {
+											"type": "number"
+										},
+										"range_max": {
+											"type": "number"
+										}
+									}
+								}
+							]
 						},
 						"max": {
 							"type": "number"
@@ -1640,7 +1673,7 @@
 							"description": "If true, the contents of this inventory can be removed by a hopper.",
 							"type": "boolean"
 						},
-						"conatiner_type": {
+						"container_type": {
 							"description": "Type of container this entity has. Can be horse, minecart_chest, minecart_hopper, inventory, container or hopper.",
 							"$ref": "../../general/inventoryType.json"
 						},
@@ -3394,56 +3427,109 @@
 					"additionalProperties": false,
 					"properties": {
 						"entities": {
-							"type": "array",
-							"items": {
-								"properties": {
-									"should_leash": {
-										"description": "If true, this the spawned entity will be leashed to the parent.",
-										"type": "boolean"
-									},
-									"num_to_spawn": {
-										"description": "The number of entities of this type to spawn each time that this triggers.",
-										"type": "number"
-									},
-									"min_wait_time": {
-										"description": "Minimum amount of time to randomly wait in seconds before another entity is spawned.",
-										"type": "number"
-									},
-									"max_wait_time": {
-										"description": "Maximum amount of time to randomly wait in seconds before another entity is spawned.",
-										"type": "number"
-									},
-									"spawn_entity": {
-										"description": "Identifier of the entity to spawn, leave empty to spawn the item defined above instead.",
-										"$ref": "../../general/vanilla/identifiers.json#/definitions/entity_identifiers"
-									},
-									"spawn_event": {
-										"description": "Event to call when the entity is spawned.",
-										"type": "string"
-									},
-									"spawn_item": {
-										"description": "Item identifier of the item to spawn.",
-										"$ref": "../../general/vanilla/identifiers.json#/definitions/item_identifiers"
-									},
-									"spawn_method": {
-										"description": "Method to use to spawn the entity.",
-										"type": "string",
-										"const": "born"
-									},
-									"spawn_sound": {
-										"description": "Identifier of the sound effect to play when the entity is spawned.",
-										"type": "string"
-									},
-									"filters": {
-										"description": "If present, the specified entity will only spawn if the filter evaluates to true.",
-										"$ref": "../general/filter.json"
-									},
-									"single_use": {
-										"description": "If true, this component will only ever spawn the specified entity once.",
-										"type": "boolean"
+							"anyOf": [
+								{
+									"type": "array",
+									"items": {
+										"properties": {
+											"should_leash": {
+												"description": "If true, this the spawned entity will be leashed to the parent.",
+												"type": "boolean"
+											},
+											"num_to_spawn": {
+												"description": "The number of entities of this type to spawn each time that this triggers.",
+												"type": "number"
+											},
+											"min_wait_time": {
+												"description": "Minimum amount of time to randomly wait in seconds before another entity is spawned.",
+												"type": "number"
+											},
+											"max_wait_time": {
+												"description": "Maximum amount of time to randomly wait in seconds before another entity is spawned.",
+												"type": "number"
+											},
+											"spawn_entity": {
+												"description": "Identifier of the entity to spawn, leave empty to spawn the item defined above instead.",
+												"$ref": "../../general/vanilla/identifiers.json#/definitions/entity_identifiers"
+											},
+											"spawn_event": {
+												"description": "Event to call when the entity is spawned.",
+												"type": "string"
+											},
+											"spawn_item": {
+												"description": "Item identifier of the item to spawn.",
+												"$ref": "../../general/vanilla/identifiers.json#/definitions/item_identifiers"
+											},
+											"spawn_method": {
+												"description": "Method to use to spawn the entity.",
+												"type": "string",
+												"const": "born"
+											},
+											"spawn_sound": {
+												"description": "Identifier of the sound effect to play when the entity is spawned.",
+												"type": "string"
+											},
+											"filters": {
+												"description": "If present, the specified entity will only spawn if the filter evaluates to true.",
+												"$ref": "../general/filter.json"
+											},
+											"single_use": {
+												"description": "If true, this component will only ever spawn the specified entity once.",
+												"type": "boolean"
+											}
+										}
+									}
+								},
+								{
+									"properties": {
+										"should_leash": {
+											"description": "If true, this the spawned entity will be leashed to the parent.",
+											"type": "boolean"
+										},
+										"num_to_spawn": {
+											"description": "The number of entities of this type to spawn each time that this triggers.",
+											"type": "number"
+										},
+										"min_wait_time": {
+											"description": "Minimum amount of time to randomly wait in seconds before another entity is spawned.",
+											"type": "number"
+										},
+										"max_wait_time": {
+											"description": "Maximum amount of time to randomly wait in seconds before another entity is spawned.",
+											"type": "number"
+										},
+										"spawn_entity": {
+											"description": "Identifier of the entity to spawn, leave empty to spawn the item defined above instead.",
+											"$ref": "../../general/vanilla/identifiers.json#/definitions/entity_identifiers"
+										},
+										"spawn_event": {
+											"description": "Event to call when the entity is spawned.",
+											"type": "string"
+										},
+										"spawn_item": {
+											"description": "Item identifier of the item to spawn.",
+											"$ref": "../../general/vanilla/identifiers.json#/definitions/item_identifiers"
+										},
+										"spawn_method": {
+											"description": "Method to use to spawn the entity.",
+											"type": "string",
+											"const": "born"
+										},
+										"spawn_sound": {
+											"description": "Identifier of the sound effect to play when the entity is spawned.",
+											"type": "string"
+										},
+										"filters": {
+											"description": "If present, the specified entity will only spawn if the filter evaluates to true.",
+											"$ref": "../general/filter.json"
+										},
+										"single_use": {
+											"description": "If true, this component will only ever spawn the specified entity once.",
+											"type": "boolean"
+										}
 									}
 								}
-							}
+							]
 						}
 					}
 				},
@@ -3624,7 +3710,7 @@
 							"description": "Minimum amount of time in seconds between random teleports.",
 							"type": "number"
 						},
-						"random_telport_cube": {
+						"random_teleport_cube": {
 							"description": "Entity will teleport to a random position within the area defined by this cube.",
 							"type": "array",
 							"minItems": 3,
