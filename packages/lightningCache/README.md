@@ -12,8 +12,8 @@ Main lightning cache storage: `schema/dynamic/`
 Please note that this path refers to the actual local save path of bridge.'s schemas. We obviously cannot distribute the actual generated schemas over this repository because they need to be created dynamically.
 
 -   `currentFile.json` saves data related to the current file
--   `[fileType]Enum.json` saves data related to \[fileType\] as enums
--   `[fileType]Properties.json` saves data related to \[fileType\] as properties
+-   `[fileType]/[cacheKey]Enum.json` saves data related to \[cacheKey\] as enums
+-   `[fileType]/[cacheKey]Properties.json` saves data related to \[cacheKey\] as properties
 
 ## General lightning cache JSON format
 
