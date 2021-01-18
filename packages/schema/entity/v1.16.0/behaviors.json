@@ -59,7 +59,7 @@
 				"target_blocks": {
 					"type": "array",
 					"items": {
-						"$ref": "../../general/vanilla/identifiers.json#/definitions/block_identifiers"
+						"$ref": "../../general/identifiers.json#/definitions/block_identifiers"
 					}
 				},
 				"on_escape": {
@@ -77,7 +77,7 @@
 				"entity_types": {
 					"anyOf": [
 						{
-							"$ref": "../../general/vanilla/identifiers.json#/definitions/entity_identifiers"
+							"$ref": "../../general/identifiers.json#/definitions/entity_identifiers"
 						},
 						{
 							"$ref": "../general/entityType.json"
@@ -167,7 +167,7 @@
 					"description": "List of items that this mob likes.",
 					"type": "array",
 					"items": {
-						"$ref": "../../general/vanilla/identifiers.json#/definitions/item_identifiers"
+						"$ref": "../../general/identifiers.json#/definitions/item_identifiers"
 					}
 				}
 			}
@@ -258,7 +258,7 @@
 					"description": "The list of items that can be used to charge the held item.",
 					"type": "array",
 					"items": {
-						"$ref": "../../general/vanilla/identifiers.json#/definitions/item_identifiers"
+						"$ref": "../../general/identifiers.json#/definitions/item_identifiers"
 					}
 				}
 			}
@@ -638,10 +638,10 @@
 					"items": {
 						"properties": {
 							"eat_block": {
-								"$ref": "../../general/vanilla/identifiers.json#/definitions/block_identifiers"
+								"$ref": "../../general/identifiers.json#/definitions/block_identifiers"
 							},
 							"replace_block": {
-								"$ref": "../../general/vanilla/identifiers.json#/definitions/block_identifiers"
+								"$ref": "../../general/identifiers.json#/definitions/block_identifiers"
 							}
 						}
 					}
@@ -1508,11 +1508,11 @@
 						{
 							"type": "array",
 							"items": {
-								"$ref": "../../general/vanilla/identifiers.json#/definitions/entity_identifiers"
+								"$ref": "../../general/identifiers.json#/definitions/entity_identifiers"
 							}
 						},
 						{
-							"$ref": "../../general/vanilla/identifiers.json#/definitions/entity_identifiers"
+							"$ref": "../../general/identifiers.json#/definitions/entity_identifiers"
 						}
 					]
 				},
@@ -1653,7 +1653,7 @@
 				"target_blocks": {
 					"type": "array",
 					"items": {
-						"$ref": "../../general/vanilla/identifiers.json#/definitions/block_identifiers"
+						"$ref": "../../general/identifiers.json#/definitions/block_identifiers"
 					}
 				},
 				"on_stay_completed": {
@@ -2202,7 +2202,7 @@
 					"description": "Blocks that the mob is looking for to eat/raid.",
 					"type": "array",
 					"items": {
-						"$ref": "../../general/vanilla/identifiers.json#/definitions/block_identifiers"
+						"$ref": "../../general/identifiers.json#/definitions/block_identifiers"
 					}
 				},
 				"eat_delay": {
@@ -2839,7 +2839,7 @@
 					"description": "Items that we are interested in snacking on.",
 					"type": "array",
 					"items": {
-						"$ref": "../../general/vanilla/identifiers.json#/definitions/item_identifiers"
+						"$ref": "../../general/identifiers.json#/definitions/item_identifiers"
 					}
 				}
 			}
@@ -3125,7 +3125,7 @@
 											"type": "number"
 										},
 										"entity_type": {
-											"$ref": "../../general/vanilla/identifiers.json#/definitions/entity_identifiers"
+											"$ref": "../../general/identifiers.json#/definitions/entity_identifiers"
 										},
 										"size": {
 											"type": "number"
@@ -3299,7 +3299,7 @@
 					"description": "List of items this mob is tempted by.",
 					"type": "array",
 					"items": {
-						"$ref": "../../general/vanilla/identifiers.json#/definitions/item_identifiers"
+						"$ref": "../../general/identifiers.json#/definitions/item_identifiers"
 					}
 				},
 				"speed_multiplier": {

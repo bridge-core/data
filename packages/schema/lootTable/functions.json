@@ -227,7 +227,7 @@
 				"then": {
 					"properties": {
 						"id": {
-							"$ref": "../general/vanilla/identifiers.json#/definitions/entity_identifiers"
+							"$ref": "../general/identifiers.json#/definitions/entity_identifiers"
 						}
 					}
 				}

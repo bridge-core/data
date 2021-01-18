@@ -1,0 +1,56 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"definitions": {
+		"entity_identifiers": {
+			"allOf": [
+				{
+					"type": "string",
+					"pattern": "^minecraft:[a-z_]*<[a-z_:]*>$"
+				},
+				{
+					"$ref": "./vanilla/identifiers.json#/definitions/entity_identifiers"
+				},
+				{
+					"$ref": "./vanilla/identifiers.json#/definitions/unprefixed_entity_identifiers"
+				},
+				{
+					"$ref": "../dynamic/entity/identifierEnum.json"
+				}
+			]
+		},
+		"block_identifiers": {
+			"allOf": [
+				{
+					"type": "string",
+					"pattern": "^minecraft:[a-z_]*:[0-9]$"
+				},
+				{
+					"$ref": "./vanilla/identifiers.json#/definitions/block_identifiers"
+				},
+				{
+					"$ref": "./vanilla/identifiers.json#/definitions/unprefixed_block_identifiers"
+				},
+				{
+					"$ref": "../dynamic/block/identifierEnum.json"
+				}
+			]
+		},
+		"item_identifiers": {
+			"allOf": [
+				{
+					"type": "string",
+					"pattern": "^minecraft:[a-z_]*:[0-9]$"
+				},
+				{
+					"$ref": "./vanilla/identifiers.json#/definitions/item_identifiers"
+				},
+				{
+					"$ref": "./vanilla/identifiers.json#/definitions/unprefixed_item_identifiers"
+				},
+				{
+					"$ref": "../dynamic/item/identifierEnum.json"
+				}
+			]
+		}
+	}
+}

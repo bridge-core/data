@@ -15,12 +15,12 @@
 				{
 					"type": "array",
 					"items": {
-						"$ref": "../general/vanilla/identifiers.json#/definitions/block_identifiers"
+						"$ref": "../general/identifiers.json#/definitions/block_identifiers"
 					}
 				},
 				{
 					"type": "string",
-					"$ref": "../general/vanilla/identifiers.json#/definitions/block_identifiers"
+					"$ref": "../general/identifiers.json#/definitions/block_identifiers"
 				}
 			]
 		},
