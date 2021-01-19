@@ -140,7 +140,7 @@
 					"$ref": "../general/filter/operator.json"
 				},
 				"value": {
-					"$ref": "../general/vanilla/biomeTags.json"
+					"$ref": "../general/vanilla/biomeTagEnum.json"
 				}
 			}
 		},

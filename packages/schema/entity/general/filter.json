@@ -228,7 +228,7 @@
 			"then": {
 				"properties": {
 					"value": {
-						"$ref": "../../general/vanilla/biomeTags.json"
+						"$ref": "../../general/vanilla/biomeTagEnum.json"
 					}
 				}
 			}

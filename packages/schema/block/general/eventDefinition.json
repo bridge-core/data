@@ -13,7 +13,7 @@
 			"enum": ["self", "other", "target", "parent", "baby"]
 		},
 		"event": {
-			"type": "string",
+			"$ref": "../../dynamic/block/currentContext/eventEnum.json",
 			"description": "Identifier of the event to trigger"
 		}
 	}

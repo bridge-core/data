@@ -22,7 +22,7 @@
 			"$ref": "../../general/filter/subject.json"
 		},
 		"event": {
-			"type": "string",
+			"$ref": "../../dynamic/entity/currentContext/eventEnum.json",
 			"description": "Identifier of the event to trigger."
 		}
 	}

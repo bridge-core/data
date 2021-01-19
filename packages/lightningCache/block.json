@@ -1,6 +1,7 @@
 [
 	{ "identifier": "minecraft:block/description/identifier" },
 	{ "event": "minecraft:block/events" },
+	{ "property": "minecraft:block/description/properties" },
 	{
 		"recipeTag": [
 			"minecraft:block/components/minecraft:crafting_table/crafting_tags",

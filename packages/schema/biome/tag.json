@@ -1,44 +1,12 @@
 {
 	"$schema": "http://json-schema.org/draft-07/schema",
 	"type": "object",
-	"properties": {
-		"animal": {},
-		"bamboo": {},
-		"beach": {},
-		"birch": {},
-		"cold": {},
-		"deep": {},
-		"desert": {},
-		"edge": {},
-		"extreme_hills": {},
-		"flower_forest": {},
-		"frozen": {},
-		"hills": {},
-		"ice": {},
-		"ice_plains": {},
-		"jungle": {},
-		"forest": {},
-		"lukewarm": {},
-		"mega": {},
-		"mesa": {},
-		"monster": {},
-		"mooshroom_island": {},
-		"mountain": {},
-		"mutated": {},
-		"nether": {},
-		"no_legacy_worldgen": {},
-		"ocean": {},
-		"overworld": {},
-		"plains": {},
-		"plateau": {},
-		"savanna": {},
-		"swamp": {},
-		"rare": {},
-		"river": {},
-		"roofed": {},
-		"shore": {},
-		"stone": {},
-		"taiga": {},
-		"warm": {}
-	}
+	"anyOf": [
+		{
+			"$ref": "../general/vanilla/biomeTagProperty.json"
+		},
+		{
+			"$ref": "../dynamic/biome/tagsProperty.json"
+		}
+	]
 }

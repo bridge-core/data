@@ -69,7 +69,7 @@
 							"description": "Defines the geometries used in this entity.",
 							"patternProperties": {
 								".*": {
-									"type": "string"
+									"$ref": "../../general/reference/geometry.json"
 								}
 							}
 						},

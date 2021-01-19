@@ -61,7 +61,7 @@
 			}
 		},
 		"minecraft:geometry": {
-			"type": "string",
+			"$ref": "../../general/reference/geometry.json",
 			"description": "The geometry definition name to use"
 		},
 		"minecraft:on_step_on": {

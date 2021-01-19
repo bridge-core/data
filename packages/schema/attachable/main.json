@@ -51,7 +51,7 @@
 							"description": "Defines the geometries used in the attachable.",
 							"patternProperties": {
 								".*": {
-									"type": "string"
+									"$ref": "../general/reference/geometry.json"
 								}
 							}
 						},

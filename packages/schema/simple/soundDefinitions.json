@@ -12,6 +12,9 @@
 				".*": {
 					"additionalProperties": false,
 					"properties": {
+						"__use_legacy_max_distance": {
+							"type": "boolean"
+						},
 						"category": {
 							"type": "string",
 							"enum": [

@@ -6,7 +6,9 @@
 			"description": "Sets this block to another block type",
 			"additionalProperties": false,
 			"properties": {
-				"block_type": { "type": "string" }
+				"block_type": {
+					"$ref": "../general/reference/identifiers.json#/definitions/block_identifiers"
+				}
 			}
 		},
 		"set_block_at_pos": {
@@ -21,7 +23,9 @@
 						"type": "number"
 					}
 				},
-				"block_type": { "type": "string" }
+				"block_type": {
+					"$ref": "../general/reference/identifiers.json#/definitions/block_identifiers"
+				}
 			}
 		}
 	}
