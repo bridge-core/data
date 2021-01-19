@@ -42,7 +42,7 @@
 							"additionalProperties": false,
 							"properties": {
 								"texture": {
-									"type": "string"
+									"$ref": "../general/reference/itemTexture.json"
 								},
 								"frame_index": {
 									"type": "integer"

@@ -33,7 +33,7 @@
 							"properties": {
 								"texture": {
 									"description": "Defines the spawn egg texture/color for the entity.",
-									"type": "string"
+									"$ref": "../../general/reference/itemTexture.json"
 								},
 								"texture_index": {
 									"description": "The texture index to use.",

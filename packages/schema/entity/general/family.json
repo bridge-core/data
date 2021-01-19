@@ -1,4 +1,12 @@
 {
 	"$schema": "http://json-schema.org/draft-07/schema",
-	"$ref": "../../general/vanilla/families.json"
+	"type": "string",
+	"anyOf": [
+		{
+			"$ref": "../../general/vanilla/family.json"
+		},
+		{
+			"$ref": "../../dynamic/entity/familyEnum.json"
+		}
+	]
 }

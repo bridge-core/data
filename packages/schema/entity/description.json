@@ -21,7 +21,7 @@
 		"animations": {
 			"patternProperties": {
 				".*": {
-					"$ref": "../general/serverAnimationRefs.json"
+					"$ref": "../general/reference/serverAnimation.json"
 				}
 			}
 		},

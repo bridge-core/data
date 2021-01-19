@@ -35,7 +35,7 @@
 							"properties": {
 								"texture": {
 									"description": "Texture to use for the spawn egg.",
-									"type": "string"
+									"$ref": "../../general/reference/itemTexture.json"
 								},
 								"texture_index": {
 									"description": "The texture index to use.",
@@ -79,7 +79,7 @@
 							"description": "Defines animations and animation controllers to be used in this entity.",
 							"patternProperties": {
 								".*": {
-									"$ref": "../../general/clientAnimationRefs.json"
+									"$ref": "../../general/reference/clientAnimation.json"
 								}
 							}
 						},
