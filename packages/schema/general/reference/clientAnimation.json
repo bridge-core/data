@@ -3,16 +3,16 @@
 	"type": "string",
 	"anyOf": [
 		{
-			"$ref": "../dynamic/clientAnimation/identifierEnum.json"
+			"$ref": "../../dynamic/clientAnimation/identifierEnum.json"
 		},
 		{
-			"$ref": "../dynamic/clientAnimationController/identifierEnum.json"
+			"$ref": "../../dynamic/clientAnimationController/identifierEnum.json"
 		},
 		{
-			"$ref": "./vanilla/animation.json"
+			"$ref": "../vanilla/animation.json"
 		},
 		{
-			"$ref": "./vanilla/animationController.json"
+			"$ref": "../vanilla/animationController.json"
 		}
 	]
 }

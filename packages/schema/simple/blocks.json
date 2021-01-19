@@ -60,31 +60,31 @@
 				"textures": {
 					"anyOf": [
 						{
-							"type": "string"
+							"$ref": "../general/reference/terrainTexture.json"
 						},
 						{
 							"additionalProperties": false,
 							"properties": {
 								"up": {
-									"type": "string"
+									"$ref": "../general/reference/terrainTexture.json"
 								},
 								"down": {
-									"type": "string"
+									"$ref": "../general/reference/terrainTexture.json"
 								},
 								"side": {
-									"type": "string"
+									"$ref": "../general/reference/terrainTexture.json"
 								},
 								"north": {
-									"type": "string"
+									"$ref": "../general/reference/terrainTexture.json"
 								},
 								"south": {
-									"type": "string"
+									"$ref": "../general/reference/terrainTexture.json"
 								},
 								"east": {
-									"type": "string"
+									"$ref": "../general/reference/terrainTexture.json"
 								},
 								"west": {
-									"type": "string"
+									"$ref": "../general/reference/terrainTexture.json"
 								}
 							}
 						}
@@ -93,31 +93,31 @@
 				"carried_textures": {
 					"anyOf": [
 						{
-							"type": "string"
+							"$ref": "../general/reference/terrainTexture.json"
 						},
 						{
 							"additionalProperties": false,
 							"properties": {
 								"up": {
-									"type": "string"
+									"$ref": "../general/reference/terrainTexture.json"
 								},
 								"down": {
-									"type": "string"
+									"$ref": "../general/reference/terrainTexture.json"
 								},
 								"side": {
-									"type": "string"
+									"$ref": "../general/reference/terrainTexture.json"
 								},
 								"north": {
-									"type": "string"
+									"$ref": "../general/reference/terrainTexture.json"
 								},
 								"south": {
-									"type": "string"
+									"$ref": "../general/reference/terrainTexture.json"
 								},
 								"east": {
-									"type": "string"
+									"$ref": "../general/reference/terrainTexture.json"
 								},
 								"west": {
-									"type": "string"
+									"$ref": "../general/reference/terrainTexture.json"
 								}
 							}
 						}

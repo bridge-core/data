@@ -294,10 +294,10 @@
 					"value": {
 						"anyOf": [
 							{
-								"$ref": "../../general/identifiers.json#/definitions/item_identifiers"
+								"$ref": "../../general/reference/identifiers.json#/definitions/item_identifiers"
 							},
 							{
-								"$ref": "../../general/identifiers.json#/definitions/block_identifiers"
+								"$ref": "../../general/reference/identifiers.json#/definitions/block_identifiers"
 							}
 						]
 					}
@@ -475,7 +475,7 @@
 			"then": {
 				"properties": {
 					"value": {
-						"$ref": "../../general/identifiers.json#/definitions/block_identifiers"
+						"$ref": "../../general/reference/identifiers.json#/definitions/block_identifiers"
 					}
 				}
 			}

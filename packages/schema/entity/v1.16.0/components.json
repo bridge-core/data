@@ -9,7 +9,7 @@
 					"properties": {
 						"entity_type": {
 							"description": "The entity type that will be riding this entity.",
-							"$ref": "../../general/identifiers.json#/definitions/entity_identifiers"
+							"$ref": "../../general/reference/identifiers.json#/definitions/entity_identifiers"
 						},
 						"spawn_event": {
 							"description": "The spawn event that will be used when the riding entity is created.",
@@ -50,7 +50,7 @@
 											{
 												"properties": {
 													"item": {
-														"$ref": "../../general/identifiers.json#/definitions/item_identifiers"
+														"$ref": "../../general/reference/identifiers.json#/definitions/item_identifiers"
 													},
 													"growth": {
 														"type": "number"
@@ -58,13 +58,13 @@
 												}
 											},
 											{
-												"$ref": "../../general/identifiers.json#/definitions/item_identifiers"
+												"$ref": "../../general/reference/identifiers.json#/definitions/item_identifiers"
 											}
 										]
 									}
 								},
 								{
-									"$ref": "../../general/identifiers.json#/definitions/item_identifiers"
+									"$ref": "../../general/reference/identifiers.json#/definitions/item_identifiers"
 								}
 							]
 						},
@@ -72,7 +72,7 @@
 							"description": "List of items that the entity drops when it grows up.",
 							"type": "array",
 							"items": {
-								"$ref": "../../general/identifiers.json#/definitions/item_identifiers"
+								"$ref": "../../general/reference/identifiers.json#/definitions/item_identifiers"
 							}
 						},
 						"grow_up": {
@@ -295,7 +295,7 @@
 									"block_list": {
 										"type": "array",
 										"items": {
-											"$ref": "../../general/identifiers.json#/definitions/block_identifiers"
+											"$ref": "../../general/reference/identifiers.json#/definitions/block_identifiers"
 										}
 									},
 									"on_block_broken": {
@@ -325,7 +325,7 @@
 								"properties": {
 									"item": {
 										"description": "Name of the item that can be used to boost.",
-										"$ref": "../../general/identifiers.json#/definitions/item_identifiers"
+										"$ref": "../../general/reference/identifiers.json#/definitions/item_identifiers"
 									},
 									"damage": {
 										"description": "This is the damage that the item will take each time it is used.",
@@ -333,7 +333,7 @@
 									},
 									"replace_item": {
 										"description": "The item used to boost will become this item once it is used up.",
-										"$ref": "../../general/identifiers.json#/definitions/item_identifiers"
+										"$ref": "../../general/reference/identifiers.json#/definitions/item_identifiers"
 									}
 								}
 							}
@@ -366,7 +366,7 @@
 							"description": "A list of the blocks that can be broken as this entity moves around.",
 							"type": "array",
 							"items": {
-								"$ref": "../../general/identifiers.json#/definitions/block_identifiers"
+								"$ref": "../../general/reference/identifiers.json#/definitions/block_identifiers"
 							}
 						}
 					}
@@ -379,7 +379,7 @@
 							"description": "List of blocks this entity can breathe in, in addition to the above.",
 							"type": "array",
 							"items": {
-								"$ref": "../../general/identifiers.json#/definitions/block_identifiers"
+								"$ref": "../../general/reference/identifiers.json#/definitions/block_identifiers"
 							}
 						},
 						"breathes_water": {
@@ -426,7 +426,7 @@
 							"description": "List of blocks this entity can't breathe in, in addition to the above.",
 							"type": "array",
 							"items": {
-								"$ref": "../../general/identifiers.json#/definitions/block_identifiers"
+								"$ref": "../../general/reference/identifiers.json#/definitions/block_identifiers"
 							}
 						}
 					}
@@ -459,7 +459,7 @@
 							"description": "List of blocks this entity can float on. Must be a liquid block.",
 							"type": "array",
 							"items": {
-								"$ref": "../../general/identifiers.json#/definitions/block_identifiers"
+								"$ref": "../../general/reference/identifiers.json#/definitions/block_identifiers"
 							}
 						},
 						"simulate_waves": {
@@ -495,13 +495,13 @@
 									"items": {
 										"anyOf": [
 											{
-												"$ref": "../../general/identifiers.json#/definitions/item_identifiers"
+												"$ref": "../../general/reference/identifiers.json#/definitions/item_identifiers"
 											}
 										]
 									}
 								},
 								{
-									"$ref": "../../general/identifiers.json#/definitions/item_identifiers"
+									"$ref": "../../general/reference/identifiers.json#/definitions/item_identifiers"
 								}
 							]
 						},
@@ -510,11 +510,11 @@
 							"properties": {
 								"mate_type": {
 									"description": "The entity definition of this entity's mate.",
-									"$ref": "../../general/identifiers.json#/definitions/entity_identifiers"
+									"$ref": "../../general/reference/identifiers.json#/definitions/entity_identifiers"
 								},
 								"baby_type": {
 									"description": "The entity definition of this entity's babies.",
-									"$ref": "../../general/identifiers.json#/definitions/entity_identifiers"
+									"$ref": "../../general/reference/identifiers.json#/definitions/entity_identifiers"
 								},
 								"breed_event": {
 									"description": "Event to run when this entity breeds.",
@@ -535,7 +535,7 @@
 										"properties": {
 											"blocks": {
 												"description": "The block types required nearby for the entity to breed.",
-												"$ref": "../../general/identifiers.json#/definitions/block_identifiers"
+												"$ref": "../../general/reference/identifiers.json#/definitions/block_identifiers"
 											},
 											"count": {
 												"description": "The number of the required block types nearby for the entity to breed.",
@@ -552,7 +552,7 @@
 									"properties": {
 										"blocks": {
 											"description": "The block types required nearby for the entity to breed.",
-											"$ref": "../../general/identifiers.json#/definitions/block_identifiers"
+											"$ref": "../../general/reference/identifiers.json#/definitions/block_identifiers"
 										},
 										"count": {
 											"description": "The number of the required block types nearby for the entity to breed.",
@@ -639,7 +639,7 @@
 							"items": {
 								"anyOf": [
 									{
-										"$ref": "../../general/identifiers.json#/definitions/item_identifiers"
+										"$ref": "../../general/reference/identifiers.json#/definitions/item_identifiers"
 									}
 								]
 							}
@@ -1105,7 +1105,7 @@
 										"items": {
 											"anyOf": [
 												{
-													"$ref": "../../general/identifiers.json#/definitions/item_identifiers"
+													"$ref": "../../general/reference/identifiers.json#/definitions/item_identifiers"
 												}
 											]
 										}
@@ -1116,7 +1116,7 @@
 									},
 									"item": {
 										"description": "Identifier of the item that can be equipped for this slot.",
-										"$ref": "../../general/identifiers.json#/definitions/item_identifiers"
+										"$ref": "../../general/reference/identifiers.json#/definitions/item_identifiers"
 									},
 									"on_equip": {
 										"description": "Event to trigger when this entity is equipped with this item.",
@@ -1492,7 +1492,7 @@
 												"items": {
 													"anyOf": [
 														{
-															"$ref": "../../general/identifiers.json#/definitions/item_identifiers"
+															"$ref": "../../general/reference/identifiers.json#/definitions/item_identifiers"
 														}
 													]
 												}
@@ -1516,7 +1516,7 @@
 											"items": {
 												"anyOf": [
 													{
-														"$ref": "../../general/identifiers.json#/definitions/item_identifiers"
+														"$ref": "../../general/reference/identifiers.json#/definitions/item_identifiers"
 													}
 												]
 											}
@@ -1589,7 +1589,7 @@
 										"description": "Item identifier that can be used to heal this entity.",
 										"anyOf": [
 											{
-												"$ref": "../../general/identifiers.json#/definitions/item_identifiers"
+												"$ref": "../../general/reference/identifiers.json#/definitions/item_identifiers"
 											}
 										]
 									},
@@ -1778,7 +1778,7 @@
 										"description": "List of entities to spawn when the interaction occurs.",
 										"type": "array",
 										"items": {
-											"$ref": "../../general/identifiers.json#/definitions/entity_identifiers"
+											"$ref": "../../general/reference/identifiers.json#/definitions/entity_identifiers"
 										}
 									},
 									"spawn_items": {
@@ -1795,7 +1795,7 @@
 									},
 									"transform_to_item": {
 										"description": "The item used will transform to this item upon successful interaction.",
-										"$ref": "../../general/identifiers.json#/definitions/item_identifiers"
+										"$ref": "../../general/reference/identifiers.json#/definitions/item_identifiers"
 									},
 									"barter": {
 										"type": "boolean"
@@ -1909,12 +1909,12 @@
 									"description": "List of items that can be used to control this entity.",
 									"type": "array",
 									"items": {
-										"$ref": "../../general/identifiers.json#/definitions/item_identifiers"
+										"$ref": "../../general/reference/identifiers.json#/definitions/item_identifiers"
 									}
 								},
 								{
 									"description": "Item that can be used to control this entity.",
-									"$ref": "../../general/identifiers.json#/definitions/item_identifiers"
+									"$ref": "../../general/reference/identifiers.json#/definitions/item_identifiers"
 								}
 							]
 						}
@@ -2880,7 +2880,7 @@
 									"blocks": {
 										"type": "array",
 										"items": {
-											"$ref": "../../general/identifiers.json#/definitions/block_identifiers"
+											"$ref": "../../general/reference/identifiers.json#/definitions/block_identifiers"
 										}
 									}
 								}
@@ -3037,10 +3037,10 @@
 											"type": "number"
 										},
 										"spawn_mob": {
-											"type": "string"
+											"$ref": "../../general/reference/identifiers.json#/definitions/entity_identifiers"
 										},
 										"spawn_definition": {
-											"$ref": "../../general/identifiers.json#/definitions/entity_identifiers"
+											"$ref": "../../general/reference/identifiers.json#/definitions/entity_identifiers"
 										},
 										"spawn_baby": {
 											"type": "boolean"
@@ -3493,14 +3493,14 @@
 									},
 									"item": {
 										"description": "The name of the item. Aux value can be specified, for instance 'minecraft:skull:1'.",
-										"$ref": "../../general/identifiers.json#/definitions/item_identifiers"
+										"$ref": "../../general/reference/identifiers.json#/definitions/item_identifiers"
 									},
 									"item_aux": {
 										"type": "number"
 									},
 									"craft_into": {
 										"description": "Defines the item this entity wants to craft with the item defined above. Should be an item name.",
-										"$ref": "../../general/identifiers.json#/definitions/item_identifiers"
+										"$ref": "../../general/reference/identifiers.json#/definitions/item_identifiers"
 									},
 									"max_amount": {
 										"description": "Maximum number of this item the mob will hold.",
@@ -3545,7 +3545,7 @@
 					"properties": {
 						"def": {
 							"description": "Actor definition to use as projectile for the ranged attack. The actor definition must have the projectile component to be able to be shot as a projectile.",
-							"$ref": "../../general/identifiers.json#/definitions/entity_identifiers"
+							"$ref": "../../general/reference/identifiers.json#/definitions/entity_identifiers"
 						},
 						"aux_val": {
 							"description": "ID of the Potion effect to be applied on hit.",
@@ -3604,7 +3604,7 @@
 											},
 											"spawn_entity": {
 												"description": "Identifier of the entity to spawn, leave empty to spawn the item defined above instead.",
-												"$ref": "../../general/identifiers.json#/definitions/entity_identifiers"
+												"$ref": "../../general/reference/identifiers.json#/definitions/entity_identifiers"
 											},
 											"spawn_event": {
 												"description": "Event to call when the entity is spawned.",
@@ -3612,7 +3612,7 @@
 											},
 											"spawn_item": {
 												"description": "Item identifier of the item to spawn.",
-												"$ref": "../../general/identifiers.json#/definitions/item_identifiers"
+												"$ref": "../../general/reference/identifiers.json#/definitions/item_identifiers"
 											},
 											"spawn_method": {
 												"description": "Method to use to spawn the entity.",
@@ -3654,7 +3654,7 @@
 										},
 										"spawn_entity": {
 											"description": "Identifier of the entity to spawn, leave empty to spawn the item defined above instead.",
-											"$ref": "../../general/identifiers.json#/definitions/entity_identifiers"
+											"$ref": "../../general/reference/identifiers.json#/definitions/entity_identifiers"
 										},
 										"spawn_event": {
 											"description": "Event to call when the entity is spawned.",
@@ -3662,7 +3662,7 @@
 										},
 										"spawn_item": {
 											"description": "Item identifier of the item to spawn.",
-											"$ref": "../../general/identifiers.json#/definitions/item_identifiers"
+											"$ref": "../../general/reference/identifiers.json#/definitions/item_identifiers"
 										},
 										"spawn_method": {
 											"description": "Method to use to spawn the entity.",
@@ -3750,11 +3750,11 @@
 								{
 									"type": "array",
 									"items": {
-										"$ref": "../../general/identifiers.json#/definitions/item_identifiers"
+										"$ref": "../../general/reference/identifiers.json#/definitions/item_identifiers"
 									}
 								},
 								{
-									"$ref": "../../general/identifiers.json#/definitions/item_identifiers"
+									"$ref": "../../general/reference/identifiers.json#/definitions/item_identifiers"
 								}
 							]
 						},
@@ -3779,7 +3779,7 @@
 									"description": "Name of the item this entity dislikes and will cause it to get angry if used while untamed.",
 									"anyOf": [
 										{
-											"$ref": "../../general/identifiers.json#/definitions/item_identifiers"
+											"$ref": "../../general/reference/identifiers.json#/definitions/item_identifiers"
 										}
 									]
 								}
@@ -3793,7 +3793,7 @@
 									"description": "Name of the item this entity likes and can be used to increase this entity's temper.",
 									"anyOf": [
 										{
-											"$ref": "../../general/identifiers.json#/definitions/item_identifiers"
+											"$ref": "../../general/reference/identifiers.json#/definitions/item_identifiers"
 										}
 									]
 								},
@@ -4002,7 +4002,7 @@
 					"properties": {
 						"block_type": {
 							"description": "The type of block you wish to be spawned by the entity as it move about the world. Solid blocks may not be spawned at an offset of (0,0,0).",
-							"$ref": "../../general/identifiers.json#/definitions/block_identifiers"
+							"$ref": "../../general/reference/identifiers.json#/definitions/block_identifiers"
 						},
 						"spawn_filter": {
 							"description": "One or more conditions that must be met in order to cause the chosen block type to spawn.",
@@ -4025,7 +4025,7 @@
 					"properties": {
 						"into": {
 							"description": "Entity Definition that this entity will transform into.",
-							"$ref": "../../general/identifiers.json#/definitions/entity_identifiers"
+							"$ref": "../../general/reference/identifiers.json#/definitions/entity_identifiers"
 						},
 						"add": {
 							"description": "List of components to add to the entity after the transformation.",
@@ -4096,7 +4096,7 @@
 									"description": "List of blocks that can help the transformation of this entity.",
 									"type": "array",
 									"items": {
-										"$ref": "../../general/identifiers.json#/definitions/block_identifiers"
+										"$ref": "../../general/reference/identifiers.json#/definitions/block_identifiers"
 									}
 								}
 							}
@@ -4115,7 +4115,7 @@
 							"description": "The list of items that can be used to get the entity to trust players.",
 							"type": "array",
 							"items": {
-								"$ref": "../../general/identifiers.json#/definitions/item_identifiers"
+								"$ref": "../../general/reference/identifiers.json#/definitions/item_identifiers"
 							}
 						},
 						"trust_event": {

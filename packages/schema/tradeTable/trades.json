@@ -10,7 +10,7 @@
 				"items": {
 					"properties": {
 						"item": {
-							"$ref": "../general/identifiers.json#/definitions/item_identifiers"
+							"$ref": "../general/reference/identifiers.json#/definitions/item_identifiers"
 						},
 						"quantity": {
 							"anyOf": [
@@ -45,7 +45,7 @@
 				"items": {
 					"properties": {
 						"item": {
-							"$ref": "../general/identifiers.json#/definitions/item_identifiers"
+							"$ref": "../general/reference/identifiers.json#/definitions/item_identifiers"
 						},
 						"quantity": {
 							"anyOf": [
@@ -72,7 +72,7 @@
 							"items": {
 								"properties": {
 									"item": {
-										"$ref": "../general/identifiers.json#/definitions/item_identifiers"
+										"$ref": "../general/reference/identifiers.json#/definitions/item_identifiers"
 									},
 									"quantity": {
 										"anyOf": [

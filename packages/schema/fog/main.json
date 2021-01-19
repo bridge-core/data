@@ -27,6 +27,16 @@
 				"distance": {
 					"additionalProperties": false,
 					"type": "object",
+					"propertyNames": {
+						"enum": [
+							"water",
+							"air",
+							"weather",
+							"lava",
+							"lava_resistance",
+							"powder_snow"
+						]
+					},
 					"description": "Valid properties: 'water', 'air', 'weather', 'lava', 'lava_resistance', 'powder_snow'",
 					"patternProperties": {
 						"^water|air|weather|lava|lava_resistance|powder_snow$": {

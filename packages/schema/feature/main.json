@@ -214,49 +214,49 @@
 						"top": {
 							"type": "array",
 							"items": {
-								"$ref": "../general/identifiers.json#/definitions/block_identifiers"
+								"$ref": "../general/reference/identifiers.json#/definitions/block_identifiers"
 							}
 						},
 						"bottom": {
 							"type": "array",
 							"items": {
-								"$ref": "../general/identifiers.json#/definitions/block_identifiers"
+								"$ref": "../general/reference/identifiers.json#/definitions/block_identifiers"
 							}
 						},
 						"north": {
 							"type": "array",
 							"items": {
-								"$ref": "../general/identifiers.json#/definitions/block_identifiers"
+								"$ref": "../general/reference/identifiers.json#/definitions/block_identifiers"
 							}
 						},
 						"east": {
 							"type": "array",
 							"items": {
-								"$ref": "../general/identifiers.json#/definitions/block_identifiers"
+								"$ref": "../general/reference/identifiers.json#/definitions/block_identifiers"
 							}
 						},
 						"south": {
 							"type": "array",
 							"items": {
-								"$ref": "../general/identifiers.json#/definitions/block_identifiers"
+								"$ref": "../general/reference/identifiers.json#/definitions/block_identifiers"
 							}
 						},
 						"west": {
 							"type": "array",
 							"items": {
-								"$ref": "../general/identifiers.json#/definitions/block_identifiers"
+								"$ref": "../general/reference/identifiers.json#/definitions/block_identifiers"
 							}
 						},
 						"all": {
 							"type": "array",
 							"items": {
-								"$ref": "../general/identifiers.json#/definitions/block_identifiers"
+								"$ref": "../general/reference/identifiers.json#/definitions/block_identifiers"
 							}
 						},
 						"sides": {
 							"type": "array",
 							"items": {
-								"$ref": "../general/identifiers.json#/definitions/block_identifiers"
+								"$ref": "../general/reference/identifiers.json#/definitions/block_identifiers"
 							}
 						}
 					}

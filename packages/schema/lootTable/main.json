@@ -86,7 +86,7 @@
 														"type": "string"
 													},
 													{
-														"$ref": "../general/identifiers.json#/definitions/item_identifiers"
+														"$ref": "../general/reference/identifiers.json#/definitions/item_identifiers"
 													}
 												]
 											},

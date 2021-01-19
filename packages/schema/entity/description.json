@@ -5,7 +5,7 @@
 			"type": "string"
 		},
 		"runtime_identifier": {
-			"$ref": "../general/identifiers.json#/definitions/entity_identifiers"
+			"$ref": "../general/reference/identifiers.json#/definitions/entity_identifiers"
 		},
 		"is_spawnable": {
 			"description": "Whether this entity should have a spawn egg.",

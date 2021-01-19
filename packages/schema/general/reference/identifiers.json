@@ -8,13 +8,13 @@
 					"pattern": "^minecraft:[a-z_]*<[a-z_:]*>$"
 				},
 				{
-					"$ref": "./vanilla/identifiers.json#/definitions/entity_identifiers"
+					"$ref": "../vanilla/identifiers.json#/definitions/entity_identifiers"
 				},
 				{
-					"$ref": "./vanilla/identifiers.json#/definitions/unprefixed_entity_identifiers"
+					"$ref": "../vanilla/identifiers.json#/definitions/unprefixed_entity_identifiers"
 				},
 				{
-					"$ref": "../dynamic/entity/identifierEnum.json"
+					"$ref": "../../dynamic/entity/identifierEnum.json"
 				}
 			]
 		},
@@ -25,13 +25,13 @@
 					"pattern": "^minecraft:[a-z_]*:[0-9]$"
 				},
 				{
-					"$ref": "./vanilla/identifiers.json#/definitions/block_identifiers"
+					"$ref": "../vanilla/identifiers.json#/definitions/block_identifiers"
 				},
 				{
-					"$ref": "./vanilla/identifiers.json#/definitions/unprefixed_block_identifiers"
+					"$ref": "../vanilla/identifiers.json#/definitions/unprefixed_block_identifiers"
 				},
 				{
-					"$ref": "../dynamic/block/identifierEnum.json"
+					"$ref": "../../dynamic/block/identifierEnum.json"
 				}
 			]
 		},
@@ -42,33 +42,33 @@
 					"pattern": "^minecraft:[a-z_]*:[0-9]$"
 				},
 				{
-					"$ref": "./vanilla/identifiers.json#/definitions/item_identifiers"
+					"$ref": "../vanilla/identifiers.json#/definitions/item_identifiers"
 				},
 				{
-					"$ref": "./vanilla/identifiers.json#/definitions/unprefixed_item_identifiers"
+					"$ref": "../vanilla/identifiers.json#/definitions/unprefixed_item_identifiers"
 				},
 				{
-					"$ref": "../dynamic/item/identifierEnum.json"
+					"$ref": "../../dynamic/item/identifierEnum.json"
 				}
 			]
 		},
 		"particle_identifiers": {
 			"anyOf": [
 				{
-					"$ref": "./vanilla/identifiers.json#/definitions/particle_identifiers"
+					"$ref": "../vanilla/identifiers.json#/definitions/particle_identifiers"
 				},
 				{
-					"$ref": "../dynamic/particle/identifierEnum.json"
+					"$ref": "../../dynamic/particle/identifierEnum.json"
 				}
 			]
 		},
 		"fog_identifiers": {
 			"anyOf": [
 				{
-					"$ref": "./vanilla/identifiers.json#/definitions/fog_identifiers"
+					"$ref": "../vanilla/identifiers.json#/definitions/fog_identifiers"
 				},
 				{
-					"$ref": "../dynamic/fog/identifierEnum.json"
+					"$ref": "../../dynamic/fog/identifierEnum.json"
 				}
 			]
 		}

@@ -32,13 +32,13 @@
 		"block_reference": {
 			"anyOf": [
 				{
-					"$ref": "../general/identifiers.json#/definitions/block_identifiers"
+					"$ref": "../general/reference/identifiers.json#/definitions/block_identifiers"
 				},
 				{
 					"additionalProperties": false,
 					"properties": {
 						"name": {
-							"$ref": "../general/identifiers.json#/definitions/block_identifiers"
+							"$ref": "../general/reference/identifiers.json#/definitions/block_identifiers"
 						},
 						"state": {
 							"$ref": "../general/vanilla/blockState.json"
