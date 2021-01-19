@@ -7,6 +7,12 @@ export async function buildDynamicSchemas() {
 		null
 	)
 
+	try {
+		await Deno.remove(join('./packages/schema/dynamic/currentContext'), {
+			recursive: true,
+		})
+	} catch {}
+
 	for (const { lightningCache, id } of fileDefs) {
 		if (!lightningCache) continue
 
@@ -22,9 +28,13 @@ export async function buildDynamicSchemas() {
 				recursive: true,
 			})
 		} catch {}
-		await Deno.mkdir(join('./packages/schema/dynamic', id), {
-			recursive: true,
-		})
+		await Deno.mkdir(
+			join('./packages/schema/dynamic', id, 'currentContext'),
+			{
+				recursive: true,
+			}
+		)
+
 		for (const cacheDef of json) {
 			const key = Object.keys(cacheDef).find(
 				(key) => !key.startsWith('@')
@@ -41,6 +51,31 @@ export async function buildDynamicSchemas() {
 			)
 			await Deno.writeTextFile(
 				join('./packages/schema/dynamic', id, `${key}Property.json`),
+				JSON.stringify({
+					$schema: 'http://json-schema.org/draft-07/schema',
+					type: 'object',
+					properties: {},
+				})
+			)
+
+			await Deno.writeTextFile(
+				join(
+					'./packages/schema/dynamic',
+					id,
+					`currentContext/${key}Enum.json`
+				),
+				JSON.stringify({
+					$schema: 'http://json-schema.org/draft-07/schema',
+					type: 'string',
+					enum: [],
+				})
+			)
+			await Deno.writeTextFile(
+				join(
+					'./packages/schema/dynamic',
+					id,
+					`currentContext/${key}Property.json`
+				),
 				JSON.stringify({
 					$schema: 'http://json-schema.org/draft-07/schema',
 					type: 'object',
