@@ -4,10 +4,6 @@
 		"entity_identifiers": {
 			"anyOf": [
 				{
-					"type": "string",
-					"pattern": "^minecraft:[a-z_]*<[a-z_:]*>$"
-				},
-				{
 					"$ref": "../vanilla/identifiers.json#/definitions/entity_identifiers"
 				},
 				{
@@ -15,15 +11,15 @@
 				},
 				{
 					"$ref": "../../dynamic/entity/identifierEnum.json"
+				},
+				{
+					"type": "string",
+					"pattern": "^minecraft:[a-z_]*<[a-z_:]*>$"
 				}
 			]
 		},
 		"block_identifiers": {
 			"anyOf": [
-				{
-					"type": "string",
-					"pattern": "^minecraft:[a-z_]*:[0-9]$"
-				},
 				{
 					"$ref": "../vanilla/identifiers.json#/definitions/block_identifiers"
 				},
@@ -32,15 +28,15 @@
 				},
 				{
 					"$ref": "../../dynamic/block/identifierEnum.json"
+				},
+				{
+					"type": "string",
+					"pattern": "^minecraft:[a-z_]*:[0-9]$"
 				}
 			]
 		},
 		"item_identifiers": {
 			"anyOf": [
-				{
-					"type": "string",
-					"pattern": "^minecraft:[a-z_]*:[0-9]$"
-				},
 				{
 					"$ref": "../vanilla/identifiers.json#/definitions/item_identifiers"
 				},
@@ -49,6 +45,10 @@
 				},
 				{
 					"$ref": "../../dynamic/item/identifierEnum.json"
+				},
+				{
+					"type": "string",
+					"pattern": "^minecraft:[a-z_]*:[0-9]$"
 				}
 			]
 		},

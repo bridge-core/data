@@ -1,7 +1,7 @@
 {
 	"$schema": "http://json-schema.org/draft-07/schema",
 	"title": "Attachable",
-	"required": ["format_version", "minecraft:client_entity"],
+	"required": ["format_version", "minecraft:attachable"],
 	"additionalProperties": false,
 	"$id": "bridge.attachable",
 	"properties": {
@@ -14,7 +14,7 @@
 			"properties": {
 				"description": {
 					"required": [
-						"texture",
+						"textures",
 						"geometry",
 						"render_controllers",
 						"identifier",
@@ -28,7 +28,7 @@
 						"item": {
 							"description": "Sets an item identifier with a Molang script to decide when to render the attachable.",
 							"propertyNames": {
-								"$ref": "../general/vanilla/identifiers.json#/definitions/item_identifier"
+								"$ref": "../general/reference/identifiers.json#/definitions/item_identifiers"
 							}
 						},
 						"materials": {

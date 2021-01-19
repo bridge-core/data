@@ -10,7 +10,7 @@
 			"properties": {
 				"description": {
 					"required": [
-						"texture",
+						"textures",
 						"geometry",
 						"render_controllers",
 						"identifier",
