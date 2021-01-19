@@ -1,4 +1,4 @@
-import JSON5 from 'https://cdn.skypack.dev/json5@2.0.0'
+import JSON5 from 'https://cdn.skypack.dev/json5'
 import { join, basename } from 'https://deno.land/std/path/mod.ts'
 
 const autoCompletions: any = {}
@@ -7,7 +7,7 @@ async function loadDir(
 	dirPath: string,
 	saveObj = autoCompletions
 ): Promise<void> {
-	const dirents = await Deno.readDir(dirPath)
+	const dirents = Deno.readDir(dirPath)
 
 	for await (const dirent of dirents) {
 		if (dirent.isDirectory) {
@@ -15,7 +15,8 @@ async function loadDir(
 			await loadDir(join(dirPath, dirent.name), saveObj[dirent.name])
 		} else {
 			saveObj[basename(dirent.name, '.json')] = JSON5.parse(
-				await Deno.readTextFile(join(dirPath, dirent.name))
+				await Deno.readTextFile(join(dirPath, dirent.name)),
+				null
 			)
 		}
 	}
