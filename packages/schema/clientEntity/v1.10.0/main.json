@@ -79,7 +79,7 @@
 							"description": "Defines animations and animation controllers to be used in this entity.",
 							"patternProperties": {
 								".*": {
-									"type": "string"
+									"$ref": "../../general/clientAnimationRefs.json"
 								}
 							}
 						},

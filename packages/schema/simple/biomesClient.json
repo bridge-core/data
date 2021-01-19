@@ -16,7 +16,7 @@
 							"type": "number"
 						},
 						"fog_identifier": {
-							"type": "string"
+							"$ref": "../general/identifiers.json#/definitions/fog_identifiers"
 						}
 					}
 				}

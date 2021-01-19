@@ -20,21 +20,14 @@
 					"type": "object",
 					"properties": {
 						"identifier": {
-							"anyOf": [
-								{
-									"type": "string"
-								},
-								{
-									"$ref": "../general/vanilla/identifiers.json#/definitions/fog_identifiers"
-								}
-							]
+							"$ref": "../general/vanilla/identifiers.json#/definitions/fog_identifiers"
 						}
 					}
 				},
 				"distance": {
 					"additionalProperties": false,
 					"type": "object",
-					"description": "Valid properties: 'water', 'air', 'weather', 'lava', 'lava_resistance'",
+					"description": "Valid properties: 'water', 'air', 'weather', 'lava', 'lava_resistance', 'powder_snow'",
 					"patternProperties": {
 						"^water|air|weather|lava|lava_resistance|powder_snow$": {
 							"properties": {

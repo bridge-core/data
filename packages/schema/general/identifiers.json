@@ -2,7 +2,7 @@
 	"$schema": "http://json-schema.org/draft-07/schema",
 	"definitions": {
 		"entity_identifiers": {
-			"allOf": [
+			"anyOf": [
 				{
 					"type": "string",
 					"pattern": "^minecraft:[a-z_]*<[a-z_:]*>$"
@@ -19,7 +19,7 @@
 			]
 		},
 		"block_identifiers": {
-			"allOf": [
+			"anyOf": [
 				{
 					"type": "string",
 					"pattern": "^minecraft:[a-z_]*:[0-9]$"
@@ -36,7 +36,7 @@
 			]
 		},
 		"item_identifiers": {
-			"allOf": [
+			"anyOf": [
 				{
 					"type": "string",
 					"pattern": "^minecraft:[a-z_]*:[0-9]$"
@@ -49,6 +49,26 @@
 				},
 				{
 					"$ref": "../dynamic/item/identifierEnum.json"
+				}
+			]
+		},
+		"particle_identifiers": {
+			"anyOf": [
+				{
+					"$ref": "./vanilla/identifiers.json#/definitions/particle_identifiers"
+				},
+				{
+					"$ref": "../dynamic/particle/identifierEnum.json"
+				}
+			]
+		},
+		"fog_identifiers": {
+			"anyOf": [
+				{
+					"$ref": "./vanilla/identifiers.json#/definitions/fog_identifiers"
+				},
+				{
+					"$ref": "../dynamic/fog/identifierEnum.json"
 				}
 			]
 		}
