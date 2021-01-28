@@ -375,9 +375,9 @@
 						"block": {
 							"@import.value": "$general.block_identifier",
 							"tags": ["query.any_tag()", "query.all_tags()"]
-						}
-					},
-					"speed": "$general.number"
+						},
+						"speed": "$general.number"
+					}
 				}
 			}
 		}
