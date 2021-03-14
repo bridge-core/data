@@ -375,9 +375,9 @@
 						"block": {
 							"@import.value": "$general.block_identifier",
 							"tags": ["query.any_tag()", "query.all_tags()"]
-						}
-					},
-					"speed": "$general.number"
+						},
+						"speed": "$general.number"
+					}
 				}
 			}
 		}
@@ -461,8 +461,16 @@
 	],
 	"$versioned_template.minecraft:render_offsets": [
 		{
-			"$if": "$format_version >= 1.16.100",
+			"$if": "$format_version == 1.16.100",
 			"$data": "$client_item.general.render_offsets"
+		},
+		{
+			"$if": "$format_version >= 1.16.200",
+			"$data": {
+				"$item.general.hand_type": {
+					"$item.general.camera_type": "$item.general.render_offset"
+				}
+			}
 		}
 	],
 	"$versioned_template.minecraft:hover_text_color": [

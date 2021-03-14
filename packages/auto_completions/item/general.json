@@ -161,5 +161,18 @@
 		"11",
 		"wait",
 		"pigstep"
-	]
+	],
+	"hand_type": ["main_hand", "off_hand"],
+	"camera_type": ["first_person", "third_person"],
+	"render_offset": {
+		"position": {
+			"$dynamic.list.index_triple": "$general.number"
+		},
+		"rotation": {
+			"$dynamic.list.index_triple": "$general.number"
+		},
+		"scale": {
+			"$dynamic.list.index_triple": "$general.decimal"
+		}
+	}
 }
