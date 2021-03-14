@@ -461,7 +461,7 @@
 	],
 	"$versioned_template.minecraft:render_offsets": [
 		{
-			"$if": "$format_version == 1.16.100",
+			"$if": "$format_version = 1.16.100",
 			"$data": "$client_item.general.render_offsets"
 		},
 		{
