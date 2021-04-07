@@ -24,7 +24,7 @@
 	},
 	"add_mob_effect": {
 		"effect": "$general.effect_name",
-		"target": ["holder"],
+		"target": ["holder", "other"],
 		"duration": "$general.number",
 		"amplifier": "$general.number"
 	},
