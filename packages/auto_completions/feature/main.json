@@ -23,16 +23,38 @@
 			}
 		}
 	},
-	"minecraft:ore_feature": {
-		"description": {
-			"identifier": "$general.file_identifier"
+	"$versioned_template.minecraft:ore_feature": [
+		{
+			"$data": {
+				"description": {
+					"identifier": "$general.file_identifier"
+				},
+				"count": "$general.number",
+				"places_block": "$feature.general.block_reference"
+			}
 		},
-		"count": "$general.number",
-		"places_block": "$feature.general.block_reference",
-		"may_replace": {
-			"$dynamic.list.next_index": "$feature.general.block_reference"
+		{
+			"$if": "$format_version < 1.16.220",
+			"$data": {
+				"may_replace": {
+					"$dynamic.list.next_index": "$feature.general.block_reference"
+				}
+			}
+		},
+		{
+			"$if": "$format_version >= 1.16.220",
+			"$data": {
+				"replace_rules": {
+					"$dynamic.list.next_index": {
+						"places_block": "$feature.general.block_reference",
+						"may_replace": {
+							"$dynamic.list.next_index": "$feature.general.block_reference"
+						}
+					}
+				}
+			}
 		}
-	},
+	],
 	"minecraft:scatter_feature": {
 		"description": {
 			"identifier": "$general.file_identifier"
@@ -311,5 +333,145 @@
 				}
 			}
 		}
-	}
+	},
+	"$versioned_template.minecraft:cave_carver_feature": [
+		{
+			"$if": "$format_version >= 1.16.220",
+			"$data": {
+				"description": {
+					"identifier": "$general.file_identifier"
+				},
+				"fill_with": "$feature.general.block_reference",
+				"width_modifier": "$general.number"
+			}
+		}
+	],
+	"$versioned_template.minecraft:hell_cave_carver_feature": [
+		{
+			"$if": "$format_version >= 1.16.220",
+			"$data": {
+				"description": {
+					"identifier": "$general.file_identifier"
+				},
+				"fill_with": "$feature.general.block_reference",
+				"width_modifier": "$general.number"
+			}
+		}
+	],
+	"$versioned_template.minecraft:underwater_cave_carver_feature": [
+		{
+			"$if": "$format_version >= 1.16.220",
+			"$data": {
+				"description": {
+					"identifier": "$general.file_identifier"
+				},
+				"fill_with": "$feature.general.block_reference",
+				"width_modifier": "$general.number",
+				"replace_air_with": "$feature.general.block_reference"
+			}
+		}
+	],
+	"$versioned_template.minecraft:growing_plant_feature": [
+		{
+			"$if": "$format_version >= 1.16.220",
+			"$data": {
+				"description": {
+					"identifier": "$general.file_identifier"
+				},
+				"height_distribution": {
+					"$dynamic.list.next_index": {
+						"0": {
+							"@meta": { "is_molang": true },
+							"@import.value.molang": "$molang.general.boolean and ('query.' + $molang.general.query)"
+						},
+						"1": "$general.number"
+					}
+				},
+				"allow_water": "$general.boolean",
+				"growth_direction": ["UP", "DOWN"],
+				"age": {
+					"@meta": { "is_molang": true },
+					"@import.value.molang": "$molang.general.boolean and ('query.' + $molang.general.query)"
+				},
+				"body_blocks": {
+					"$dynamic.list.next_index": {
+						"0": "$general.block_identifier",
+						"1": "$general.number"
+					}
+				},
+				"head_blocks": {
+					"$dynamic.list.next_index": {
+						"0": "$general.block_identifier",
+						"1": "$general.number"
+					}
+				}
+			}
+		}
+	],
+	"$versioned_template.minecraft:snap_to_surface_feature": [
+		{
+			"$if": "$format_version >= 1.16.220",
+			"$data": {
+				"description": {
+					"identifier": "$general.file_identifier"
+				},
+				"feature_to_snap": {
+					"@meta": { "is_value": true },
+					"@import.value.feature_ref": "$dynamic.biome.feature_references"
+				},
+				"vertical_search_range": "$general.number",
+				"surface": ["ceiling", "floor"]
+			}
+		}
+	],
+	"$versioned_template.minecraft:vegetation_patch_feature": [
+		{
+			"$if": "$format_version >= 1.16.220",
+			"$data": {
+				"replaceable_blocks": {
+					"$dynamic.list.next_index": "$feature.general.block_reference"
+				},
+				"ground_block": "$feature.general.block_reference",
+				"vegetation_feature": {
+					"@meta": { "is_value": true },
+					"@import.value.feature_ref": "$dynamic.biome.feature_references"
+				},
+				"surface": ["floor", "ceiling"],
+				"depth": {
+					"@import.value": "$general.number",
+					"range_min": "$general.number",
+					"range_max": "$general.number"
+				},
+				"extra_deep_block_chance": "$general.number",
+				"vertical_range": "$general.number",
+				"vegetation_chance": "$general.number",
+				"horizontal_radius": {
+					"@import.value": "$general.number",
+					"range_min": "$general.number",
+					"range_max": "$general.number"
+				},
+				"extra_edge_column_chance": "$general.number",
+				"waterlogged": "$general.boolean"
+			}
+		}
+	],
+	"$versioned_template.minecraft:multiplace_feature": [
+		{
+			"$if": "$format_version >= 1.16.220",
+			"$data": {
+				"description": {
+					"identifier": "$general.file_identifier"
+				},
+				"places_block": "$feature.general.block_reference",
+				"search_range": "$general.number",
+				"can_place_on_floor": "$general.boolean",
+				"can_place_on_ceiling": "$general.boolean",
+				"can_place_on_wall": "$general.boolean",
+				"chance_of_spreading": "$general.number",
+				"can_place_on": {
+					"$dynamic.list.next_index": "$feature.general.block_reference"
+				}
+			}
+		}
+	]
 }
