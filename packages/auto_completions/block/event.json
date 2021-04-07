@@ -56,7 +56,9 @@
 		"target": ["other", "self"],
 		"type": "$general.damage_type"
 	},
-	"decrement_stack": {},
+	"decrement_stack": {
+		"ignore_game_mode": "$general.boolean"
+	},
 	"die": {
 		"target": ["self", "other"]
 	},

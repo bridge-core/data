@@ -803,6 +803,24 @@
 		"priority": "$general.number",
 		"speed_multiplier": "$general.decimal"
 	},
+	"$versioned_template.minecraft:play_dead": [
+		{
+			"$if": "$format_version >= 1.16.220",
+			"$data": {
+				"priority": "$general.number",
+				"duration": "$general.number",
+				"force_below_health": "$general.number",
+				"random_start_chance": "$general.decimal",
+				"random_damage_range": {
+					"$dynamic.list.index_pair": "$general.number"
+				},
+				"damage_sources": {
+					"$dynamic.list.next_index": "$general.damage_type"
+				},
+				"apply_regeneration": "$general.boolean"
+			}
+		}
+	],
 	"minecraft:behavior.player_ride_tamed": {
 		"priority": "$general.number"
 	},

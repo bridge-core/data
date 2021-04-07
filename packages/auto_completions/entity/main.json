@@ -68,7 +68,9 @@
 				"$versioned_template.decrement_stack": [
 					{
 						"$if": "$format_version >= 1.16.100",
-						"$data": {}
+						"$data": {
+							"ignore_game_mode": "$general.boolean"
+						}
 					}
 				],
 				"$versioned_template.die": [

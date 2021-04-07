@@ -14,7 +14,9 @@
 		"angle_offset": "$general.number and $molang.embedded"
 	},
 	"swing": {},
-	"decrement_stack": {},
+	"decrement_stack": {
+		"ignore_game_mode": "$general.boolean"
+	},
 	"damage": {
 		"type": "$general.damage_type",
 		"amount": "$general.number",

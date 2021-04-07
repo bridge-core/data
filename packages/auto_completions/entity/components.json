@@ -292,6 +292,12 @@
 				"require_tame": "$general.boolean",
 				"require_full_health": "$general.boolean"
 			}
+		},
+		{
+			"$if": "$format_version >= 1.16.220",
+			"$data": {
+				"transform_to_item": "$general.item_identifier"
+			}
 		}
 	],
 	"$versioned_template.minecraft:bribeable": [
@@ -397,6 +403,14 @@
 	"minecraft:color2": {
 		"value": "$general.number"
 	},
+	"$versioned_template.minecraft:combat_regeneration": [
+		{
+			"$if": "$format_version >= 1.16.220",
+			"$data": {
+				"regeneration_duration": "$general.number"
+			}
+		}
+	],
 	"minecraft:custom_hit_test": {
 		"hitboxes": {
 			"$dynamic.list.next_index": {

@@ -181,5 +181,20 @@
 				}
 			}
 		}
-	}
+	},
+	"$versioned_template.minecraft:mountain_parameters": [
+		{
+			"$if": "$format_version >= 1.16.210",
+			"$data": {
+				"top_slide": {
+					"enabled": "$general.boolean"
+				},
+				"steep_material_adjustment": {
+					"material": "$general.block_identifier",
+					"north_slopes": "$general.boolean",
+					"east_slopes": "$general.boolean"
+				}
+			}
+		}
+	]
 }
