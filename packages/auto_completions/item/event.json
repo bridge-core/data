@@ -37,6 +37,7 @@
 	},
 	"sequence": {
 		"$dynamic.list.next_index": {
+			"condition": "$molang.embedded",
 			"$load": "$item.event"
 		}
 	},
