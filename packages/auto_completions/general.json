@@ -121,7 +121,8 @@
 			"1.16.100",
 			"1.16.200",
 			"1.16.210",
-			"1.16.220"
+			"1.16.220",
+			"1.17.0"
 		]
 	},
 	"translatable_text": {
@@ -556,7 +557,9 @@
 		"spawn_endermen",
 		"spawn_ghast",
 		"spawn_magma_cubes",
-		"spawn_many_magma_cubes"
+		"spawn_many_magma_cubes",
+		"overworld",
+		"overworld_generation"
 	],
 	"biome_name": [
 		"ice",

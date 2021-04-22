@@ -473,5 +473,55 @@
 				}
 			}
 		}
+	],
+	"$versioned_template.minecraft:geode_feature": [
+		{
+			"$if": "$format_version >= 1.16.220",
+			"$data": {
+				"description": {
+					"identifier": "$general.file_identifier"
+				},
+				"filler": "$feature.general.block_reference",
+				"inner_layer": "$feature.general.block_reference",
+				"alternate_inner_layer": "$feature.general.block_reference",
+				"middle_layer": "$feature.general.block_reference",
+				"outer_layer": "$feature.general.block_reference",
+				"inner_placements": {
+					"$dynamic.list.next_index": "$feature.general.block_reference"
+				},
+				"min_outer_wall_distance": "$general.number",
+				"max_outer_wall_distance": "$general.number",
+				"min_distribution_points": "$general.number",
+				"max_distribution_points": "$general.number",
+				"min_point_offset": "$general.number",
+				"max_point_offset": "$general.number",
+				"max_radius": "$general.number",
+				"crack_point_offset": "$general.number",
+				"generate_crack_chance": "$general.decimal",
+				"base_crack_size": "$general.number",
+				"noise_multiplier": "$general.decimal",
+				"use_potential_placements_chance": "$general.decimal",
+				"use_alternate_layer0_chance": "$general.deciaml",
+				"placements_require_layer0_alternate": "$general.boolean",
+				"invalid_blocks_threshold": "$general.number"
+			}
+		}
+	],
+	"$versioned_template.minecraft:multiface_feature": [
+		{
+			"$if": "$format_version >= 1.16.220",
+			"data": {
+				"description": {
+					"identifier": "$general.file_identifier"
+				},
+				"places_block": "$feature.general.block_reference",
+				"search_range": "$general.number",
+				"can_place_on_floor": "$general.boolean",
+				"can_place_on_ceiling": "$general.boolean",
+				"can_place_on_wall": "$general.boolean",
+				"chance_of_spreading": "$general.decimal",
+				"can_place_on": ["$general.block_identifier"]
+			}
+		}
 	]
 }
