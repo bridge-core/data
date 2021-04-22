@@ -376,7 +376,9 @@
 							"@import.value": "$general.block_identifier",
 							"tags": ["query.any_tag()", "query.all_tags()"]
 						},
-						"speed": "$general.number"
+						"speed": "$general.number",
+						"on_dig": "$item.general.event_definition",
+						"use_efficiency": "$general.boolean"
 					}
 				}
 			}
