@@ -556,7 +556,9 @@
 		"spawn_endermen",
 		"spawn_ghast",
 		"spawn_magma_cubes",
-		"spawn_many_magma_cubes"
+		"spawn_many_magma_cubes",
+		"overworld",
+		"overworld_generation"
 	],
 	"biome_name": [
 		"ice",
