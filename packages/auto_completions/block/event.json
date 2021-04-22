@@ -10,7 +10,8 @@
 	},
 	"sequence": {
 		"$dynamic.list.next_index": {
-			"$load": "$block.event"
+			"$load": "$block.event",
+			"condition": "$molang.embedded"
 		}
 	},
 	"transform_item": {
