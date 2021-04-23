@@ -1,182 +1,168 @@
 {
-    "distributions": [
-        "gaussian",
-        "uniform",
-        "inverse_gaussian",
-        "fixed_grid",
-        "jittered_grid"
-    ],
-    "early_outs": [
-        "none",
-        "first_failure",
-        "first_success"
-    ],
-    "coordinate_eval_orders": [
-        "xyz",
-        "zyx",
-        "yxz",
-        "xzy",
-        "zxy",
-        "yzx"
-    ],
-    "chance_information": {
-        "numerator": "$general.number",
-        "denominator": "$general.number"
-    },
-    "min-max_information": {
-        "min": "$general.number",
-        "max": "$general.number"
-    },
-    "range_information": {
-        "range_min": "$general.number",
-        "range_max": "$general.number"
-    },
-    "block_reference": {
-        "@import.value.block_id": "$general.block_identifier",
-        "name": "$general.block_identifier",
-        "states": "$_general.block_states"
-    },
-    "canopy_reference": {
-        "acacia_canopy": {
-            "canopy_size": "$general.number",
-            "leaf_block": "$feature.general.block_reference"
-        },
-        "canopy": {
-            "canopy_offset": "$feature.general.min-max_information",
-            "min_width": "$general.number",
-            "canopy_slope": {
-                "rise": "$general.number",
-                "run": "$general.number"
-            },
-            "variation_chance": {
-                "$dynamic.list.next_index": "$feature.general.chance_information"
-            },
-            "leaf_block": "$feature.general.block_reference",
-            "canopy_decoration": {
-                "decoration_chance": "$feature.general.chance_information",
-                "block_reference": "$feature.general.block_reference",
-                "num_steps": "$general.number",
-                "step_direction": [
-                    "down",
-                    "up",
-                    "out",
-                    "away"
-                ]
-            }
-        },
-        "fancy_canopy": {
-            "height": "$general.number",
-            "radius": "$general.number",
-            "leaf_block": "$feature.general.block_reference"
-        },
-        "mega_canopy": {
-            "canopy_height": "$general.number",
-            "core_width": "$general.number",
-            "base_radius": "$general.number",
-            "leaf_block": "$feature.general.block_reference"
-        },
-        "mega_pine_canopy": {
-            "canopy_height": "$general.number",
-            "core_width": "$general.number",
-            "base_radius": "$general.number",
-            "radius_step_modifier": "$general.decimal",
-            "leaf_block": "$feature.general.block_reference"
-        },
-        "pine_canopy": {
-            "canopy_height": "$feature.general.range_information",
-            "base_radius": "$general.number",
-            "leaf_block": "$feature.general.block_reference"
-        },
-        "roofed_canopy": {
-            "canopy_height": "$general.number",
-            "core_width": "$general.number",
-            "outer_radius": "$general.number",
-            "inner_radius": "$general.number",
-            "leaf_block": "$feature.general.block_reference"
-        },
-        "spruce_canopy": {
-            "lower_offset": "$feature.general.range_information",
-            "upper_offset": "$feature.general.range_information",
-            "max_radius": "$feature.general.range_information",
-            "leaf_block": "$feature.general.block_reference"
-        }
-    },
-    "acacia_branch_reference": {
-        "branch_length": "$feature.general.range_information",
-        "branch_position": "$feature.general.range_information",
-        "branch_chance": "$general.decimal",
-        "$load": "$feature.general.branch_canopy_refence"
-    },
-    "mega_branch_reference": {
-        "branch_length": "$general.number",
-        "branch_slope": "$general.decimal",
-        "branch_interval": "$feature.general.range_information",
-        "branch_altitude_factor": "$feature.general.min-max_information",
-        "$load": "$feature.general.branch_canopy_refence"
-    },
-    "branch_canopy_refence": {
-        "branch_canopy": {
-            "acacia_canopy": {
-                "canopy_size": "$general.number",
-                "simplify_canopy": "$general.boolean",
-                "leaf_block": "$feature.general.block_reference"
-            },
-            "canopy": {
-                "canopy_offset": {
-                    "min": "$general.number",
-                    "max": "$general.number"
-                },
-                "min_width": "$general.number",
-                "canopy_slope": {
-                    "rise": "$general.number",
-                    "run": "$general.number"
-                },
-                "variation_chance": {
-                    "$dynamic.list.next_index": "$feature.general.chance_information"
-                },
-                "leaf_block": "$feature.general.block_reference",
-                "canopy_decoration": {
-                    "decoration_chance": "$feature.general.chance_information",
-                    "decoration_block": "$feature.general.block_reference",
-                    "num_steps": "$general.number",
-                    "step_direction": [
-                        "down",
-                        "up",
-                        "out",
-                        "away"
-                    ]
-                }
-            },
-            "fancy_canopy": {
-                "height": "$general.number",
-                "radius": "$general.number",
-                "leaf_block": "$feature.general.block_reference"
-            },
-            "mega_canopy": {
-                "canopy_height": "$feature.general.range_information",
-                "core_width": "$general.number",
-                "base_radius": "$general.number",
-                "simplify_canopy": "$general.boolean",
-                "leaf_block": "$feature.general.block_reference"
-            },
-            "mega_pine_canopy": {
-                "canopy_height": "$general.number",
-                "core_width": "$general.number",
-                "base_radius": "$general.number",
-                "radius_step_modifier": "$general.decimal",
-                "leaf_block": "$feature.general.block_reference"
-            },
-            "pine_canopy": {
-                "canopy_height": "$general.number",
-                "base_radius": "$general.number",
-                "leaf_block": "$feature.general.block_reference"
-            },
-            "spruce_canopy": {
-                "lower_offset": "$general.number",
-                "upper_offset": "$general.number",
-                "max_radius": "$general.number",
-                "leaf_block": "$feature.general.block_reference"
-            }
-        }
-    }
+	"distributions": [
+		"gaussian",
+		"uniform",
+		"inverse_gaussian",
+		"fixed_grid",
+		"jittered_grid"
+	],
+	"early_outs": ["none", "first_failure", "first_success"],
+	"coordinate_eval_orders": ["xyz", "zyx", "yxz", "xzy", "zxy", "yzx"],
+	"chance_information": {
+		"numerator": "$general.number",
+		"denominator": "$general.number"
+	},
+
+	"min-max_information": {
+		"min": "$general.number",
+		"max": "$general.number"
+	},
+
+	"range_information": {
+		"range_min": "$general.number",
+		"range_max": "$general.number"
+	},
+
+	"block_reference": {
+		"@import.value.block_id": "$general.block_identifier",
+		"name": "$general.block_identifier",
+		"states": "$_general.block_states"
+	},
+
+	"canopy_reference": {
+		"acacia_canopy": {
+			"canopy_size": "$general.number",
+			"leaf_block": "$feature.general.block_reference"
+		},
+		"canopy": {
+			"canopy_offset": "$feature.general.min-max_information",
+			"min_width": "$general.number",
+			"canopy_slope": {
+				"rise": "$general.number",
+				"run": "$general.number"
+			},
+			"variation_chance": {
+				"$dynamic.list.next_index": "$feature.general.chance_information"
+			},
+			"leaf_block": "$feature.general.block_reference",
+			"canopy_decoration": {
+				"decoration_chance": "$feature.general.chance_information",
+				"block_reference": "$feature.general.block_reference",
+				"num_steps": "$general.number",
+				"step_direction": ["down", "up", "out", "away"]
+			}
+		},
+		"fancy_canopy": {
+			"height": "$general.number",
+			"radius": "$general.number",
+			"leaf_block": "$feature.general.block_reference"
+		},
+		"mega_canopy": {
+			"canopy_height": "$general.number",
+			"core_width": "$general.number",
+			"base_radius": "$general.number",
+			"leaf_block": "$feature.general.block_reference"
+		},
+		"mega_pine_canopy": {
+			"canopy_height": "$general.number",
+			"core_width": "$general.number",
+			"base_radius": "$general.number",
+			"radius_step_modifier": "$general.decimal",
+			"leaf_block": "$feature.general.block_reference"
+		},
+		"pine_canopy": {
+			"canopy_height": "$feature.general.range_information",
+			"base_radius": "$general.number",
+			"leaf_block": "$feature.general.block_reference"
+		},
+		"roofed_canopy": {
+			"canopy_height": "$general.number",
+			"core_width": "$general.number",
+			"outer_radius": "$general.number",
+			"inner_radius": "$general.number",
+			"leaf_block": "$feature.general.block_reference"
+		},
+		"spruce_canopy": {
+			"lower_offset": "$feature.general.range_information",
+			"upper_offset": "$feature.general.range_information",
+			"max_radius": "$feature.general.range_information",
+			"leaf_block": "$feature.general.block_reference"
+		}
+	},
+
+	"acacia_branch_reference": {
+		"branch_length": "$feature.general.range_information",
+		"branch_position": "$feature.general.range_information",
+		"branch_chance": "$general.decimal",
+		"$load": "$feature.general.branch_canopy_refence"
+	},
+
+	"mega_branch_reference": {
+		"branch_length": "$general.number",
+		"branch_slope": "$general.decimal",
+		"branch_interval": "$feature.general.range_information",
+		"branch_altitude_factor": "$feature.general.min-max_information",
+		"$load": "$feature.general.branch_canopy_refence"
+	},
+
+	"branch_canopy_refence": {
+		"branch_canopy": {
+			"acacia_canopy": {
+				"canopy_size": "$general.number",
+				"simplify_canopy": "$general.boolean",
+				"leaf_block": "$feature.general.block_reference"
+			},
+			"canopy": {
+				"canopy_offset": {
+					"min": "$general.number",
+					"max": "$general.number"
+				},
+				"min_width": "$general.number",
+				"canopy_slope": {
+					"rise": "$general.number",
+					"run": "$general.number"
+				},
+				"variation_chance": {
+					"$dynamic.list.next_index": "$feature.general.chance_information"
+				},
+				"leaf_block": "$feature.general.block_reference",
+				"canopy_decoration": {
+					"decoration_chance": "$feature.general.chance_information",
+					"decoration_block": "$feature.general.block_reference",
+					"num_steps": "$general.number",
+					"step_direction": ["down", "up", "out", "away"]
+				}
+			},
+			"fancy_canopy": {
+				"height": "$general.number",
+				"radius": "$general.number",
+				"leaf_block": "$feature.general.block_reference"
+			},
+			"mega_canopy": {
+				"canopy_height": "$feature.general.range_information",
+				"core_width": "$general.number",
+				"base_radius": "$general.number",
+				"simplify_canopy": "$general.boolean",
+				"leaf_block": "$feature.general.block_reference"
+			},
+			"mega_pine_canopy": {
+				"canopy_height": "$general.number",
+				"core_width": "$general.number",
+				"base_radius": "$general.number",
+				"radius_step_modifier": "$general.decimal",
+				"leaf_block": "$feature.general.block_reference"
+			},
+			"pine_canopy": {
+				"canopy_height": "$general.number",
+				"base_radius": "$general.number",
+				"leaf_block": "$feature.general.block_reference"
+			},
+			"spruce_canopy": {
+				"lower_offset": "$general.number",
+				"upper_offset": "$general.number",
+				"max_radius": "$general.number",
+				"leaf_block": "$feature.general.block_reference"
+			}
+		}
+	}
 }

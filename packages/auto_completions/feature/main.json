@@ -123,14 +123,7 @@
 				"$dynamic.list.index_triple": "$general.number"
 			}
 		},
-		"search_axis": [
-			"-x",
-			"+x",
-			"-y",
-			"+y",
-			"-z",
-			"+z"
-		],
+		"search_axis": ["-x", "+x", "-y", "+y", "-z", "+z"],
 		"required_successes": "$general.number"
 	},
 	"minecraft:single_block_feature": {
@@ -141,12 +134,7 @@
 		"enforce_survivability_rules": "$general.boolean",
 		"enforce_placement_rules": "$general.boolean",
 		"may_attach_to": {
-			"min_sides_must_attach": [
-				"1",
-				"2",
-				"3",
-				"4"
-			],
+			"min_sides_must_attach": ["1", "2", "3", "4"],
 			"auto_rotate": "$general.boolean",
 			"top": {
 				"$dynamic.list.next_index": "$general.block_identifier"
@@ -205,13 +193,7 @@
 			"15",
 			"16"
 		],
-		"facing_direction": [
-			"north",
-			"south",
-			"east",
-			"west",
-			"random"
-		],
+		"facing_direction": ["north", "south", "east", "west", "random"],
 		"constraints": {
 			"grounded": {},
 			"unburied": {},
@@ -276,12 +258,7 @@
 				"decoration_chance": "$feature.general.chance_information",
 				"decoration_block": "$feature.general.block_reference",
 				"num_steps": "$general.number",
-				"step_direction": [
-					"down",
-					"up",
-					"out",
-					"away"
-				]
+				"step_direction": ["down", "up", "out", "away"]
 			},
 			"branches": "$feature.general.acacia_branch_reference"
 		},
@@ -295,12 +272,7 @@
 				"decoration_chance": "$feature.general.chance_information",
 				"decoration_block": "$feature.general.block_reference",
 				"num_steps": "$general.number",
-				"step_direction": [
-					"down",
-					"up",
-					"out",
-					"away"
-				]
+				"step_direction": ["down", "up", "out", "away"]
 			}
 		},
 		"fancy_trunk": {
@@ -332,12 +304,7 @@
 				"decoration_chance": "$feature.general.chance_information",
 				"decoration_block": "$feature.general.block_reference",
 				"num_steps": "$general.number",
-				"step_direction": [
-					"down",
-					"up",
-					"out",
-					"away"
-				]
+				"step_direction": ["down", "up", "out", "away"]
 			},
 			"branches": "$feature.general.mega_branch_reference"
 		},
@@ -355,12 +322,7 @@
 				"decoration_chance": "$feature.general.chance_information",
 				"decoration_block": "$feature.general.block_reference",
 				"num_steps": "$general.number",
-				"step_direction": [
-					"down",
-					"up",
-					"out",
-					"away"
-				]
+				"step_direction": ["down", "up", "out", "away"]
 			}
 		}
 	},
@@ -442,10 +404,7 @@
 					}
 				},
 				"allow_water": "$general.boolean",
-				"growth_direction": [
-					"UP",
-					"DOWN"
-				],
+				"growth_direction": ["UP", "DOWN"],
 				"age": {
 					"@meta": {
 						"is_molang": true
@@ -481,10 +440,7 @@
 					"@import.value.feature_ref": "$dynamic.biome.feature_references"
 				},
 				"vertical_search_range": "$general.number",
-				"surface": [
-					"ceiling",
-					"floor"
-				]
+				"surface": ["ceiling", "floor"]
 			}
 		}
 	],
@@ -502,10 +458,7 @@
 					},
 					"@import.value.feature_ref": "$dynamic.biome.feature_references"
 				},
-				"surface": [
-					"floor",
-					"ceiling"
-				],
+				"surface": ["floor", "ceiling"],
 				"depth": {
 					"@import.value": "$general.number",
 					"range_min": "$general.number",
