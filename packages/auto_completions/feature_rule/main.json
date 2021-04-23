@@ -10,7 +10,11 @@
         },
         "conditions": {
             "placement_pass": "$feature_rule.general.passes",
-            "minecraft:biome_filter": "$spawn_rule.components.minecraft:biome_filter"
+            "minecraft:biome_filter": {
+                "$dynamic.list.next_index": {
+                    "$load": "$spawn_rule.components.minecraft:biome_filter"
+                }
+            }
         },
         "distribution": {
             "iterations": "$general.number",
