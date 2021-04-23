@@ -7,7 +7,9 @@
 		"early_out": "$feature.general.early_outs",
 		"features": {
 			"$dynamic.list.next_index": {
-				"@meta": { "is_value": true },
+				"@meta": {
+					"is_value": true
+				},
 				"@import.value.feature_ref": "$dynamic.biome.feature_references"
 			}
 		}
@@ -18,7 +20,9 @@
 		},
 		"features": {
 			"$dynamic.list.next_index": {
-				"@meta": { "is_value": true },
+				"@meta": {
+					"is_value": true
+				},
 				"@import.value.feature_ref": "$dynamic.biome.feature_references"
 			}
 		}
@@ -63,15 +67,17 @@
 		"project_input_to_floor": "$general.boolean",
 		"coordinate_eval_order": "$feature.general.coordinate_eval_orders",
 		"scatter_chance": {
-			"@meta": { "is_molang": true },
+			"@meta": {
+				"is_molang": true
+			},
 			"@import.value.molang": "$molang.general.boolean and ('query.' + $molang.general.query)",
-
 			"$load": "$feature.general.chance_information"
 		},
 		"x": {
-			"@meta": { "is_molang": true },
+			"@meta": {
+				"is_molang": true
+			},
 			"@import.value.molang": "$molang.general.boolean and ('query.' + $molang.general.query)",
-
 			"extent": {
 				"$dynamic.list.index_pair": {
 					"@import.value": "$general.number and ('query.' + $molang.general.query)",
@@ -92,7 +98,9 @@
 		"y": "$feature.main.minecraft:scatter_feature.x",
 		"places_feature": {
 			"$dynamic.list.next_index": {
-				"@meta": { "is_value": true },
+				"@meta": {
+					"is_value": true
+				},
 				"@import.value.feature_ref": "$dynamic.biome.feature_references"
 			}
 		}
@@ -102,7 +110,9 @@
 			"identifier": "$general.file_identifier"
 		},
 		"places_features": {
-			"@meta": { "is_value": true },
+			"@meta": {
+				"is_value": true
+			},
 			"@import.value.feature_ref": "$dynamic.biome.feature_references"
 		},
 		"search_volume": {
@@ -113,7 +123,14 @@
 				"$dynamic.list.index_triple": "$general.number"
 			}
 		},
-		"search_axis": ["-x", "+x", "-y", "+y", "-z", "+z"],
+		"search_axis": [
+			"-x",
+			"+x",
+			"-y",
+			"+y",
+			"-z",
+			"+z"
+		],
 		"required_successes": "$general.number"
 	},
 	"minecraft:single_block_feature": {
@@ -124,7 +141,12 @@
 		"enforce_survivability_rules": "$general.boolean",
 		"enforce_placement_rules": "$general.boolean",
 		"may_attach_to": {
-			"min_sides_must_attach": ["1", "2", "3", "4"],
+			"min_sides_must_attach": [
+				"1",
+				"2",
+				"3",
+				"4"
+			],
 			"auto_rotate": "$general.boolean",
 			"top": {
 				"$dynamic.list.next_index": "$general.block_identifier"
@@ -159,7 +181,11 @@
 		"description": {
 			"identifier": "$general.file_identifier"
 		},
-		"structure_name": { "@meta": { "is_value": true } },
+		"structure_name": {
+			"@meta": {
+				"is_value": true
+			}
+		},
 		"adjustment_radius": [
 			"0",
 			"1",
@@ -179,7 +205,13 @@
 			"15",
 			"16"
 		],
-		"facing_direction": ["north", "south", "east", "west", "random"],
+		"facing_direction": [
+			"north",
+			"south",
+			"east",
+			"west",
+			"random"
+		],
 		"constraints": {
 			"grounded": {},
 			"unburied": {},
@@ -225,40 +257,50 @@
 		"may_replace": {
 			"$dynamic.list.next_index": "$feature.general.block_reference"
 		},
-
-		"$load": "$feature.general.branches_reference",
-
+		"$load": "$feature.general.canopy_reference",
 		"acacia_trunk": {
 			"trunk_height": {
-				"range_min": "$general.number",
-				"range_max": "$general.number"
+				"base": "$general.number",
+				"intervals": {
+					"$dynamic.list.next_index": "$general.number"
+				}
 			},
 			"trunk_width": "$general.number",
 			"trunk_lean": {
 				"allow_diagonal_growth": "$general.boolean",
-				"lean_height": "$general.number",
-				"lean_steps": "$general.number"
+				"lean_height": "$feature.general.range_information",
+				"lean_steps": "$feature.general.range_information"
 			},
 			"trunk_block": "$feature.general.block_reference",
 			"trunk_decoration": {
 				"decoration_chance": "$feature.general.chance_information",
-				"block_reference": "$feature.general.block_reference",
+				"decoration_block": "$feature.general.block_reference",
 				"num_steps": "$general.number",
-				"step_direction": ["down", "up", "out", "away"]
+				"step_direction": [
+					"down",
+					"up",
+					"out",
+					"away"
+				]
 			},
-			"branches": "$feature.general.branches_reference"
+			"branches": "$feature.general.acacia_branch_reference"
 		},
 		"fallen_trunk": {
 			"stump_height": "$general.number",
 			"height_modifier": "$general.number",
-			"log_length": "$general.number",
+			"log_length": "$feature.general.range_information",
 			"trunk_block": "$feature.general.block_reference",
 			"log_decoration_feature": "$dynamic.biome.feature_references",
 			"trunk_decoration": {
 				"decoration_chance": "$feature.general.chance_information",
-				"block_reference": "$feature.general.block_reference",
+				"decoration_block": "$feature.general.block_reference",
 				"num_steps": "$general.number",
-				"step_direction": ["down", "up", "out", "away"]
+				"step_direction": [
+					"down",
+					"up",
+					"out",
+					"away"
+				]
 			}
 		},
 		"fancy_trunk": {
@@ -277,7 +319,6 @@
 				"min_altitude_factor": "$general.decimal"
 			}
 		},
-
 		"mega_trunk": {
 			"trunk_height": {
 				"base": "$general.number",
@@ -289,30 +330,37 @@
 			"trunk_block": "$feature.general.block_reference",
 			"trunk_decoration": {
 				"decoration_chance": "$feature.general.chance_information",
-				"block_reference": "$feature.general.block_reference",
+				"decoration_block": "$feature.general.block_reference",
 				"num_steps": "$general.number",
-				"step_direction": ["down", "up", "out", "away"]
+				"step_direction": [
+					"down",
+					"up",
+					"out",
+					"away"
+				]
 			},
-			"branches": "$feature.general.branches_reference"
+			"branches": "$feature.general.mega_branch_reference"
 		},
-
 		"trunk": {
 			"can_be_submerged": {
 				"@import.value": "$general.boolean",
 				"max_depth": "$general.number"
 			},
-			"base_block": "$feature.general.block_reference",
 			"trunk_height": {
 				"range_min": "$general.number",
 				"range_max": "$general.number"
 			},
-			"trunk_width": "$general.number",
 			"trunk_block": "$feature.general.block_reference",
 			"trunk_decoration": {
 				"decoration_chance": "$feature.general.chance_information",
-				"block_reference": "$feature.general.block_reference",
+				"decoration_block": "$feature.general.block_reference",
 				"num_steps": "$general.number",
-				"step_direction": ["down", "up", "out", "away"]
+				"step_direction": [
+					"down",
+					"up",
+					"out",
+					"away"
+				]
 			}
 		}
 	},
@@ -324,11 +372,15 @@
 		"features": {
 			"$dynamic.list.next_index": {
 				"0": {
-					"@meta": { "is_value": true },
+					"@meta": {
+						"is_value": true
+					},
 					"@import.value.feature_ref": "$dynamic.biome.feature_references"
 				},
 				"1": {
-					"@meta": { "is_value": true },
+					"@meta": {
+						"is_value": true
+					},
 					"@import.value.weight": "$general.number"
 				}
 			}
@@ -381,16 +433,23 @@
 				"height_distribution": {
 					"$dynamic.list.next_index": {
 						"0": {
-							"@meta": { "is_molang": true },
+							"@meta": {
+								"is_molang": true
+							},
 							"@import.value.molang": "$molang.general.boolean and ('query.' + $molang.general.query)"
 						},
 						"1": "$general.number"
 					}
 				},
 				"allow_water": "$general.boolean",
-				"growth_direction": ["UP", "DOWN"],
+				"growth_direction": [
+					"UP",
+					"DOWN"
+				],
 				"age": {
-					"@meta": { "is_molang": true },
+					"@meta": {
+						"is_molang": true
+					},
 					"@import.value.molang": "$molang.general.boolean and ('query.' + $molang.general.query)"
 				},
 				"body_blocks": {
@@ -416,11 +475,16 @@
 					"identifier": "$general.file_identifier"
 				},
 				"feature_to_snap": {
-					"@meta": { "is_value": true },
+					"@meta": {
+						"is_value": true
+					},
 					"@import.value.feature_ref": "$dynamic.biome.feature_references"
 				},
 				"vertical_search_range": "$general.number",
-				"surface": ["ceiling", "floor"]
+				"surface": [
+					"ceiling",
+					"floor"
+				]
 			}
 		}
 	],
@@ -433,10 +497,15 @@
 				},
 				"ground_block": "$feature.general.block_reference",
 				"vegetation_feature": {
-					"@meta": { "is_value": true },
+					"@meta": {
+						"is_value": true
+					},
 					"@import.value.feature_ref": "$dynamic.biome.feature_references"
 				},
-				"surface": ["floor", "ceiling"],
+				"surface": [
+					"floor",
+					"ceiling"
+				],
 				"depth": {
 					"@import.value": "$general.number",
 					"range_min": "$general.number",
@@ -506,5 +575,5 @@
 				"invalid_blocks_threshold": "$general.number"
 			}
 		}
-	] 
+	]
 }
