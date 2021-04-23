@@ -528,5 +528,22 @@
 				"invalid_blocks_threshold": "$general.number"
 			}
 		}
+	],
+	"$versioned_template.minecraft:multiface_feature": [
+		{
+			"$if": "$format_version >= 1.16.220",
+			"data": {
+				"description": {
+					"identifier": "$general.file_identifier"
+				},
+				"places_block": "$feature.general.block_reference",
+				"search_range": "$general.number",
+				"can_place_on_floor": "$general.boolean",
+				"can_place_on_ceiling": "$general.boolean",
+				"can_place_on_wall": "$general.boolean",
+				"chance_of_spreading": "$general.decimal",
+				"can_place_on": ["$general.block_identifier"]
+			}
+		}
 	]
 }
