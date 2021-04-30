@@ -477,25 +477,6 @@
 			}
 		}
 	],
-	"$versioned_template.minecraft:multiplace_feature": [
-		{
-			"$if": "$format_version >= 1.16.220",
-			"$data": {
-				"description": {
-					"identifier": "$general.file_identifier"
-				},
-				"places_block": "$feature.general.block_reference",
-				"search_range": "$general.number",
-				"can_place_on_floor": "$general.boolean",
-				"can_place_on_ceiling": "$general.boolean",
-				"can_place_on_wall": "$general.boolean",
-				"chance_of_spreading": "$general.number",
-				"can_place_on": {
-					"$dynamic.list.next_index": "$feature.general.block_reference"
-				}
-			}
-		}
-	],
 	"$versioned_template.minecraft:geode_feature": [
 		{
 			"$if": "$format_version >= 1.16.220",
@@ -541,8 +522,61 @@
 				"can_place_on_floor": "$general.boolean",
 				"can_place_on_ceiling": "$general.boolean",
 				"can_place_on_wall": "$general.boolean",
-				"chance_of_spreading": "$general.decimal",
-				"can_place_on": ["$general.block_identifier"]
+				"chance_of_spreading": "$general.number",
+				"can_place_on": {
+					"$dynamic.list.next_index": "$feature.general.block_reference"
+				}
+			}
+		}
+	],
+	"$versioned_template.minecraft:beards_and_shavers": [
+		{
+			"$if": "$format_version >= 1.17.0",
+			"$data": {
+				"description": {
+					"identifier": "$general.file_identifier"
+				},
+				"places_feature": {
+					"@meta": {
+						"is_value": true
+					},
+					"@import.value.feature_ref": "$dynamic.biome.feature_references"
+				},
+				"bounding_box_min": {
+					"$dynamic.list.index_triple": "$general.number"
+				},
+				"bounding_box_max": {
+					"$dynamic.list.index_triple": "$general.number"
+				},
+				"y_delta": "$general.number",
+				"surface_block_type": "$feature.general.block_reference",
+				"subsurface_block_type": "$feature.general.block_reference",
+				"beard_raggedness_min": "$general.number",
+				"beard_raggedness_max": "$general.number"
+			}
+		}
+	],
+	"$versioned_template.minecraft:rect_layout": [
+		{
+			"$if": "$format_version >= 1.17.0",
+			"$data": {
+				"description": {
+					"identifier": "$general.file_identifier"
+				},
+				"ratio_of_empty_space": "$general.number",
+				"feature_areas": {
+					"$dynamic.list.next_index": {
+						"feature": {
+							"@meta": {
+								"is_value": true
+							},
+							"@import.value.feature_ref": "$dynamic.biome.feature_references"
+						},
+						"area_dimensions": {
+							"$dynamic.list.index_pair": "$general.number"
+						}
+					}
+				}
 			}
 		}
 	]

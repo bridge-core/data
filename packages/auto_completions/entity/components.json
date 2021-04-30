@@ -467,6 +467,18 @@
 		"min_range_inactivity_timer": "$general.number",
 		"min_range_random_chance": "$general.number"
 	},
+	"$versioned_template.minecraft:drying_out_timer": [
+		{
+			"$if": "$format_version >= 1.17.0",
+			"$data": {
+				"dried_out_event": "$entity.general.event_definition",
+				"recover_after_dried_out_event": "$entity.general.event_definition",
+				"stopped_drying_out_event": "$entity.general.event_definition",
+				"total_time": "$general.number",
+				"water_bottle_refill_time": "$general.number"
+			}
+		}
+	],
 	"minecraft:dweller": {
 		"dwelling_type": ["village"],
 		"dweller_role": ["hostile", "inhabitant", "defender"],
