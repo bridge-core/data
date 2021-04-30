@@ -192,7 +192,9 @@
 				"steep_material_adjustment": {
 					"material": "$general.block_identifier",
 					"north_slopes": "$general.boolean",
-					"east_slopes": "$general.boolean"
+					"east_slopes": "$general.boolean",
+					"south_slopes": "$general.boolean",
+					"west_slopes": "$general.boolean"
 				}
 			}
 		}

@@ -150,7 +150,7 @@
 		"weather",
 		"weather_at_position"
 	],
-	"filters_beta": [],
+	"filters_beta": ["in_contact_with_water"],
 	"filter_targets": {
 		"@meta": {
 			"validate": "entity/filterTarget.js"
