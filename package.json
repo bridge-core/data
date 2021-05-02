@@ -1,6 +1,6 @@
 {
 	"name": "bridge-data",
-	"version": "1.1.30",
+	"version": "1.1.31",
 	"description": "Provide data for the bridge. editor",
 	"main": "dist/auto-completions.js",
 	"scripts": {
