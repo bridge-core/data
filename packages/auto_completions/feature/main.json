@@ -513,7 +513,7 @@
 	"$versioned_template.minecraft:multiface_feature": [
 		{
 			"$if": "$format_version >= 1.16.220",
-			"data": {
+			"$data": {
 				"description": {
 					"identifier": "$general.file_identifier"
 				},
