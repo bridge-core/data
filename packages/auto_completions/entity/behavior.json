@@ -940,12 +940,10 @@
 		{
 			"$if": "$format_version >= 1.16.0",
 			"$data": {
-				"minecraft:behavior.rise_to_liquid_level": {
-					"priority": "$general.number",
-					"liquid_y_offset": "$general.decimal",
-					"rise_delta": "$general.decimal",
-					"sink_delta": "$general.decimal"
-				}
+				"priority": "$general.number",
+				"liquid_y_offset": "$general.decimal",
+				"rise_delta": "$general.decimal",
+				"sink_delta": "$general.decimal"
 			}
 		}
 	],
