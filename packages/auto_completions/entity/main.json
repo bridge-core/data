@@ -28,12 +28,61 @@
 						"@import.value.refs": "$dynamic.entity.animation_references"
 					}
 				}
-			}
+			},
+			"$versioned_template.aliases": [
+				{
+					"$if": "$format_version >= 1.17.0",
+					"$data": {
+						"$placeholder": {
+							"$placeholder": {
+								"@meta": {
+									"is_value": true
+								}
+							}
+						}
+					}
+				}
+			],
+			"$versioned_template.properties": [
+				{
+					"$if": "$format_version >= 1.17.0",
+					"$data": {
+						"$placeholder": {
+							"values": {
+								"$dynamic.list.next_index": {
+									"@meta": {
+										"is_value": true
+									}
+								}
+							},
+							"min": "$general.number",
+							"max": "$general.number",
+							"default": {
+								"@meta": {
+									"is_value": true
+								}
+							},
+							"client_sync": "$general.boolean"
+						}
+					}
+				}
+			]
 		},
 		"component_groups": {
 			"$placeholder": "$entity.general.components"
 		},
 		"components": "$entity.general.components",
+		"$versioned_template.permutations": [
+			{
+				"$if": "$format_version >= 1.17.0",
+				"$data": {
+					"$dynamic.list.next_index": {
+						"condition": "$molang.embedded",
+						"components": "$entity.general.components"
+					}
+				}
+			}
+		],
 		"events": {
 			"$asObject": "$entity.general.built_in_event",
 			"$placeholder": {
@@ -193,6 +242,18 @@
 						"$data": {
 							"commands": {
 								"$dynamic.list.next_index": "$function.embedded"
+							}
+						}
+					}
+				],
+				"$versioned_template.set_actor_property": [
+					{
+						"$if": "$format_version >= 1.17.0",
+						"$data": {
+							"$placeholder": {
+								"@meta": {
+									"is_value": true
+								}
 							}
 						}
 					}
