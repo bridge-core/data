@@ -320,7 +320,7 @@
 				"repair_items": {
 					"$dynamic.list.next_index": {
 						"items": {
-							"$dynamic.list.next_index": "$general.item_identifier"
+							"$dynamic.list.next_index": "$general.block_identifier and $general.item_identifier"
 						},
 						"repair_amount": "$general.number and $molang.embedded"
 					}
