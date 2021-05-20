@@ -41,7 +41,7 @@
 					"$dynamic_template": {
 						"$key": "$dynamic.children.type",
 						"item": {
-							"name": "$general.item_identifier",
+							"name": "$general.block_identifier and $general.item_identifier",
 							"weight": "$general.number",
 							"functions": "$loot_table.functions",
 							"pools": "$loot_table.main.pools"
