@@ -446,7 +446,7 @@
 	],
 	"$versioned_template.minecraft:vegetation_patch_feature": [
 		{
-			"$if": "$format_version >= 1.16.220",
+			"$if": "$format_version >= 1.17.0",
 			"$data": {
 				"replaceable_blocks": {
 					"$dynamic.list.next_index": "$feature.general.block_reference"
@@ -479,7 +479,7 @@
 	],
 	"$versioned_template.minecraft:geode_feature": [
 		{
-			"$if": "$format_version >= 1.16.220",
+			"$if": "$format_version >= 1.17.0",
 			"$data": {
 				"description": {
 					"identifier": "$general.file_identifier"
@@ -512,7 +512,7 @@
 	],
 	"$versioned_template.minecraft:multiface_feature": [
 		{
-			"$if": "$format_version >= 1.16.220",
+			"$if": "$format_version >= 1.17.0",
 			"$data": {
 				"description": {
 					"identifier": "$general.file_identifier"

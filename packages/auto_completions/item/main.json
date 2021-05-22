@@ -1,5 +1,17 @@
 {
-	"format_version": "$general.format_version",
+	"format_version": {
+		"@import.value": "$general.format_version",
+		"@meta": {
+			"is_value": true,
+			"validate": {
+				"confirm": "Bridge.Version.compare(Bridge.Node.data, '1.16.100', '>')",
+				"then": {
+					"show": true,
+					"message": "Format version 1.16.200+ for items may produce unexpected results; use 1.16.100 instead"
+				}
+			}
+		}
+	},
 	"minecraft:item": {
 		"description": {
 			"identifier": "$general.file_identifier and $general.item_identifier",

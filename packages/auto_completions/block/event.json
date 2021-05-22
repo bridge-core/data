@@ -54,7 +54,7 @@
 	},
 	"damage": {
 		"amount": "$general.number",
-		"target": ["other", "self"],
+		"target": ["item", "other", "self"],
 		"type": "$general.damage_type"
 	},
 	"decrement_stack": {
