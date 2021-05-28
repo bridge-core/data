@@ -6,6 +6,7 @@
 			"validate": {
 				"confirm": "['1.16.200', '1.16.210', '1.16.220'].includes(Bridge.Node.data)",
 				"then": {
+					"is_warning": true,
 					"show": true,
 					"message": "This Format Version for items may produce unexpected results; use 1.16.100 instead, or if you are in beta use 1.17.0"
 				}
