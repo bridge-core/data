@@ -192,7 +192,9 @@
 		"scoreboard",
 		"self",
 		"target",
-		"time_of_day"
+		"time_of_day",
+		"show_bottom",
+		"death_time"
 	],
 	"world_gen_query": ["heightmap", "above_top_solid"],
 	"variable": ["worldx", "worldz", "attack_time"],
@@ -225,7 +227,8 @@
 		"asin",
 		"pi",
 		"random_integer",
-		"hermite_blend"
+		"hermite_blend",
+		"min_angle"
 	],
 	"operator": [
 		"+",
