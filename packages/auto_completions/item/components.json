@@ -1,51 +1,10 @@
 {
-	"@meta": {
-		"expand_path_exceptions": [
-			"minecraft:bucket",
-			"minecraft:bed",
-			"minecraft:coal",
-			"minecraft:fire_charge",
-			"minecraft:fishing_rod",
-			"minecraft:flint_and_steel",
-			"minecraft:bottle",
-			"minecraft:lead",
-			"minecraft:name_tag",
-			"saddle",
-			"minecraft:shears",
-			"minecarft:skull",
-			"minecraft:mob_placer"
-		]
-	},
 	"minecraft:use_duration": "$general.number",
 	"minecraft:max_stack_size": "$general.number",
 	"minecraft:max_damage": "$general.number",
 	"minecraft:hand_equipped": "$general.boolean",
 	"minecraft:stacked_by_data": "$general.boolean",
 	"minecraft:foil": "$general.boolean",
-	"$versioned_template.minecraft:bucket": [
-		{
-			"$if": "$format_version >= 1.17.0",
-			"$data": {}
-		}
-	],
-	"$versioned_template.minecraft:bed": [
-		{
-			"$if": "$format_version >= 1.17.0",
-			"$data": {}
-		}
-	],
-	"$versioned_template.minecraft:frame_count": [
-		{
-			"$if": "$format_version >= 1.17.0",
-			"$data": "$general.number"
-		}
-	],
-	"$versioned_template.minecraft:animates_in_toolbar": [
-		{
-			"$if": "$format_version >= 1.17.0",
-			"$data": "$general.boolean"
-		}
-	],
 	"$versioned_template.minecraft:ignores_permission": [
 		{
 			"$if": "$format_version >= 1.16.100",
@@ -78,52 +37,10 @@
 			}
 		}
 	],
-	"$versioned_template.minecraft:requires_interact": [
-		{
-			"$if": "$format_version >= 1.17.0",
-			"$data": "$general.boolean"
-		}
-	],
-	"$versioned_template.minecraft:fire_charge": [
-		{
-			"$if": "$format_version >= 1.17.0",
-			"$data": {}
-		}
-	],
 	"$versioned_template.minecraft:mirrored_art": [
 		{
 			"$if": "$format_version >= 1.16.100",
 			"$data": "$general.boolean"
-		}
-	],
-	"$versioned_template.minecraft:fishing_rod": [
-		{
-			"$if": "$format_version >= 1.17.0",
-			"$data": {}
-		}
-	],
-	"$versioned_template.minecraft:flint_and_steel": [
-		{
-			"$if": "$format_version >= 1.17.0",
-			"$data": {}
-		}
-	],
-	"$versioned_template.minecraft:bottle": [
-		{
-			"$if": "$format_version >= 1.17.0",
-			"$data": {}
-		}
-	],
-	"$versioned_template.minecraft:lead": [
-		{
-			"$if": "$format_version >= 1.17.0",
-			"$data": {}
-		}
-	],
-	"$versioned_template.minecraft:name_tag": [
-		{
-			"$if": "$format_version >= 1.17.0",
-			"$data": {}
 		}
 	],
 	"$versioned_template.minecraft:explodable": [
@@ -136,30 +53,6 @@
 		{
 			"$if": "$format_version >= 1.16.100",
 			"$data": "$general.boolean"
-		}
-	],
-	"$versioned_template.saddle": [
-		{
-			"$if": "$format_version >= 1.17.0",
-			"$data": {}
-		}
-	],
-	"$versioned_template.minecraft:shears": [
-		{
-			"$if": "$format_version >= 1.17.0",
-			"$data": {}
-		}
-	],
-	"$versioned_template.minecraft:skull": [
-		{
-			"$if": "$format_version >= 1.17.0",
-			"$data": {}
-		}
-	],
-	"$versioned_template.minecraft:mob_placer": [
-		{
-			"$if": "$format_version >= 1.17.0",
-			"$data": {}
 		}
 	],
 	"$versioned_template.minecraft:liquid_clipped": [
@@ -175,23 +68,6 @@
 		}
 	],
 
-	"$versioned_template.minecraft:door": [
-		{
-			"$if": "$format_version >= 1.17.0",
-			"$data": {
-				"material": ["metal", "wood"],
-				"type": "$item.general.door_types"
-			}
-		}
-	],
-	"$versioned_template.minecraft:sign": [
-		{
-			"$if": "$format_version >= 1.17.0",
-			"$data": {
-				"type": "$_general.block_states.wood_type"
-			}
-		}
-	],
 	"$versioned_template.minecraft:projectile": [
 		{
 			"$if": "$format_version >= 1.16.100",
@@ -411,27 +287,11 @@
 			}
 		}
 	],
-	"$versioned_template.minecraft:map": [
-		{
-			"$if": "$format_version >= 1.17.0",
-			"$data": {
-				"empty": "$general.boolean"
-			}
-		}
-	],
 	"$versioned_template.minecraft:potion": [
 		{
 			"$if": "$format_version >= 1.16.100",
 			"$data": {
 				"type": "$item.general.potion_types"
-			}
-		}
-	],
-	"$versioned_template.minecraft:hanging_entity": [
-		{
-			"$if": "$format_version >= 1.17.0",
-			"$data": {
-				"actor_type": "$general.number"
 			}
 		}
 	],
