@@ -33,7 +33,20 @@
 		"target": ["holder"]
 	},
 	"transform_item": {
-		"transform": "$general.item_identifier"
+		"transform": {
+			"@import.value": "$general.item_identifier",
+			"@meta": {
+				"is_value": true,
+				"validate": {
+					"confirm": "true",
+					"then": {
+						"is_warning": true,
+						"show": true,
+						"message": "'transform_item' may crash the software when used; removing it is recommended"
+					}
+				}
+			}
+		}
 	},
 	"sequence": {
 		"$dynamic.list.next_index": {
