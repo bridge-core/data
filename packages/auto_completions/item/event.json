@@ -42,7 +42,7 @@
 					"then": {
 						"is_warning": true,
 						"show": true,
-						"message": "'transform_item' may crash the software when used; removing it is recommended"
+						"message": "'transform_item' may crash Minecraft when used; removing it is recommended"
 					}
 				}
 			}
