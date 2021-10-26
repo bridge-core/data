@@ -185,7 +185,7 @@
 		},
 		"@import.value.family": "$dynamic.cache.entity.families and $entity.general.vanilla_families"
 	},
-	"vanilla_families": "vanilla_families": [
+	"vanilla_families": [
         "armor_stand",
         "inanimate",
         "mob",
