@@ -125,9 +125,6 @@
 		},
 		"attack_cooldown_complete_event": "$entity.general.event_definition"
 	},
-	"minecraft:attack_damage": {
-		"value": "$general.number"
-	},
 	"minecraft:balloonable": {
 		"mass": "$general.decimal"
 	},
