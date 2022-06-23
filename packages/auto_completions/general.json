@@ -482,7 +482,8 @@
 		"soul_speed",
 		"thorns",
 		"unbreaking",
-		"vanishing"
+		"vanishing",
+		"swift_sneak"
 	],
 	"gamerule": [
 		"alwaysday",
