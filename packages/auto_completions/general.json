@@ -340,7 +340,9 @@
 		"shipwreck",
 		"stronghold",
 		"temple",
-		"village"
+		"village",
+		"ancientcity",
+		"bastionremnant"
 	],
 	"particle_name": [
 		"mobspellambient",
