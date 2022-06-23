@@ -199,7 +199,10 @@
 		"temperature",
 		"lightning",
 		"all",
-		"fly_into_wall"
+		"fly_into_wall",
+		"freezing",
+		"stalactite",
+		"stalagmite"
 	],
 	"potion_number_id": [
 		"0",
