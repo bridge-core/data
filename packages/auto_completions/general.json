@@ -494,14 +494,17 @@
 		"dodaylightcycle",
 		"doentitydrops",
 		"dofiretick",
+		"doinsomnia",
 		"doimmediaterespawn",
 		"domobloot",
 		"domobspawning",
+		"dowardenspawning"
 		"dotiledrops",
 		"doweathercycle",
 		"drowningdamage",
 		"falldamage",
 		"firedamage",
+		"freezedamage"
 		"functioncommandlimit",
 		"keepinventory",
 		"maxcommandchainlength",
@@ -509,9 +512,13 @@
 		"naturalregeneration",
 		"pvp",
 		"randomtickspeed",
+		"respawnblocksexplode"
 		"sendcommandfeedback",
+		"showbordereffect",
 		"showcoordinates",
 		"showdeathmessages",
+		"showtags",
+		"spawnradius",
 		"tntexplodes"
 	],
 	"game_difficulty": [
