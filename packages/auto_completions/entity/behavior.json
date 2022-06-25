@@ -9,6 +9,81 @@
 		"on_admire_item_start": "$entity.general.event_definition",
 		"on_admire_item_stop": "$entity.general.event_definition"
 	},
+	"minecraft:behavior.croak": {
+		"duration": {
+			"$dynamic.list.index_pair": "$general.number"
+		},
+		"filters": "$entity.filters",
+		"interval": {
+			"$dynamic.list.index_pair": "$general.number"
+		}
+	},
+	"minecraft:behavior.dig": {
+		"allow_dig_when_named": "$general.boolean",
+		"digs_in_daylight": "$general.boolean",
+		"duration": "$general.number",
+		"idle_time": "$general.number",
+		"suspicion_is_disturbance": "$general.boolean",
+		"vibration_is_disturbance": "$general.boolean"
+	},
+	"minecraft:behavior.eat_mob": {
+		"eat_animation_time": "$general.decimal",
+		"eat_mob_sound": "$general.sound",
+		"loot_table": "$dynamic.loot_table_files",
+		"pull_in_force": "$general.decimal",
+		"reach_mob_distance": "$general.decimal",
+		"run_speed": "$general.decimal"
+	},
+	"minecraft:behavior.emerge": {
+		"cooldown_time": "$general.number",
+		"duration": "$general.decimal",
+		"on_done": "$entity.general.event_definition"
+	},
+	"minecraft:behavior.go_and_give_items_to_noteblock": {
+		"listen_time": "$general.number",
+		"on_item_throw": "$entity.general.event_definition",
+		"reach_block_distance": "$general.decimal",
+		"run_speed": "$general.decimal",
+		"throw_force": "$general.decimal",
+		"throw_sound": "$general.sound",
+		"vertical_throw_mul": "$general.decimal"
+	},
+	"minecraft:behavior.investigate_suspicious_location": {
+		"goal_radius": "$general.decimal",
+		"speed_multiplier": "$general.decimal"
+	},
+	"minecraft:behavior.roar": {
+		"duration": "$general.decimal"
+	},
+	"minecraft:behavior.sniff": {
+		"cooldown_range": {
+			"$dynamic.list.index_pair": "$general.number"
+		},
+		"duration": "$general.decimal",
+		"sniffing_radius": "$general.decimal",
+		"suspicion_radius_horizontal": "$general.decimal",
+		"suspicion_radius_vertical": "$general.decimal"
+	},
+	"minecraft:behavior.sonic_boom": {
+		"attack_cooldown": "$general.decimal",
+		"attack_damage": "$general.decimal",
+		"attack_range_horizontal": "$general.decimal",
+		"attack_range_vertical": "$general.decimal",
+		"attack_sound": "$general.sound",
+		"charge_sound": "$general.sound",
+		"duration": "$general.decimal",
+		"duration_until_attack_sound": "$general.decimal",
+		"knockback_height_cap": "$general.decimal",
+		"knockback_horizontal_strength": "$general.decimal",
+		"knockback_vertical_strength": "$general.decimal",
+		"speed_multiplier": "$general.decimal"
+	},
+	"minecraft:behavior.stay_near_noteblock": {
+		"listen_time": "$general.number",
+		"speed": "$general.decimal",
+		"start_distance": "$general.decimal",
+		"stop_distance": "$general.decimal"
+	},
 	"minecraft:behavior.avoid_block": {
 		"priority": "$general.number",
 		"tick_interval": "$general.number",
@@ -1045,6 +1120,7 @@
 	},
 	"minecraft:behavior.sleep": {
 		"priority": "$general.number",
+		"can_sleep_while_riding": "$general.boolean",
 		"goal_radius": "$general.number",
 		"speed_multiplier": "$general.decimal",
 		"sleep_collider_height": "$general.decimal",
