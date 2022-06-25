@@ -8,6 +8,11 @@
 		"minecraft:on_prime",
 		"minecraft:start_celebrating"
 	],
+	"vibrations": [
+		"entity_interact",
+		"shear",
+		"none"
+	],
 	"effect_definition": {
 		"effect": "$general.effect_name",
 		"duration": "$general.number",
