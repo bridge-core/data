@@ -191,6 +191,10 @@
 		"@import.value.family": "$dynamic.cache.entity.families and $entity.general.vanilla_families"
 	},
 	"vanilla_families": [
+	"warden",
+	"allay",
+	"tadpole",
+	"frog",
         "armor_stand",
         "inanimate",
         "mob",
