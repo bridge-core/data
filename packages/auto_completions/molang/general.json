@@ -5,6 +5,13 @@
   ],
   "query": [
     "actor_count",
+    "anger_level",
+    "heartbeat_interval",
+    "heartbeat_phase",
+    "is_sonic_boom",
+    "surface_particle_color",
+    "surface_particle_texture_coordinate",
+    "surface_particle_texture_size",
     "all_animations_finished",
     "all_tags",
     "anim_time",

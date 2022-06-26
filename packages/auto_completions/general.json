@@ -498,13 +498,13 @@
 		"doimmediaterespawn",
 		"domobloot",
 		"domobspawning",
-		"dowardenspawning"
+		"dowardenspawning",
 		"dotiledrops",
 		"doweathercycle",
 		"drowningdamage",
 		"falldamage",
 		"firedamage",
-		"freezedamage"
+		"freezedamage",
 		"functioncommandlimit",
 		"keepinventory",
 		"maxcommandchainlength",
@@ -512,7 +512,7 @@
 		"naturalregeneration",
 		"pvp",
 		"randomtickspeed",
-		"respawnblocksexplode"
+		"respawnblocksexplode",
 		"sendcommandfeedback",
 		"showbordereffect",
 		"showcoordinates",

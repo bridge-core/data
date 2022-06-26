@@ -43,6 +43,7 @@
 			}
 		},
 		"is_daytime": "$general.boolean",
+		"is_waterlogged": "$general.boolean",
 		"is_game_rule": "$general.boolean",
 		"is_underwater": "$general.boolean",
 		"in_nether": "$general.boolean",
