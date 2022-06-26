@@ -34,29 +34,34 @@
 		"entity_type": "$general.entity_identifier",
 		"spawn_event": "$dynamic.cache.entity.events"
 	},
-	"$versioned_template.minecraft:anger_level": {
-		"$if": "$format_version >= 1.19.0",
-		"$data": {
-			"anger_decrement_interval": "$general.decimal",
-			"angry_boost": "$general.number",
-			"angry_threshold": "$general.number",
-			"default_annoyingness": "$general.number",
-			"max_anger": "$general.number",
-			"nuisance_filter": "$entity.filters",
-			"on_increase_sounds": {
-				"$dynamic.list.next_index": {
-					"condition": "$molang.embedded",
-					"sound": "$general.sound"
-				},
-				"remove_targets_below_angry_threshold": "$general.boolean"
+	"$versioned_template.minecraft:anger_level": [
+		{
+			"$if": "$format_version >= 1.19.0",
+			"$data": {
+				"anger_decrement_interval": "$general.decimal",
+				"angry_boost": "$general.number",
+				"angry_threshold": "$general.number",
+				"default_annoyingness": "$general.number",
+				"max_anger": "$general.number",
+				"nuisance_filter": "$entity.filters",
+				"on_increase_sounds": {
+					"$dynamic.list.next_index": {
+						"condition": "$molang.embedded",
+						"sound": "$general.sound"
+					},
+					"remove_targets_below_angry_threshold": "$general.boolean"
+				}
 			}
 		}
-	},
-	"$versioned_templete.minecraft:heartbeat": {
-		"$if": "$format_version >= 1.19.0",
-		"$data": {}
-	},
-	"$versioned_template.minecraft:interact": [{
+	],
+	"$versioned_template.minecraft:heartbeat": [
+		{
+			"$if": "$format_version >= 1.19.0",
+			"$data": {}
+		}
+	],
+	"$versioned_template.minecraft:interact": [
+		{
 			"$if": "$format_version >= 1.19",
 			"$data": {
 				"interactions": {
@@ -116,7 +121,8 @@
 			}
 		}
 	],
-	"$versioned_templete.minecraft:mob_effect": [{
+	"$versioned_template.minecraft:mob_effect": [
+		{
 			"$if": "$format_version < 1.19",
 			"$data": {
 				"effect_range": "$general.number",
@@ -135,24 +141,32 @@
 			}
 		}
 	],
-	"$versioned_template.minecraft:suspect_tracking": {
-		"$if": "$format_version >= 1.19.0",
-		"$data": {}
-	},
-	"$versioned_template.minecraft:vibration_damper": {
-		"$if": "$format_version >= 1.19.0",
-		"$data": {}
-	},
-	"$versioned_template.minecraft:vibration_listener": {
-		"$if": "$format_version >= 1.19.0",
-		"$data": {}
-	},
-	"$versioned_template.minecraft:movement_sound_distance_offset": {
-		"$if": "$format_version >= 1.19.0",
-		"$data": {
-			"value": "$general.decimal"
+	"$versioned_template.minecraft:suspect_tracking": [
+		{
+			"$if": "$format_version >= 1.19.0",
+			"$data": {}
 		}
-	},
+	],
+	"$versioned_template.minecraft:vibration_damper": [
+		{
+			"$if": "$format_version >= 1.19.0",
+			"$data": {}
+		}
+	],
+	"$versioned_template.minecraft:vibration_listener": [
+		{
+			"$if": "$format_version >= 1.19.0",
+			"$data": {}
+		}
+	],
+	"$versioned_template.minecraft:movement_sound_distance_offset": [
+		{
+			"$if": "$format_version >= 1.19.0",
+			"$data": {
+				"value": "$general.decimal"
+			}
+		}
+	],
 	"minecraft:admire_item": {
 		"duration": "$general.number",
 		"cooldown_after_being_attacked": "$general.number"
