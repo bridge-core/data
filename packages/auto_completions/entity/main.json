@@ -235,17 +235,11 @@
 						"$default": "$entity.components.minecraft:spell_effects.remove_effects"
 					}
 				},
-				"$versioned_template.execute": [
-					{
-						"$if": "$format_version < 1.16.100",
-						"$legacy_if": "$dynamic.bridge_core.is_active",
-						"$data": {
-							"commands": {
-								"$dynamic.list.next_index": "$function.embedded"
-							}
-						}
+				"execute": {
+					"commands": {
+						"$dynamic.list.next_index": "$function.embedded"
 					}
-				],
+				},
 				"$versioned_template.set_actor_property": [
 					{
 						"$if": "$format_version >= 1.17.0",
