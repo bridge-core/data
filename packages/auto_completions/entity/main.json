@@ -48,15 +48,19 @@
 					"$if": "$format_version >= 1.17.0",
 					"$data": {
 						"$placeholder": {
-							"values": {
-								"$dynamic.list.next_index": {
+							"range": {
+								"$dynamic.list.index_pair": {
 									"@meta": {
 										"is_value": true
 									}
 								}
 							},
-							"min": "$general.number",
-							"max": "$general.number",
+							"type" : [
+								"int",
+								"bool",
+								"float",
+								"enum"
+							],
 							"default": {
 								"@meta": {
 									"is_value": true
