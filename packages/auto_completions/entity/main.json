@@ -244,7 +244,7 @@
 						"$dynamic.list.next_index": "$function.embedded"
 					}
 				},
-				"$versioned_template.set_actor_property": [
+				"$versioned_template.set_property": [
 					{
 						"$if": "$format_version >= 1.17.0",
 						"$data": {
